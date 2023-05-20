@@ -1,0 +1,7 @@
+@use "../abstract/variables" as var;
+
+@mixin d-flex() {
+    @each $d-flex-val in var.$display-flex-prefixes-values {
+        display: $d-flex-val;
+    }
+}
