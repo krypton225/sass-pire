@@ -2,10 +2,8 @@
 @use "../abstract/variables" as var;
 
 @mixin align-items($value: normal) {
-    $all-values: (normal, flex-start, flex-end, center, baseline);
-
-    @if not list.index($all-values, $value) {
-        @error "#{$val} argument must be one of these units: (#{$all-values})";
+    @if not list.index(var.$align-items-values, $value) {
+        @error "$value argument must be one of these units: (#{var.$align-items-values})";
     }
 
     @each $prop in var.$align-items-props {
