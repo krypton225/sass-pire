@@ -6,6 +6,8 @@ $inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-fl
 
 $align-items-props: (-webkit-box-align, -ms-flex-align, align-items) !default;
 
+$align-items-values: (normal, flex-start, flex-end, center, baseline) !default;
+
 $justify-content-values: (flex-start, flex-end, center, space-between, space-around, space-evenly) !default;
 
 $flex-direction-values: (row, row-reverse, column, column-reverse) !default;
