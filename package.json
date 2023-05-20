@@ -1,0 +1,32 @@
+{
+    "name": "live-with-scss",
+    "version": "1.0.0",
+    "description": "Just a more mixins and functions with SCSS for more productive projects.",
+    "license": "MIT",
+    "author": {
+        "name": "Khaled Mohamed",
+        "email": "k.mohamed.11.98@gmail.com",
+        "url": "https://github.com/krypton225"
+    },
+    "bugs": {
+        "url": "https://github.com/krypton225/live-with-scss/issues"
+    },
+    "homepage": "https://github.com/krypton225/live-with-scss#readme",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/krypton225/live-with-scss"
+    },
+    "keywords": [
+        "SCSS",
+        "SASS"
+    ],
+    "scripts": {
+        "sass:watch": "sass --no-source-map ./src/index.scss:dist/styles.css --watch",
+        "lint": "npx stylelint ./src/**/*.scss"
+    },
+    "devDependencies": {
+        "sass": "^1.62.1",
+        "stylelint": "^15.6.2",
+        "stylelint-config-standard-scss": "^9.0.0"
+    }
+}
