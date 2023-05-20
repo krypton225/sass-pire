@@ -10,6 +10,8 @@ $align-items-values: (normal, flex-start, flex-end, center, baseline) !default;
 
 $justify-content-values: (flex-start, flex-end, center, space-between, space-around, space-evenly) !default;
 
+$justify-content-props: (-webkit-box-pack, -ms-flex-pack, justify-content) !default;
+
 $flex-direction-values: (row, row-reverse, column, column-reverse) !default;
 
 $flex-direction-props: (-webkit-box-orient, -webkit-box-direction, -ms-flex-direction, flex-direction) !default;
