@@ -1,0 +1,14 @@
+@use "sass:list";
+@use "../abstract/variables" as var;
+
+@mixin align-items($value: normal) {
+    $all-values: (normal, flex-start, flex-end, center, baseline);
+
+    @if not list.index($all-values, $value) {
+        @error "#{$val} argument must be one of these units: (#{$all-values})";
+    }
+
+    @each $prop in var.$align-items-props {
+        #{$prop}: $value;
+    }
+}
