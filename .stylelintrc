@@ -4,7 +4,6 @@
     "ignoreFiles": "dist/styles.css",
     "rules": {
         "indentation": 4,
-        "import-notation": "url",
         "max-empty-lines": 1,
         "number-max-precision": 3,
         "declaration-no-important": true,
