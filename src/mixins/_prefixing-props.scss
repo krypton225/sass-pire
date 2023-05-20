@@ -1,0 +1,54 @@
+/*
+    * This file has many mixins for using prefix for CSS properties.
+    * It has prefix for all web browsers and specific ones.
+*/
+
+@mixin prefix-all($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-web-moz-ms($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-web-moz($property, $value) {
+    -webkit-#{$property}: $value;
+    -moz-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-web-ms($property, $value) {
+    -webkit-#{$property}: $value;
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-web-o($property, $value) {
+    -webkit-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-moz-o($property, $value) {
+    -moz-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-ms-o($property, $value) {
+    -ms-#{$property}: $value;
+    -o-#{$property}: $value;
+    #{$property}: $value;
+}
+
+@mixin prefix-ms($property, $value) {
+    -ms-#{$property}: $value;
+    #{$property}: $value;
+}
