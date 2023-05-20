@@ -1,3 +1,50 @@
-$display-flex-prefixes-values: (-webkit-box, -ms-flexbox, flex);
-$display-inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-flex);
-$align-items-props: (-webkit-box-align, -ms-flex-align, align-items);
+/* stylelint-disable scss/dollar-variable-empty-line-before */
+
+$flex-prefixes-values: (-webkit-box, -ms-flexbox, flex) !default;
+
+$inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-flex) !default;
+
+$align-items-props: (-webkit-box-align, -ms-flex-align, align-items) !default;
+
+$justify-content-values: (flex-start, flex-end, center, space-between, space-around, space-evenly) !default;
+
+$flex-direction-values: (row, row-reverse, column, column-reverse) !default;
+
+$flex-direction-props: (-webkit-box-orient, -webkit-box-direction, -ms-flex-direction, flex-direction) !default;
+
+$flex-wrap-values: (nowrap, wrap, wrap-reverse) !default;
+
+$align-self-props: (-ms-grid-row-align, align-self) !default;
+
+$align-self-values: (auto, stretch, center, flex-start, flex-end, baseline) !default;
+
+$flex-grow-props: (-webkit-box-flex, -ms-flex-positive, flex-grow) !default;
+
+$flex-basis-props: (-ms-flex-preferred-size, flex-basis) !default;
+
+$main-units: (#{"%"}, rem, px, em) !default;
+
+$fade-values: (hide, show) !default;
+
+$transitions-function-values: (ease, ease-in, ease-in-out, linear) !default;
+
+$main-dimensions: (width, w, height, h) !default;
+
+$main-mq-types: (min, max) !default;
+
+$breakpoints: (
+    "mob-min": 320px,
+    "mob": 400px,
+    "mob-wide": 480px,
+    "xs": 576px,
+    "sm-tab": 640px,
+    "sm": 767px,
+    "sm-wide": 870px,
+    "md": 991px,
+    "lg": 1200px,
+    "xl": 1400px,
+    "xl-2": 1900px,
+    "xl-3": 2400px,
+    "xl-4": 2800px,
+    "xxl": 3000px,
+) !default;
