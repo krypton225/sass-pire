@@ -12,17 +12,45 @@ $justify-content-values: (flex-start, flex-end, center, space-between, space-aro
 
 $justify-content-props: (-webkit-box-pack, -ms-flex-pack, justify-content) !default;
 
-$flex-direction-values: (row, row-reverse, column, column-reverse) !default;
+$flex-direction-values: (row, r, row-reverse, r-rev, column, col, column-reverse, col-rev, "") !default;
 
 $flex-direction-props: (-webkit-box-orient, -webkit-box-direction, -ms-flex-direction, flex-direction) !default;
 
 $flex-direction-column-values: (vertical, normal, column, column) !default;
 
+$merge-flex-direction-column: (
+    -webkit-box-orient: vertical,
+    -webkit-box-direction: normal,
+    -ms-flex-direction: column,
+    flex-direction: column
+);
+
 $flex-direction-column-reverse-values: (vertical, reverse, column-reverse, column-reverse) !default;
+
+$merge-flex-direction-column-reverse: (
+    -webkit-box-orient: vertical,
+    -webkit-box-direction: reverse,
+    -ms-flex-direction: column-reverse,
+    flex-direction: column-reverse
+);
 
 $flex-direction-row-values: (horizontal, normal, row, row) !default;
 
+$merge-flex-direction-row: (
+    -webkit-box-orient: horizontal,
+    -webkit-box-direction: normal,
+    -ms-flex-direction: row,
+    flex-direction: row
+);
+
 $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-reverse) !default;
+
+$merge-flex-direction-row-reverse: (
+    -webkit-box-orient: horizontal,
+    -webkit-box-direction: reverse,
+    -ms-flex-direction: row-reverse,
+    flex-direction: row-reverse
+);
 
 $flex-wrap-values: (nowrap, wrap, wrap-reverse) !default;
 
