@@ -54,6 +54,8 @@ $merge-flex-direction-row-reverse: (
 
 $flex-wrap-values: (nowrap, wrap, wrap-reverse) !default;
 
+$flex-shrink-props: (-ms-flex-negative, flex-shrink) !default;
+
 $align-self-props: (-ms-grid-row-align, align-self) !default;
 
 $align-self-values: (auto, stretch, center, flex-start, flex-end, baseline) !default;
