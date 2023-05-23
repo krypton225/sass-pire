@@ -1,6 +1,4 @@
-$base-fz: 16px;
-
-@function px($px-val: 1px) {
+@function px($px-val: 1) {
     @if type-of($px-val) != number {
         @error "Please, Enter a number to px function";
     }
