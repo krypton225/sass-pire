@@ -1,3 +1,9 @@
+/*
+    * @param: {Number} $number - A number to get the half of it.
+    * @output: '$number'.
+    * @return: The half of number.
+*/
+
 @function half($number: 0) {
     @if type-of($number) != number {
         @error "Please, Enter a number to half function";
