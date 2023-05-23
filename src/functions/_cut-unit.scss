@@ -1,6 +1,6 @@
 @use "sass:math";
 
-@function get-unit($num) {
+@function cut-unit($num) {
     @if type-of($num) == "number" and not unitless($num) {
         @return math.div($num, ($num * 0 + 1));
     }
