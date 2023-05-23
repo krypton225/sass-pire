@@ -1,5 +1,11 @@
 @use "sass:math";
 
+/*
+    * This code belongs to: Kitty Giraudel.
+    * You can see that in: https://css-tricks.com/snippets/sass/strip-unit-function/
+    * We updated the using of math lib of sass.
+*/
+
 @function cut-unit($num) {
     @if type-of($num) == "number" and not unitless($num) {
         @return math.div($num, ($num * 0 + 1));
