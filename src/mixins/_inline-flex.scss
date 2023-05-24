@@ -1,5 +1,11 @@
 @use "../abstract/variables" as var;
 
+/*
+    * @param: null.
+    * @output: Properties of display inline-flex with its vendor prefixes.
+    * @return: Nothing.
+*/
+
 @mixin d-inflex() {
     @each $inflex-val in var.$inline-flex-prefixes-values {
         display: $inflex-val;
