@@ -1,6 +1,12 @@
 @use "sass:list";
 @use "../abstract/variables" as var;
 
+/*
+    * @param: {String} $value - The actual value of justify-content property.
+    * @output: Properties of justify-content with its vendor prefixes.
+    * @return: Nothing.
+*/
+
 @mixin justify-content($value: flex-start) {
     @if not list.index(var.$justify-content-values, $value) {
         @error "$value argument must has one of these units: (#{var.$justify-content-values})";
