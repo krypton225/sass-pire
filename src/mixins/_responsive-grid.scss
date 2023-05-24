@@ -9,6 +9,8 @@
 /*
     * @param $min-col-size: min width of the one column of the item.
     * @param $gap: the space between every column in both x-axis and y-axis.
+    * @output: Display grid with its specified column width with gapping.
+    * @return: Nothing.
 */
 
 @mixin grid($min-col-size: 4rem, $gap: 1rem) {
