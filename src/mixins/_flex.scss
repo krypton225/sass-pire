@@ -1,5 +1,11 @@
 @use "../abstract/variables" as var;
 
+/*
+    * @param: null.
+    * @output: Properties of display flex with its vendor prefixes.
+    * @return: Nothing.
+*/
+
 @mixin d-flex() {
     @each $flex-val in var.$flex-prefixes-values {
         display: $flex-val;
