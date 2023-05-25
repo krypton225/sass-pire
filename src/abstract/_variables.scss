@@ -6,15 +6,29 @@ $inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-fl
 
 $align-items-props: (-webkit-box-align, -ms-flex-align, align-items) !default;
 
-$align-items-values: (normal, flex-start, flex-end, center, baseline) !default;
-
-$justify-content-values: (flex-start, flex-end, center, space-between, space-around, space-evenly) !default;
+$align-items-values: (normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit) !default;
 
 $justify-content-props: (-webkit-box-pack, -ms-flex-pack, justify-content) !default;
 
-$flex-direction-values: (row, r, row-reverse, r-rev, column, col, column-reverse, col-rev, "") !default;
+$justify-content-values: (
+    normal,
+    stretch,
+    start,
+    end,
+    right,
+    left,
+    flex-start,
+    flex-end,
+    center,
+    space-between,
+    space-around,
+    space-evenly,
+    inherit
+) !default;
 
 $flex-direction-props: (-webkit-box-orient, -webkit-box-direction, -ms-flex-direction, flex-direction) !default;
+
+$flex-direction-values: (row, r, row-reverse, r-rev, column, col, column-reverse, col-rev, "") !default;
 
 $flex-direction-column-values: (vertical, normal, column, column) !default;
 
