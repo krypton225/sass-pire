@@ -1,0 +1,70 @@
+/*
+    * These are useful mixin for using properties of flexbox in CSS.
+    * The pattern you follow: (flex)-(justify-content)-(align-items).
+    * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
+
+    * NOTE: This file for make mixins with justify content flex-start.
+*/
+
+@mixin flex-fstart-normal($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(normal);
+}
+
+@mixin flex-fstart-stretch($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(stretch);
+}
+
+@mixin flex-fstart-start($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(start);
+}
+
+@mixin flex-fstart-end($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(end);
+}
+
+@mixin flex-fstart-fstart($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(flex-start);
+}
+
+@mixin flex-fstart-fend($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(flex-end);
+}
+
+@mixin flex-fstart-center($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(center);
+}
+
+@mixin flex-fstart-baseline($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(baseline);
+}
+
+@mixin flex-fstart-inherit($dir: row) {
+    @include d-flex;
+    @include flex-dir($dir);
+    @include justify-content(flex-start);
+    @include align-items(inherit);
+}
