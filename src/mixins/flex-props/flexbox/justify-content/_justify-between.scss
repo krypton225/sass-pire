@@ -7,64 +7,37 @@
 */
 
 @mixin flex-between-normal($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(normal);
+    @include f-prop($dir, space-between, normal);
 }
 
 @mixin flex-between-stretch($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(stretch);
+    @include f-prop($dir, space-between, stretch);
 }
 
 @mixin flex-between-start($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(start);
+    @include f-prop($dir, space-between, start);
 }
 
 @mixin flex-between-end($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(end);
+    @include f-prop($dir, space-between, end);
 }
 
 @mixin flex-between-fstart($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(flex-start);
+    @include f-prop($dir, space-between, flex-start);
 }
 
 @mixin flex-between-fend($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(flex-end);
+    @include f-prop($dir, space-between, flex-end);
 }
 
 @mixin flex-between-center($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(center);
+    @include f-prop($dir, space-between, center);
 }
 
 @mixin flex-between-baseline($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(baseline);
+    @include f-prop($dir, space-between, baseline);
 }
 
 @mixin flex-between-inherit($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-between);
-    @include align-items(inherit);
+    @include f-prop($dir, space-between, inherit);
 }
