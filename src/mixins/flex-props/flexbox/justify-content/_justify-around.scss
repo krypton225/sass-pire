@@ -7,64 +7,37 @@
 */
 
 @mixin flex-around-normal($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(normal);
+    @include f-prop($dir, space-around, normal);
 }
 
 @mixin flex-around-stretch($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(stretch);
+    @include f-prop($dir, space-around, stretch);
 }
 
 @mixin flex-around-start($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(start);
+    @include f-prop($dir, space-around, start);
 }
 
 @mixin flex-around-end($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(end);
+    @include f-prop($dir, space-around, end);
 }
 
 @mixin flex-around-fstart($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(flex-start);
+    @include f-prop($dir, space-around, flex-start);
 }
 
 @mixin flex-around-fend($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(flex-end);
+    @include f-prop($dir, space-around, flex-end);
 }
 
 @mixin flex-around-center($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(center);
+    @include f-prop($dir, space-around, center);
 }
 
 @mixin flex-around-baseline($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(baseline);
+    @include f-prop($dir, space-around, baseline);
 }
 
 @mixin flex-around-inherit($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-around);
-    @include align-items(inherit);
+    @include f-prop($dir, space-around, inherit);
 }
