@@ -1,8 +1,3 @@
-/*
-    * This file has many mixins for using prefix values for CSS properties.
-    * It has prefix for all web browsers and specific ones.
-*/
-
 @mixin prefix-val-all($prop, $value) {
     #{$prop}: -webkit-#{$value};
     #{$prop}: -moz-#{$value};
