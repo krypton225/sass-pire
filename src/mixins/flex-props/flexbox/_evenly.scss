@@ -38,6 +38,6 @@
     @include f-prop($dir, space-evenly, baseline);
 }
 
-@mixin flex-even-inherit($dir: row) {
+@mixin flex-even-inh($dir: row) {
     @include f-prop($dir, space-evenly, inherit);
 }

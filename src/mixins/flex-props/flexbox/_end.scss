@@ -38,6 +38,6 @@
     @include f-prop($dir, end, baseline);
 }
 
-@mixin flex-end-inherit($dir: row) {
+@mixin flex-end-inh($dir: row) {
     @include f-prop($dir, end, inherit);
 }

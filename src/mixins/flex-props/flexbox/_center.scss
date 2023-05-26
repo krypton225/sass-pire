@@ -38,6 +38,6 @@
     @include f-prop($dir, center, baseline);
 }
 
-@mixin flex-center-inherit($dir: row) {
+@mixin flex-center-inh($dir: row) {
     @include f-prop($dir, center, inherit);
 }
