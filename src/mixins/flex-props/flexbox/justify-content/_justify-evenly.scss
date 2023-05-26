@@ -7,64 +7,37 @@
 */
 
 @mixin flex-even-normal($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(normal);
+    @include f-prop($dir, space-evenly, normal);
 }
 
 @mixin flex-even-stretch($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(stretch);
+    @include f-prop($dir, space-evenly, stretch);
 }
 
 @mixin flex-even-start($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(start);
+    @include f-prop($dir, space-evenly, start);
 }
 
 @mixin flex-even-end($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(end);
+    @include f-prop($dir, space-evenly, end);
 }
 
 @mixin flex-even-fstart($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(flex-start);
+    @include f-prop($dir, space-evenly, flex-start);
 }
 
 @mixin flex-even-fend($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(flex-end);
+    @include f-prop($dir, space-evenly, flex-end);
 }
 
 @mixin flex-even-center($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(center);
+    @include f-prop($dir, space-evenly, center);
 }
 
 @mixin flex-even-baseline($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(baseline);
+    @include f-prop($dir, space-evenly, baseline);
 }
 
 @mixin flex-even-inherit($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(space-evenly);
-    @include align-items(inherit);
+    @include f-prop($dir, space-evenly, inherit);
 }
