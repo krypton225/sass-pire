@@ -1,0 +1,23 @@
+@use "sass:list";
+@use "sass:math";
+@use "../../../abstract/variables" as var;
+
+/*
+    * @param: {String | Number} $val - The actual value of flex-basis property.
+    * @output: Properties of flex-basis with its vendor prefixes.
+    * @return: Nothing.
+*/
+
+@mixin flex-basis($val: auto) {
+    @if type-of($val) == number and unitless($val) {
+        @error "$val argument must has its unit with flex-basis mixin. These units are: (#{var.$main-units})";
+    } @else if type-of($val) == string {
+        @if not list.index(var.$flex-basis-values, $val) {
+            @error "$val argument is string type and must has one of these units: (#{var.$flex-basis-values})";
+        }
+    }
+
+    @each $prop in var.$flex-basis-props {
+        #{$prop}: $val;
+    }
+}
