@@ -1,0 +1,15 @@
+/*
+    * This mixin for collect main properties of flexbox.
+    * @param: {String} $f-dir - flex-direction.
+    * @param: {String} $justify-content-val - justify-content.
+    * @param: {String} $align-items-val - align-items.
+    * @output: flexbox properties with its vendor prefixes.
+    * @return: null.
+*/
+
+@mixin f-prop($f-dir: row, $justify-content-val: flex-start, $align-items-val: normal) {
+    @include d-flex;
+    @include flex-dir($f-dir);
+    @include justify-content($justify-content-val);
+    @include align-items($align-items-val);
+}

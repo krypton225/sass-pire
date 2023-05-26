@@ -1,7 +1,7 @@
 /* stylelint-disable scss/no-global-function-names */
 @use "sass:list";
 @use "sass:map";
-@use "../abstract/variables" as var;
+@use "../../../abstract/variables" as var;
 
 /*
     * @param: {String} $value - The actual value of flex-direction property.

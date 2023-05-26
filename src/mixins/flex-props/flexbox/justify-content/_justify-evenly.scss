@@ -1,0 +1,43 @@
+/*
+    * These are useful mixin for using properties of flexbox in CSS.
+    * The pattern you follow: (flex)-(justify-content)-(align-items).
+    * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
+
+    * NOTE: This file for make mixins with justify content space-evenly.
+*/
+
+@mixin flex-even-normal($dir: row) {
+    @include f-prop($dir, space-evenly, normal);
+}
+
+@mixin flex-even-stretch($dir: row) {
+    @include f-prop($dir, space-evenly, stretch);
+}
+
+@mixin flex-even-start($dir: row) {
+    @include f-prop($dir, space-evenly, start);
+}
+
+@mixin flex-even-end($dir: row) {
+    @include f-prop($dir, space-evenly, end);
+}
+
+@mixin flex-even-fstart($dir: row) {
+    @include f-prop($dir, space-evenly, flex-start);
+}
+
+@mixin flex-even-fend($dir: row) {
+    @include f-prop($dir, space-evenly, flex-end);
+}
+
+@mixin flex-even-center($dir: row) {
+    @include f-prop($dir, space-evenly, center);
+}
+
+@mixin flex-even-baseline($dir: row) {
+    @include f-prop($dir, space-evenly, baseline);
+}
+
+@mixin flex-even-inherit($dir: row) {
+    @include f-prop($dir, space-evenly, inherit);
+}
