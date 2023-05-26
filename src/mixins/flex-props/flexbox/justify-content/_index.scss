@@ -10,7 +10,3 @@
 @import "./justify-around";
 @import "./justify-evenly";
 @import "./justify-inherit";
-
-.one {
-    @include flex-around-inherit;
-}
