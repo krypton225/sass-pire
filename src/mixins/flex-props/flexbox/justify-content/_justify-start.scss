@@ -7,64 +7,37 @@
 */
 
 @mixin flex-start-normal($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(normal);
+    @include f-prop($dir, start, normal);
 }
 
 @mixin flex-start-stretch($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(stretch);
+    @include f-prop($dir, start, stretch);
 }
 
 @mixin flex-start-start($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(start);
+    @include f-prop($dir, start, start);
 }
 
 @mixin flex-start-end($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(end);
+    @include f-prop($dir, start, end);
 }
 
 @mixin flex-start-fstart($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(flex-start);
+    @include f-prop($dir, start, flex-start);
 }
 
 @mixin flex-start-fend($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(flex-end);
+    @include f-prop($dir, start, flex-end);
 }
 
 @mixin flex-start-center($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(center);
+    @include f-prop($dir, start, center);
 }
 
 @mixin flex-start-baseline($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(baseline);
+    @include f-prop($dir, start, baseline);
 }
 
 @mixin flex-start-inherit($dir: row) {
-    @include d-flex;
-    @include flex-dir($dir);
-    @include justify-content(start);
-    @include align-items(inherit);
+    @include f-prop($dir, start, inherit);
 }
