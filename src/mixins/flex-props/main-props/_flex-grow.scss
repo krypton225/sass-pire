@@ -1,0 +1,19 @@
+@use "sass:list";
+@use "../../../abstract/variables" as var;
+@import "../../../functions/cut-unit";
+
+/*
+    * @param: {Number} $value - The actual value of flex-grow property.
+    * @output: Properties of flex-grow with its vendor prefixes.
+    * @return: Nothing.
+*/
+
+@mixin flex-grow($val: 0) {
+    @if type-of($val) != number {
+        @error "$val of flex-grow argument must be of type number.";
+    }
+
+    @each $prop in var.$flex-grow-props {
+        #{$prop}: cut-unit($val);
+    }
+}
