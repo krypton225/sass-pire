@@ -72,7 +72,7 @@ $flex-shrink-props: (-ms-flex-negative, flex-shrink) !default;
 
 $align-self-props: (-ms-grid-row-align, align-self) !default;
 
-$align-self-values: (auto, stretch, center, flex-start, flex-end, baseline) !default;
+$align-self-values: (auto, normal, stretch, start, end, self-start, self-end, center, flex-start, flex-end, baseline, inherit) !default;
 
 $flex-grow-props: (-webkit-box-flex, -ms-flex-positive, flex-grow) !default;
 
