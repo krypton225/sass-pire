@@ -78,7 +78,7 @@ $flex-grow-props: (-webkit-box-flex, -ms-flex-positive, flex-grow) !default;
 
 $flex-basis-props: (-ms-flex-preferred-size, flex-basis) !default;
 
-$flex-basis-values: (max-content, min-content, fit-content, content, inherit) !default;
+$flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
 
 $main-units: (#{"%"}, rem, px, em) !default;
 
