@@ -38,6 +38,6 @@
     @include inflex-prop($dir, end, baseline);
 }
 
-@mixin inflex-end-inherit($dir: row) {
+@mixin inflex-end-inh($dir: row) {
     @include inflex-prop($dir, end, inherit);
 }

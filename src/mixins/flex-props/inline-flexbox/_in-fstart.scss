@@ -38,6 +38,6 @@
     @include inflex-prop($dir, flex-start, baseline);
 }
 
-@mixin inflex-fstart-inherit($dir: row) {
+@mixin inflex-fstart-inh($dir: row) {
     @include inflex-prop($dir, flex-start, inherit);
 }

@@ -38,6 +38,6 @@
     @include inflex-prop($dir, space-between, baseline);
 }
 
-@mixin inflex-between-inherit($dir: row) {
+@mixin inflex-between-inh($dir: row) {
     @include inflex-prop($dir, space-between, inherit);
 }

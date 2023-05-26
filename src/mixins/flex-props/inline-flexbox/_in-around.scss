@@ -38,6 +38,6 @@
     @include inflex-prop($dir, space-around, baseline);
 }
 
-@mixin inflex-around-inherit($dir: row) {
+@mixin inflex-around-inh($dir: row) {
     @include inflex-prop($dir, space-around, inherit);
 }

@@ -38,6 +38,6 @@
     @include f-prop($dir, space-between, baseline);
 }
 
-@mixin flex-between-inherit($dir: row) {
+@mixin flex-between-inh($dir: row) {
     @include f-prop($dir, space-between, inherit);
 }
