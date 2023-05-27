@@ -1,0 +1,11 @@
+@mixin doc-out($output: "Nothing") {
+    @if type-of($output) != string {
+        @error "Type of parameter of doc-out must be string.";
+    }
+
+    @if not $output or $output == "" {
+        $output: "Nothing";
+    }
+
+    /* @output: #{$output} */
+}
