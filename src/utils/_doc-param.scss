@@ -1,0 +1,20 @@
+/* stylelint-disable comment-empty-line-before */
+@use "sass:list";
+
+@mixin doc-param($param...) {
+    @if not $param or $param == "" {
+        $param: "null";
+    }
+
+    @each $individual-param, $description in $param {
+        @if not $individual-param or not $description or $description == "" {
+            @error "Please, Enter the valid parameter or its description.";
+        } @else {
+            @if $individual-param == "" {
+                /* @param: {#{type-of($individual-param)}} - #{$description} */
+            } @else {
+                /* @param: {#{type-of($individual-param)}} #{$individual-param} - #{$description} */
+            }
+        }
+    }
+}
