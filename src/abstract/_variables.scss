@@ -2,7 +2,13 @@
 
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
 
-$inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-flex) !default;
+$inline-flex-prefixes-values: (
+    -webkit-inline-box,
+    -webkit-inline-flex,
+    -ms-inline-flexbox,
+    -moz-inline-box,
+    inline-flex
+) !default;
 
 $align-items-props: (-webkit-box-align, -ms-flex-align, align-items) !default;
 
@@ -72,7 +78,20 @@ $flex-shrink-props: (-ms-flex-negative, flex-shrink) !default;
 
 $align-self-props: (-ms-grid-row-align, align-self) !default;
 
-$align-self-values: (auto, normal, stretch, start, end, self-start, self-end, center, flex-start, flex-end, baseline, inherit) !default;
+$align-self-values: (
+    auto,
+    normal,
+    stretch,
+    start,
+    end,
+    self-start,
+    self-end,
+    center,
+    flex-start,
+    flex-end,
+    baseline,
+    inherit
+) !default;
 
 $flex-grow-props: (-webkit-box-flex, -ms-flex-positive, flex-grow) !default;
 
