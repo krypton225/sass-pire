@@ -1,6 +1,6 @@
 /* stylelint-disable scss/dollar-variable-empty-line-before */
 
-$flex-prefixes-values: (-webkit-box, -ms-flexbox, flex) !default;
+$flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
 
 $inline-flex-prefixes-values: (-webkit-inline-box, -ms-inline-flexbox, inline-flex) !default;
 
