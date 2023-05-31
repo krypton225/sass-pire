@@ -55,7 +55,10 @@ $flex-direction-column-values: (vertical, normal, column, column) !default;
 $merge-flex-direction-column: (
     -webkit-box-orient: vertical,
     -webkit-box-direction: normal,
+    -webkit-flex-direction: column,
     -ms-flex-direction: column,
+    -moz-flex-direction: column,
+    -o-flex-direction: column,
     flex-direction: column
 );
 
@@ -64,7 +67,10 @@ $flex-direction-column-reverse-values: (vertical, reverse, column-reverse, colum
 $merge-flex-direction-column-reverse: (
     -webkit-box-orient: vertical,
     -webkit-box-direction: reverse,
+    -webkit-flex-direction: column-reverse,
     -ms-flex-direction: column-reverse,
+    -moz-flex-direction: column-reverse,
+    -o-flex-direction: column-reverse,
     flex-direction: column-reverse
 );
 
