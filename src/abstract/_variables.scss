@@ -143,7 +143,15 @@ $flex-grow-props: (
     flex-grow
 ) !default;
 
-$flex-basis-props: (-ms-flex-preferred-size, flex-basis) !default;
+$flex-basis-props: (
+    -webkit-flex-basis,
+    -ms-flex-basis,
+    -ms-flex-preferred-size,
+    -moz-flex-basis,
+    -moz-box-sizing,
+    -o-flex-basis,
+    flex-basis
+) !default;
 
 $flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
 
