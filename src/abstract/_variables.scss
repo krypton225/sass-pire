@@ -110,7 +110,14 @@ $flex-shrink-props: (
     flex-shrink
 ) !default;
 
-$align-self-props: (-ms-grid-row-align, align-self) !default;
+$align-self-props: (
+    -webkit-align-self,
+    -ms-grid-row-align,
+    -ms-align-self,
+    -moz-align-self,
+    -o-align-self,
+    align-self
+) !default;
 
 $align-self-values: (
     auto,
