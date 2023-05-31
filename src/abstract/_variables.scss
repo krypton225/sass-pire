@@ -10,7 +10,7 @@ $inline-flex-prefixes-values: (
     inline-flex
 ) !default;
 
-$align-items-props: (-webkit-box-align, -ms-flex-align, align-items) !default;
+$align-items-props: (-webkit-box-align, -webkit-align-items, -ms-flex-align, -moz-align-items, align-items) !default;
 
 $align-items-values: (normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit) !default;
 
