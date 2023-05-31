@@ -38,7 +38,15 @@ $justify-content-values: (
     inherit
 ) !default;
 
-$flex-direction-props: (-webkit-box-orient, -webkit-box-direction, -ms-flex-direction, flex-direction) !default;
+$flex-direction-props: (
+    -webkit-box-orient,
+    -webkit-box-direction,
+    -webkit-flex-direction,
+    -ms-flex-direction,
+    -moz-flex-direction,
+    -o-flex-direction,
+    flex-direction
+) !default;
 
 $flex-direction-values: (row, r, row-reverse, r-rev, column, col, column-reverse, col-rev, "") !default;
 
