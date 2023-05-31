@@ -79,7 +79,10 @@ $flex-direction-row-values: (horizontal, normal, row, row) !default;
 $merge-flex-direction-row: (
     -webkit-box-orient: horizontal,
     -webkit-box-direction: normal,
+    -webkit-flex-direction: row,
     -ms-flex-direction: row,
+    -moz-flex-direction: row,
+    -o-flex-direction: row,
     flex-direction: row
 );
 
@@ -88,7 +91,10 @@ $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-rever
 $merge-flex-direction-row-reverse: (
     -webkit-box-orient: horizontal,
     -webkit-box-direction: reverse,
+    -webkit-flex-direction: row-reverse,
     -ms-flex-direction: row-reverse,
+    -moz-flex-direction: row-reverse,
+    -o-flex-direction: row-reverse,
     flex-direction: row-reverse
 );
 
