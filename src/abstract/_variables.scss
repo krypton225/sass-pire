@@ -14,7 +14,13 @@ $align-items-props: (-webkit-box-align, -webkit-align-items, -ms-flex-align, -mo
 
 $align-items-values: (normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit) !default;
 
-$justify-content-props: (-webkit-box-pack, -ms-flex-pack, justify-content) !default;
+$justify-content-props: (
+    -webkit-box-pack,
+    -webkit-justify-content,
+    -ms-flex-pack,
+    -moz-justify-content,
+    justify-content
+) !default;
 
 $justify-content-values: (
     normal,
