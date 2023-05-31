@@ -134,7 +134,14 @@ $align-self-values: (
     inherit
 ) !default;
 
-$flex-grow-props: (-webkit-box-flex, -ms-flex-positive, flex-grow) !default;
+$flex-grow-props: (
+    -webkit-flex-grow,
+    -webkit-box-flex,
+    -ms-flex-positive,
+    -ms-flex-positive,
+    -moz-box-flex,
+    flex-grow
+) !default;
 
 $flex-basis-props: (-ms-flex-preferred-size, flex-basis) !default;
 
