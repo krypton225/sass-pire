@@ -1,11 +1,9 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-
-/*
-    * @param: {String} $value - The actual value of justify-content property.
-    * @output: Properties of justify-content with its vendor prefixes.
-    * @return: Nothing.
-*/
+@import "../../..//utils";
+@include doc-param(("$value", "The actual value of justify-content property."));
+@include doc-return("Nothing");
+@include doc-out("Properties of justify-content with its vendor prefixes.");
 
 @mixin justify-content($value: flex-start) {
     @if not list.index(var.$justify-content-values, $value) {
