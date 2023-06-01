@@ -1,11 +1,12 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
 @import "../../..//utils";
-@include doc-param(("$value", "The actual value of justify-content property."));
-@include doc-return("Nothing");
-@include doc-out("Properties of justify-content with its vendor prefixes.");
 
 @mixin justify-content($value: flex-start) {
+    @include doc-param(($value, "The actual value of justify-content property."));
+    @include doc-return("Nothing");
+    @include doc-out("Properties of justify-content with its vendor prefixes.");
+
     @if not list.index(var.$justify-content-values, $value) {
         @error "$value argument must has one of these units: (#{var.$justify-content-values})";
     }
