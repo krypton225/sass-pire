@@ -1,10 +1,8 @@
 @use "../../../abstract/variables" as var;
-
-/*
-    * @param: null.
-    * @output: Properties of display inline-flex with its vendor prefixes.
-    * @return: Nothing.
-*/
+@import "../../..//utils";
+@include doc-param(("", "No parameter."));
+@include doc-return("Nothing");
+@include doc-out("Properties of display inline-flex with its vendor prefixes.");
 
 @mixin d-inflex() {
     @each $inflex-val in var.$inline-flex-prefixes-values {
