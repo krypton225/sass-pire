@@ -3,11 +3,12 @@
 @use "sass:map";
 @use "../../../abstract/variables" as var;
 @import "../../..//utils";
-@include doc-param(("$value", "The actual value of flex-direction property."));
-@include doc-return("Nothing");
-@include doc-out("Properties of flex-direction with its vendor prefixes.");
 
 @mixin flex-dir($value: row) {
+    @include doc-param(($value, "The actual value of flex-direction property."));
+    @include doc-return("Nothing");
+    @include doc-out("Properties of flex-direction with its vendor prefixes.");
+
     @if not list.index(var.$flex-direction-values, $value) {
         @error "$value argument must has one of these values: (#{var.$flex-direction-values})";
     }
