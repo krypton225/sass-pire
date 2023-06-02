@@ -1,6 +1,6 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-@import "../../..//utils";
+@import "../../../utils";
 
 @mixin align-self($val: auto) {
     @include doc-param(($val, "The actual value of align-self property."));

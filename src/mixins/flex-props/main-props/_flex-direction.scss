@@ -2,7 +2,7 @@
 @use "sass:list";
 @use "sass:map";
 @use "../../../abstract/variables" as var;
-@import "../../..//utils";
+@import "../../../utils";
 
 @mixin flex-dir($value: row) {
     @include doc-param(($value, "The actual value of flex-direction property."));

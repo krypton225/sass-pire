@@ -1,7 +1,7 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../../abstract/variables" as var;
-@import "../../..//utils";
+@import "../../../utils";
 
 @mixin flex-wrap($val: nowrap) {
     @include doc-param(($val, "The actual value of flex-wrap property."));

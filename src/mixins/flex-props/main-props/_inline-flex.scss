@@ -1,5 +1,5 @@
 @use "../../../abstract/variables" as var;
-@import "../../..//utils";
+@import "../../../utils";
 @include doc-param(("", "No parameter."));
 @include doc-return("Nothing");
 @include doc-out("Properties of display inline-flex with its vendor prefixes.");
