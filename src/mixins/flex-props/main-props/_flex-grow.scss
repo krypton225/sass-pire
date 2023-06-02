@@ -1,7 +1,7 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
 @import "../../../functions/cut-unit";
-@import "../../..//utils";
+@import "../../../utils";
 
 @mixin flex-grow($val: 0) {
     @include doc-param(($val, "The actual value of flex-grow property."));
