@@ -22,6 +22,7 @@
     ],
     "scripts": {
         "sass:watch": "sass --no-source-map ./src/index.scss:dist/styles.css --watch",
+        "sass:comp": "sass --no-source-map ./src/index.scss:dist/styles.min.css --watch --style=compressed",
         "lint": "npx stylelint ./src/**/*.scss"
     },
     "devDependencies": {
