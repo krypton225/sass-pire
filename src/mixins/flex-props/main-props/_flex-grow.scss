@@ -1,13 +1,12 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
 @import "../../../functions/cut-unit";
-@import "../../../utils";
+
+// * @param: {Number} $val : The actual value of flex-grow property.
+// * @return: Nothing.
+// * @output: Properties of flex-grow with its vendor prefixes.
 
 @mixin flex-grow($val: 0) {
-    @include doc-param(($val, "The actual value of flex-grow property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of flex-grow with its vendor prefixes.");
-
     @if type-of($val) != number {
         @error "$val of flex-grow argument must be of type number.";
     }

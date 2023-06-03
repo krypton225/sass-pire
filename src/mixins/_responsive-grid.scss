@@ -2,14 +2,13 @@
 
 @use "sass:list";
 @use "sass:math";
-@import "../utils";
+
+// * @param: {Number} $min-col-size - min width of the one column of the item.
+// * @param: {Number} $gap - the space between every column in both x-axis and y-axis.
+// * @return: Nothing.
+// * @output: Display grid with its specified column width with gapping.
 
 @mixin grid($min-col-size: 4rem, $gap: 1rem) {
-    @include doc-param(($min-col-size, "min width of the one column of the item."));
-    @include doc-param(($gap, "the space between every column in both x-axis and y-axis."));
-    @include doc-return("Nothing");
-    @include doc-out("Display grid with its specified column width with gapping.");
-
     @if type-of($min-col-size) != number {
         @error "$min-col-size argument must be of type number.";
     }

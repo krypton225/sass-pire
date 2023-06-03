@@ -1,9 +1,9 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-@import "../../../utils";
-@include doc-param(("$value", "The actual value of align-items property."));
-@include doc-return("Nothing");
-@include doc-out("Properties of align-items with its vendor prefixes.");
+
+// * @param: {String} $value : The actual value of align-items property.
+// * @return: Nothing.
+// * @output: Properties of align-items with its vendor prefixes.
 
 @mixin align-items($value: normal) {
     @if not list.index(var.$align-items-values, $value) {
