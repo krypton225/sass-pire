@@ -42,7 +42,3 @@
     grid-template-columns: repeat(auto-fit, minmax(min(#{$min-col-size}, 100%), 1fr));
     gap: #{$gap};
 }
-
-.one {
-    @include grid(13rem, 2rem);
-}
