@@ -6,9 +6,6 @@
 // * @output: Flexbox properties with its vendor prefixes. This mixin for collect main properties of inline flexbox.
 
 @mixin inflex-prop($f-dir: row, $justify-content-val: flex-start, $align-items-val: normal) {
-    @include doc-param(($f-dir, "flex-direction."));
-    @include doc-param(($justify-content-val, "justify-content."));
-    @include doc-param(($align-items-val, "align-items."));
     @include d-inflex;
     @include flex-dir($f-dir);
     @include justify-content($justify-content-val);
