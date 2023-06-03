@@ -1,6 +1,6 @@
-// @param: {Number} $px-val - The number with pixel value without px unit.
-// @output: A converted number with rem value.
-// @return: The number after converting from pixel to rem.
+// * @param: {Number} $px-val - The number with pixel value without px unit.
+// * @output: A converted number with rem value.
+// * @return: The number after converting from pixel to rem.
 
 @function px($px-val: 1) {
     @if type-of($px-val) != number {
