@@ -1,13 +1,12 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../../abstract/variables" as var;
-@import "../../../utils";
+
+// * @param: {String | Number} $val : The actual value of flex-basis property.
+// * @return: Nothing.
+// * @output: Properties of flex-basis with its vendor prefixes.
 
 @mixin flex-basis($val: auto) {
-    @include doc-param(($val, "The actual value of flex-basis property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of flex-basis with its vendor prefixes.");
-
     @if type-of($val) == string or type-of($val) == number {
         @if type-of($val) == string {
             @if not list.index(var.$flex-basis-values, $val) {

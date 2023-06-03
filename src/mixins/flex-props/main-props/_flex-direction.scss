@@ -1,14 +1,15 @@
-// stylelint-disable scss/no-global-function-names
+// * stylelint-disable scss/no-global-function-names
 
 @use "sass:list";
 @use "sass:map";
 @use "../../../abstract/variables" as var;
-@import "../../../utils";
+
+// * @param: {String} $val : The actual value of flex-direction property.
+// * @return: Nothing
+// * @output: Properties of flex-direction with its vendor prefixes.
 
 @mixin flex-dir($value: row) {
-    @include doc-param(($value, "The actual value of flex-direction property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of flex-direction with its vendor prefixes.");
+    @include doc-out("");
 
     @if not list.index(var.$flex-direction-values, $value) {
         @error "$value argument must has one of these values: (#{var.$flex-direction-values})";

@@ -1,13 +1,12 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../../abstract/variables" as var;
-@import "../../../utils";
+
+// * @param: {String} $val : The actual value of flex-wrap property.
+// * @return: Nothing.
+// * @output: Properties of flex-wrap with its vendor prefixes.
 
 @mixin flex-wrap($val: nowrap) {
-    @include doc-param(($val, "The actual value of flex-wrap property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of flex-wrap with its vendor prefixes.");
-
     @if not index(var.$flex-wrap-values, $val) {
         @error "$val of flex-wrap must has one of these units: (#{var.$flex-wrap-values})";
     }

@@ -1,13 +1,14 @@
-@import "../../../utils";
+// * @param: {String} $f-dir : flex-direction.
+// * @param: {String} $justify-content-val : justify-content.
+// * @param: {String} $align-items-val : align-items.
+
+// * @return: Nothing.
+// * @output: Flexbox properties with its vendor prefixes. This mixin for collect main properties of inline flexbox.
 
 @mixin inflex-prop($f-dir: row, $justify-content-val: flex-start, $align-items-val: normal) {
     @include doc-param(($f-dir, "flex-direction."));
     @include doc-param(($justify-content-val, "justify-content."));
     @include doc-param(($align-items-val, "align-items."));
-    @include doc-return("");
-    @include doc-out(
-        "Flexbox properties with its vendor prefixes. This mixin for collect main properties of inline flexbox."
-    );
     @include d-inflex;
     @include flex-dir($f-dir);
     @include justify-content($justify-content-val);

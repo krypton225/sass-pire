@@ -1,12 +1,11 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-@import "../../../utils";
+
+// * @param: {String} $val : The actual value of align-self property.
+// * @return: Nothing.
+// * @output: Properties of align-self with its vendor prefixes.
 
 @mixin align-self($val: auto) {
-    @include doc-param(($val, "The actual value of align-self property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of align-self with its vendor prefixes.");
-
     @if type-of($val) != string {
         @error "$val of align-self argument must be of type string.";
     }

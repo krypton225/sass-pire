@@ -1,13 +1,12 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
 @import "../../../functions/cut-unit";
-@import "../../../utils";
+
+// * @param: {Number} $val : The actual value of flex-shrink property.
+// * @return: Nothing.
+// * @output: Properties of flex-shrink with its vendor prefixes.
 
 @mixin flex-shrink($val: 0) {
-    @include doc-param(($val, "The actual value of flex-shrink property."));
-    @include doc-return("Nothing");
-    @include doc-out("Properties of flex-shrink with its vendor prefixes.");
-
     @if type-of($val) != number {
         @error "$val of flex-shrink argument must be of type number.";
     }
