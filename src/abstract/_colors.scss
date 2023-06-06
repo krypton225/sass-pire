@@ -1,8 +1,22 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+
+$red-color: hsl(0deg 100% 50%);
+
+$yellow-color: hsl(60deg 100% 50%);
+
+$black-color: hsl(0deg 0% 0%);
+
+$white-color: hsl(0deg 0% 100%);
+
+$blue-color: hsl(240deg 100% 50%);
+
+$green-color: hsl(120deg 100% 50%);
+
 $main-colors-map: (
-    red-clr: hsl(0deg 100% 50%),
-    yellow-clr: hsl(60deg 100% 50%),
-    black-clr: hsl(0deg 0% 0%),
-    white-clr: hsl(0deg 0% 100%),
-    blue-clr: hsl(240deg 100% 50%),
-    green-clr: hsl(120deg 100% 50%),
+    red-clr: $red-color,
+    yellow-clr: $yellow-color,
+    black-clr: $black-color,
+    white-clr: $white-color,
+    blue-clr: $blue-color,
+    green-clr: $green-color,
 );
