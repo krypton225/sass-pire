@@ -1,7 +1,4 @@
-// stylelint-disable scss/no-global-function-names
-// stylelint-disable scss/dollar-variable-empty-line-before
-
-@use "../../abstract/colors" as clr;
+@use "../abstract/colors" as clr;
 
 @mixin color-generator() {
     @each $color-name, $palette in clr.$main-colors-map {
