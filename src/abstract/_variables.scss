@@ -151,7 +151,7 @@ $flex-basis-values: (max-content, min-content, fit-content, content, inherit, au
 
 $main-units: (#{"%"}, rem, px, em) !default;
 
-$fade-values: (hide, show) !default;
+$fade-values: (hide, show, yes, no) !default;
 
 $transitions-function-values: (ease, ease-in, ease-in-out, linear) !default;
 
