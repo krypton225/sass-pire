@@ -1,0 +1,42 @@
+@use "sass:list";
+@use "../../abstract/variables" as var;
+@use "../vendor-prefixes/prefix" as pref;
+
+@mixin transition($prop: all, $time: 0.33, $func: ease-in-out, $delaying: 0) {
+    $params-with-types-map: (
+        $prop: "string",
+        $time: "number",
+        $func: "string",
+        $delaying: "number",
+    );
+
+    @if not list.index(var.$list-transition-functions, $func) {
+        @error "#{$func} dose not exist in list: (#{var.$list-transition-functions}).";
+    }
+
+    @each $custom, $val in $params-with-types-map {
+        @if type-of($custom) != $val {
+            @error "#{$custom} parameter must be in type #{$val}.";
+        }
+    }
+
+    @if $time < 0 {
+        @error "Time of transition must be equal or bigger than zero.";
+    }
+
+    @if $delaying < 0 {
+        @error "Transition delay must be equal or bigger than zero.";
+    }
+
+    @if $func == ease {
+        @include pref.prefixing-all(transition, $prop #{$time}s ease #{$delaying}s);
+    } @else if $func == ease-in {
+        @include pref.prefixing-all(transition, $prop #{$time}s ease-in #{$delaying}s);
+    } @else if $func == ease-in-out {
+        @include pref.prefixing-all(transition, $prop #{$time}s ease-in-out #{$delaying}s);
+    } @else if $func == ease-out {
+        @include pref.prefixing-all(transition, $prop #{$time}s ease-out #{$delaying}s);
+    } @else if $func == linear {
+        @include pref.prefixing-all(transition, $prop #{$time}s linear #{$delaying}s);
+    }
+}
