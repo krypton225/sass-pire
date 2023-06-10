@@ -1,0 +1,18 @@
+@use "sass:list";
+@use "../../abstract/variables" as var;
+
+@mixin fade($type) {
+    @if not list.index(var.$fade-values, $type) {
+        @error "#{$type} dose not exist in list: (#{var.$fade-values}).";
+    }
+
+    @if $type == "hide" or $type == "no" {
+        visibility: hidden;
+        opacity: 0;
+    } @else if $type == "show" or $type == "yes" {
+        visibility: visible;
+        opacity: 1;
+    } @else {
+        @error "You must pass a value to fade mixin. It must receive one of these values: (#{var.$fade-values})";
+    }
+}
