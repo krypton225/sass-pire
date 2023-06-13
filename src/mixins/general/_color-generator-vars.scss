@@ -1,0 +1,25 @@
+@use "sass:list";
+
+@mixin generate-colors($color-map: ()) {
+    @if type-of($color-map) != map {
+        @error "You must pass a map of colors to generate-colors mixin.";
+    }
+
+    @if list.length($color-map) == 0 {
+        @error "Please, Pass a map with values to generate-colors mixin.";
+    }
+
+    :root {
+        @each $clr, $val in $color-map {
+            @if type-of($clr) != string {
+                @error "Please, Make the color name in the string type.";
+            }
+
+            @if type-of($val) != color {
+                @error "Please, Make sure the value in the map has a color type.";
+            }
+
+            --#{$clr}-clr: #{$val};
+        }
+    }
+}
