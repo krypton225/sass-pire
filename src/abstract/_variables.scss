@@ -149,6 +149,8 @@ $flex-basis-props: (
 
 $flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
 
+$order-props: (-webkit-box-ordinal-group, -webkit-order, -ms-flex-order, -ms-order, -moz-order, -o-order, order);
+
 $main-units: (#{"%"}, rem, px, em) !default;
 
 $fade-values: (hide, show, yes, no) !default;

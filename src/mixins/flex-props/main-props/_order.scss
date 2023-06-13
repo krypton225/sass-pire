@@ -1,0 +1,14 @@
+@use "../../../abstract/variables" as var;
+@import "../../../functions/cut-unit";
+
+@mixin order($val) {
+    @if type-of($val) != number {
+        @error "The value of order mixin argument must be of type number.";
+    }
+
+    $actual-val: cut-unit($val);
+
+    @each $prop in var.$order-props {
+        #{$prop}: $actual-val;
+    }
+}
