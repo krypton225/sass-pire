@@ -1,0 +1,19 @@
+@use "sass:list";
+@use "sass:math";
+@use "../../abstract/variables" as var;
+
+@mixin circle($side) {
+    $get-unit: math.unit($side);
+
+    @if type-of($side) != number {
+        @error "$side variable must be of number type.";
+    }
+
+    @if not list.index(var.$main-units, $get-unit) {
+        @error "(#{$get-unit}) unit dose not exist in #{var.$main-units}";
+    }
+
+    width: #{$side};
+    height: #{$side};
+    border-radius: 50%;
+}
