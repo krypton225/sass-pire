@@ -1,0 +1,20 @@
+@use "sass:math";
+@use "./cut-unit" as func;
+
+@function in-to-cm($inches-val) {
+    @if type-of($inches-val) != number {
+        @error "$inches-val as argument of in-to-cm function must be in number type.";
+    }
+
+    @if unitless($inches-val) {
+        @error "You must write the unit of the argument";
+    }
+
+    @if math.unit($inches-val) != in {
+        @error "$inches-val as argument must be with inches unit. The function is used to convert from inches to centimeter only.";
+    }
+
+    $actual-number: func.cut-unit($inches-val);
+
+    @return $actual-number * 2.54cm;
+}

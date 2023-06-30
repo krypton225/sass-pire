@@ -6,6 +6,10 @@
         @error "$pixel-val as argument of px-to-in function must be in number type.";
     }
 
+    @if unitless($pixel-val) {
+        @error "You must write the unit of the argument";
+    }
+
     @if math.unit($pixel-val) != px {
         @error "$pixel-val as argument must be with pixel unit. The function is used to convert from pixel to inches only.";
     }

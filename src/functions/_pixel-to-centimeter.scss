@@ -1,0 +1,21 @@
+@use "sass:math";
+@use "./cut-unit" as func;
+
+@function px-to-cm($px-val) {
+    @if type-of($px-val) != number {
+        @error "$px-val as argument of px-to-cm function must be in number type.";
+    }
+
+    @if unitless($px-val) {
+        @error "You must write the unit of the argument";
+    }
+
+    @if math.unit($px-val) != px {
+        @error "$px-val as argument must be with pixel unit. The function is used to convert from pixel to centimeter only.";
+    }
+
+    $actual-number: func.cut-unit($px-val);
+
+    /* stylelint-disable-next-line number-max-precision */
+    @return $actual-number * 0.0264583333cm;
+}
