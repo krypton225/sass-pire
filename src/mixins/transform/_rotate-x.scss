@@ -1,0 +1,20 @@
+@use "sass:list";
+@use "sass:math";
+@use "../vendor-prefixes/prefix" as prefix;
+@use "../../abstract" as var;
+
+@mixin rotate-x($angle: 0deg) {
+    @if type-of($angle) == number {
+        @if not index(var.$transform-rotate-units, math.unit($angle)) {
+            @error "$angle must has one of these units: (#{var.$transform-rotate-units})";
+        }
+    } @else if type-of($angle) == string {
+        @if not index(var.$transform-props-values, $angle) {
+            @error "The value of transform property with rotate value must has one of these: (#{var.$transform-props-values})";
+        }
+    } @else {
+        @error "The value of rotate in transform property must be in number or string type.";
+    }
+
+    @include prefix.prefixing-all(transform, rotateX($angle));
+}
