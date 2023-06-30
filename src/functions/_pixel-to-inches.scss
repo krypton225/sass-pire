@@ -1,0 +1,17 @@
+@use "sass:math";
+@use "./cut-unit" as func;
+
+@function px-to-in($pixel-val) {
+    @if type-of($pixel-val) != number {
+        @error "$pixel-val as argument of px-to-in function must be in number type.";
+    }
+
+    @if math.unit($pixel-val) != px {
+        @error "$pixel-val as argument must be with pixel unit. The function is used to convert from pixel to inches only.";
+    }
+
+    $actual-number: func.cut-unit($pixel-val);
+
+    /* stylelint-disable-next-line number-max-precision */
+    @return $actual-number * 0.0104166666666667in;
+}
