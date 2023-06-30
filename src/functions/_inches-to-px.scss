@@ -7,7 +7,7 @@
     }
 
     @if math.unit($inches-val) != in {
-        @error "$inches-val as argument must be with pixel unit. The function is used to convert from inches to pixel only.";
+        @error "$inches-val as argument must be with inches unit. The function is used to convert from inches to pixel only.";
     }
 
     $actual-number: func.cut-unit($inches-val);
