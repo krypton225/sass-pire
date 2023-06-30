@@ -4,9 +4,7 @@
 @use "../../abstract" as var;
 
 @mixin translate($x: 0, $y: $x) {
-    @if type-of($x) != number or type-of($y) != number {
-        @error "x and y values of translate in transform property must be in number type.";
-    } @else if type-of($x) == number and type-of($y) == number {
+    @if type-of($x) == number and type-of($y) == number {
         @if not index(var.$main-units, math.unit($x)) {
             @error "$x must has one of these units: (#{var.$main-units})";
         }
@@ -15,6 +13,14 @@
             @error "$y must has one of these units: (#{var.$main-units})";
         }
 
-        @include prefix.prefixing-web-ms(transform, translate($x, $y));
+        @include prefix.prefixing-all(transform, translate($x, $y));
+    } @else if type-of($x) == string {
+        @if not index(var.$transform-props-values, $x) {
+            @error "The value of transform property with translate value must has one of these: (#{var.$transform-props-values})";
+        }
+
+        @include prefix.prefixing-all(transform, translate($x));
+    } @else {
+        @error "x and y values of translate in transform property must be in number or string type.";
     }
 }
