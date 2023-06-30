@@ -1,0 +1,24 @@
+@use "sass:list";
+@use "sass:math";
+@use "../vendor-prefixes/prefix" as prefix;
+@use "../../abstract" as var;
+
+@mixin translate($x: 1px, $y: $x) {
+    @if type-of($x) == number and type-of($y) == number {
+        @if not index(var.$main-units, math.unit($x)) {
+            @error "$x must has one of these units: (#{var.$main-units})";
+        }
+
+        @if not index(var.$main-units, math.unit($y)) {
+            @error "$y must has one of these units: (#{var.$main-units})";
+        }
+    } @else if type-of($x) == string {
+        @if not index(var.$transform-props-values, $x) {
+            @error "The value of transform property with translate value must has one of these: (#{var.$transform-props-values})";
+        }
+    } @else {
+        @error "x and y values of translate in transform property must be in number or string type.";
+    }
+
+    @include prefix.prefixing-all(transform, translate($x));
+}

@@ -1,0 +1,20 @@
+@use "sass:list";
+@use "sass:math";
+@use "../vendor-prefixes/prefix" as prefix;
+@use "../../abstract" as var;
+
+@mixin scale($x: 1, $y: $x) {
+    @if type-of($x) == number and type-of($y) == number {
+        @if not unitless($x) or not unitless($y) {
+            @error "The value of scale property must not has any unit.";
+        }
+    } @else if type-of($x) == string {
+        @if not index(var.$transform-props-values, $x) or not index(var.$transform-props-values, $y) {
+            @error "The value of transform property with scale value must has one of these: (#{var.$transform-props-values})";
+        }
+    } @else {
+        @error "The value of scale in transform property must be in number or string type.";
+    }
+
+    @include prefix.prefixing-all(transform, scale($x, $y));
+}

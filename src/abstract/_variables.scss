@@ -157,6 +157,10 @@ $fade-values: (hide, show, yes, no) !default;
 
 $main-directions: (top, right, bottom, left);
 
+$transform-props-values: (inherit, initial, revert, unset, none);
+
+$transform-rotate-units: (deg, turn, rad, grad);
+
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto);
 
 $transitions-function-values: (ease, ease-in, ease-in-out, linear) !default;
