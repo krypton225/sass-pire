@@ -47,3 +47,8 @@
     -ms-#{$property}: $value;
     #{$property}: $value;
 }
+
+@mixin prefixing-web($property, $value) {
+    -webkit-#{$property}: $value;
+    #{$property}: $value;
+}
