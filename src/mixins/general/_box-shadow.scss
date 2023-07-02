@@ -1,0 +1,136 @@
+// stylelint-disable indentation
+
+@use "sass:list";
+@use "sass:math";
+@use "../vendor-prefixes/prefix" as prefix;
+@use "../../abstract" as var;
+
+@mixin shadow($val...) {
+    $actual-value-box-shadow: ();
+
+    @if list.length($val) == 0 {
+        @warn "The default value now for shadow is none. So, for more readable in using shadow mixin, please, pass (none) value as argument to it.";
+        @include prefix.prefixing-web(box-shadow, none);
+    } @else {
+        @each $one-list in $val {
+            $first-item-val: list.nth($one-list, 1);
+
+            @if list.length($one-list) == 1 {
+                @if type-of($first-item-val) == string {
+                    @if not index(var.$box-shadow-values, $first-item-val) {
+                        @error "The value of box shadow must has one of these values: (#{var.$box-shadow-values})";
+                    }
+
+                    $actual-value-box-shadow: list.append($actual-value-box-shadow, $first-item-val, $separator: comma);
+
+                    @debug $actual-value-box-shadow;
+                } @else {
+                    @error "The box shadow property receive string type if you pass to it a single value.";
+                }
+            } @else if list.length($one-list) == 2 {
+                @error "Please, Enter the valid values of the shadow mixin. It must be at least 3 values";
+            } @else if list.length($one-list) >= 3 {
+                $second-item-val: list.nth($one-list, 2);
+
+                @if type-of($first-item-val) == number and type-of($second-item-val) == number {
+                    @if not index(var.$main-units, math.unit($first-item-val)) {
+                        @error "First value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if not index(var.$main-units, math.unit($second-item-val)) {
+                        @error "Second value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+                } @else {
+                    @error "First and second value in shadow mixin must be in number type. If you want to add (inset) value, add it as last one in arguments.";
+                }
+
+                @if list.length($one-list) == 3 {
+                    $third-item-val: list.nth($one-list, 3);
+
+                    @if type-of($third-item-val) != color {
+                        @error "The third argument of shadow mixin must be in color type.";
+                    }
+
+                    $actual-value-box-shadow: list.append(
+                        $actual-value-box-shadow,
+                        $first-item-val $second-item-val $third-item-val,
+                        $separator: comma
+                    );
+                } @else if list.length($one-list) == 4 {
+                    $third-item-val: list.nth($one-list, 3);
+                    $fourth-item-val: list.nth($one-list, 4);
+
+                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                        @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if type-of($fourth-item-val) != color {
+                        @error "The fourth argument of shadow mixin must be in color type.";
+                    }
+
+                    $actual-value-box-shadow: list.append(
+                        $actual-value-box-shadow,
+                        $first-item-val $second-item-val $third-item-val $fourth-item-val,
+                        $separator: comma
+                    );
+                } @else if list.length($one-list) == 5 {
+                    $third-item-val: list.nth($one-list, 3);
+                    $fourth-item-val: list.nth($one-list, 4);
+                    $fifth-item-val: list.nth($one-list, 5);
+
+                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                        @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                        @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if type-of($fifth-item-val) != color {
+                        @error "The fifth argument of shadow mixin must be in color type.";
+                    }
+
+                    $actual-value-box-shadow: list.append(
+                        $actual-value-box-shadow,
+                        $first-item-val $second-item-val $third-item-val $fourth-item-val $fifth-item-val,
+                        $separator: comma
+                    );
+                } @else if list.length($one-list) == 6 {
+                    $third-item-val: list.nth($one-list, 3);
+                    $fourth-item-val: list.nth($one-list, 4);
+                    $fifth-item-val: list.nth($one-list, 5);
+                    $sixth-item-val: list.nth($one-list, 6);
+
+                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                        @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                        @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
+                    }
+
+                    @if type-of($fifth-item-val) != color {
+                        @error "The fifth argument of shadow mixin must be in color type.";
+                    }
+
+                    @if $sixth-item-val != inset {
+                        @error "Last value of the box shadow must be (inset).";
+                    }
+
+                    $current-list: (
+                        $actual-value-box-shadow,
+                        $first-item-val
+                            $second-item-val
+                            $third-item-val
+                            $fourth-item-val
+                            $fifth-item-val
+                            $sixth-item-val,
+                        comma
+                    );
+                }
+            }
+        }
+
+        @include prefix.prefixing-web(box-shadow, $actual-value-box-shadow);
+    }
+}

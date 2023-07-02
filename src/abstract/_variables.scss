@@ -163,6 +163,8 @@ $transform-rotate-units: (deg, turn, rad, grad);
 
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto);
 
+$box-shadow-values: (inherit, initial, revert, revert-layer, unset, none);
+
 $transitions-function-values: (ease, ease-in, ease-in-out, linear) !default;
 
 $main-dimensions: (width, w, height, h) !default;
