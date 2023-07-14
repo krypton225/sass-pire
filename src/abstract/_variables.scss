@@ -1,5 +1,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
+$text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink);
+
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
 
 $inline-flex-prefixes-values: (
@@ -189,7 +191,7 @@ $breakpoints: (
     "xl-2": 1900px,
     "xl-3": 2400px,
     "xl-4": 2800px,
-    "xxl": 3000px,
+    "xxl": 3000px
 ) !default;
 
 $list-transition-functions: (ease, ease-in, ease-in-out, linear) !default;

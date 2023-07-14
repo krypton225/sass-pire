@@ -1,5 +1,9 @@
 // * This reset file belongs to Andy Bell.
 // * You can check this here: https://andy-bell.co.uk/a-modern-css-reset/
+// * We updated some of this reset file.
+
+@use "../abstract/variables" as var;
+@use "../mixins/vendor-prefixes/prefix" as prefix;
 
 /* Box sizing rules */
 *,
@@ -43,7 +47,9 @@ body {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-    text-decoration-skip-ink: auto;
+    @each $prop, $val in var.$text-decoration-ink-props {
+        #{$prop}: auto;
+    }
 }
 
 /* Make images easier to work with */
@@ -64,15 +70,16 @@ select {
 /* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
 @media (prefers-reduced-motion: reduce) {
     html:focus-within {
-        scroll-behavior: auto;
+        scroll-behavior: smooth;
     }
 
     *,
     *::before,
     *::after {
-        animation-duration: 0.01ms;
-        animation-iteration-count: 1;
-        transition-duration: 0.01ms;
-        scroll-behavior: auto;
+        @include prefix.prefixing-web(animation-duration, 0.01ms);
+        @include prefix.prefixing-web(animation-iteration-count, 1);
+        @include prefix.prefixing-web-o(transition-duration, 0.01ms);
+
+        scroll-behavior: smooth;
     }
 }
