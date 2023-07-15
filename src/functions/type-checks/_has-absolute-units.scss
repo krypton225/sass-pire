@@ -1,0 +1,17 @@
+@use "sass:list";
+@use "sass:math";
+@use "../../abstract/variables" as var;
+
+@function has-abs-unit($val) {
+    @if type-of($val) != number {
+        @error "Argument of has-abs-unit must be of type number.";
+    }
+
+    $flag: true;
+
+    @if not list.index(var.$absolute-units, math.unit($val)) {
+        $flag: false;
+    }
+
+    @return $flag;
+}
