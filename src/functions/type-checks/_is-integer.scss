@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@function is-int($val) {
+    @if type-of($val) != number {
+        @error "You must pass argument to is-int function with a number type.";
+    }
+
+    $flag: true;
+
+    @if math.round($val) != $val {
+        $flag: false;
+    }
+
+    @return $flag;
+}
