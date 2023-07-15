@@ -1,3 +1,5 @@
+// * This function from https://kittygiraudel.com/
+
 @function get-first($list) {
     @return nth($list, 1);
 }

@@ -1,0 +1,5 @@
+// * This function from https://kittygiraudel.com/
+
+@function get-last($list) {
+    @return nth($list, length($list));
+}
