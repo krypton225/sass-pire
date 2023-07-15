@@ -1,0 +1,24 @@
+// * This function from https://kittygiraudel.com/
+// * We updated this function as need.
+
+@use "sass:list";
+@use "../../abstract/variables" as var;
+@use "./flatten-list" as func;
+
+@function get-last-from($list: ()) {
+    @if length($list) == 0 {
+        @error "You must enter the values of the list to get the last element form it.";
+    }
+
+    @if type-of($list) != list {
+        @if list.index(var.$main-data-types, $list) {
+            $new-list: list.append($list, null);
+
+            @return nth($new-list, length($new-list) - 1);
+        }
+    }
+
+    $new-list: func.flatten($list);
+
+    @return nth($new-list, length($new-list));
+}

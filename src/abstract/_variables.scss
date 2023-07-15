@@ -1,5 +1,9 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
+$all-data-types: (number, string, bool, list, color, map, null);
+
+$main-data-types: (number, string, bool);
+
 $text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink);
 
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
