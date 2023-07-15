@@ -1,0 +1,17 @@
+@use "sass:list";
+@use "sass:math";
+@use "../../abstract/variables" as var;
+
+@function is-angle($val: 0deg) {
+    @if type-of($val) != number {
+        @error "You must pass argument to is-angle function with number type.";
+    }
+
+    $get-unit: math.unit($val);
+
+    @if not list.index(var.$angle-units, $get-unit) {
+        @error "$value argument of is-angle function must has one of these units: (#{var.$angle-units})";
+    }
+
+    @return true;
+}
