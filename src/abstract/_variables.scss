@@ -10,6 +10,8 @@ $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
 
 $resolution-units: (dpi, dpcm, dppx) !default;
 
+$angle-units: (deg, turn, rad, grad);
+
 $time-units: (ms, s) !default;
 
 $text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
@@ -172,8 +174,6 @@ $fade-values: (hide, show, yes, no) !default;
 $main-directions: (top, right, bottom, left);
 
 $transform-props-values: (inherit, initial, revert, unset, none);
-
-$transform-rotate-units: (deg, turn, rad, grad);
 
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto);
 
