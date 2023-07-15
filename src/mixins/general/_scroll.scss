@@ -1,0 +1,88 @@
+@mixin scrolling(
+    $widthScrollbar: 0.4,
+    $borderRadiusScrollbar: 0.3,
+    $bgColorScrollbar: rgb(255, 255, 255),
+    $bgColorThumb: rgb(99, 99, 99),
+    $borderRadiusThumb: 0.3,
+    $bgColorTrack: transparent,
+    $bxShadow: true
+) {
+    $max-width-scroll: 0.7;
+    $max-border-radius-scroll: 0.7;
+    $max-border-radius-thumb: 0.7;
+
+    // * Scrollbar width.
+    @if type-of($widthScrollbar) != number {
+        @error "Width of the scrollbar must be in number type.";
+    }
+
+    @if $widthScrollbar <= 0 {
+        @error "Width of scrollbar can not be smaller than or equal to 0.";
+    } @else if $widthScrollbar >= $max-width-scroll {
+        @warn "Width of scrollbar should be between to 0.1 and 0.6 maximum.";
+    }
+
+    // * Scrollbar border radius.
+    @if type-of($borderRadiusScrollbar) != number {
+        @error "Width of the scrollbar must be in number type.";
+    }
+
+    @if $borderRadiusScrollbar <= 0 {
+        @error "Border radius of scrollbar can not be smaller than or equal to 0.";
+    } @else if $borderRadiusScrollbar >= $max-border-radius-scroll {
+        @warn "Border radius of scrollbar should be between to 0.1 and 0.6 maximum.";
+    }
+
+    // * Scroll thumb border radius.
+    @if type-of($borderRadiusThumb) != number {
+        @error "Width of the scrollbar must be in number type.";
+    }
+
+    @if $borderRadiusThumb <= 0 {
+        @error "Border radius of scroll thumb can not be smaller than or equal to 0.";
+    } @else if $borderRadiusThumb >= $max-border-radius-thumb {
+        @warn "Border radius of scroll thumb should be between to 0.1 and 0.6 maximum.";
+    }
+
+    // * Scroll thumb background.
+    @if type-of($bgColorScrollbar) != color {
+        @error "Background color of scroll bar must be in color type.";
+    }
+
+    @if type-of($bgColorThumb) != color {
+        @error "Background color of scroll thumb must be in color type.";
+    }
+
+    @if type-of($bgColorTrack) != color {
+        @error "Background color of scroll track must be in color type.";
+    }
+
+    @if type-of($bxShadow) != bool {
+        @error "Box shadow value in scrolling mixin must be in boolean type.";
+    }
+
+    body {
+        overflow-x: hidden;
+
+        &::-webkit-scrollbar {
+            width: #{$widthScrollbar}rem;
+            border-radius: #{$borderRadiusScrollbar}rem;
+            background-color: $bgColorScrollbar;
+        }
+
+        &::-webkit-scrollbar-track {
+            @if $bxShadow == true {
+                box-shadow: 0 0 6px #a8a8a8;
+                background-color: transparent;
+            } @else {
+                box-shadow: none;
+                background-color: $bgColorTrack;
+            }
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: $bgColorThumb;
+            border-radius: #{$borderRadiusThumb}rem;
+        }
+    }
+}
