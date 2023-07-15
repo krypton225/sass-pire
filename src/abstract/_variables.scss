@@ -1,10 +1,16 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
-$all-data-types: (number, string, bool, list, color, map, null);
+$all-data-types: (number, string, bool, list, color, map, null) !default;
 
-$main-data-types: (number, string, bool);
+$main-data-types: (number, string, bool) !default;
 
-$text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink);
+$absolute-units: (cm, mm, in, px, pt, pc) !default;
+
+$relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
+
+$resolution-units: (dpi, dpcm, dppx) !default;
+
+$text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
 
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
 
