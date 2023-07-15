@@ -5,8 +5,8 @@
 
 @mixin rotate($val: 0deg) {
     @if type-of($val) == number {
-        @if not index(var.$transform-rotate-units, math.unit($val)) {
-            @error "$val must has one of these units: (#{var.$transform-rotate-units})";
+        @if not index(var.$angle-units, math.unit($val)) {
+            @error "$val must has one of these units: (#{var.$angle-units})";
         }
     } @else if type-of($val) == string {
         @if not index(var.$transform-props-values, $val) {

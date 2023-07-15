@@ -1,0 +1,15 @@
+@use "sass:math";
+
+@function is-float($val) {
+    @if type-of($val) != number {
+        @error "You must pass argument to is-float function with a number type.";
+    }
+
+    $flag: false;
+
+    @if $val % 1 != 0 {
+        $flag: true;
+    }
+
+    @return $flag;
+}

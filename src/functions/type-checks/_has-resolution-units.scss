@@ -1,0 +1,17 @@
+@use "sass:list";
+@use "sass:math";
+@use "../../abstract/variables" as var;
+
+@function has-res-unit($val) {
+    @if type-of($val) != number {
+        @error "Argument of has-res-unit must be of type number.";
+    }
+
+    $flag: true;
+
+    @if not list.index(var.$resolution-units, math.unit($val)) {
+        $flag: false;
+    }
+
+    @return $flag;
+}

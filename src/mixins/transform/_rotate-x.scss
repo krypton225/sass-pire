@@ -5,8 +5,8 @@
 
 @mixin rotate-x($angle: 0deg) {
     @if type-of($angle) == number {
-        @if not index(var.$transform-rotate-units, math.unit($angle)) {
-            @error "$angle must has one of these units: (#{var.$transform-rotate-units})";
+        @if not index(var.$angle-units, math.unit($angle)) {
+            @error "$angle must has one of these units: (#{var.$angle-units})";
         }
     } @else if type-of($angle) == string {
         @if not index(var.$transform-props-values, $angle) {
