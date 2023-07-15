@@ -10,6 +10,8 @@ $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
 
 $resolution-units: (dpi, dpcm, dppx) !default;
 
+$time-units: (ms, s) !default;
+
 $text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
 
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
