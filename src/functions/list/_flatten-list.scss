@@ -5,7 +5,7 @@
 
     @each $item in $list {
         @if type-of($item) == list {
-            $flat-list: list.append($flat-list, flatten($item));
+            $flat-list: list.join($flat-list, flatten($item));
         } @else {
             $flat-list: list.append($flat-list, $item);
         }
