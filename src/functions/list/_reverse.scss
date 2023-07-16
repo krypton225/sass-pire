@@ -1,0 +1,17 @@
+@use "sass:list";
+@use "./flatten-list" as func;
+
+@function reverse($list: ()) {
+    @if type-of($list) != list {
+        @error "You must pass a list to reverse function.";
+    }
+
+    $flat-list: func.flatten($list);
+    $reversed-list: ();
+
+    @for $i from list.length($flat-list) to 0 {
+        $reversed-list: list.append($reversed-list, list.nth($flat-list, $i));
+    }
+
+    @return $reversed-list;
+}
