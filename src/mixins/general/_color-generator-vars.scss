@@ -19,7 +19,7 @@
                 @error "Please, Make sure the value in the map has a color type.";
             }
 
-            --#{$clr}-clr: #{$val};
+            --#{to-lower-case($clr)}-clr: #{$val};
         }
     }
 }
