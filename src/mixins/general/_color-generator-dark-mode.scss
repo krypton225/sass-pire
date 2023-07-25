@@ -1,0 +1,67 @@
+@use "sass:list";
+
+@mixin generate-colors-dark-mode($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {
+    @if type-of($light-colors-map) != map {
+        @error "You must pass a two map of colors to generate-colors-dark-mode mixin.";
+    }
+
+    @if list.length($light-colors-map) == 0 {
+        @error "Please, Pass a map with values to generate-colors-dark-mode mixin.";
+    }
+
+    @if type-of($dark-colors-map) != map {
+        @error "You must pass a two map of colors to generate-colors-dark-mode mixin.";
+    }
+
+    @if list.length($dark-colors-map) == 0 {
+        @error "Please, Pass a map with values to generate-colors-dark-mode mixin.";
+    }
+
+    @if type-of($generate-with-attr) != bool {
+        @error "You must pass the third argument of the generate-colors-dark-mode mixin with boolean value.";
+    }
+
+    :root {
+        @each $clr, $val in $light-colors-map {
+            @if type-of($clr) != string {
+                @error "Please, Make the color name in the string type.";
+            }
+
+            @if type-of($val) != color {
+                @error "Please, Make sure the value in the map has a color type.";
+            }
+
+            --#{to-lower-case($clr)}-clr: #{$val};
+        }
+    }
+
+    @if $generate-with-attr {
+        html[data-theme="light"] {
+            @each $clr, $val in $light-colors-map {
+                @if type-of($clr) != string {
+                    @error "Please, Make the color name in the string type.";
+                }
+
+                @if type-of($val) != color {
+                    @error "Please, Make sure the value in the map has a color type.";
+                }
+
+                --#{to-lower-case($clr)}-clr: #{$val};
+            }
+        }
+    }
+
+    html[data-theme="dark"] {
+        @each $clr, $val in $dark-colors-map {
+            @if type-of($clr) != string {
+                @error "Please, Make the color name in the string type.";
+            }
+
+            @if type-of($val) != color {
+                @error "Please, Make sure the value in the map has a color type.";
+            }
+
+            --#{to-lower-case($clr)}-clr: #{$val};
+        }
+    }
+}
