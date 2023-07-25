@@ -1,0 +1,29 @@
+// stylelint-disable selector-no-vendor-prefix
+
+@mixin select($bg-color, $text-color) {
+    @if type-of($bg-color) == string {
+        @if not str-index($bg-color, "var") {
+            @error "You must pass a CSS variable in the first argument of select mixin.";
+        }
+    } @else if type-of($bg-color) != color {
+        @error "Background color (first argument) of select mixin must be in color type.";
+    }
+
+    @if type-of($text-color) == string {
+        @if not str-index($text-color, "var") {
+            @error "You must pass a CSS variable in the second argument of select mixin.";
+        }
+    } @else if type-of($text-color) != color {
+        @error "Text color (second argument) of select mixin must be in color type.";
+    }
+
+    ::-moz-selection {
+        background-color: $bg-color;
+        color: $text-color;
+    }
+
+    ::selection {
+        background-color: $bg-color;
+        color: $text-color;
+    }
+}
