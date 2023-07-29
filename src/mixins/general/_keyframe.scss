@@ -1,0 +1,27 @@
+// stylelint-disable at-rule-no-vendor-prefix
+
+@mixin keyframe($name) {
+    @if type-of($name) != string {
+        @error "You must pass a name of keyframe mixin in string type.";
+    }
+
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+
+    @-moz-keyframes #{$name} {
+        @content;
+    }
+
+    @-ms-keyframes #{$name} {
+        @content;
+    }
+
+    @-o-keyframes #{$name} {
+        @content;
+    }
+
+    @keyframes #{$name} {
+        @content;
+    }
+}
