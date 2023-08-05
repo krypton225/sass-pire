@@ -1,6 +1,6 @@
 {
-    "name": "live-with-scss",
-    "version": "1.0.0",
+    "name": "scssify",
+    "version": "0.0.1",
     "description": "Just a more mixins and functions with SCSS for more productive projects.",
     "license": "MIT",
     "author": {
@@ -9,12 +9,12 @@
         "url": "https://github.com/krypton225"
     },
     "bugs": {
-        "url": "https://github.com/krypton225/live-with-scss/issues"
+        "url": "https://github.com/krypton225/scssify/issues"
     },
-    "homepage": "https://github.com/krypton225/live-with-scss#readme",
+    "homepage": "https://github.com/krypton225/scssify#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/krypton225/live-with-scss"
+        "url": "https://github.com/krypton225/scssify"
     },
     "keywords": [
         "SCSS",
