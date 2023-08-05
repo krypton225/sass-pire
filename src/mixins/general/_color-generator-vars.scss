@@ -1,8 +1,7 @@
 @use "sass:list";
+@use "../../abstract/variables" as var;
 
-@mixin generate-colors($brand-name: "lws", $color-map: ()) {
-    // ! (lws) stands for live-with-scss library not a person's name.
-
+@mixin generate-colors($brand-name: var.$brand-lib-name, $color-map: ()) {
     @if type-of($brand-name) != string {
         @error "Brand name must be in string type.";
     }
@@ -25,10 +24,8 @@
                 @error "Please, Make sure the value in the map has a color type.";
             }
 
-            @if $brand-name == "" {
-                --#{to-lower-case($clr)}-clr: #{$val};
-            } @else if $brand-name == def {
-                --lws-#{to-lower-case($clr)}-clr: #{$val};
+            @if $brand-name == "" or $brand-name == def {
+                --#{var.$brand-lib-name}-#{to-lower-case($clr)}-clr: #{$val};
             } @else {
                 --#{to-lower-case($brand-name)}-#{to-lower-case($clr)}-clr: #{$val};
             }
