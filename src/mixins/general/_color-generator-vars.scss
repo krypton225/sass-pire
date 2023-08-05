@@ -1,6 +1,10 @@
 @use "sass:list";
 
-@mixin generate-colors($color-map: ()) {
+@mixin generate-colors($brand-name: "", $color-map: ()) {
+    @if type-of($brand-name) != string {
+        @error "Brand name must be in string type.";
+    }
+
     @if type-of($color-map) != map {
         @error "You must pass a map of colors to generate-colors mixin.";
     }
@@ -19,7 +23,11 @@
                 @error "Please, Make sure the value in the map has a color type.";
             }
 
-            --#{to-lower-case($clr)}-clr: #{$val};
+            @if $brand-name == "" {
+                --#{to-lower-case($clr)}-clr: #{$val};
+            } @else {
+                --#{to-lower-case($brand-name)}-#{to-lower-case($clr)}-clr: #{$val};
+            }
         }
     }
 }
