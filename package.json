@@ -23,7 +23,8 @@
     "scripts": {
         "sass:watch": "sass --no-source-map ./src/index.scss:dist/styles.css --watch",
         "sass:comp": "sass --no-source-map ./src/index.scss:dist/styles.min.css --watch --style=compressed",
-        "lint": "npx stylelint ./src/**/*.scss"
+        "lint": "npx stylelint ./src/**/*.scss",
+        "gen:lock": "npm i --package-lock-only"
     },
     "devDependencies": {
         "sass": "^1.63.6",
