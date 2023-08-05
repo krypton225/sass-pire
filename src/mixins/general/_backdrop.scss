@@ -1,0 +1,54 @@
+@use "sass:list";
+@use "sass:map";
+@use "../../abstract/variables" as var;
+@use "../../functions/list/flatten-list" as f;
+
+@mixin backdrop($val...) {
+    @debug "Type of argument in first: " + type-of($val);
+
+    @if type-of($val) == string {
+        @if not list.index(var.$backdrop-global-values, $val) {
+            @error "$value argument must has one of these values: (#{var.$backdrop-global-values})";
+        }
+
+        @each $prop in var.$backdrop-props {
+            #{$prop}: $val;
+        }
+    }
+
+    @if type-of($val) == map {
+        @each $one-key in map.keys($val) {
+            @if not list.index(var.$backdrop-functions, $one-key) {
+                @error "#{one-key} is not one of these functions: (#{var.$backdrop-functions})";
+            }
+        }
+
+        @debug type-of($val);
+        @debug $val;
+
+        $merged: ();
+
+        @each $prop in var.$backdrop-props {
+            @each $key, $actual-val in $val {
+                $merged: map.merge(($key, $actual-val), ());
+
+                // #{$prop}: $key + "(" + #{$actual-val} + ")";
+            }
+        }
+
+        @debug $merged;
+
+        // @each $prop in $flatten-map {
+        //     @debug $prop;
+        // }
+    }
+}
+
+.one {
+    @include backdrop(
+        (
+            blur: 30px,
+            contrast: 2px
+        )
+    );
+}
