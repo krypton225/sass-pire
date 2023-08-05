@@ -1,0 +1,11 @@
+// stylelint-disable comment-empty-line-before
+
+@use "../abstract/variables" as var;
+
+@mixin banner() {
+    /*
+        ***** #{var.$lib-name} library v0.0.1
+        ***** Copyright 2023 for #{var.$lib-name} authors.
+        ***** Licensed under MIT.
+     */
+}
