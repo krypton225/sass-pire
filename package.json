@@ -31,8 +31,8 @@
         "gen:lock": "npm i --package-lock-only"
     },
     "devDependencies": {
-        "sass": "^1.63.6",
-        "stylelint": "^15.10.1",
+        "sass": "^1.64.2",
+        "stylelint": "^15.10.2",
         "stylelint-config-standard-scss": "^10.0.0"
     }
 }
