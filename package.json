@@ -1,5 +1,5 @@
 {
-    "name": "scsspire",
+    "name": "sass-pire",
     "version": "0.0.1",
     "description": "Just a more mixins and functions with SCSS for more productive projects.",
     "license": "MIT",
@@ -9,12 +9,12 @@
         "url": "https://github.com/krypton225"
     },
     "bugs": {
-        "url": "https://github.com/krypton225/scsspire/issues"
+        "url": "https://github.com/krypton225/sass-pire/issues"
     },
-    "homepage": "https://github.com/krypton225/scsspire#readme",
+    "homepage": "https://github.com/krypton225/sass-pire#readme",
     "repository": {
         "type": "git",
-        "url": "https://github.com/krypton225/scsspire"
+        "url": "https://github.com/krypton225/sass-pire"
     },
     "keywords": [
         "SCSS",
