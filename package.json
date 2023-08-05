@@ -18,7 +18,11 @@
     },
     "keywords": [
         "SCSS",
-        "SASS"
+        "SASS",
+        "sass-pire",
+        "ui-library",
+        "sass-library",
+        "scss-library"
     ],
     "scripts": {
         "sass:watch": "sass --no-source-map ./src/index.scss:dist/styles.css --watch",
