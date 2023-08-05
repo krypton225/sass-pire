@@ -1,8 +1,8 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
-$lib-name: scssfiy;
+$lib-name: scssfiy !default;
 
-$brand-lib-name: sf;
+$brand-lib-name: sf !default;
 
 $all-data-types: (number, string, bool, list, color, map, null) !default;
 
@@ -38,7 +38,7 @@ $viewport-units: (
     dvb
 ) !default;
 
-$angle-units: (deg, turn, rad, grad);
+$angle-units: (deg, turn, rad, grad) !default;
 
 $time-units: (ms, s) !default;
 
@@ -104,7 +104,7 @@ $merge-flex-direction-column: (
     -moz-flex-direction: column,
     -o-flex-direction: column,
     flex-direction: column
-);
+) !default;
 
 $flex-direction-column-reverse-values: (vertical, reverse, column-reverse, column-reverse) !default;
 
@@ -116,7 +116,7 @@ $merge-flex-direction-column-reverse: (
     -moz-flex-direction: column-reverse,
     -o-flex-direction: column-reverse,
     flex-direction: column-reverse
-);
+) !default;
 
 $flex-direction-row-values: (horizontal, normal, row, row) !default;
 
@@ -128,7 +128,7 @@ $merge-flex-direction-row: (
     -moz-flex-direction: row,
     -o-flex-direction: row,
     flex-direction: row
-);
+) !default;
 
 $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-reverse) !default;
 
@@ -140,7 +140,7 @@ $merge-flex-direction-row-reverse: (
     -moz-flex-direction: row-reverse,
     -o-flex-direction: row-reverse,
     flex-direction: row-reverse
-);
+) !default;
 
 $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
 
@@ -193,19 +193,19 @@ $flex-basis-props: (
 
 $flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
 
-$order-props: (-webkit-box-ordinal-group, -webkit-order, -ms-flex-order, -ms-order, -moz-order, -o-order, order);
+$order-props: (-webkit-box-ordinal-group, -webkit-order, -ms-flex-order, -ms-order, -moz-order, -o-order, order) !default;
 
 $main-units: (#{"%"}, rem, px, em) !default;
 
 $fade-values: (hide, show, yes, no) !default;
 
-$main-directions: (top, right, bottom, left);
+$main-directions: (top, right, bottom, left) !default;
 
-$transform-props-values: (inherit, initial, revert, unset, none);
+$transform-props-values: (inherit, initial, revert, unset, none) !default;
 
-$directions-props-values: (inherit, initial, revert, revert-layer, unset, auto);
+$directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) !default;
 
-$box-shadow-values: (inherit, initial, revert, revert-layer, unset, none);
+$box-shadow-values: (inherit, initial, revert, revert-layer, unset, none) !default;
 
 $transitions-function-values: (ease, ease-in, ease-in-out, linear) !default;
 
@@ -236,8 +236,8 @@ $breakpoints: (
 
 $list-transition-functions: (ease, ease-in, ease-in-out, linear) !default;
 
-$backdrop-props: (-webkit-backdrop-filter, backdrop-filter);
+$backdrop-props: (-webkit-backdrop-filter, backdrop-filter) !default;
 
-$backdrop-global-values: (inherit, initial, revert, revert-layer, unset, none);
+$backdrop-global-values: (inherit, initial, revert, revert-layer, unset, none) !default;
 
-$backdrop-functions: (blur, brightness, contrast, drop-shadow, grayscale, hue-rotate, invert, opacity, sepia, saturate);
+$backdrop-functions: (blur, brightness, contrast, drop-shadow, grayscale, hue-rotate, invert, opacity, sepia, saturate) !default;
