@@ -1,0 +1,13 @@
+@use "sass:list";
+
+@function is-in-list($list-name, $value) {
+    @if type-of($list-name) != list {
+        @error "First argument must be in list type.";
+    }
+
+    @if not list.index($list-name, $value) {
+        @error "Second argument must be one of these units: (#{$list-name})";
+    }
+
+    @return true;
+}
