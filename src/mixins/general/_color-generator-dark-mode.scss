@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @use "sass:list";
 
 @mixin generate-colors-dark-mode($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 @mixin prefix-val-all($prop, $value) {
     #{$prop}: -webkit-#{$value};
     #{$prop}: -moz-#{$value};

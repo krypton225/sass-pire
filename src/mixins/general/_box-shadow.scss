@@ -1,9 +1,10 @@
-// stylelint-disable indentation
-
+@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as prefix;
 @use "../../abstract" as var;
+
+// stylelint-disable indentation
 
 @mixin shadow($val...) {
     $actual-value-box-shadow: ();

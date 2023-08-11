@@ -1,9 +1,10 @@
-// This is just a mixin for using a grid to make a layout as responsive design.
-
+@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../functions/global/is-in-list" as func;
 @use "../vendor-prefixes/prefix-val" as pref;
+
+// * This is just a mixin for using a grid to make a layout as responsive design.
 
 // * @param: {Number} $min-col-size - min width of the one column of the item.
 // * @param: {Number} $gap - the space between every column in both x-axis and y-axis.
