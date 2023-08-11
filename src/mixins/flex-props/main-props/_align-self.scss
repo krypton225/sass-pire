@@ -1,20 +1,15 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-
-// * @param: {String} $val : The actual value of align-self property.
-// * @return: Nothing.
-// * @output: Properties of align-self with its vendor prefixes.
+@import "../../../functions";
 
 @mixin align-self($val: auto) {
     @if type-of($val) != string {
         @error "$val of align-self argument must be of type string.";
     }
 
-    @if not list.index(var.$align-self-values, $val) {
-        @error "$val must has one of these units: (#{var.$align-self-values})";
-    }
-
-    @each $prop in var.$align-self-props {
-        #{$prop}: $val;
+    @if is-in-list(var.$align-self-values, $val) {
+        @each $prop in var.$align-self-props {
+            #{$prop}: $val;
+        }
     }
 }

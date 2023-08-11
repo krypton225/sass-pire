@@ -1,16 +1,15 @@
 @use "sass:list";
 @use "../../abstract/variables" as var;
+@use "../../functions/global/is-in-list" as func;
 
 @mixin u-select($val) {
     @if type-of($val) != string {
         @error "You must pass a value to u-select mixin in string type.";
     }
 
-    @if not list.index(var.$user-select-values, $val) {
-        @error "Value argument of u-select mixin must has one of these values: (#{var.$user-select-values})";
-    }
-
-    @each $prop in var.$user-select-props {
-        #{$prop}: $val;
+    @if func.is-in-list(var.$user-select-values, $val) {
+        @each $prop in var.$user-select-props {
+            #{$prop}: $val;
+        }
     }
 }

@@ -2,10 +2,6 @@
 @use "../../../abstract/variables" as var;
 @import "../../../functions/global/cut-unit";
 
-// * @param: {Number} $val : The actual value of flex-shrink property.
-// * @return: Nothing.
-// * @output: Properties of flex-shrink with its vendor prefixes.
-
 @mixin flex-shrink($val: 0) {
     @if type-of($val) != number {
         @error "$val of flex-shrink argument must be of type number.";

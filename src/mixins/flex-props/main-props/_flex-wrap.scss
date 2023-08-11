@@ -1,23 +1,18 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../../abstract/variables" as var;
-
-// * @param: {String} $val : The actual value of flex-wrap property.
-// * @return: Nothing.
-// * @output: Properties of flex-wrap with its vendor prefixes.
+@import "../../../functions";
 
 @mixin flex-wrap($val: nowrap) {
-    @if not index(var.$flex-wrap-values, $val) {
-        @error "$val of flex-wrap must has one of these units: (#{var.$flex-wrap-values})";
-    }
-
-    @if $val == "" or $val == no or $val == nowrap {
-        @include prefixing-ms(flex-wrap, nowrap);
-    } @else if $val == wrap or $val == w or $val == yes {
-        @include prefixing-ms(flex-wrap, wrap);
-    } @else if $val == wrap-reverse or $val == wrap-rev or $val == w-rev {
-        @include prefixing-ms(flex-wrap, wrap-reverse);
-    } @else {
-        @include prefixing-ms(flex-wrap, $val);
+    @if is-in-list(var.$flex-wrap-values, $val) {
+        @if $val == "" or $val == no or $val == nowrap {
+            @include prefixing-ms(flex-wrap, nowrap);
+        } @else if $val == wrap or $val == w or $val == yes {
+            @include prefixing-ms(flex-wrap, wrap);
+        } @else if $val == wrap-reverse or $val == wrap-rev or $val == w-rev {
+            @include prefixing-ms(flex-wrap, wrap-reverse);
+        } @else {
+            @include prefixing-ms(flex-wrap, $val);
+        }
     }
 }

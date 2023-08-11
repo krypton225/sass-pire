@@ -1,16 +1,11 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-
-// * @param: {String} $value : The actual value of align-items property.
-// * @return: Nothing.
-// * @output: Properties of align-items with its vendor prefixes.
+@import "../../../functions";
 
 @mixin align-items($value: normal) {
-    @if not list.index(var.$align-items-values, $value) {
-        @error "$value argument must be one of these units: (#{var.$align-items-values})";
-    }
-
-    @each $prop in var.$align-items-props {
-        #{$prop}: $value;
+    @if is-in-list(var.$align-items-values, $value) {
+        @each $prop in var.$align-items-props {
+            #{$prop}: $value;
+        }
     }
 }

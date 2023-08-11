@@ -2,10 +2,6 @@
 @use "../../../abstract/variables" as var;
 @import "../../../functions/global/cut-unit";
 
-// * @param: {Number} $val : The actual value of flex-grow property.
-// * @return: Nothing.
-// * @output: Properties of flex-grow with its vendor prefixes.
-
 @mixin flex-grow($val: 0) {
     @if type-of($val) != number {
         @error "$val of flex-grow argument must be of type number.";

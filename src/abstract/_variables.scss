@@ -92,7 +92,7 @@ $flex-direction-props: (
     flex-direction
 ) !default;
 
-$flex-direction-values: (row, r, row-reverse, r-rev, column, col, column-reverse, col-rev, "") !default;
+$flex-direction-values: (row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev, "") !default;
 
 $flex-direction-column-values: (vertical, normal, column, column) !default;
 
@@ -264,3 +264,13 @@ $backdrop-functions: (
 $user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, user-select) !default;
 
 $user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
+
+$grid-prefixes-values: (-ms-grid, grid) !default;
+
+$inline-grid-prefixes-values: (-ms-inline-grid, inline-grid) !default;
+
+$column-gap-props: (-webkit-column-gap, -moz-column-gap, column-gap) !default;
+
+$grid-column-props: (-ms-grid-column, grid-column) !default;
+
+$grid-row-props: (-ms-grid-row, grid-row) !default;
