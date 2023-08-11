@@ -1,16 +1,15 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract" as var;
+@use "../../functions/global/is-in-list" as func;
 
 @mixin square($one-side) {
     @if type-of($one-side) != number {
         @error "The side value of square shape must be in number type.";
     }
 
-    @if not list.index(var.$main-units, math.unit($one-side)) {
-        @error "#{$one-side} argument must be one of these units: (#{var.$main-units})";
+    @if func.is-in-list(var.$main-units, math.unit($one-side)) {
+        width: $one-side;
+        height: $one-side;
     }
-
-    width: $one-side;
-    height: $one-side;
 }
