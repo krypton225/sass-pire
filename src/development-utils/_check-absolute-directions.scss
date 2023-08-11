@@ -1,6 +1,6 @@
 @use "sass:list";
 @use "sass:math";
-@use "../functions/cut-unit" as c;
+@use "../functions/global/cut-unit" as c;
 @use "../abstract/variables" as var;
 
 @mixin check-absolute-dirs($dir, $val) {

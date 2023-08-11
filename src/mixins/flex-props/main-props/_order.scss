@@ -1,5 +1,5 @@
 @use "../../../abstract/variables" as var;
-@import "../../../functions/cut-unit";
+@import "../../../functions/global/cut-unit";
 
 @mixin order($val) {
     @if type-of($val) != number {
