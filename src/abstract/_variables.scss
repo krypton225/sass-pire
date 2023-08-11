@@ -1,5 +1,6 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
+// * General
 $lib-name: sass-pire !default;
 
 $brand-lib-name: sp !default;
@@ -8,6 +9,11 @@ $all-data-types: (number, string, bool, list, color, map, null) !default;
 
 $main-data-types: (number, string, bool) !default;
 
+$main-directions: (top, right, bottom, left) !default;
+
+$text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
+
+// * Units
 $absolute-units: (cm, mm, in, px, pt, pc) !default;
 
 $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
@@ -40,10 +46,11 @@ $viewport-units: (
 
 $angle-units: (deg, turn, rad, grad) !default;
 
+$main-units: (#{"%"}, rem, px, em) !default;
+
 $time-units: (ms, s) !default;
 
-$text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
-
+// * Flexbox
 $flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
 
 $inline-flex-prefixes-values: (
@@ -203,11 +210,7 @@ $order-props: (
     order
 ) !default;
 
-$main-units: (#{"%"}, rem, px, em) !default;
-
 $fade-values: (hide, show, yes, no) !default;
-
-$main-directions: (top, right, bottom, left) !default;
 
 $transform-props-values: (inherit, initial, revert, unset, none) !default;
 
@@ -265,6 +268,7 @@ $user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, use
 
 $user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
 
+// * Grid
 $grid-prefixes-values: (-ms-grid, grid) !default;
 
 $inline-grid-prefixes-values: (-ms-inline-grid, inline-grid) !default;
@@ -274,3 +278,13 @@ $column-gap-props: (-webkit-column-gap, -moz-column-gap, column-gap) !default;
 $grid-column-props: (-ms-grid-column, grid-column) !default;
 
 $grid-row-props: (-ms-grid-row, grid-row) !default;
+
+$grid-template-columns-props: (-ms-grid-columns, grid-template-columns) !default;
+
+$grid-template-rows-props: (-ms-grid-rows, grid-template-rows) !default;
+
+$grid-column-start: (-ms-grid-column, grid-column-start) !default;
+
+$grid-row-start: (-ms-grid-row, grid-row-start) !default;
+
+$grid-row-end: (-ms-grid-row-span, grid-row-end) !default;
