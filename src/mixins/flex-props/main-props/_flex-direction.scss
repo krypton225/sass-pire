@@ -1,9 +1,10 @@
-// * stylelint-disable scss/no-global-function-names
-
+@charset "UTF-8";
 @use "sass:list";
 @use "sass:map";
 @use "../../../abstract/variables" as var;
 @import "../../../functions";
+
+// * stylelint-disable scss/no-global-function-names
 
 @mixin flex-dir($value: row) {
     @if is-in-list(var.$flex-direction-values, $value) {

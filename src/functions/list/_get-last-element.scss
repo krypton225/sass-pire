@@ -1,9 +1,10 @@
-// * This function from https://kittygiraudel.com/
-// * We updated this function as need.
-
+@charset "UTF-8";
 @use "sass:list";
 @use "../../abstract/variables" as var;
 @use "./flatten-list" as func;
+
+// * This function from https://kittygiraudel.com/
+// * We updated this function as need.
 
 @function get-last-from($list: ()) {
     @if length($list) == 0 {
