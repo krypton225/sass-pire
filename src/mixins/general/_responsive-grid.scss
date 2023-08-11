@@ -2,6 +2,8 @@
 
 @use "sass:list";
 @use "sass:math";
+@use "../../functions/global/is-in-list" as func;
+@use "../vendor-prefixes/prefix-val" as pref;
 
 // * @param: {Number} $min-col-size - min width of the one column of the item.
 // * @param: {Number} $gap - the space between every column in both x-axis and y-axis.
@@ -26,18 +28,10 @@
     $get-col-unit: math.unit($min-col-size);
     $get-gap-unit: math.unit($gap);
 
-    // * Check if the unit of one column was passed to mixin exists in its units.
-    @if not list.index($col-units, $get-col-unit) {
-        @error "$min-col-size must has one of these units: (#{$col-units})";
+    @if func.is-in-list($col-units, $get-col-unit) and func.is-in-list($gap-units, $get-gap-unit) {
+        @include pref.prefix-val-ms(display, grid);
+
+        grid-template-columns: repeat(auto-fit, minmax(min(#{$min-col-size}, 100%), 1fr));
+        gap: #{$gap};
     }
-
-    // * Check if the unit of gap was passed to mixin exists in its units.
-    @if not list.index($gap-units, $get-gap-unit) {
-        @error "$gap argument must has one of these units: (#{$gap-units})";
-    }
-
-    @include prefix-val-ms(display, grid);
-
-    grid-template-columns: repeat(auto-fit, minmax(min(#{$min-col-size}, 100%), 1fr));
-    gap: #{$gap};
 }
