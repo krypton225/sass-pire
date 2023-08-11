@@ -1,6 +1,6 @@
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-@import "../../../functions/cut-unit";
+@import "../../../functions/global/cut-unit";
 
 // * @param: {Number} $val : The actual value of flex-grow property.
 // * @return: Nothing.
