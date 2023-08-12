@@ -1,9 +1,18 @@
 @charset "UTF-8";
 @use "sass:math";
 
+// * @explain
+// * This is just a function to check if the argument has percentage unit or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has percentage unit or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as has-ptg(12%) | has-ptg(22%) | has-ptg(23%).
+// * @return:   {boolean} - true if it has percentage unit and false if not.
+
 @function has-ptg($val) {
     @if type-of($val) != number {
-        @error "You must pass argument to has-percentage function with a number type.";
+        @error "You must pass argument to has-ptg (has-percentage) function with a number type.";
     }
 
     $flag: true;
