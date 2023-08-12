@@ -3,16 +3,26 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
-@function is-angle($val: 0deg) {
+// * @explain
+// * This is just a function to check if the argument has angle units or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has angle units or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as is-angle(12deg) | is-angle(22rad) | is-angle(23grad).
+// * @return:   {boolean} - true if it has one of angle units and false if not.
+
+@function is-angle($val) {
     @if type-of($val) != number {
         @error "You must pass argument to is-angle function with number type.";
     }
 
+    $flag: true;
     $get-unit: math.unit($val);
 
     @if not list.index(var.$angle-units, $get-unit) {
-        @error "$value argument of is-angle function must has one of these units: (#{var.$angle-units})";
+        $flag: false;
     }
 
-    @return true;
+    @return $flag;
 }
