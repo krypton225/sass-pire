@@ -3,16 +3,26 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
-@function is-time($val: 0s) {
+// * @explain
+// * This is just a function to check if the argument has time type or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has time type or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as is-int(12s) | is-int(22ms) | is-int(23px).
+// * @return:   {boolean} - true if it an time type and false if not.
+
+@function is-time($val) {
     @if type-of($val) != number {
         @error "You must pass argument to is-time function with number type.";
     }
 
+    $flag: true;
     $get-unit: math.unit($val);
 
     @if not list.index(var.$time-units, $get-unit) {
-        @error "$value argument of is-time function must has one of these units: (#{var.$time-units})";
+        $flag: false;
     }
 
-    @return true;
+    @return $flag;
 }

@@ -1,12 +1,26 @@
 @charset "UTF-8";
+@use "sass:math";
+@use "cut-unit" as func;
 
-// * @param: {Number} $number - A number to get the half of it.
-// * @output: '$number'.
-// * @return: The half of number.
+// * @explain
+// * This is just a function to get the half of number you pass to it.
 
-@function half($number: 0) {
+// * @group:    functions/global.
+// * @param:    {number} $num - A number to get the half of it. It can be has unit or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as half(12) | half(130rem) | half(22cm).
+// * @return:   {number} - The half of the given number and if it has unit it will be returned with it.
+
+@function half($number) {
     @if type-of($number) != number {
         @error "Please, Enter a number to half function";
+    }
+
+    @if not unitless($number) {
+        $num-after-cut-unit: func.cut-unit($number);
+        $unit-of-number: math.unit($number);
+
+        @return unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");
     }
 
     @return calc($number / 2);

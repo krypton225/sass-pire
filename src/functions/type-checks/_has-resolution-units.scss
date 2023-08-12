@@ -3,6 +3,15 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
+// * @explain
+// * This is just a function to check if the argument has resolution units or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has resolution units or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as has-res-unit(12dpi) | has-res-unit(22dpcm) | has-res-unit(23dppx).
+// * @return:   {boolean} - true if it has one of resolution units and false if not.
+
 @function has-res-unit($val) {
     @if type-of($val) != number {
         @error "Argument of has-res-unit must be of type number.";

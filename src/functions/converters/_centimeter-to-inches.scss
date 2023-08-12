@@ -2,6 +2,15 @@
 @use "sass:math";
 @use "../global/cut-unit" as func;
 
+// * @explain
+// * This is just a function to convert any value has centimeter unit into inch.
+
+// * @group:    functions/converters.
+// * @param:    {number} $cm-val - Value into centimeter unit.
+// * @throw:    Exceptions if @param not a number, not has unit or not has cm unit.
+// * @example:  call it as cm-to-in(12cm) | cm-to-in(130cm) and store value in prop.
+// * @return:   {number} - A converted centimeter number into inch.
+
 @function cm-to-in($cm-val) {
     @if type-of($cm-val) != number {
         @error "$cm-val as argument of cm-to-in function must be in number type.";

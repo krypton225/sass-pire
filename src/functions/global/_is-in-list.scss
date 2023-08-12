@@ -1,6 +1,16 @@
 @charset "UTF-8";
 @use "sass:list";
 
+// * @explain
+// * This is just a function to check if a value is in a given list or not.
+
+// * @group:    functions/global.
+// * @param:    {list} $list-name - A list to check if a second argument is in it or not.
+// * @param:    {any} $value - Second argument to check if it exists in the list which is passed to first argument or not.
+// * @throw:    Exceptions if first @param not a list.
+// * @example:  call it as is-in-list((1, 2, 4), 4) | is-in-list((1, 2, 4), 2).
+// * @return:   {boolean} - Return true if the second argument exists in the list and false if not.
+
 @function is-in-list($list-name, $value) {
     @if type-of($list-name) != list {
         @error "First argument must be in list type.";

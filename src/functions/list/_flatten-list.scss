@@ -1,6 +1,15 @@
 @charset "UTF-8";
 @use "sass:list";
 
+// * @explain
+// * This is just a function to flatten a give list.
+
+// * @group:    functions/list.
+// * @param:    {list} $list - A list has more deep list to make it flatten one.
+// * @throw:    Exceptions if first @param not a list.
+// * @example:  call it as flatten((1, 2, 4), 4) | flatten((1, 2, 4), (2, ((33, 4), 67))).
+// * @return:   {boolean} - Flatten list.
+
 @function flatten($list) {
     $flat-list: ();
 

@@ -3,6 +3,15 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
+// * @explain
+// * This is just a function to check if the argument has viewport units or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has viewport units or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as has-view-unit(12lvh) | has-view-unit(22svmax) | has-view-unit(23svmin).
+// * @return:   {boolean} - true if it has one of viewport units and false if not.
+
 @function has-view-unit($val) {
     @if type-of($val) != number {
         @error "Argument of has-view-unit must be of type number.";
