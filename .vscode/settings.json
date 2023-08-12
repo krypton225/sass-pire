@@ -1,0 +1,25 @@
+{
+    "conventionalCommits.scopes": [
+        "mixins",
+        "mixins-flex-props",
+        "mixins-flex-props-flexbox",
+        "mixins-flex-props-inline-flexbox",
+        "mixins-flex-props-main",
+        "mixins-general",
+        "mixins-grid-props",
+        "mixins-transform",
+        "mixins-vendor-prefix",
+        "utils",
+        "helpers",
+        "functions",
+        "functions-converters",
+        "functions-global",
+        "functions-list",
+        "functions-type-checks",
+        "development-utils",
+        "base",
+        "abstract",
+        "gitignore",
+        "vscode-settings"
+    ]
+}
