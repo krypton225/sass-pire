@@ -3,6 +3,15 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
+// * @explain
+// * This is just a function to check if the argument has absolute unit or not.
+
+// * @group:    functions/type-checks.
+// * @param:    {number} $val - A number to check if it has absolute unit or not.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as has-abs-unit(12cm) | has-abs-unit(22mm) | has-abs-unit(23pt).
+// * @return:   {boolean} - true if it has absolute unit and false if not.
+
 @function has-abs-unit($val) {
     @if type-of($val) != number {
         @error "Argument of has-abs-unit must be of type number.";
