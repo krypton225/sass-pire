@@ -3,15 +3,6 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
-// * @explain
-// * This is just a function to check if the argument has relative units or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has relative units or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-rel-unit(12%) | has-rel-unit(22%) | has-rel-unit(23%).
-// * @return:   {boolean} - true if it has one of relative units and false if not.
-
 @function has-rel-unit($val) {
     @if type-of($val) != number {
         @error "Argument of has-rel-unit must be of type number.";
