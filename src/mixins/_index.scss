@@ -1,4 +1,4 @@
-@import "vendor-prefixes";
-@import "flex-props";
-@import "general";
-@import "transform";
+@forward "vendor-prefixes";
+@forward "flex-props";
+@forward "general";
+@forward "transform";
