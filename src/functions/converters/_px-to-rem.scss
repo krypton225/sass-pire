@@ -1,8 +1,13 @@
 @charset "UTF-8";
 
-// * @param: {Number} $px-val - The number with pixel value without px unit.
-// * @output: A converted number with rem value.
-// * @return: The number after converting from pixel to rem.
+// * @explain
+// * This is just a function to convert any value has pixel unit into rem.
+
+// * @group:    functions/converters.
+// * @param:    {number} $px-val - Value into pixel unit.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as px(12px) | px(130px) and store value in prop.
+// * @return:   {number} - A converted pixel number into rem.
 
 @function px($px-val: 1) {
     @if type-of($px-val) != number {
