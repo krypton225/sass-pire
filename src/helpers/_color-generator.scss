@@ -1,7 +1,7 @@
 @charset "UTF-8";
 @use "../abstract/colors" as clr;
 
-@mixin color-generator() {
+@mixin color-generator-def() {
     @each $color-name, $palette in clr.$main-colors-map {
         @each $key, $val in $palette {
             .bg-#{$color-name}-#{$key} {
