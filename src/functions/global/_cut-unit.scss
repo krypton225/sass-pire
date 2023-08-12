@@ -1,15 +1,23 @@
 @charset "UTF-8";
 @use "sass:math";
 
-// * This code belongs to: Kitty Giraudel.
-// * You can see that in: https://css-tricks.com/snippets/sass/strip-unit-function/
-// * We updated the using of math lib of sass.
+// * @explain
+// * This is just a function to cut the unit or strip from a given number.
 
-// * @param: {Number} $num - The number with its unit to remove the unit from it.
-// * @output: '$num'.
-// * @return: number without its unit.
+// * @group:    functions/global.
+// * @author    Kitty Giraudel.
+// * @link      https://css-tricks.com/snippets/sass/strip-unit-function/.
+// * @update    We updated the using of math lib of sass and add more validations.
+// * @param:    {number} $num - Value to cut the unit from.
+// * @throw:    Exceptions if @param not a number.
+// * @example:  call it as cut-unit(12cm) | cut-unit(130rem) | cut-unit(22px).
+// * @return:   {number} - A number after strip or cut the unit from it.
 
 @function cut-unit($num) {
+    @if type-of($num) != number {
+        @error "You must pass a value in type number to cut-unit function.";
+    }
+
     @if type-of($num) == "number" and not unitless($num) {
         @return math.div($num, ($num * 0 + 1));
     }
