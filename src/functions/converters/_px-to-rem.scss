@@ -1,4 +1,6 @@
 @charset "UTF-8";
+@use "sass:math";
+@use "../../abstract/variables" as var;
 
 // * @explain
 // * This is just a function to convert any value has pixel unit into rem.
@@ -9,7 +11,7 @@
 // * @example:  call it as px(12px) | px(130px) and store value in prop.
 // * @return:   {number} - A converted pixel number into rem.
 
-@function px($px-val: 1) {
+@function px-to-rem($px-val) {
     @if type-of($px-val) != number {
         @error "Please, Enter a number to px function";
     }
@@ -18,5 +20,5 @@
         @return 0;
     }
 
-    @return calc($px-val / 16) + rem;
+    @return calc($px-val / var.$base-font-size) + rem;
 }
