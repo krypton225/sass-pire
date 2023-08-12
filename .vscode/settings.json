@@ -20,6 +20,7 @@
         "base",
         "abstract",
         "gitignore",
-        "vscode-settings"
+        "vscode-settings",
+        "npm-new-package"
     ]
 }
