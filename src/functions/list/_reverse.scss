@@ -1,6 +1,15 @@
 @charset "UTF-8";
 @use "sass:list";
-@use "./flatten-list" as func;
+@use "flatten-list" as func;
+
+// * @explain
+// * This is just a function to get the reversed list from given one.
+
+// * @group:    functions/list.
+// * @param:    {list} $list - A list to get the reversed from it.
+// * @throw:    Exceptions if @param not a list.
+// * @example:  call it as reverse(12, 43, 4) | reverse((22, 3), 5) | reverse(23, (43, 4, (5))).
+// * @return:   {any} - Reversed list.
 
 @function reverse($list: ()) {
     @if type-of($list) != list {
