@@ -2,6 +2,14 @@
 
 // stylelint-disable comment-empty-line-before
 
+// * This mixin is used for add banner for the library in the top of
+// * CSS file which will be compiled.
+// * It contains all needed information like library name, its current
+// * version, license, .. etc.
+// * It will not be used in any mixins or even functions.
+// * It ONLY will be used in base/reset.scss path to add it before all
+// * codes which will be compiled from SCSS into CSS.
+
 @use "../abstract/variables" as var;
 
 @mixin banner() {
