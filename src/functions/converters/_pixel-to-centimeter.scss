@@ -1,6 +1,6 @@
 @charset "UTF-8";
 @use "sass:math";
-@use "./cut-unit" as func;
+@use "../global/cut-unit" as func;
 
 @function px-to-cm($px-val) {
     @if type-of($px-val) != number {
