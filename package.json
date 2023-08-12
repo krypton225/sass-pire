@@ -28,11 +28,18 @@
         "sass:watch": "sass --no-source-map ./src/index.scss:dist/styles.css --watch",
         "sass:comp": "sass --no-source-map ./src/index.scss:dist/styles.min.css --watch --style=compressed",
         "lint": "npx stylelint ./src/**/*.scss",
+        "cmt": "cz",
         "gen:lock": "npm i --package-lock-only"
     },
     "devDependencies": {
+        "cz-conventional-changelog": "^3.3.0",
         "sass": "^1.64.2",
         "stylelint": "^15.10.2",
         "stylelint-config-standard-scss": "^10.0.0"
+    },
+    "config": {
+        "commitizen": {
+            "path": "./node_modules/cz-conventional-changelog"
+        }
     }
 }
