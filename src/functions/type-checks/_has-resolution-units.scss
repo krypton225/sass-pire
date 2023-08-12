@@ -9,7 +9,7 @@
 // * @group:    functions/type-checks.
 // * @param:    {number} $val - A number to check if it has resolution units or not.
 // * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-res-unit(12%) | has-res-unit(22%) | has-res-unit(23%).
+// * @example:  call it as has-res-unit(12dpi) | has-res-unit(22dpcm) | has-res-unit(23dppx).
 // * @return:   {boolean} - true if it has one of resolution units and false if not.
 
 @function has-res-unit($val) {
