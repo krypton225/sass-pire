@@ -6,7 +6,8 @@
 
 @use "../abstract/variables" as var;
 @use "../mixins/vendor-prefixes/prefix" as prefix;
-@include banner;
+@use "../base/banner" as b;
+@include b.banner;
 
 /* Box sizing rules */
 *,
