@@ -1,10 +1,19 @@
 @charset "UTF-8";
 @use "sass:list";
 @use "../../abstract/variables" as var;
-@use "./flatten-list" as func;
+@use "flatten-list" as func;
 
-// * This function from https://kittygiraudel.com/
-// * We updated this function as need.
+// * @explain
+// * This is just a function to get the last element in the given list.
+
+// * @group:    functions/list.
+// * @author    Kitty Giraudel.
+// * @link      https://kittygiraudel.com/
+// * @update    We updated the using of list lib of sass.
+// * @param:    {list} $list - A list to get the last element in it.
+// * @throw:    Exceptions if @param not a list.
+// * @example:  call it as get-last-from(12, 43, 4) | get-last-from((22, 3), 5) | get-last-from(23, (43, 4, (5))).
+// * @return:   {any} - Last element in the list.
 
 @function get-last-from($list: ()) {
     @if length($list) == 0 {
