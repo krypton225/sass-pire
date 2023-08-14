@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/inflex-prop" as f;
 
 // * These are useful mixin for using properties of inline flexbox in CSS.
 // * The pattern you follow: (inflex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content space-around.
 
 @mixin inflex-around-normal($dir: row) {
-    @include inflex-prop($dir, space-around, normal);
+    @include f.inflex-prop($dir, space-around, normal);
 }
 
 @mixin inflex-around-stretch($dir: row) {
-    @include inflex-prop($dir, space-around, stretch);
+    @include f.inflex-prop($dir, space-around, stretch);
 }
 
 @mixin inflex-around-start($dir: row) {
-    @include inflex-prop($dir, space-around, start);
+    @include f.inflex-prop($dir, space-around, start);
 }
 
 @mixin inflex-around-end($dir: row) {
-    @include inflex-prop($dir, space-around, end);
+    @include f.inflex-prop($dir, space-around, end);
 }
 
 @mixin inflex-around-fstart($dir: row) {
-    @include inflex-prop($dir, space-around, flex-start);
+    @include f.inflex-prop($dir, space-around, flex-start);
 }
 
 @mixin inflex-around-fend($dir: row) {
-    @include inflex-prop($dir, space-around, flex-end);
+    @include f.inflex-prop($dir, space-around, flex-end);
 }
 
 @mixin inflex-around-center($dir: row) {
-    @include inflex-prop($dir, space-around, center);
+    @include f.inflex-prop($dir, space-around, center);
 }
 
 @mixin inflex-around-baseline($dir: row) {
-    @include inflex-prop($dir, space-around, baseline);
+    @include f.inflex-prop($dir, space-around, baseline);
 }
 
 @mixin inflex-around-inh($dir: row) {
-    @include inflex-prop($dir, space-around, inherit);
+    @include f.inflex-prop($dir, space-around, inherit);
 }
