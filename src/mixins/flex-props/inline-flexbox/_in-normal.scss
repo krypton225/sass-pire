@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/inflex-prop" as f;
 
 // * These are useful mixin for using properties of inline flexbox in CSS.
 // * The pattern you follow: (inflex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content normal.
 
 @mixin inflex-normal-normal($dir: row) {
-    @include inflex-prop($dir, normal, normal);
+    @include f.inflex-prop($dir, normal, normal);
 }
 
 @mixin inflex-normal-stretch($dir: row) {
-    @include inflex-prop($dir, normal, stretch);
+    @include f.inflex-prop($dir, normal, stretch);
 }
 
 @mixin inflex-normal-start($dir: row) {
-    @include inflex-prop($dir, normal, start);
+    @include f.inflex-prop($dir, normal, start);
 }
 
 @mixin inflex-normal-end($dir: row) {
-    @include inflex-prop($dir, normal, end);
+    @include f.inflex-prop($dir, normal, end);
 }
 
 @mixin inflex-normal-fstart($dir: row) {
-    @include inflex-prop($dir, normal, flex-start);
+    @include f.inflex-prop($dir, normal, flex-start);
 }
 
 @mixin inflex-normal-fend($dir: row) {
-    @include inflex-prop($dir, normal, flex-end);
+    @include f.inflex-prop($dir, normal, flex-end);
 }
 
 @mixin inflex-normal-center($dir: row) {
-    @include inflex-prop($dir, normal, center);
+    @include f.inflex-prop($dir, normal, center);
 }
 
 @mixin inflex-normal-baseline($dir: row) {
-    @include inflex-prop($dir, normal, baseline);
+    @include f.inflex-prop($dir, normal, baseline);
 }
 
 @mixin inflex-normal-inh($dir: row) {
-    @include inflex-prop($dir, normal, inherit);
+    @include f.inflex-prop($dir, normal, inherit);
 }
