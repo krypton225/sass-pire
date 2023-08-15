@@ -22,6 +22,7 @@
         "gitignore",
         "vscode-settings",
         "npm-new-package",
-        "scripts"
+        "scripts",
+        "tests"
     ]
 }
