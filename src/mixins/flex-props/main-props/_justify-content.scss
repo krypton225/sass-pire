@@ -1,10 +1,10 @@
 @charset "UTF-8";
 @use "sass:list";
 @use "../../../abstract/variables" as var;
-@import "../../../functions";
+@use "../../../functions/global/is-in-list" as func;
 
 @mixin justify-content($value: flex-start) {
-    @if is-in-list(var.$justify-content-values, $value) {
+    @if func.is-in-list(var.$justify-content-values, $value) {
         @each $prop in var.$justify-content-props {
             #{$prop}: $value;
         }
