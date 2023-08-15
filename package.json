@@ -29,7 +29,8 @@
         "sass:comp": "sass --no-source-map ./src/sass-pire.scss:dist/styles.min.css --watch --style=compressed",
         "lint": "npx stylelint ./src/**/*.scss",
         "cmt": "cz",
-        "gen:lock": "npm i --package-lock-only"
+        "gen:lock": "npm i --package-lock-only",
+        "test": "sass --no-source-map ./tests/test.scss:dist/test-styles.css --watch"
     },
     "devDependencies": {
         "cz-conventional-changelog": "^3.3.0",
