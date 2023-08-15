@@ -2,18 +2,19 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../../abstract/variables" as var;
-@import "../../../functions";
+@use "../../vendor-prefixes/prefix" as pref;
+@use "../../../functions/global/is-in-list" as func;
 
 @mixin flex-wrap($val: nowrap) {
-    @if is-in-list(var.$flex-wrap-values, $val) {
+    @if func.is-in-list(var.$flex-wrap-values, $val) {
         @if $val == "" or $val == no or $val == nowrap {
-            @include prefixing-ms(flex-wrap, nowrap);
+            @include pref.prefixing-ms(flex-wrap, nowrap);
         } @else if $val == wrap or $val == w or $val == yes {
-            @include prefixing-ms(flex-wrap, wrap);
+            @include pref.prefixing-ms(flex-wrap, wrap);
         } @else if $val == wrap-reverse or $val == wrap-rev or $val == w-rev {
-            @include prefixing-ms(flex-wrap, wrap-reverse);
+            @include pref.prefixing-ms(flex-wrap, wrap-reverse);
         } @else {
-            @include prefixing-ms(flex-wrap, $val);
+            @include pref.prefixing-ms(flex-wrap, $val);
         }
     }
 }
