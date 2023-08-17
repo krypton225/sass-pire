@@ -1,0 +1,19 @@
+@use "../../../src/sass-pire.scss" as *;
+
+.rotate-x {
+    &-degree {
+        @include rotate-x(120deg);
+    }
+
+    &-turn {
+        @include rotate-x(120turn);
+    }
+
+    &-rad {
+        @include rotate-x(120rad);
+    }
+
+    &-grad {
+        @include rotate-x(120grad);
+    }
+}
