@@ -55,7 +55,7 @@ $main-units: (#{"%"}, rem, px, em) !default;
 $time-units: (ms, s) !default;
 
 // * Flexbox
-$flex-prefixes-values: (-webkit-box, -webkit-flex, -ms-flexbox, -moz-box, flex) !default;
+$flex-prefixes-values: (-webkit-box, -moz-box, -ms-flexbox, -webkit-flex, flex) !default;
 
 $inline-flex-prefixes-values: (
     -webkit-inline-box,
@@ -206,6 +206,7 @@ $flex-basis-values: (max-content, min-content, fit-content, content, inherit, au
 
 $order-props: (
     -webkit-box-ordinal-group,
+    -moz-box-ordinal-group,
     -webkit-order,
     -ms-flex-order,
     -ms-order,
