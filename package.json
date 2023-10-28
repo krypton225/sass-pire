@@ -27,6 +27,7 @@
     "scripts": {
         "sass:watch": "sass --no-source-map ./src/sass-pire.scss:dist/styles.css --watch",
         "sass:comp": "sass --no-source-map ./src/sass-pire.scss:dist/styles.min.css --watch --style=compressed",
+        "upgrade": "ncu --upgrade",
         "lint": "npx stylelint ./src/**/*.scss",
         "cmt": "cz",
         "gen:lock": "npm i --package-lock-only",
@@ -34,9 +35,10 @@
     },
     "devDependencies": {
         "cz-conventional-changelog": "^3.3.0",
-        "sass": "^1.64.2",
-        "stylelint": "^15.10.2",
-        "stylelint-config-standard-scss": "^10.0.0"
+        "npm-check-updates": "^16.14.6",
+        "sass": "^1.69.5",
+        "stylelint": "^15.11.0",
+        "stylelint-config-standard-scss": "^11.0.0"
     },
     "config": {
         "commitizen": {
