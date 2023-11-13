@@ -1,14 +1,30 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
 @charset "UTF-8";
 @use "sass:list";
-@use "../../../abstract/variables" as var;
 @import "../../../functions/global/cut-unit";
 
-@mixin flex-shrink($val: 0) {
-    @if type-of($val) != number {
-        @error "$val of flex-shrink argument must be of type number.";
+@mixin flex-shrink($val) {
+    $flex-shrink-props: (
+        -webkit-flex-shrink,
+        -ms-flex-negative,
+        -ms-flex-shrink,
+        -moz-box-flex,
+        -moz-flex-shrink,
+        flex-shrink
+    ) !default;
+
+    $flex-shrink-values: (initial, inherit) !default;
+
+    @if type-of($val) == string and not is-in-list($flex-shrink-values, $val) {
+        @error "$val is not a valid value for flex-shrink. Allowed string values: #{$flex-shrink-values}.";
     }
 
-    @each $prop in var.$flex-shrink-props {
-        #{$prop}: cut-unit($val);
+    @if type-of($val) == number and $val < 0 {
+        @error "$val must be greater than or equal to zero for flex-shrink.";
+    }
+
+    @each $prop in $flex-shrink-props {
+        // stylelint-disable-next-line scss/no-global-function-names
+        #{$prop}: if(type-of($val) == string, $val, cut-unit($val));
     }
 }
