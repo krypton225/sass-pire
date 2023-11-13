@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/flex-prop" as f;
 
 // * These are useful mixin for using properties of flexbox in CSS.
 // * The pattern you follow: (flex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content flex-end.
 
 @mixin flex-fend-normal($dir: row) {
-    @include f-prop($dir, flex-end, normal);
+    @include f.f-prop($dir, flex-end, normal);
 }
 
 @mixin flex-fend-stretch($dir: row) {
-    @include f-prop($dir, flex-end, stretch);
+    @include f.f-prop($dir, flex-end, stretch);
 }
 
 @mixin flex-fend-start($dir: row) {
-    @include f-prop($dir, flex-end, start);
+    @include f.f-prop($dir, flex-end, start);
 }
 
 @mixin flex-fend-end($dir: row) {
-    @include f-prop($dir, flex-end, end);
+    @include f.f-prop($dir, flex-end, end);
 }
 
 @mixin flex-fend-fstart($dir: row) {
-    @include f-prop($dir, flex-end, flex-start);
+    @include f.f-prop($dir, flex-end, flex-start);
 }
 
 @mixin flex-fend-fend($dir: row) {
-    @include f-prop($dir, flex-end, flex-end);
+    @include f.f-prop($dir, flex-end, flex-end);
 }
 
 @mixin flex-fend-center($dir: row) {
-    @include f-prop($dir, flex-end, center);
+    @include f.f-prop($dir, flex-end, center);
 }
 
 @mixin flex-fend-baseline($dir: row) {
-    @include f-prop($dir, flex-end, baseline);
+    @include f.f-prop($dir, flex-end, baseline);
 }
 
 @mixin flex-fend-inh($dir: row) {
-    @include f-prop($dir, flex-end, inherit);
+    @include f.f-prop($dir, flex-end, inherit);
 }

@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/flex-prop" as f;
 
 // * These are useful mixin for using properties of flexbox in CSS.
 // * The pattern you follow: (flex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content center.
 
 @mixin flex-center-normal($dir: row) {
-    @include f-prop($dir, center, normal);
+    @include f.f-prop($dir, center, normal);
 }
 
 @mixin flex-center-stretch($dir: row) {
-    @include f-prop($dir, center, stretch);
+    @include f.f-prop($dir, center, stretch);
 }
 
 @mixin flex-center-start($dir: row) {
-    @include f-prop($dir, center, start);
+    @include f.f-prop($dir, center, start);
 }
 
 @mixin flex-center-end($dir: row) {
-    @include f-prop($dir, center, end);
+    @include f.f-prop($dir, center, end);
 }
 
 @mixin flex-center-fstart($dir: row) {
-    @include f-prop($dir, center, flex-start);
+    @include f.f-prop($dir, center, flex-start);
 }
 
 @mixin flex-center-fend($dir: row) {
-    @include f-prop($dir, center, flex-end);
+    @include f.f-prop($dir, center, flex-end);
 }
 
 @mixin flex-center-center($dir: row) {
-    @include f-prop($dir, center, center);
+    @include f.f-prop($dir, center, center);
 }
 
 @mixin flex-center-baseline($dir: row) {
-    @include f-prop($dir, center, baseline);
+    @include f.f-prop($dir, center, baseline);
 }
 
 @mixin flex-center-inh($dir: row) {
-    @include f-prop($dir, center, inherit);
+    @include f.f-prop($dir, center, inherit);
 }

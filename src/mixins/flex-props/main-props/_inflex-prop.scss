@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@use "../main-props/inline-flex" as f;
+@use "../main-props/flex-direction" as dir;
+@use "../main-props/justify-content" as jc;
+@use "../main-props/align-items" as ai;
 
 // * @param: {String} $f-dir : flex-direction.
 // * @param: {String} $justify-content-val : justify-content.
@@ -8,8 +12,8 @@
 // * @output: Flexbox properties with its vendor prefixes. This mixin for collect main properties of inline flexbox.
 
 @mixin inflex-prop($f-dir: row, $justify-content-val: flex-start, $align-items-val: normal) {
-    @include d-inflex;
-    @include flex-dir($f-dir);
-    @include justify-content($justify-content-val);
-    @include align-items($align-items-val);
+    @include f.d-inflex;
+    @include dir.flex-dir($f-dir);
+    @include jc.justify-content($justify-content-val);
+    @include ai.align-items($align-items-val);
 }
