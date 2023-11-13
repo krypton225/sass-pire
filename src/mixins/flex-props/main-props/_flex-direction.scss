@@ -1,27 +1,69 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:map";
-@use "../../../abstract/variables" as var;
 @import "../../../functions";
 
-// * stylelint-disable scss/no-global-function-names
+// stylelint-disable scss/no-global-function-names
 
 @mixin flex-dir($value: row) {
-    @if is-in-list(var.$flex-direction-values, $value) {
+    $flex-direction-values: (row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev, "") !default;
+
+    $merge-flex-direction-column: (
+        -webkit-box-orient: vertical,
+        -webkit-box-direction: normal,
+        -webkit-flex-direction: column,
+        -ms-flex-direction: column,
+        -moz-flex-direction: column,
+        -o-flex-direction: column,
+        flex-direction: column
+    ) !default;
+
+    $merge-flex-direction-column-reverse: (
+        -webkit-box-orient: vertical,
+        -webkit-box-direction: reverse,
+        -webkit-flex-direction: column-reverse,
+        -ms-flex-direction: column-reverse,
+        -moz-flex-direction: column-reverse,
+        -o-flex-direction: column-reverse,
+        flex-direction: column-reverse
+    ) !default;
+
+    $merge-flex-direction-row: (
+        -webkit-box-orient: horizontal,
+        -webkit-box-direction: normal,
+        -webkit-flex-direction: row,
+        -ms-flex-direction: row,
+        -moz-flex-direction: row,
+        -o-flex-direction: row,
+        flex-direction: row
+    ) !default;
+
+    $merge-flex-direction-row-reverse: (
+        -webkit-box-orient: horizontal,
+        -webkit-box-direction: reverse,
+        -webkit-flex-direction: row-reverse,
+        -ms-flex-direction: row-reverse,
+        -moz-flex-direction: row-reverse,
+        -o-flex-direction: row-reverse,
+        flex-direction: row-reverse
+    ) !default;
+
+    @if is-in-list($flex-direction-values, $value) {
         @if $value == column or $value == col or $value == c {
-            @each $prop, $val in var.$merge-flex-direction-column {
+            @each $prop, $val in $merge-flex-direction-column {
                 #{$prop}: $val;
             }
         } @else if $value == row or $value == r or $value == "" {
-            @each $prop, $val in var.$merge-flex-direction-row {
+            @each $prop, $val in $merge-flex-direction-row {
                 #{$prop}: $val;
             }
         } @else if $value == row-reverse or $value == r-rev {
-            @each $prop, $val in var.$merge-flex-direction-row-reverse {
+            @each $prop, $val in $merge-flex-direction-row-reverse {
                 #{$prop}: $val;
             }
         } @else if $value == column-reverse or $value == col-rev {
-            @each $prop, $val in var.$merge-flex-direction-column-reverse {
+            @each $prop, $val in $merge-flex-direction-column-reverse {
                 #{$prop}: $val;
             }
         }
