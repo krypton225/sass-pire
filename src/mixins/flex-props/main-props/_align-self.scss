@@ -1,15 +1,39 @@
 @charset "UTF-8";
 @use "sass:list";
-@use "../../../abstract/variables" as var;
 @import "../../../functions";
 
 @mixin align-self($val: auto) {
+    $align-self-props: (
+        -webkit-align-self,
+        -ms-grid-row-align,
+        -ms-align-self,
+        -moz-align-self,
+        -o-align-self,
+        align-self
+    ) !default;
+
+    // stylelint-disable-next-line scss/dollar-variable-empty-line-before
+    $align-self-values: (
+        auto,
+        normal,
+        stretch,
+        start,
+        end,
+        self-start,
+        self-end,
+        center,
+        flex-start,
+        flex-end,
+        baseline,
+        inherit
+    ) !default;
+
     @if type-of($val) != string {
         @error "$val of align-self argument must be of type string.";
     }
 
-    @if is-in-list(var.$align-self-values, $val) {
-        @each $prop in var.$align-self-props {
+    @if is-in-list($align-self-values, $val) {
+        @each $prop in $align-self-props {
             #{$prop}: $val;
         }
     }
