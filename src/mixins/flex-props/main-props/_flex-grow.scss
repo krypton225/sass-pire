@@ -1,14 +1,19 @@
 @charset "UTF-8";
 @use "sass:list";
-@use "../../../abstract/variables" as var;
 @import "../../../functions/global/cut-unit";
 
 @mixin flex-grow($val: 0) {
+    $flex-grow-props: (-webkit-flex-grow, -webkit-box-flex, -ms-flex-positive, -moz-box-flex, flex-grow) !default;
+
     @if type-of($val) != number {
         @error "$val of flex-grow argument must be of type number.";
     }
 
-    @each $prop in var.$flex-grow-props {
+    @if $val < 0 {
+        @error "The value of flex-grow argument must be bigger than or equal to zero.";
+    }
+
+    @each $prop in $flex-grow-props {
         #{$prop}: cut-unit($val);
     }
 }
