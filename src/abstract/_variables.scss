@@ -162,30 +162,6 @@ $flex-shrink-props: (
 
 $flex-shrink-values: (initial, inherit) !default;
 
-$align-self-props: (
-    -webkit-align-self,
-    -ms-grid-row-align,
-    -ms-align-self,
-    -moz-align-self,
-    -o-align-self,
-    align-self
-) !default;
-
-$align-self-values: (
-    auto,
-    normal,
-    stretch,
-    start,
-    end,
-    self-start,
-    self-end,
-    center,
-    flex-start,
-    flex-end,
-    baseline,
-    inherit
-) !default;
-
 $flex-grow-props: (-webkit-flex-grow, -webkit-box-flex, -ms-flex-positive, -moz-box-flex, flex-grow) !default;
 
 $flex-basis-props: (
