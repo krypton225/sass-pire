@@ -109,17 +109,6 @@ $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-rever
 
 $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
 
-$flex-shrink-props: (
-    -webkit-flex-shrink,
-    -ms-flex-negative,
-    -ms-flex-shrink,
-    -moz-box-flex,
-    -moz-flex-shrink,
-    flex-shrink
-) !default;
-
-$flex-shrink-values: (initial, inherit) !default;
-
 $order-props: (
     -webkit-box-ordinal-group,
     -webkit-order,
