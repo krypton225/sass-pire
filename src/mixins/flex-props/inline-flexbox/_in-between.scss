@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/inflex-prop" as f;
 
 // * These are useful mixin for using properties of inline flexbox in CSS.
 // * The pattern you follow: (inflex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content space-between.
 
 @mixin inflex-between-normal($dir: row) {
-    @include inflex-prop($dir, space-between, normal);
+    @include f.inflex-prop($dir, space-between, normal);
 }
 
 @mixin inflex-between-stretch($dir: row) {
-    @include inflex-prop($dir, space-between, stretch);
+    @include f.inflex-prop($dir, space-between, stretch);
 }
 
 @mixin inflex-between-start($dir: row) {
-    @include inflex-prop($dir, space-between, start);
+    @include f.inflex-prop($dir, space-between, start);
 }
 
 @mixin inflex-between-end($dir: row) {
-    @include inflex-prop($dir, space-between, end);
+    @include f.inflex-prop($dir, space-between, end);
 }
 
 @mixin inflex-between-fstart($dir: row) {
-    @include inflex-prop($dir, space-between, flex-start);
+    @include f.inflex-prop($dir, space-between, flex-start);
 }
 
 @mixin inflex-between-fend($dir: row) {
-    @include inflex-prop($dir, space-between, flex-end);
+    @include f.inflex-prop($dir, space-between, flex-end);
 }
 
 @mixin inflex-between-center($dir: row) {
-    @include inflex-prop($dir, space-between, center);
+    @include f.inflex-prop($dir, space-between, center);
 }
 
 @mixin inflex-between-baseline($dir: row) {
-    @include inflex-prop($dir, space-between, baseline);
+    @include f.inflex-prop($dir, space-between, baseline);
 }
 
 @mixin inflex-between-inh($dir: row) {
-    @include inflex-prop($dir, space-between, inherit);
+    @include f.inflex-prop($dir, space-between, inherit);
 }

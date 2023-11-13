@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@use "../main-props/inflex-prop" as f;
 
 // * These are useful mixin for using properties of inline flexbox in CSS.
 // * The pattern you follow: (inflex)-(justify-content)-(align-items).
@@ -7,37 +8,37 @@
 // * NOTE: This file for make mixins with justify content right.
 
 @mixin inflex-right-normal($dir: row) {
-    @include inflex-prop($dir, right, normal);
+    @include f.inflex-prop($dir, right, normal);
 }
 
 @mixin inflex-right-stretch($dir: row) {
-    @include inflex-prop($dir, right, stretch);
+    @include f.inflex-prop($dir, right, stretch);
 }
 
 @mixin inflex-right-start($dir: row) {
-    @include inflex-prop($dir, right, start);
+    @include f.inflex-prop($dir, right, start);
 }
 
 @mixin inflex-right-end($dir: row) {
-    @include inflex-prop($dir, right, end);
+    @include f.inflex-prop($dir, right, end);
 }
 
 @mixin inflex-right-fstart($dir: row) {
-    @include inflex-prop($dir, right, flex-start);
+    @include f.inflex-prop($dir, right, flex-start);
 }
 
 @mixin inflex-right-fend($dir: row) {
-    @include inflex-prop($dir, right, flex-end);
+    @include f.inflex-prop($dir, right, flex-end);
 }
 
 @mixin inflex-right-center($dir: row) {
-    @include inflex-prop($dir, right, center);
+    @include f.inflex-prop($dir, right, center);
 }
 
 @mixin inflex-right-baseline($dir: row) {
-    @include inflex-prop($dir, right, baseline);
+    @include f.inflex-prop($dir, right, baseline);
 }
 
 @mixin inflex-right-inh($dir: row) {
-    @include inflex-prop($dir, right, inherit);
+    @include f.inflex-prop($dir, right, inherit);
 }

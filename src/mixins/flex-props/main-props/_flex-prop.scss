@@ -1,4 +1,8 @@
 @charset "UTF-8";
+@use "flex" as f;
+@use "flex-direction" as dir;
+@use "justify-content" as jc;
+@use "align-items" as ai;
 
 // * @param: {String} $f-dir : flex-direction.
 // * @param: {String} $justify-content-val : justify-content.
@@ -8,8 +12,8 @@
 // * @output: Flexbox properties with its vendor prefixes. This mixin for collect main properties of flexbox.
 
 @mixin f-prop($f-dir: row, $justify-content-val: flex-start, $align-items-val: normal) {
-    @include d-flex;
-    @include flex-dir($f-dir);
-    @include justify-content($justify-content-val);
-    @include align-items($align-items-val);
+    @include f.d-flex;
+    @include dir.flex-dir($f-dir);
+    @include jc.justify-content($justify-content-val);
+    @include ai.align-items($align-items-val);
 }
