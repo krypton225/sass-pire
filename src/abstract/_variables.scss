@@ -120,8 +120,6 @@ $flex-shrink-props: (
 
 $flex-shrink-values: (initial, inherit) !default;
 
-$flex-grow-props: (-webkit-flex-grow, -webkit-box-flex, -ms-flex-positive, -moz-box-flex, flex-grow) !default;
-
 $order-props: (
     -webkit-box-ordinal-group,
     -webkit-order,
