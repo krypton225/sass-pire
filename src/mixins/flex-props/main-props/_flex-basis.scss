@@ -1,14 +1,26 @@
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../../abstract/variables" as var;
 @import "../../../functions";
 
 @mixin flex-basis($val: auto) {
+    $flex-basis-props: (
+        -webkit-flex-basis,
+        -ms-flex-basis,
+        -ms-flex-preferred-size,
+        -moz-flex-basis,
+        -moz-box-sizing,
+        -o-flex-basis,
+        flex-basis
+    ) !default;
+
+    // stylelint-disable-next-line scss/dollar-variable-empty-line-before
+    $flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
+
     @if type-of($val) == string or type-of($val) == number {
         @if type-of($val) == string {
-            @if is-in-list(var.$flex-basis-values, $val) {
-                @each $prop in var.$flex-basis-props {
+            @if is-in-list($flex-basis-values, $val) {
+                @each $prop in $flex-basis-props {
                     #{$prop}: $val;
                 }
             }
@@ -16,10 +28,10 @@
 
         @if type-of($val) == number and cut-unit($val) != 0 {
             @if unitless($val) {
-                @error "Please, Enter the unit of $val argument. It must be one of these units (#{var.$flex-basis-values})";
+                @error "Please, Enter the unit of $val argument. It must be one of these units (#{$flex-basis-values})";
             }
 
-            @each $prop in var.$flex-basis-props {
+            @each $prop in $flex-basis-props {
                 #{$prop}: $val;
             }
         }
