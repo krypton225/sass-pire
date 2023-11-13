@@ -107,8 +107,6 @@ $flex-direction-row-values: (horizontal, normal, row, row) !default;
 
 $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-reverse) !default;
 
-$flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
-
 $order-props: (
     -webkit-box-ordinal-group,
     -moz-box-ordinal-group,

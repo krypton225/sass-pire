@@ -1,12 +1,13 @@
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../../abstract/variables" as var;
 @use "../../vendor-prefixes/prefix" as pref;
 @use "../../../functions/global/is-in-list" as func;
 
 @mixin flex-wrap($val: nowrap) {
-    @if func.is-in-list(var.$flex-wrap-values, $val) {
+    $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
+
+    @if func.is-in-list($flex-wrap-values, $val) {
         @if $val == "" or $val == no or $val == nowrap {
             @include pref.prefixing-ms(flex-wrap, nowrap);
         } @else if $val == wrap or $val == w or $val == yes {
