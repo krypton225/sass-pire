@@ -21,6 +21,7 @@
         "abstract",
         "gitignore",
         "vscode-settings",
-        "npm-new-package"
+        "npm-new-package",
+        "enhance"
     ]
 }
