@@ -55,7 +55,6 @@ $main-units: (#{"%"}, rem, px, em) !default;
 $time-units: (ms, s) !default;
 
 // * Flexbox
-$flex-prefixes-values: (-webkit-box, -moz-box, -ms-flexbox, -webkit-flex, flex) !default;
 
 $inline-flex-prefixes-values: (
     -webkit-inline-box,
