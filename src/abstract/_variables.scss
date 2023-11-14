@@ -56,30 +56,6 @@ $time-units: (ms, s) !default;
 
 // * Flexbox
 
-$justify-content-props: (
-    -webkit-box-pack,
-    -webkit-justify-content,
-    -ms-flex-pack,
-    -moz-justify-content,
-    justify-content
-) !default;
-
-$justify-content-values: (
-    normal,
-    stretch,
-    start,
-    end,
-    right,
-    left,
-    flex-start,
-    flex-end,
-    center,
-    space-between,
-    space-around,
-    space-evenly,
-    inherit
-) !default;
-
 $flex-direction-props: (
     -webkit-box-orient,
     -webkit-box-direction,
