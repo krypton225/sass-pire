@@ -2,6 +2,34 @@
 @use "sass:list";
 @import "../../../functions";
 
+// ? Align Self Mixin
+// * This mixin provides a convenient way to set the `align-self` property
+// * with vendor prefixes for better cross-browser compatibility.
+
+// ? @group mixins/flex-props/main-props
+
+// ? @param {String} $val - The value for the `align-self` property.
+// * Allowed values: auto, normal, stretch, start, end, self-start, self-end, center,
+// * flex-start, flex-end, baseline, inherit.
+// * Default: auto.
+
+// ? @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+
+// ? @example
+// * .example {
+// *   @include align-self(center);
+// * }
+
+// ? @output:
+// * .example {
+// *   -webkit-align-self: center;
+// *   -ms-grid-row-align: center;
+// *   -ms-align-self: center;
+// *   -moz-align-self: center;
+// *   -o-align-self: center;
+// *   align-self: center;
+// * }
+
 @mixin align-self($val: auto) {
     $align-self-props: (
         -webkit-align-self,
