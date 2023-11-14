@@ -3,9 +3,9 @@
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to space-around, and align items to a specific value.
 
-// ? @module flex-around-mixins
+// ? @module flex-mixins
 
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 // ? @example
 // *   .example {
@@ -44,7 +44,7 @@
 
 // ? @mixin flex-around-normal
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-normal($dir: row) {
     @include f.f-prop($dir, space-around, normal);
@@ -52,7 +52,7 @@
 
 // ? @mixin flex-around-stretch
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-stretch($dir: row) {
     @include f.f-prop($dir, space-around, stretch);
@@ -60,7 +60,7 @@
 
 // ? @mixin flex-around-start
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-start($dir: row) {
     @include f.f-prop($dir, space-around, start);
@@ -68,7 +68,7 @@
 
 // ? @mixin flex-around-end
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-end($dir: row) {
     @include f.f-prop($dir, space-around, end);
@@ -76,7 +76,7 @@
 
 // ? @mixin flex-around-fstart
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-fstart($dir: row) {
     @include f.f-prop($dir, space-around, flex-start);
@@ -84,7 +84,7 @@
 
 // ? @mixin flex-around-fend
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-fend($dir: row) {
     @include f.f-prop($dir, space-around, flex-end);
@@ -92,7 +92,7 @@
 
 // ? @mixin flex-around-center
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-center($dir: row) {
     @include f.f-prop($dir, space-around, center);
@@ -100,7 +100,7 @@
 
 // ? @mixin flex-around-baseline
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-baseline($dir: row) {
     @include f.f-prop($dir, space-around, baseline);
@@ -108,7 +108,7 @@
 
 // ? @mixin flex-around-inh
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group flex-around-mixins
+// ? @group flex-mixins-around
 
 @mixin flex-around-inh($dir: row) {
     @include f.f-prop($dir, space-around, inherit);
