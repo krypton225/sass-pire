@@ -1,43 +1,113 @@
+// ? Flex Between Mixins
+// * These mixins provide a convenient way to apply flexbox properties with the 'space-between' value
+// * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
+// * allowing you to easily set display to flex, justify content to space-between, and align items to a specific value.
+
+// ? @module flex-between-mixins
+
+// ? @group flex-between-mixins
+
+// ? @example
+// * .example {
+// *   @include flex-between-normal(row);
+// * }
+
+// ? @output
+// * .example {
+// *   display: -webkit-box;
+// *   display: -moz-box;
+// *   display: -ms-flexbox;
+// *   display: -webkit-flex;
+// *   display: flex;
+// *   -webkit-box-orient: horizontal;
+// *   -webkit-box-direction: normal;
+// *   -webkit-flex-direction: row;
+// *   -ms-flex-direction: row;
+// *   -moz-flex-direction: row;
+// *   -o-flex-direction: row;
+// *   flex-direction: row;
+// *   -webkit-box-pack: space-between;
+// *   -webkit-justify-content: space-between;
+// *   -ms-flex-pack: space-between;
+// *   -moz-justify-content: space-between;
+// *   justify-content: space-between;
+// *   -webkit-box-align: normal;
+// *   -webkit-align-items: normal;
+// *   -ms-flex-align: normal;
+// *   -moz-align-items: normal;
+// *   align-items: normal;
+// * }
+
 @charset "UTF-8";
 @use "../main-props/flex-prop" as f;
 
-// * These are useful mixin for using properties of flexbox in CSS.
-// * The pattern you follow: (flex)-(justify-content)-(align-items).
-// * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
-
-// * NOTE: This file for make mixins with justify content space-between.
+// ? @mixin flex-between-normal
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group flex-between-mixins
 
 @mixin flex-between-normal($dir: row) {
     @include f.f-prop($dir, space-between, normal);
 }
 
+// ? @mixin flex-between-stretch
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
+
 @mixin flex-between-stretch($dir: row) {
     @include f.f-prop($dir, space-between, stretch);
 }
+
+// ? @mixin flex-between-start
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
 
 @mixin flex-between-start($dir: row) {
     @include f.f-prop($dir, space-between, start);
 }
 
+// ? @mixin flex-between-end
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
+
 @mixin flex-between-end($dir: row) {
     @include f.f-prop($dir, space-between, end);
 }
+
+// ? @mixin flex-between-fstart
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
 
 @mixin flex-between-fstart($dir: row) {
     @include f.f-prop($dir, space-between, flex-start);
 }
 
+// ? @mixin flex-between-fend
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
+
 @mixin flex-between-fend($dir: row) {
     @include f.f-prop($dir, space-between, flex-end);
 }
+
+// ? @mixin flex-between-center
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
 
 @mixin flex-between-center($dir: row) {
     @include f.f-prop($dir, space-between, center);
 }
 
+// ? @mixin flex-between-baseline
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
+
 @mixin flex-between-baseline($dir: row) {
     @include f.f-prop($dir, space-between, baseline);
 }
+
+// ? @mixin flex-between-inh
+// ? @param {String} $dir - The flex direction. Default: row.
+// ? @group Flex Between Mixins
 
 @mixin flex-between-inh($dir: row) {
     @include f.f-prop($dir, space-between, inherit);
