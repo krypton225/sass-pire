@@ -43,7 +43,7 @@
 
 // ? @mixin flex-fstart-normal
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-normal($dir: row) {
     @include f.f-prop($dir, flex-start, normal);
@@ -51,7 +51,7 @@
 
 // ? @mixin flex-fstart-stretch
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-stretch($dir: row) {
     @include f.f-prop($dir, flex-start, stretch);
@@ -59,7 +59,7 @@
 
 // ? @mixin flex-fstart-start
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-start($dir: row) {
     @include f.f-prop($dir, flex-start, start);
@@ -67,7 +67,7 @@
 
 // ? @mixin flex-fstart-end
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-end($dir: row) {
     @include f.f-prop($dir, flex-start, end);
@@ -75,7 +75,7 @@
 
 // ? @mixin flex-fstart-fstart
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-fstart($dir: row) {
     @include f.f-prop($dir, flex-start, flex-start);
@@ -83,7 +83,7 @@
 
 // ? @mixin flex-fstart-fend
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-fend($dir: row) {
     @include f.f-prop($dir, flex-start, flex-end);
@@ -91,7 +91,7 @@
 
 // ? @mixin flex-fstart-center
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-center($dir: row) {
     @include f.f-prop($dir, flex-start, center);
@@ -99,7 +99,7 @@
 
 // ? @mixin flex-fstart-baseline
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-baseline($dir: row) {
     @include f.f-prop($dir, flex-start, baseline);
@@ -107,7 +107,7 @@
 
 // ? @mixin flex-fstart-inh
 // ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fstart
+// ? @group flex-mixins-fstart
 
 @mixin flex-fstart-inh($dir: row) {
     @include f.f-prop($dir, flex-start, inherit);
