@@ -1,3 +1,32 @@
+// ? Flex Basis Mixin
+// * This mixin provides a convenient way to set the `flex-basis` property
+// * with vendor prefixes for better cross-browser compatibility.
+
+// ? @group mixins/flex-props/main-props
+
+// ? @param {String|Number} $val - The value for the `flex-basis` property.
+// * Allowed values: max-content, min-content, fit-content, content, inherit, auto, or a numeric value.
+// * Default: auto.
+
+// ? @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+// * If a numeric value is provided, it must include a unit.
+
+// ? @example
+// * .example {
+// *   @include flex-basis(max-content);
+// * }
+
+// ? @Output:
+// * .example {
+// *   -webkit-flex-basis: max-content;
+// *   -ms-flex-basis: max-content;
+// *   -ms-flex-preferred-size: max-content;
+// *   -moz-flex-basis: max-content;
+// *   -moz-box-sizing: max-content;
+// *   -o-flex-basis: max-content;
+// *   flex-basis: max-content;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
