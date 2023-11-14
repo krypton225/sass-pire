@@ -55,39 +55,6 @@ $main-units: (#{"%"}, rem, px, em) !default;
 $time-units: (ms, s) !default;
 
 // * Flexbox
-$flex-prefixes-values: (-webkit-box, -moz-box, -ms-flexbox, -webkit-flex, flex) !default;
-
-$inline-flex-prefixes-values: (
-    -webkit-inline-box,
-    -webkit-inline-flex,
-    -ms-inline-flexbox,
-    -moz-inline-box,
-    inline-flex
-) !default;
-
-$justify-content-props: (
-    -webkit-box-pack,
-    -webkit-justify-content,
-    -ms-flex-pack,
-    -moz-justify-content,
-    justify-content
-) !default;
-
-$justify-content-values: (
-    normal,
-    stretch,
-    start,
-    end,
-    right,
-    left,
-    flex-start,
-    flex-end,
-    center,
-    space-between,
-    space-around,
-    space-evenly,
-    inherit
-) !default;
 
 $flex-direction-props: (
     -webkit-box-orient,
@@ -106,17 +73,6 @@ $flex-direction-column-reverse-values: (vertical, reverse, column-reverse, colum
 $flex-direction-row-values: (horizontal, normal, row, row) !default;
 
 $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-reverse) !default;
-
-$order-props: (
-    -webkit-box-ordinal-group,
-    -moz-box-ordinal-group,
-    -webkit-order,
-    -ms-flex-order,
-    -ms-order,
-    -moz-order,
-    -o-order,
-    order
-) !default;
 
 $fade-values: (hide, show, yes, no) !default;
 
