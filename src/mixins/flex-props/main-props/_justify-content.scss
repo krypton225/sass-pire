@@ -14,9 +14,11 @@
 
 // ? @output:
 // * .example {
-// *   -webkit-justify-content: center;
-// *   -ms-flex-pack: center;
-// *   justify-content: center;
+// *   -webkit-box-pack: start;
+// *   -webkit-justify-content: start;
+// *   -ms-flex-pack: start;
+// *   -moz-justify-content: start;
+// *   justify-content: start;
 // * }
 
 @charset "UTF-8";
