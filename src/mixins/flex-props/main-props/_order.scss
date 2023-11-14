@@ -26,17 +26,27 @@
 // * }
 
 @charset "UTF-8";
-@use "../../../abstract/variables" as var;
 @use "../../../functions/global/cut-unit" as func;
 
 @mixin order($val) {
+    $order-props: (
+        -webkit-box-ordinal-group,
+        -moz-box-ordinal-group,
+        -webkit-order,
+        -ms-flex-order,
+        -ms-order,
+        -moz-order,
+        -o-order,
+        order
+    ) !default;
+
     @if type-of($val) != number {
         @error "The value of order mixin argument must be of type number.";
     }
 
     $actual-val: func.cut-unit($val);
 
-    @each $prop in var.$order-props {
+    @each $prop in $order-props {
         #{$prop}: $actual-val;
     }
 }
