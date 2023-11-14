@@ -56,14 +56,6 @@ $time-units: (ms, s) !default;
 
 // * Flexbox
 
-$inline-flex-prefixes-values: (
-    -webkit-inline-box,
-    -webkit-inline-flex,
-    -ms-inline-flexbox,
-    -moz-inline-box,
-    inline-flex
-) !default;
-
 $justify-content-props: (
     -webkit-box-pack,
     -webkit-justify-content,

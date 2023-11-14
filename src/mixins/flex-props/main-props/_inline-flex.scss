@@ -21,10 +21,17 @@
 // * }
 
 @charset "UTF-8";
-@use "../../../abstract/variables" as var;
 
 @mixin d-inflex() {
-    @each $inflex-val in var.$inline-flex-prefixes-values {
+    $inline-flex-prefixes-values: (
+        -webkit-inline-box,
+        -webkit-inline-flex,
+        -ms-inline-flexbox,
+        -moz-inline-box,
+        inline-flex
+    ) !default;
+
+    @each $inflex-val in $inline-flex-prefixes-values {
         display: $inflex-val;
     }
 }
