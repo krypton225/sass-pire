@@ -1,6 +1,5 @@
 @charset "UTF-8";
 @use "sass:list";
-@use "../../abstract/variables" as var;
 @use "../../functions/global/is-in-list" as func;
 
 // * @param: {String} $type - The type of query you want (min | max).
@@ -10,9 +9,34 @@
 // * @return: Nothing.
 
 @mixin mq($type: min, $dimension: w, $breakpoint-name: md) {
-    @if func.is-in-list(var.$main-mq-types, $type) and func.is-in-list(var.$main-dimensions, $dimension) {
-        @if map-has-key(var.$breakpoints, $breakpoint-name) {
-            $actual-dimension: map_get(var.$breakpoints, $breakpoint-name);
+    $main-mq-types: (min, max) !default;
+    $main-dimensions: (width, w, height, h) !default;
+
+    // stylelint-disable-next-line scss/dollar-variable-empty-line-before
+    $breakpoints: (
+        "mob-min": 320px,
+        "mob": 400px,
+        "mob-wide": 480px,
+        "xs": 576px,
+        "sm-tab": 640px,
+        "sm": 767px,
+        "sm-wide": 870px,
+        "sm-max": 930px,
+        "md": 991px,
+        "md-max": 1150px,
+        "lg": 1200px,
+        "lg-max": 1300px,
+        "xl": 1400px,
+        "xl-max": 1550px,
+        "xl-2": 1900px,
+        "xl-3": 2400px,
+        "xl-4": 2800px,
+        "xxl": 3000px
+    ) !default;
+
+    @if func.is-in-list($main-mq-types, $type) and func.is-in-list($main-dimensions, $dimension) {
+        @if map-has-key($breakpoints, $breakpoint-name) {
+            $actual-dimension: map_get($breakpoints, $breakpoint-name);
 
             @if $type == max {
                 $actual-dimension: $actual-dimension - 1px;
@@ -28,7 +52,7 @@
                 }
             }
         } @else {
-            @error "Please, Enter the valid breakpoint. #{$breakpoint-name} dose not exist in (#{var.$breakpoints})";
+            @error "Please, Enter the valid breakpoint. #{$breakpoint-name} dose not exist in (#{$breakpoints})";
         }
     }
 }

@@ -82,31 +82,6 @@ $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) 
 
 $box-shadow-values: (inherit, initial, revert, revert-layer, unset, none) !default;
 
-$main-dimensions: (width, w, height, h) !default;
-
-$main-mq-types: (min, max) !default;
-
-$breakpoints: (
-    "mob-min": 320px,
-    "mob": 400px,
-    "mob-wide": 480px,
-    "xs": 576px,
-    "sm-tab": 640px,
-    "sm": 767px,
-    "sm-wide": 870px,
-    "sm-max": 930px,
-    "md": 991px,
-    "md-max": 1150px,
-    "lg": 1200px,
-    "lg-max": 1300px,
-    "xl": 1400px,
-    "xl-max": 1550px,
-    "xl-2": 1900px,
-    "xl-3": 2400px,
-    "xl-4": 2800px,
-    "xxl": 3000px
-) !default;
-
 $backdrop-props: (-webkit-backdrop-filter, backdrop-filter) !default;
 
 $backdrop-global-values: (inherit, initial, revert, revert-layer, unset, none) !default;
