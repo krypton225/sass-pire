@@ -1,10 +1,11 @@
 @charset "UTF-8";
 @use "sass:list";
-@use "../../abstract/variables" as var;
 @use "../../functions/global/is-in-list" as func;
 
 @mixin fade($type) {
-    @if func.is-in-list(var.$fade-values, $type) {
+    $fade-values: (hide, show, yes, no) !default;
+
+    @if func.is-in-list($fade-values, $type) {
         @if $type == "hide" or $type == "no" {
             visibility: hidden;
             opacity: 0;
