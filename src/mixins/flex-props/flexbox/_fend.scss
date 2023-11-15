@@ -1,18 +1,18 @@
-// ? Flex Flex-End Mixins
+// * Flex Flex-End Mixins
 // * These mixins provide a convenient way to apply flexbox properties with the 'flex-end' value
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to flex-end, and align items to a specific value.
 
-// ? @module flex-mixins
+// @module flex-mixins
 
-// ? @group flex-mixins-fend
+// @group flex-mixins-fend
 
-// ? @example
+// @example
 // * .example {
 // *   @include flex-fend-normal(row);
 // * }
 
-// ? @output
+// @output
 // * .example {
 // *   display: -webkit-box;
 // *   display: -moz-box;
@@ -41,73 +41,73 @@
 @charset "UTF-8";
 @use "../main-props/flex-prop" as f;
 
-// ? @mixin flex-fend-normal
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-normal
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-normal($dir: row) {
     @include f.f-prop($dir, flex-end, normal);
 }
 
-// ? @mixin flex-fend-stretch
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-stretch
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-stretch($dir: row) {
     @include f.f-prop($dir, flex-end, stretch);
 }
 
-// ? @mixin flex-fend-start
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-start
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-start($dir: row) {
     @include f.f-prop($dir, flex-end, start);
 }
 
-// ? @mixin flex-fend-end
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-end
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-end($dir: row) {
     @include f.f-prop($dir, flex-end, end);
 }
 
-// ? @mixin flex-fend-fstart
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-fstart
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-fstart($dir: row) {
     @include f.f-prop($dir, flex-end, flex-start);
 }
 
-// ? @mixin flex-fend-fend
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-fend
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-fend($dir: row) {
     @include f.f-prop($dir, flex-end, flex-end);
 }
 
-// ? @mixin flex-fend-center
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-center
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-center($dir: row) {
     @include f.f-prop($dir, flex-end, center);
 }
 
-// ? @mixin flex-fend-baseline
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-baseline
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-baseline($dir: row) {
     @include f.f-prop($dir, flex-end, baseline);
 }
 
-// ? @mixin flex-fend-inh
-// ? @param {String} $dir - The flex direction. Default: row.
-// ? @group Flex flex-mixins-fend
+// @mixin flex-fend-inh
+// @param {String} $dir - The flex direction. Default: row.
+// @group Flex flex-mixins-fend
 
 @mixin flex-fend-inh($dir: row) {
     @include f.f-prop($dir, flex-end, inherit);
