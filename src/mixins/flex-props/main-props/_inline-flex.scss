@@ -1,12 +1,37 @@
-@charset "UTF-8";
-@use "../../../abstract/variables" as var;
+// ? Display Inline-Flex Mixin
+// * This mixin sets the `display` property to inline-flex with vendor prefixes,
+// * providing a convenient way to apply inline-flex styles.
 
-// * @param: null.
-// * @return: Nothing.
-// * @output: Properties of display inline-flex with its vendor prefixes.
+// ? @group mixins/flex-props/main-props
+
+// ? @param {null} - No parameters are required for this mixin.
+
+// ? @example
+// * .example {
+// *   @include d-inflex;
+// * }
+
+// ? @output:
+// * .example {
+// *   display: -webkit-inline-box;
+// *   display: -moz-inline-box;
+// *   display: -ms-inline-flexbox;
+// *   display: -webkit-inline-flex;
+// *   display: inline-flex;
+// * }
+
+@charset "UTF-8";
 
 @mixin d-inflex() {
-    @each $inflex-val in var.$inline-flex-prefixes-values {
+    $inline-flex-prefixes-values: (
+        -webkit-inline-box,
+        -webkit-inline-flex,
+        -ms-inline-flexbox,
+        -moz-inline-box,
+        inline-flex
+    ) !default;
+
+    @each $inflex-val in $inline-flex-prefixes-values {
         display: $inflex-val;
     }
 }

@@ -1,3 +1,28 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
+// ? Flex Wrap Mixin
+// * This mixin provides a convenient way to set the `flex-wrap` property
+// * with vendor prefixes for better cross-browser compatibility.
+
+// ? @group mixins/flex-props/main-props
+
+// ? @param {String} $val - The value for the `flex-wrap` property.
+// * Allowed values: nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit.
+// * Default: nowrap.
+
+// ? @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+
+// ? @example
+// * .example {
+// *   @include flex-wrap(wrap);
+// * }
+
+// ? @output:
+// * .example {
+// *   -webkit-flex-wrap: wrap;
+// *   -ms-flex-wrap: wrap;
+// *   flex-wrap: wrap;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
@@ -7,15 +32,23 @@
 @mixin flex-wrap($val: nowrap) {
     $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
 
-    @if func.is-in-list($flex-wrap-values, $val) {
-        @if $val == "" or $val == no or $val == nowrap {
-            @include pref.prefixing-ms(flex-wrap, nowrap);
-        } @else if $val == wrap or $val == w or $val == yes {
-            @include pref.prefixing-ms(flex-wrap, wrap);
-        } @else if $val == wrap-reverse or $val == wrap-rev or $val == w-rev {
-            @include pref.prefixing-ms(flex-wrap, wrap-reverse);
-        } @else {
-            @include pref.prefixing-ms(flex-wrap, $val);
-        }
+    $flex-wrap-map: (
+        nowrap: nowrap,
+        "": nowrap,
+        no: nowrap,
+        wrap: wrap,
+        yes: wrap,
+        w: wrap,
+        wrap-reverse: wrap-reverse,
+        wrap-rev: wrap-reverse,
+        w-rev: wrap-reverse,
+        inherit: inherit
+    ) !default;
+
+    @if func.is-in-list(map-keys($flex-wrap-map), $val) {
+        // stylelint-disable-next-line scss/no-global-function-names
+        $flex-wrap-value: map-get($flex-wrap-map, $val);
+
+        @include pref.prefixing-ms(flex-wrap, $flex-wrap-value);
     }
 }

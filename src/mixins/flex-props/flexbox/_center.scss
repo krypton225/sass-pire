@@ -1,43 +1,113 @@
+// * Flex Center Mixins
+// * These mixins provide a convenient way to apply flexbox properties with the 'center' value
+// * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
+// * allowing you to easily set display to flex, justify content to center, and align items to a specific value.
+
+// @module flex-mixins
+
+// @group flex-mixins-center
+
+// @example
+// * .example {
+// *   @include flex-center-normal(row);
+// * }
+
+// @output
+// * .example {
+// *   display: -webkit-box;
+// *   display: -moz-box;
+// *   display: -ms-flexbox;
+// *   display: -webkit-flex;
+// *   display: flex;
+// *   -webkit-box-orient: horizontal;
+// *   -webkit-box-direction: normal;
+// *   -webkit-flex-direction: row;
+// *   -ms-flex-direction: row;
+// *   -moz-flex-direction: row;
+// *   -o-flex-direction: row;
+// *   flex-direction: row;
+// *   -webkit-box-pack: center;
+// *   -webkit-justify-content: center;
+// *   -ms-flex-pack: center;
+// *   -moz-justify-content: center;
+// *   justify-content: center;
+// *   -webkit-box-align: normal;
+// *   -webkit-align-items: normal;
+// *   -ms-flex-align: normal;
+// *   -moz-align-items: normal;
+// *   align-items: normal;
+// * }
+
 @charset "UTF-8";
 @use "../main-props/flex-prop" as f;
 
-// * These are useful mixin for using properties of flexbox in CSS.
-// * The pattern you follow: (flex)-(justify-content)-(align-items).
-// * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
-
-// * NOTE: This file for make mixins with justify content center.
+// @mixin flex-center-normal
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
 
 @mixin flex-center-normal($dir: row) {
     @include f.f-prop($dir, center, normal);
 }
 
+// @mixin flex-center-stretch
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
+
 @mixin flex-center-stretch($dir: row) {
     @include f.f-prop($dir, center, stretch);
 }
+
+// @mixin flex-center-start
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
 
 @mixin flex-center-start($dir: row) {
     @include f.f-prop($dir, center, start);
 }
 
+// @mixin flex-center-end
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
+
 @mixin flex-center-end($dir: row) {
     @include f.f-prop($dir, center, end);
 }
+
+// @mixin flex-center-fstart
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
 
 @mixin flex-center-fstart($dir: row) {
     @include f.f-prop($dir, center, flex-start);
 }
 
+// @mixin flex-center-fend
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
+
 @mixin flex-center-fend($dir: row) {
     @include f.f-prop($dir, center, flex-end);
 }
+
+// @mixin flex-center-center
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
 
 @mixin flex-center-center($dir: row) {
     @include f.f-prop($dir, center, center);
 }
 
+// @mixin flex-center-baseline
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
+
 @mixin flex-center-baseline($dir: row) {
     @include f.f-prop($dir, center, baseline);
 }
+
+// @mixin flex-center-inh
+// @param {String} $dir - The flex direction. Default: row.
+// @group flex-mixins-center
 
 @mixin flex-center-inh($dir: row) {
     @include f.f-prop($dir, center, inherit);

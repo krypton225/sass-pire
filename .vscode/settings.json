@@ -22,11 +22,9 @@
         "gitignore",
         "vscode-settings",
         "npm-new-package",
-<<<<<<< HEAD
         "scripts",
-        "tests"
-=======
-        "enhance"
->>>>>>> enhance
+        "tests",
+        "enhance",
+        "docs"
     ]
 }

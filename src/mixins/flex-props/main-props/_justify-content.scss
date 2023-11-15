@@ -1,11 +1,58 @@
+// ? Justify Content Mixin
+// * This mixin applies the `justify-content` property with vendor prefixes to a container.
+// * It allows you to set the horizontal alignment of flex items along the main axis.
+
+// ? @group mixins/flex-props/main-props
+
+// ? @param {String} $value - The value for `justify-content`. Default: flex-start.
+// * Allowed values: flex-start, flex-end, center, space-between, space-around, space-evenly.
+
+// ? @example
+// * .example {
+// *   @include justify-content(center);
+// * }
+
+// ? @output:
+// * .example {
+// *   -webkit-box-pack: start;
+// *   -webkit-justify-content: start;
+// *   -ms-flex-pack: start;
+// *   -moz-justify-content: start;
+// *   justify-content: start;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
-@use "../../../abstract/variables" as var;
 @use "../../../functions/global/is-in-list" as func;
 
 @mixin justify-content($value: flex-start) {
-    @if func.is-in-list(var.$justify-content-values, $value) {
-        @each $prop in var.$justify-content-props {
+    $justify-content-props: (
+        -webkit-box-pack,
+        -webkit-justify-content,
+        -ms-flex-pack,
+        -moz-justify-content,
+        justify-content
+    ) !default;
+
+    // stylelint-disable-next-line scss/dollar-variable-empty-line-before
+    $justify-content-values: (
+        normal,
+        stretch,
+        start,
+        end,
+        right,
+        left,
+        flex-start,
+        flex-end,
+        center,
+        space-between,
+        space-around,
+        space-evenly,
+        inherit
+    ) !default;
+
+    @if func.is-in-list($justify-content-values, $value) {
+        @each $prop in $justify-content-props {
             #{$prop}: $value;
         }
     }

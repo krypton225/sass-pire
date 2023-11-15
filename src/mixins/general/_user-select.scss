@@ -1,15 +1,19 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
 @charset "UTF-8";
 @use "sass:list";
-@use "../../abstract/variables" as var;
 @use "../../functions/global/is-in-list" as func;
 
 @mixin u-select($val) {
+    $user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, user-select) !default;
+
+    $user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
+
     @if type-of($val) != string {
         @error "You must pass a value to u-select mixin in string type.";
     }
 
-    @if func.is-in-list(var.$user-select-values, $val) {
-        @each $prop in var.$user-select-props {
+    @if func.is-in-list($user-select-values, $val) {
+        @each $prop in $user-select-props {
             #{$prop}: $val;
         }
     }

@@ -1,8 +1,31 @@
+// ? Display Flex Mixin
+// * This mixin provides a convenient way to set the `display` property to a flex value
+// * using the specified vendor prefixes for better cross-browser compatibility.
+
+// ? @group mixins/flex-props/main-props
+
+// ? @throws {Error} Throws an error if the $flex-prefixes-values variable is not defined in the "var" abstract.
+
+// ? @example
+// * .example {
+// *   @include d-flex;
+// * }
+
+// ? @output:
+// * .example {
+// *   display: -webkit-box;
+// *   display: -moz-box;
+// *   display: -ms-flexbox;
+// *   display: -webkit-flex;
+// *   display: flex;
+// * }
+
 @charset "UTF-8";
-@use "../../../abstract/variables" as var;
 
 @mixin d-flex() {
-    @each $flex-val in var.$flex-prefixes-values {
+    $flex-prefixes-values: (-webkit-box, -moz-box, -ms-flexbox, -webkit-flex, flex) !default;
+
+    @each $flex-val in $flex-prefixes-values {
         display: $flex-val;
     }
 }
