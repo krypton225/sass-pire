@@ -1,3 +1,4 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
@@ -7,6 +8,8 @@
 // stylelint-disable indentation
 
 @mixin shadow($val...) {
+    $box-shadow-values: (inherit, initial, revert, revert-layer, unset, none) !default;
+
     $actual-value-box-shadow: ();
 
     @if list.length($val) == 0 {
@@ -18,8 +21,8 @@
 
             @if list.length($one-list) == 1 {
                 @if type-of($first-item-val) == string {
-                    @if not index(var.$box-shadow-values, $first-item-val) {
-                        @error "The value of box shadow must has one of these values: (#{var.$box-shadow-values})";
+                    @if not index($box-shadow-values, $first-item-val) {
+                        @error "The value of box shadow must has one of these values: (#{$box-shadow-values})";
                     }
 
                     $actual-value-box-shadow: list.append($actual-value-box-shadow, $first-item-val, $separator: comma);
