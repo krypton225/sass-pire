@@ -128,10 +128,6 @@ $backdrop-functions: (
     saturate
 ) !default;
 
-$user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, user-select) !default;
-
-$user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
-
 // * Grid
 $grid-prefixes-values: (-ms-grid, grid) !default;
 
