@@ -78,23 +78,6 @@ $transform-props-values: (inherit, initial, revert, unset, none) !default;
 
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) !default;
 
-$backdrop-props: (-webkit-backdrop-filter, backdrop-filter) !default;
-
-$backdrop-global-values: (inherit, initial, revert, revert-layer, unset, none) !default;
-
-$backdrop-functions: (
-    blur,
-    brightness,
-    contrast,
-    drop-shadow,
-    grayscale,
-    hue-rotate,
-    invert,
-    opacity,
-    sepia,
-    saturate
-) !default;
-
 // * Grid
 $grid-prefixes-values: (-ms-grid, grid) !default;
 
