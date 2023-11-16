@@ -74,21 +74,6 @@ $flex-direction-row-values: (horizontal, normal, row, row) !default;
 
 $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-reverse) !default;
 
-$order-props: (
-    -webkit-box-ordinal-group,
-    -moz-box-ordinal-group,
-    -webkit-order,
-    -ms-flex-order,
-    -ms-order,
-    -moz-order,
-    -o-order,
-    order
-) !default;
-
-$fade-values: (hide, show, yes, no) !default;
-
-$transform-props-values: (inherit, initial, revert, unset, none) !default;
-
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) !default;
 
 // * Grid

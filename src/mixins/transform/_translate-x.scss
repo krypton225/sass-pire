@@ -5,6 +5,8 @@
 @use "../../abstract" as var;
 
 @mixin translate-x($x: 1px) {
+    $transform-props-values: (inherit, initial, revert, unset, none) !default;
+
     @if type-of($x) == number {
         @if not index(var.$main-units, math.unit($x)) {
             @error "$x must has one of these units: (#{var.$main-units})";
