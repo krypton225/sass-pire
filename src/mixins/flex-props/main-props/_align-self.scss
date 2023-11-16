@@ -1,22 +1,24 @@
-// ? Align Self Mixin
+// * Align Self Mixin
 // * This mixin provides a convenient way to set the `align-self` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// ? @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
 
-// ? @param {String} $val - The value for the `align-self` property.
+// @group align-self
+
+// @param {String} $val - The value for the `align-self` property.
 // * Allowed values: auto, normal, stretch, start, end, self-start, self-end, center,
 // * flex-start, flex-end, baseline, inherit.
 // * Default: auto.
 
-// ? @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+// @throws {Error} Throws an error if the provided $val is not one of the allowed values.
 
-// ? @example
+// @example
 // * .example {
 // *   @include align-self(center);
 // * }
 
-// ? @output:
+// @output:
 // * .example {
 // *   -webkit-align-self: center;
 // *   -ms-grid-row-align: center;

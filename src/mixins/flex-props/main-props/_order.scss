@@ -1,19 +1,21 @@
-// ? Order Mixin
+// * Order Mixin
 // * This mixin applies the `order` property with vendor prefixes to reorder flex items.
 // * It allows you to control the visual order of flex items within their flex container.
 
-// ? @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
 
-// ? @param {Number} $val - The order value. Must be a number.
+// @group order
 
-// ? @throws Throws an error if the provided value is not a number.
+// @param {Number} $val - The order value. Must be a number.
 
-// ? @example
+// @throws Throws an error if the provided value is not a number.
+
+// @example
 // * .example {
 // *   @include order(2);
 // * }
 
-// ? @output:
+// @output:
 // * .example {
 // *   -webkit-box-ordinal-group: 2;
 // *   -moz-box-ordinal-group: 2;

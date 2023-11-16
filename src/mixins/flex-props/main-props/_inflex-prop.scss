@@ -1,19 +1,21 @@
-// ? Inline-Flex Property Mixin
+// * Inline-Flex Property Mixin
 // * This mixin combines several inline-flex properties, providing a convenient way to set
 // * the display, flex-direction, justify-content, and align-items properties at once.
 
-// ? @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
 
-// ? @param {String} $f-dir - The flex-direction value. Default: row.
-// ? @param {String} $justify-content-val - The justify-content value. Default: flex-start.
-// ? @param {String} $align-items-val - The align-items value. Default: normal.
+// @group inflex-prop
 
-// ? @example
+// @param {String} $f-dir - The flex-direction value. Default: row.
+// @param {String} $justify-content-val - The justify-content value. Default: flex-start.
+// @param {String} $align-items-val - The align-items value. Default: normal.
+
+// @example
 // * .example {
 // *   @include inflex-prop(row, space-between, center);
 // * }
 
-// ? @output:
+// @output:
 // * .example {
 // *   display: -webkit-inline-box;
 // *   display: -webkit-inline-flex;

@@ -1,21 +1,23 @@
-// ? Flex Shrink Mixin
+// * Flex Shrink Mixin
 // * This mixin provides a convenient way to set the `flex-shrink` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// ? @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
 
-// ? @param {String|Number} $val - The value for the `flex-shrink` property.
+// @group flex-shrink
+
+// @param {String|Number} $val - The value for the `flex-shrink` property.
 // * Allowed values: initial, inherit, or a non-negative number.
 // * Default: initial.
 
-// ? @throws {Error} Throws an error if the provided $val is not one of the allowed values or if it's a negative number.
+// @throws {Error} Throws an error if the provided $val is not one of the allowed values or if it's a negative number.
 
-// ? @example
+// @example
 // * .example {
 // *     @include flex-shrink(2);
 // * }
 
-// ? @output:
+// @output:
 // * .example {
 // *   -webkit-flex-shrink: 2;
 // *   -ms-flex-negative: 2;
