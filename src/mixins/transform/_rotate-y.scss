@@ -5,13 +5,15 @@
 @use "../../abstract" as var;
 
 @mixin rotate-y($angle: 0deg) {
+    $transform-props-values: (inherit, initial, revert, unset, none) !default;
+
     @if type-of($angle) == number {
         @if not index(var.$angle-units, math.unit($angle)) {
             @error "$angle must has one of these units: (#{var.$angle-units})";
         }
     } @else if type-of($angle) == string {
-        @if not index(var.$transform-props-values, $angle) {
-            @error "The value of transform property with rotate value must has one of these: (#{var.$transform-props-values})";
+        @if not index($transform-props-values, $angle) {
+            @error "The value of transform property with rotate value must has one of these: (#{$transform-props-values})";
         }
     } @else {
         @error "The value of rotate in transform property must be in number or string type.";
