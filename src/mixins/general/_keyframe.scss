@@ -1,6 +1,62 @@
-@charset "UTF-8";
+// * keyframe mixin
+// * Generate keyframes with vendor prefixes.
+
+// @module general
+
+// @group general-keyframe
+
+// @param {String} $name - The name of the keyframes.
+
+// @example
+// *  @include keyframe(animation-name) {
+// *    0% { opacity: 0; }
+// *    100% { opacity: 1; }
+// *  }
+
+// @output
+// * @-webkit-keyframes animation-name {
+// *   0% {
+// *    opacity: 0;
+// *   }
+// *   100% {
+// *    opacity: 1;
+// *   }
+// * }
+// * @-moz-keyframes animation-name {
+// *   0% {
+// *    opacity: 0;
+// *   }
+// *   100% {
+// *    opacity: 1;
+// *   }
+// * }
+// * @-ms-keyframes animation-name {
+// *   0% {
+// *    opacity: 0;
+// *   }
+// *   100% {
+// *    opacity: 1;
+// *   }
+// * }
+// * @-o-keyframes animation-name {
+// *   0% {
+// *    opacity: 0;
+// *   }
+// *   100% {
+// *    opacity: 1;
+// *   }
+// * }
+// * @keyframes animation-name {
+// *   0% {
+// *    opacity: 0;
+// *   }
+// *   100% {
+// *    opacity: 1;
+// *   }
+// * }
 
 // stylelint-disable at-rule-no-vendor-prefix
+@charset "UTF-8";
 
 @mixin keyframe($name) {
     @if type-of($name) != string {
