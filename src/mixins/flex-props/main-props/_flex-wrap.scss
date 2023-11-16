@@ -1,3 +1,4 @@
+// stylelint-disable scss/dollar-variable-empty-line-before
 // ? Flex Wrap Mixin
 // * This mixin provides a convenient way to set the `flex-wrap` property
 // * with vendor prefixes for better cross-browser compatibility.
@@ -29,6 +30,8 @@
 @use "../../../functions/global/is-in-list" as func;
 
 @mixin flex-wrap($val: nowrap) {
+    $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
+
     $flex-wrap-map: (
         nowrap: nowrap,
         "": nowrap,
