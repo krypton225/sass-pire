@@ -1,21 +1,21 @@
-// ? Flex Direction Mixin
+// * Flex Direction Mixin
 // * This mixin provides a convenient way to set the `flex-direction` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// ? @group mixins/flex-props/main-props
+// @group mixins/flex-props/main-props
 
-// ? @param {String} $value - The value for the `flex-direction` property.
+// @param {String} $value - The value for the `flex-direction` property.
 // * Allowed values: row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev.
 // * Default: row.
 
-// ? @throws {Error} Throws an error if the provided $value is not one of the allowed values.
+// @throws {Error} Throws an error if the provided $value is not one of the allowed values.
 
-// ? @example
+// @example
 // * .example {
 // *   @include flex-dir(column);
 // * }
 
-// ? @output:
+// @output:
 // * .example {
 // *   -webkit-box-orient: vertical;
 // *   -webkit-box-direction: normal;
