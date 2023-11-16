@@ -1,6 +1,33 @@
-@charset "UTF-8";
+// * select mixin
+// * Apply custom selection styles to the browser's selection highlight.
+
+// @module general
+
+// @group general-select
+
+// @param {String|Color} $bg-color - The background color of the selection.
+// * If a string, it should represent a CSS variable.
+
+// @param {String|Color} $text-color - The text color of the selection.
+// * If a string, it should represent a CSS variable.
+
+// @example
+// * .example {
+// *   @include select(#3498db, #ffffff);
+// * }
+
+// @output
+// * .example::-moz-selection {
+// *   background-color: #3498db;
+// *   color: #ffffff;
+// * }
+// * .example::selection {
+// *   background-color: #3498db;
+// *   color: #ffffff;
+// * }
 
 // stylelint-disable selector-no-vendor-prefix
+@charset "UTF-8";
 
 @mixin select($bg-color, $text-color) {
     @if type-of($bg-color) == string {

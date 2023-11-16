@@ -1,3 +1,52 @@
+// * scrolling mixin
+// * Customize the styling of the scrollbar in the browser.
+
+// @module general
+
+// @group general-scrolling
+
+// @param {Number} $widthScrollbar - Width of the scrollbar in rem units.
+// @param {Number} $borderRadiusScrollbar - Border radius of the scrollbar in rem units.
+// @param {Color} $bgColorScrollbar - Background color of the scrollbar.
+// @param {Color} $bgColorThumb - Background color of the scroll thumb.
+// @param {Number} $borderRadiusThumb - Border radius of the scroll thumb in rem units.
+// @param {Color} $bgColorTrack - Background color of the scroll track.
+// @param {Boolean} $bxShadow - Whether to include a box shadow on the scrollbar track.
+
+// @example
+// * Use this mixin with a free in the abstract or base file. See example.
+// *   @include scrolling(
+// *     $widthScrollbar: 0.3,
+// *     $borderRadiusScrollbar: 0.2,
+// *     $bgColorScrollbar: #f0f0f0,
+// *     $bgColorThumb: #333333,
+// *     $borderRadiusThumb: 0.2,
+// *     $bgColorTrack: #e0e0e0,
+// *     $bxShadow: false
+// *   );
+// * }
+
+// @output
+// * body {
+// *   overflow-x: hidden;
+// * }
+
+// * body::-webkit-scrollbar {
+// *   width: 0.3rem;
+// *   border-radius: 0.2rem;
+// *   background-color: #f0f0f0;
+// * }
+
+// * body::-webkit-scrollbar-track {
+// *   box-shadow: none;
+// *   background-color: #e0e0e0;
+// * }
+
+// * body::-webkit-scrollbar-thumb {
+// *   background-color: #333333;
+// *   border-radius: 0.2rem;
+// * }
+
 @charset "UTF-8";
 
 @mixin scrolling(

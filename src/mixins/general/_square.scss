@@ -1,3 +1,23 @@
+// * square mixin
+// * Create a square shape with equal width and height.
+
+// @module general
+
+// @group general-square
+
+// @param {Number} $one-side - The length of one side of the square.
+
+// @example
+// * .example {
+// *   @include square(50px);
+// * }
+
+// @output
+// * .example {
+// *   width: 50px;
+// *   height: 50px;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
