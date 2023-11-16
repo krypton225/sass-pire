@@ -1,12 +1,33 @@
+// @mixin mq
+// * Generate a media query with specified type, dimension, and breakpoint.
+
+// @module general
+
+// @group general-mq
+
+// @param {String} $type - The type of query you want (min | max).
+// @param {String} $dimension - The dimension you want, which can be width, height, w, or h.
+// @param {String} $breakpoint-name - Specify the breakpoint name from the breakpoints map.
+
+// @example
+// * .example {
+// *   @include mq($type: max, $dimension: h, $breakpoint-name: lg) {
+// *     width: 100px;
+// *   }
+// * }
+
+// @output
+// * .example {
+// *   @media only screen and (max-height: 1199px) {
+// *   .example {
+// *     width: 100px;
+// *   }
+// *  }
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
-
-// * @param: {String} $type - The type of query you want (min | max).
-// * @param: {String} $dimension - The dimension you want. It will be width or height or (w, h).
-// * @param: {String} $breakpoint-name - Specify the breakpoint name from breakpoints map.
-// * @output: Media query with what you specified.
-// * @return: Nothing.
 
 @mixin mq($type: min, $dimension: w, $breakpoint-name: md) {
     $main-mq-types: (min, max) !default;
