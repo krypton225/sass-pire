@@ -1,15 +1,31 @@
+// * grid mixin
+// * Create a responsive grid layout with specified column width and gap.
+
+// @module general
+
+// @group general-grid
+
+// @param {Number} $min-col-size - Minimum width of one column in rem units.
+// @param {Number} $gap - Space between every column in both x-axis and y-axis in rem units.
+
+// @example
+// * .example {
+// *   @include grid($min-col-size: 6rem, $gap: 2rem);
+// * }
+
+// @output
+// * .example {
+// *   display: -ms-grid;
+// *   display: grid;
+// *   grid-template-columns: repeat(auto-fit, minmax(min(6rem, 100%), 1fr));
+// *   gap: 2rem;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../functions/global/is-in-list" as func;
 @use "../vendor-prefixes/prefix-val" as pref;
-
-// * This is just a mixin for using a grid to make a layout as responsive design.
-
-// * @param: {Number} $min-col-size - min width of the one column of the item.
-// * @param: {Number} $gap - the space between every column in both x-axis and y-axis.
-// * @return: Nothing.
-// * @output: Display grid with its specified column width with gapping.
 
 @mixin grid($min-col-size: 4rem, $gap: 1rem) {
     @if type-of($min-col-size) != number {
