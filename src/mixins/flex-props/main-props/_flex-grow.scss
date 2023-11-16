@@ -2,7 +2,9 @@
 // * This mixin provides a convenient way to set the `flex-grow` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
+
+// @group flex-grow
 
 // @param {Number} $val - The value for the `flex-grow` property. Must be a non-negative number.
 // * Default: 0.

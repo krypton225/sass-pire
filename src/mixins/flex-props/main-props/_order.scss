@@ -2,7 +2,9 @@
 // * This mixin applies the `order` property with vendor prefixes to reorder flex items.
 // * It allows you to control the visual order of flex items within their flex container.
 
-// @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
+
+// @group order
 
 // @param {Number} $val - The order value. Must be a number.
 

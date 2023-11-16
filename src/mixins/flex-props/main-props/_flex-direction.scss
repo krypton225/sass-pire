@@ -2,7 +2,9 @@
 // * This mixin provides a convenient way to set the `flex-direction` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
+
+// @group flex-dir
 
 // @param {String} $value - The value for the `flex-direction` property.
 // * Allowed values: row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev.

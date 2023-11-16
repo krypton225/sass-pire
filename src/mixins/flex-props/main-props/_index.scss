@@ -1,22 +1,22 @@
-// ? Flexbox Utilities
+// * Flexbox Utilities
 // * This SCSS module imports various mixins and utilities related to main flexbox properties
 // * to provide a convenient and modular way to manage flexbox layouts.
 
-// ? @group mixins/flex-props/main-props
+// @module mixins/flex-props/main-props
 
-// ? @requires flex - Import for basic flex utility mixins.
-// ? @requires inline-flex - Import for basic inline-flex utility mixins.
-// ? @requires flex-direction - Import for flex-direction utility mixins.
-// ? @requires justify-content - Import for justify-content utility mixins.
-// ? @requires align-items - Import for align-items utility mixins.
-// ? @requires align-self - Import for align-self utility mixins.
-// ? @requires flex-grow - Import for flex-grow utility mixins.
-// ? @requires flex-shrink - Import for flex-shrink utility mixins.
-// ? @requires flex-wrap - Import for flex-wrap utility mixins.
-// ? @requires flex-basis - Import for flex-basis utility mixins.
-// ? @requires flex-prop - Import for a combined flex property utility mixin.
-// ? @requires inflex-prop - Import for a combined inline-flex property utility mixin.
-// ? @requires order - Import for order utility mixins.
+// @requires flex - Import for basic flex utility mixins.
+// @requires inline-flex - Import for basic inline-flex utility mixins.
+// @requires flex-direction - Import for flex-direction utility mixins.
+// @requires justify-content - Import for justify-content utility mixins.
+// @requires align-items - Import for align-items utility mixins.
+// @requires align-self - Import for align-self utility mixins.
+// @requires flex-grow - Import for flex-grow utility mixins.
+// @requires flex-shrink - Import for flex-shrink utility mixins.
+// @requires flex-wrap - Import for flex-wrap utility mixins.
+// @requires flex-basis - Import for flex-basis utility mixins.
+// @requires flex-prop - Import for a combined flex property utility mixin.
+// @requires inflex-prop - Import for a combined inline-flex property utility mixin.
+// @requires order - Import for order utility mixins.
 
 @import "flex";
 @import "inline-flex";
