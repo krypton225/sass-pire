@@ -1,3 +1,33 @@
+// * Translate Mixin
+// * This mixin provides a convenient way to apply translation using the `transform` property
+// * with proper vendor prefixes. It supports both numerical values for translation distances
+// * and predefined keywords such as 'inherit', 'initial', 'revert', 'unset', and 'none'.
+// * If only one value is provided, it is applied to both x and y axes.
+
+// @module transform
+
+// @param {Number|String} $x - The horizontal translation distance. Default: 1px.
+// * If a number, it must have a valid unit from the main-units list.
+// * If a string, it can be one of: (inherit, initial, revert, unset, none).
+
+// @param {Number|String} $y - The vertical translation distance. Default: Same as $x.
+// * If a number, it must have a valid unit from the main-units list.
+// * If a string, it can be one of: (inherit, initial, revert, unset, none).
+
+// @example
+// * .example {
+// *   @include translate(20px);
+// * }
+
+// @output
+// * .example {
+// *   -webkit-transform: translate(20px, 20px);
+// *   -moz-transform: translate(20px, 20px);
+// *   -ms-transform: translate(20px, 20px);
+// *   -o-transform: translate(20px, 20px);
+// *   transform: translate(20px, 20px);
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
