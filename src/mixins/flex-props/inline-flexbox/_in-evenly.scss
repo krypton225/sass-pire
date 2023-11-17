@@ -1,43 +1,113 @@
+// * Inline Flex Even Mixins
+// * These mixins provide a convenient way to apply inline flexbox properties with the 'space-evenly' value
+// * for the 'justify-content' property. The pattern used is (inline-flex)-(justify-content)-(align-items),
+// * allowing you to easily set display to inline-flex, justify content to space-evenly, and align items to a specific value.
+
+// @module inline-flexbox
+
+// @group inline-flexbox-evenly
+
+// @example
+// * .example {
+// *   @include inflex-even-normal(row);
+// * }
+
+// @output
+// * .example {
+// *   display: -webkit-inline-box;
+// *   display: -webkit-inline-flex;
+// *   display: -ms-inline-flexbox;
+// *   display: -moz-inline-box;
+// *   display: inline-flex;
+// *   -webkit-box-orient: horizontal;
+// *   -webkit-box-direction: normal;
+// *   -webkit-flex-direction: row;
+// *   -ms-flex-direction: row;
+// *   -moz-flex-direction: row;
+// *   -o-flex-direction: row;
+// *   flex-direction: row;
+// *   -webkit-box-pack: space-evenly;
+// *   -webkit-justify-content: space-evenly;
+// *   -ms-flex-pack: space-evenly;
+// *   -moz-justify-content: space-evenly;
+// *   justify-content: space-evenly;
+// *   -webkit-box-align: normal;
+// *   -webkit-align-items: normal;
+// *   -ms-flex-align: normal;
+// *   -moz-align-items: normal;
+// *   align-items: normal;
+// * }
+
 @charset "UTF-8";
 @use "../main-props/inflex-prop" as f;
 
-// * These are useful mixin for using properties of inline flexbox in CSS.
-// * The pattern you follow: (inflex)-(justify-content)-(align-items).
-// * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
-
-// * NOTE: This file for make mixins with justify content space-evenly.
+// @mixin inflex-even-normal
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
 
 @mixin inflex-even-normal($dir: row) {
     @include f.inflex-prop($dir, space-evenly, normal);
 }
 
+// @mixin inflex-even-stretch
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
+
 @mixin inflex-even-stretch($dir: row) {
     @include f.inflex-prop($dir, space-evenly, stretch);
 }
+
+// @mixin inflex-even-start
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
 
 @mixin inflex-even-start($dir: row) {
     @include f.inflex-prop($dir, space-evenly, start);
 }
 
+// @mixin inflex-even-end
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
+
 @mixin inflex-even-end($dir: row) {
     @include f.inflex-prop($dir, space-evenly, end);
 }
+
+// @mixin inflex-even-fstart
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
 
 @mixin inflex-even-fstart($dir: row) {
     @include f.inflex-prop($dir, space-evenly, flex-start);
 }
 
+// @mixin inflex-even-fend
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
+
 @mixin inflex-even-fend($dir: row) {
     @include f.inflex-prop($dir, space-evenly, flex-end);
 }
+
+// @mixin inflex-even-center
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
 
 @mixin inflex-even-center($dir: row) {
     @include f.inflex-prop($dir, space-evenly, center);
 }
 
+// @mixin inflex-even-baseline
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
+
 @mixin inflex-even-baseline($dir: row) {
     @include f.inflex-prop($dir, space-evenly, baseline);
 }
+
+// @mixin inflex-even-inh
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-evenly
 
 @mixin inflex-even-inh($dir: row) {
     @include f.inflex-prop($dir, space-evenly, inherit);
