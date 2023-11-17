@@ -1,43 +1,114 @@
+// * Inline Flex Around Mixins
+// * These mixins provide a convenient way to apply inline flexbox properties with the 'space-around' value
+// * for the 'justify-content' property. The pattern used is (inline-flex)-(justify-content)-(align-items),
+// * allowing you to easily set display to inline-flex, justify content to space-around, and align items to a specific value.
+
+// @module inline-flexbox
+
+// @group inline-flexbox-around
+
+// @example
+// *   .example {
+// *     @include inflex-around-normal(row);
+// *   }
+// *
+
+// @output
+// * .example {
+// *   display: -webkit-inline-box;
+// *   display: -webkit-inline-flex;
+// *   display: -ms-inline-flexbox;
+// *   display: -moz-inline-box;
+// *   display: inline-flex;
+// *   -webkit-box-orient: horizontal;
+// *   -webkit-box-direction: normal;
+// *   -webkit-flex-direction: row;
+// *   -ms-flex-direction: row;
+// *   -moz-flex-direction: row;
+// *   -o-flex-direction: row;
+// *   flex-direction: row;
+// *   -webkit-box-pack: space-around;
+// *   -webkit-justify-content: space-around;
+// *   -ms-flex-pack: space-around;
+// *   -moz-justify-content: space-around;
+// *   justify-content: space-around;
+// *   -webkit-box-align: normal;
+// *   -webkit-align-items: normal;
+// *   -ms-flex-align: normal;
+// *   -moz-align-items: normal;
+// *   align-items: normal;
+// * }
+
 @charset "UTF-8";
 @use "../main-props/inflex-prop" as f;
 
-// * These are useful mixin for using properties of inline flexbox in CSS.
-// * The pattern you follow: (inflex)-(justify-content)-(align-items).
-// * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
-
-// * NOTE: This file for make mixins with justify content space-around.
+// @mixin inflex-around-normal
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
 
 @mixin inflex-around-normal($dir: row) {
     @include f.inflex-prop($dir, space-around, normal);
 }
 
+// @mixin inflex-around-stretch
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
+
 @mixin inflex-around-stretch($dir: row) {
     @include f.inflex-prop($dir, space-around, stretch);
 }
+
+// @mixin inflex-around-start
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
 
 @mixin inflex-around-start($dir: row) {
     @include f.inflex-prop($dir, space-around, start);
 }
 
+// @mixin inflex-around-end
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
+
 @mixin inflex-around-end($dir: row) {
     @include f.inflex-prop($dir, space-around, end);
 }
+
+// @mixin inflex-around-fstart
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
 
 @mixin inflex-around-fstart($dir: row) {
     @include f.inflex-prop($dir, space-around, flex-start);
 }
 
+// @mixin inflex-around-fend
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
+
 @mixin inflex-around-fend($dir: row) {
     @include f.inflex-prop($dir, space-around, flex-end);
 }
+
+// @mixin inflex-around-center
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
 
 @mixin inflex-around-center($dir: row) {
     @include f.inflex-prop($dir, space-around, center);
 }
 
+// @mixin inflex-around-baseline
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
+
 @mixin inflex-around-baseline($dir: row) {
     @include f.inflex-prop($dir, space-around, baseline);
 }
+
+// @mixin inflex-around-inh
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-around
 
 @mixin inflex-around-inh($dir: row) {
     @include f.inflex-prop($dir, space-around, inherit);
