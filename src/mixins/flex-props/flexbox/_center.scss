@@ -3,9 +3,9 @@
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to center, and align items to a specific value.
 
-// @module flex-mixins
+// @module flexbox
 
-// @group flex-mixins-center
+// @group flexbox-center
 
 // @example
 // * .example {
@@ -43,7 +43,7 @@
 
 // @mixin flex-center-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-normal($dir: row) {
     @include f.f-prop($dir, center, normal);
@@ -51,7 +51,7 @@
 
 // @mixin flex-center-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-stretch($dir: row) {
     @include f.f-prop($dir, center, stretch);
@@ -59,7 +59,7 @@
 
 // @mixin flex-center-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-start($dir: row) {
     @include f.f-prop($dir, center, start);
@@ -67,7 +67,7 @@
 
 // @mixin flex-center-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-end($dir: row) {
     @include f.f-prop($dir, center, end);
@@ -75,7 +75,7 @@
 
 // @mixin flex-center-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-fstart($dir: row) {
     @include f.f-prop($dir, center, flex-start);
@@ -83,7 +83,7 @@
 
 // @mixin flex-center-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-fend($dir: row) {
     @include f.f-prop($dir, center, flex-end);
@@ -91,7 +91,7 @@
 
 // @mixin flex-center-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-center($dir: row) {
     @include f.f-prop($dir, center, center);
@@ -99,7 +99,7 @@
 
 // @mixin flex-center-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-baseline($dir: row) {
     @include f.f-prop($dir, center, baseline);
@@ -107,7 +107,7 @@
 
 // @mixin flex-center-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-center
+// @group flexbox-center
 
 @mixin flex-center-inh($dir: row) {
     @include f.f-prop($dir, center, inherit);
