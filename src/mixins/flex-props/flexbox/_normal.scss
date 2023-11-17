@@ -3,9 +3,9 @@
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to normal, and align items to a specific value.
 
-// @module flex-normal-mixins
+// @module flexbox
 
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 // @example
 // * .example-class {
@@ -43,7 +43,7 @@
 
 // @mixin flex-normal-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-normal($dir: row) {
     @include f.f-prop($dir, normal, normal);
@@ -51,7 +51,7 @@
 
 // @mixin flex-normal-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-stretch($dir: row) {
     @include f.f-prop($dir, normal, stretch);
@@ -59,7 +59,7 @@
 
 // @mixin flex-normal-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-start($dir: row) {
     @include f.f-prop($dir, normal, start);
@@ -67,7 +67,7 @@
 
 // @mixin flex-normal-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-end($dir: row) {
     @include f.f-prop($dir, normal, end);
@@ -75,7 +75,7 @@
 
 // @mixin flex-normal-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-fstart($dir: row) {
     @include f.f-prop($dir, normal, flex-start);
@@ -83,7 +83,7 @@
 
 // @mixin flex-normal-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-fend($dir: row) {
     @include f.f-prop($dir, normal, flex-end);
@@ -91,7 +91,7 @@
 
 // @mixin flex-normal-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-center($dir: row) {
     @include f.f-prop($dir, normal, center);
@@ -99,7 +99,7 @@
 
 // @mixin flex-normal-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-baseline($dir: row) {
     @include f.f-prop($dir, normal, baseline);
@@ -107,7 +107,7 @@
 
 // @mixin flex-normal-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-normal
+// @group flexbox-normal
 
 @mixin flex-normal-inh($dir: row) {
     @include f.f-prop($dir, normal, inherit);

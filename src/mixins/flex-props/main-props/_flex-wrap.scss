@@ -2,9 +2,9 @@
 // * This mixin provides a convenient way to set the `flex-wrap` property
 // * with vendor prefixes for better cross-browser compatibility.
 
-// @module mixins/flex-props/main-props
+// @module main-props
 
-// @group flex-wrap
+// @group main-props-flex-wrap
 
 // @param {String} $val - The value for the `flex-wrap` property.
 // * Allowed values: nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit.

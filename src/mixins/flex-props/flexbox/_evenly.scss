@@ -3,9 +3,9 @@
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to space-evenly, and align items to a specific value.
 
-// @module flex-mixins
+// @module flexbox
 
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 // @example
 // * .example {
@@ -43,7 +43,7 @@
 
 // @mixin flex-even-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-normal($dir: row) {
     @include f.f-prop($dir, space-evenly, normal);
@@ -51,7 +51,7 @@
 
 // @mixin flex-even-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-stretch($dir: row) {
     @include f.f-prop($dir, space-evenly, stretch);
@@ -59,7 +59,7 @@
 
 // @mixin flex-even-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-start($dir: row) {
     @include f.f-prop($dir, space-evenly, start);
@@ -67,7 +67,7 @@
 
 // @mixin flex-even-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-end($dir: row) {
     @include f.f-prop($dir, space-evenly, end);
@@ -75,7 +75,7 @@
 
 // @mixin flex-even-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-fstart($dir: row) {
     @include f.f-prop($dir, space-evenly, flex-start);
@@ -83,7 +83,7 @@
 
 // @mixin flex-even-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-fend($dir: row) {
     @include f.f-prop($dir, space-evenly, flex-end);
@@ -91,7 +91,7 @@
 
 // @mixin flex-even-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-center($dir: row) {
     @include f.f-prop($dir, space-evenly, center);
@@ -99,7 +99,7 @@
 
 // @mixin flex-even-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-baseline($dir: row) {
     @include f.f-prop($dir, space-evenly, baseline);
@@ -107,7 +107,7 @@
 
 // @mixin flex-even-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flex-mixins-evenly
+// @group flexbox-evenly
 
 @mixin flex-even-inh($dir: row) {
     @include f.f-prop($dir, space-evenly, inherit);

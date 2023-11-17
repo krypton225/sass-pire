@@ -3,9 +3,9 @@
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
 // * allowing you to easily set display to flex, justify content to flex-end, and align items to a specific value.
 
-// @module flex-mixins
+// @module flexbox
 
-// @group flex-mixins-fend
+// @group flexbox-fend
 
 // @example
 // * .example {
@@ -43,7 +43,7 @@
 
 // @mixin flex-fend-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-normal($dir: row) {
     @include f.f-prop($dir, flex-end, normal);
@@ -51,7 +51,7 @@
 
 // @mixin flex-fend-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-stretch($dir: row) {
     @include f.f-prop($dir, flex-end, stretch);
@@ -59,7 +59,7 @@
 
 // @mixin flex-fend-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-start($dir: row) {
     @include f.f-prop($dir, flex-end, start);
@@ -67,7 +67,7 @@
 
 // @mixin flex-fend-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-end($dir: row) {
     @include f.f-prop($dir, flex-end, end);
@@ -75,7 +75,7 @@
 
 // @mixin flex-fend-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-fstart($dir: row) {
     @include f.f-prop($dir, flex-end, flex-start);
@@ -83,7 +83,7 @@
 
 // @mixin flex-fend-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-fend($dir: row) {
     @include f.f-prop($dir, flex-end, flex-end);
@@ -91,7 +91,7 @@
 
 // @mixin flex-fend-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-center($dir: row) {
     @include f.f-prop($dir, flex-end, center);
@@ -99,7 +99,7 @@
 
 // @mixin flex-fend-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-baseline($dir: row) {
     @include f.f-prop($dir, flex-end, baseline);
@@ -107,7 +107,7 @@
 
 // @mixin flex-fend-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group Flex flex-mixins-fend
+// @group flexbox-fend
 
 @mixin flex-fend-inh($dir: row) {
     @include f.f-prop($dir, flex-end, inherit);
