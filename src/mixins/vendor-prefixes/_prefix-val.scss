@@ -1,3 +1,29 @@
+// * Prefix-Val Mixins
+// * This mixin generates CSS properties with vendor prefixes for cross-browser compatibility.
+// * It applies the specified property and value with prefixes for webkit, moz, ms, and o.
+
+// @author Khaled Mohamed
+
+// @module vendor-prefixes
+
+// @group vendor-prefixes-prefix-val
+
+// @param {String} $prop - The CSS property.
+// @param {String} $value - The CSS value for the property.
+
+// @output {CSS} - The prefixed CSS properties.
+
+// @example
+// * .example {
+// *   @include prefix-val-ms(display, grid);
+// * }
+
+// @output
+// * .example {
+// *   display: -ms-grid;
+// *   display: grid;
+// * }
+
 @charset "UTF-8";
 
 @mixin prefix-val-all($prop, $value) {

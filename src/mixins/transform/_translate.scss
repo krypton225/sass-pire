@@ -4,7 +4,11 @@
 // * and predefined keywords such as 'inherit', 'initial', 'revert', 'unset', and 'none'.
 // * If only one value is provided, it is applied to both x and y axes.
 
+// @author Khaled Mohamed
+
 // @module transform
+
+// @group transform-translate
 
 // @param {Number|String} $x - The horizontal translation distance. Default: 1px.
 // * If a number, it must have a valid unit from the main-units list.
