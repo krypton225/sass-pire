@@ -1,25 +1,37 @@
+// * has-res-unit Function
+// * This function checks if the provided argument has resolution units.
+
+// @author Khaled Mohamed
+
+// @module type-checks
+
+// @group type-checks-has-res-unit
+
+// @param {number} $val - The number to check for resolution units.
+
+// @throws {string} Throws an error if @param is not a number.
+
+// @example
+// * has-res-unit(12dpi); // Returns true if 'dpi' (dots per inch) is present.
+// * has-res-unit(22dpcm); // Returns true if 'dpcm' (dots per centimeter) is present.
+// * has-res-unit(23dppx); // Returns true if 'dppx' (dots per pixel) is present.
+
+// @return {boolean} - Returns true if the argument has one of the resolution units, otherwise false.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../abstract/variables" as var;
-
-// * @explain
-// * This is just a function to check if the argument has resolution units or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has resolution units or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-res-unit(12dpi) | has-res-unit(22dpcm) | has-res-unit(23dppx).
-// * @return:   {boolean} - true if it has one of resolution units and false if not.
 
 @function has-res-unit($val) {
+    $resolution-units: (dpi, dpcm, dppx) !default;
+
     @if type-of($val) != number {
         @error "Argument of has-res-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index(var.$resolution-units, math.unit($val)) {
+    @if not list.index($resolution-units, math.unit($val)) {
         $flag: false;
     }
 
