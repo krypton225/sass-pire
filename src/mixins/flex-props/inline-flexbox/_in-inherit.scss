@@ -1,43 +1,113 @@
+// * Inline Flex inherit Mixins
+// * These mixins provide a convenient way to apply inline flexbox properties with the 'flex-end' value
+// * for the 'justify-content' property. The pattern used is (inline-flex)-(justify-content)-(align-items),
+// * allowing you to easily set display to inline-flex, justify content to flex-end, and align items to a specific value.
+
+// @module inline-flexbox
+
+// @group inline-flexbox-inh
+
+// @example
+// * .example {
+// *   @include inflex-inh-normal(row);
+// * }
+
+// @output
+// * .example {
+// *   display: -webkit-inline-box;
+// *   display: -webkit-inline-flex;
+// *   display: -ms-inline-flexbox;
+// *   display: -moz-inline-box;
+// *   display: inline-flex;
+// *   -webkit-box-orient: horizontal;
+// *   -webkit-box-direction: normal;
+// *   -webkit-flex-direction: row;
+// *   -ms-flex-direction: row;
+// *   -moz-flex-direction: row;
+// *   -o-flex-direction: row;
+// *   flex-direction: row;
+// *   -webkit-box-pack: inherit;
+// *   -webkit-justify-content: inherit;
+// *   -ms-flex-pack: inherit;
+// *   -moz-justify-content: inherit;
+// *   justify-content: inherit;
+// *   -webkit-box-align: normal;
+// *   -webkit-align-items: normal;
+// *   -ms-flex-align: normal;
+// *   -moz-align-items: normal;
+// *   align-items: normal;
+// * }
+
 @charset "UTF-8";
 @use "../main-props/inflex-prop" as f;
 
-// * These are useful mixin for using properties of inline flexbox in CSS.
-// * The pattern you follow: (inflex)-(justify-content)-(align-items).
-// * Example: flex-between-center => make display flex, justify-content: space-between, align-items: center.
-
-// * NOTE: This file for make mixins with justify content inherit.
+// @mixin inflex-inh-normal
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
 
 @mixin inflex-inh-normal($dir: row) {
     @include f.inflex-prop($dir, inherit, normal);
 }
 
+// @mixin inflex-inh-stretch
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
+
 @mixin inflex-inh-stretch($dir: row) {
     @include f.inflex-prop($dir, inherit, stretch);
 }
+
+// @mixin inflex-inh-start
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
 
 @mixin inflex-inh-start($dir: row) {
     @include f.inflex-prop($dir, inherit, start);
 }
 
+// @mixin inflex-inh-end
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
+
 @mixin inflex-inh-end($dir: row) {
     @include f.inflex-prop($dir, inherit, end);
 }
+
+// @mixin inflex-inh-fstart
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
 
 @mixin inflex-inh-fstart($dir: row) {
     @include f.inflex-prop($dir, inherit, flex-start);
 }
 
+// @mixin inflex-inh-fend
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
+
 @mixin inflex-inh-fend($dir: row) {
     @include f.inflex-prop($dir, inherit, flex-end);
 }
+
+// @mixin inflex-inh-center
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
 
 @mixin inflex-inh-center($dir: row) {
     @include f.inflex-prop($dir, inherit, center);
 }
 
+// @mixin inflex-inh-baseline
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
+
 @mixin inflex-inh-baseline($dir: row) {
     @include f.inflex-prop($dir, inherit, baseline);
 }
+
+// @mixin inflex-inh-inh
+// @param {String} $dir - The flex direction. Default: row.
+// @group inline-flexbox-inh
 
 @mixin inflex-inh-inh($dir: row) {
     @include f.inflex-prop($dir, inherit, inherit);
