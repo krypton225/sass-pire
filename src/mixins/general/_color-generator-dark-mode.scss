@@ -1,3 +1,98 @@
+// * Generate Colors for Dark Mode Mixin
+// * This mixin generates CSS custom properties for defining colors in the :root
+// * element based on the provided color maps for both light and dark modes. It
+// * allows you to create a consistent color scheme for both modes and supports
+// * dynamic theme switching using HTML attributes.
+
+// @author Khaled Mohamed
+
+// @module general
+
+// @group general-generate-colors-dark-mode
+
+// @param {Map} $light-colors-map - A map containing color names and their corresponding
+// * values for the light mode. Each key-value pair represents
+// * a custom property for a color. The key (color name) must be
+// * a string, and the value must be a color.
+
+// @param {Map} $dark-colors-map - A map containing color names and their corresponding
+// * values for the dark mode. Each key-value pair represents
+// * a custom property for a color. The key (color name) must be
+// * a string, and the value must be a color.
+
+// @param {Boolean} $generate-with-attr - An optional boolean flag indicating whether to generate
+// * additional custom properties using HTML attribute selectors
+// * for light mode. Defaults to false.
+
+// @example 1
+// * // Generated CSS custom properties for dark mode:
+// * @include generate-colors-dark-mode(
+// *   (
+// *     "primary": #3498db,
+// *     "secondary": #2ecc71,
+// *     "accent": #e74c3c
+// *   ),
+// *   (
+// *     "primary": #1a1a1a,
+// *     "secondary": #2c2c2c,
+// *     "accent": #3d3d3d
+// *   ),
+// *   true
+// * );
+
+// @output 1
+// * :root {
+// *   --primary-clr: #3498db;
+// *   --secondary-clr: #2ecc71;
+// *   --accent-clr: #e74c3c;
+// * }
+
+// * html[data-theme="dark"] {
+// *   --primary-clr: #1a1a1a;
+// *   --secondary-clr: #2c2c2c;
+// *   --accent-clr: #3d3d3d;
+// * }
+
+// * Additional custom properties with HTML attribute selectors for light mode:
+// * html[data-theme="light"] {
+// *   --primary-clr: #3498db;
+// *   --secondary-clr: #2ecc71;
+// *   --accent-clr: #e74c3c;
+// * }
+
+// @example 2
+// * @include generate-colors-dark-mode(
+// *   (
+// *     "primary": #3498db,
+// *     "secondary": #2ecc71,
+// *     "accent": #e74c3c
+// *   ),
+// *   (
+// *     "primary": #1a1a1a,
+// *     "secondary": #2c2c2c,
+// *     "accent": #3d3d3d
+// *   ),
+// *   false
+// * );
+
+// @output 2
+// * :root {
+// *   --primary-clr: #3498db;
+// *   --secondary-clr: #2ecc71;
+// *   --accent-clr: #e74c3c;
+// * }
+
+// * html[data-theme=dark] {
+// *   --primary-clr: #1a1a1a;
+// *   --secondary-clr: #2c2c2c;
+// *   --accent-clr: #3d3d3d;
+// * }
+
+// @note
+// * The mixin assumes that the light mode is the default, and dark mode is applied
+// * with the `html[data-theme="dark"]` selector. Adjust the HTML attribute selector
+// * if your dark mode implementation uses a different attribute.
+
 @charset "UTF-8";
 @use "sass:list";
 
