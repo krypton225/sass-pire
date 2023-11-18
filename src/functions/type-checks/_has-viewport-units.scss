@@ -1,25 +1,59 @@
+// * has-view-unit Function
+// * It checks if the provided argument has viewport units.
+
+// @author Khaled Mohamed
+
+// @module type-checks
+
+// @group type-checks-has-view-unit
+
+// @param {number} $val - The number to check for viewport units.
+
+// @throws {string} Throws an error if @param is not a number or @param is not in $viewport-units list.
+
+// @example
+// * has-view-unit(12lvh); // Returns true if 'lvh' (viewport height unit) is present.
+// * has-view-unit(22svmax); // Returns true if 'svmax' (maximum of the viewport width and height) is present.
+// * has-view-unit(23svmin); // Returns true if 'svmin' (minimum of the viewport width and height) is present.
+
+// @returns {boolean} - Returns true if the argument has one of the viewport units, otherwise false.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../abstract/variables" as var;
-
-// * @explain
-// * This is just a function to check if the argument has viewport units or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has viewport units or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-view-unit(12lvh) | has-view-unit(22svmax) | has-view-unit(23svmin).
-// * @return:   {boolean} - true if it has one of viewport units and false if not.
 
 @function has-view-unit($val) {
+    $viewport-units: (
+        vw,
+        svw,
+        lvw,
+        dvw,
+        vh,
+        lvh,
+        dvh,
+        vi,
+        svi,
+        lvi,
+        vmin,
+        svmin,
+        lvmin,
+        dvmin,
+        vmax,
+        svmax,
+        lvmax,
+        dvmax,
+        vb,
+        lvb,
+        dvb
+    ) !default;
+
     @if type-of($val) != number {
         @error "Argument of has-view-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index(var.$viewport-units, math.unit($val)) {
+    @if not list.index($viewport-units, math.unit($val)) {
         $flag: false;
     }
 

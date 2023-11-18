@@ -24,30 +24,6 @@ $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
 
 $resolution-units: (dpi, dpcm, dppx) !default;
 
-$viewport-units: (
-    vw,
-    svw,
-    lvw,
-    dvw,
-    vh,
-    lvh,
-    dvh,
-    vi,
-    svi,
-    lvi,
-    vmin,
-    svmin,
-    lvmin,
-    dvmin,
-    vmax,
-    svmax,
-    lvmax,
-    dvmax,
-    vb,
-    lvb,
-    dvb
-) !default;
-
 $angle-units: (deg, turn, rad, grad) !default;
 
 $main-units: (#{"%"}, rem, px, em) !default;
