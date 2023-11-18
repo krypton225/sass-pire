@@ -3,7 +3,11 @@
 // * with proper vendor prefixes. It supports both numerical values for scaling factors
 // * and predefined keywords such as 'inherit', 'initial', 'revert', 'unset', and 'none'.
 
+// @author Khaled Mohamed
+
 // @module transform
+
+// @group transform-scale
 
 // @param {Number|String} $x - The scaling factor for the x-axis. Default: 1.
 // * If a number, it must be unitless.
@@ -31,11 +35,6 @@
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as prefix;
-
-// @mixin scale
-// @param {Number|String} $x - The scaling factor for the x-axis. Default: 1.
-// @param {Number|String} $y - The scaling factor for the y-axis. Default: $x.
-// @group transform-scale-mixin
 
 @mixin scale($x: 1, $y: $x) {
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
