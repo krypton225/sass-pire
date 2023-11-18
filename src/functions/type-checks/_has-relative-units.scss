@@ -1,25 +1,37 @@
+// * has-rel-unit Function
+// * This function checks if the provided argument has relative units.
+
+// @author Khaled Mohamed
+
+// @module type-checks
+
+// @group type-checks-has-rel-unit
+
+// @param {number} $val - The number to check for relative units.
+
+// @throws {string} Throws an error if @param is not a number or not in $relative-units list.
+
+// @example
+// * has-rel-unit(12em); // Returns true if 'em' (em units) is present.
+// * has-rel-unit(22vw); // Returns true if 'vw' (viewport width units) is present.
+// * has-rel-unit(23vmin); // Returns true if 'vmin' (viewport minimum units) is present.
+
+// @return {boolean} - Returns true if the argument has one of the relative units, otherwise false.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../abstract/variables" as var;
-
-// * @explain
-// * This is just a function to check if the argument has relative units or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has relative units or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-rel-unit(12em) | has-rel-unit(22vw) | has-rel-unit(23vmin).
-// * @return:   {boolean} - true if it has one of relative units and false if not.
 
 @function has-rel-unit($val) {
+    $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
+
     @if type-of($val) != number {
         @error "Argument of has-rel-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index(var.$relative-units, math.unit($val)) {
+    @if not list.index($relative-units, math.unit($val)) {
         $flag: false;
     }
 

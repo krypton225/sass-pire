@@ -1,14 +1,25 @@
+// * has-ptg Function
+// * This function checks if the provided argument has a percentage unit.
+
+// @author Khaled Mohamed
+
+// @module type-checks
+
+// @group type-checks-has-ptg
+
+// @param {number} $val - The number to check for a percentage unit.
+
+// @throws {string} Throws an error if @param is not a number.
+
+// @example
+// * has-ptg(12%); // Returns true if the unit is '%' (percentage).
+// * has-ptg(22%); // Returns true if the unit is '%' (percentage).
+// * has-ptg(23%); // Returns true if the unit is '%' (percentage).
+
+// @return {boolean} - Returns true if the argument has a percentage unit, otherwise false.
+
 @charset "UTF-8";
 @use "sass:math";
-
-// * @explain
-// * This is just a function to check if the argument has percentage unit or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has percentage unit or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-ptg(12%) | has-ptg(22%) | has-ptg(23%).
-// * @return:   {boolean} - true if it has percentage unit and false if not.
 
 @function has-ptg($val) {
     @if type-of($val) != number {
