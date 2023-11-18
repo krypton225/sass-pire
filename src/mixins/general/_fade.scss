@@ -1,3 +1,28 @@
+// * Fade Mixin
+// * This mixin provides a simple way to control the visibility and opacity
+// * of an element for creating fade-in and fade-out effects.
+
+// @author Khaled Mohamed
+
+// @module general
+
+// @group general-fade
+
+// @param {String} $type - The type of fade effect. Possible values are:
+// * - "hide" or "no": Sets visibility to hidden and opacity to 0.
+// * - "show" or "yes": Sets visibility to visible and opacity to 1.
+
+// @example
+// * .element {
+// *    @include fade("hide");
+// * }
+
+// @output
+// * .element {
+// *   visibility: hidden;
+// *   opacity: 0;
+// * }
+
 @charset "UTF-8";
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
