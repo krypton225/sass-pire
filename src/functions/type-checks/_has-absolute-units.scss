@@ -1,25 +1,37 @@
+// * has-abs-unit Function
+// * This function checks if the provided argument has an absolute unit.
+
+// @author Khaled Mohamed
+
+// @module type-checks
+
+// @group type-checks-has-abs-unit
+
+// @param {number} $val - The number to check for an absolute unit.
+
+// @throws {string} Throws an error if @param is not a number or @param is not in $absolute-units list.
+
+// @example
+// * has-abs-unit(12cm); // Returns true if 'cm' (centimeters) is present.
+// * has-abs-unit(22mm); // Returns true if 'mm' (millimeters) is present.
+// * has-abs-unit(23pt); // Returns true if 'pt' (points) is present.
+
+// @return {boolean} - Returns true if the argument has an absolute unit, otherwise false.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
-@use "../../abstract/variables" as var;
-
-// * @explain
-// * This is just a function to check if the argument has absolute unit or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has absolute unit or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as has-abs-unit(12cm) | has-abs-unit(22mm) | has-abs-unit(23pt).
-// * @return:   {boolean} - true if it has absolute unit and false if not.
 
 @function has-abs-unit($val) {
+    $absolute-units: (cm, mm, in, px, pt, pc) !default;
+
     @if type-of($val) != number {
         @error "Argument of has-abs-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index(var.$absolute-units, math.unit($val)) {
+    @if not list.index($absolute-units, math.unit($val)) {
         $flag: false;
     }
 
