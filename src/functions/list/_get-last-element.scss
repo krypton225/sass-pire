@@ -1,19 +1,45 @@
+// * Get Last From Function
+// * This function retrieves the first element from the given list.
+
+// @author Kitty Giraudel
+// @link https://kittygiraudel.com/
+
+// @module list
+
+// @group list-get-last-from
+
+// @update We updated the use of the list library of Sass.
+
+// @param {List} $list - A list from which to retrieve the last element.
+
+// @throw {Exception} - Throws an exception if the provided parameter is not a list or if the list is empty.
+
+// @example 1
+// * .example1 {
+// *   content: get-first-from((12, 43, 4));
+// * }
+
+// @output 1
+// * .example1 {
+// *   content: 4;
+// * }
+
+// @example 2
+// * .example2 {
+// *   width: get-first-from((22, 3), 5);
+// * }
+
+// @output 2
+// * .example2 {
+// *   width: 5;
+// * }
+
+// @return {Any} - Returns the last element from the list.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "../../abstract/variables" as var;
 @use "flatten-list" as func;
-
-// * @explain
-// * This is just a function to get the last element in the given list.
-
-// * @group:    functions/list.
-// * @author    Kitty Giraudel.
-// * @link      https://kittygiraudel.com/
-// * @update    We updated the using of list lib of sass.
-// * @param:    {list} $list - A list to get the last element in it.
-// * @throw:    Exceptions if @param not a list.
-// * @example:  call it as get-last-from(12, 43, 4) | get-last-from((22, 3), 5) | get-last-from(23, (43, 4, (5))).
-// * @return:   {any} - Last element in the list.
 
 @function get-last-from($list: ()) {
     @if length($list) == 0 {

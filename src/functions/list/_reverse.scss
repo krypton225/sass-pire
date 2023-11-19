@@ -1,15 +1,34 @@
+// * Reverse Function
+// * This function retrieves the reversed list from the given one.
+
+// @author Kitty Giraudel
+// @link https://kittygiraudel.com/
+
+// @module list
+
+// @group list-reverse
+
+// @update We updated the use of the list library of Sass.
+
+// @param {List} $list - A list from which to reverse.
+
+// @throw {Exception} - Throws an exception if the provided parameter is not a list.
+
+// @example
+// * .example {
+// *   content: reverse((12, 43, 4, (33, 555, 6));
+// * }
+
+// @output
+// * .example {
+// *   content: 6, 555, 33, 4, 43, 12;
+// * }
+
+// @return {Any} - Returns the reversed list from the given list.
+
 @charset "UTF-8";
 @use "sass:list";
 @use "flatten-list" as func;
-
-// * @explain
-// * This is just a function to get the reversed list from given one.
-
-// * @group:    functions/list.
-// * @param:    {list} $list - A list to get the reversed from it.
-// * @throw:    Exceptions if @param not a list.
-// * @example:  call it as reverse(12, 43, 4) | reverse((22, 3), 5) | reverse(23, (43, 4, (5))).
-// * @return:   {any} - Reversed list.
 
 @function reverse($list: ()) {
     @if type-of($list) != list {

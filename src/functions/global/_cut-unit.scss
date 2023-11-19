@@ -1,17 +1,37 @@
+// * Cut-Unit Function
+// * This function cuts or strips the unit from a given number.
+
+// @author Kitty Giraudel
+// @link https://css-tricks.com/snippets/sass/strip-unit-function/
+
+// @module global
+
+// @group global-cut-unit
+
+// @update We updated the usage of the math library of Sass and added more validations.
+
+// @param {Number} $num - The value from which the unit will be cut or stripped.
+
+// @throw {Exception} - Throws an exception if the parameter is not a number.
+
+// @example
+// * .example {
+// *   width: cut-unit(12cm);
+// *   font-size: cut-unit(130rem);
+// *   margin-top: cut-unit(22px);
+// * }
+
+// @output
+// * .example {
+// *   width: 12;
+// *   font-size: 130;
+// *   margin-top: 22;
+// * }
+
+// @return {Number} - A number after cutting or stripping the unit.
+
 @charset "UTF-8";
 @use "sass:math";
-
-// * @explain
-// * This is just a function to cut the unit or strip from a given number.
-
-// * @group:    functions/global.
-// * @author    Kitty Giraudel.
-// * @link      https://css-tricks.com/snippets/sass/strip-unit-function/
-// * @update    We updated the using of math lib of sass and add more validations.
-// * @param:    {number} $num - Value to cut the unit from.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as cut-unit(12cm) | cut-unit(130rem) | cut-unit(22px).
-// * @return:   {number} - A number after strip or cut the unit from it.
 
 @function cut-unit($num) {
     @if type-of($num) != number {
