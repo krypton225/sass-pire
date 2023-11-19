@@ -1,15 +1,37 @@
+// * Is In List Function
+// * This function checks if a given value exists in a provided list.
+
+// @author Khaled Mohamed
+
+// @module global
+
+// @group global-is-in-list
+
+// @param {List} $list-name - The list to check if the second argument is in it or not.
+
+// @param {Any} $value - The second argument to check for its existence in the provided list at the first parameter.
+
+// @throw {Exception} - Throws an exception if the first parameter is not a list or if the second parameter is not found in the list.
+
+// @example 1
+// * .example {
+// *   display: is-in-list((block, inline, flex), inline); // Returns true
+// * }
+
+// @output 1
+// * .example {
+// *   display: true;
+// * }
+
+// @example 2
+// * .example {
+// *   font-size: is-in-list((12px, 14px, 16px), 18px); // Throws an exception
+// * }
+
+// @return {Boolean} - Returns true if the second argument exists in the list, and false otherwise.
+
 @charset "UTF-8";
 @use "sass:list";
-
-// * @explain
-// * This is just a function to check if a value is in a given list or not.
-
-// * @group:    functions/global.
-// * @param:    {list} $list-name - A list to check if a second argument is in it or not.
-// * @param:    {any} $value - Second argument to check if it exists in the list which is passed to first argument or not.
-// * @throw:    Exceptions if first @param not a list.
-// * @example:  call it as is-in-list((1, 2, 4), 4) | is-in-list((1, 2, 4), 2).
-// * @return:   {boolean} - Return true if the second argument exists in the list and false if not.
 
 @function is-in-list($list-name, $value) {
     @if type-of($list-name) != list {
