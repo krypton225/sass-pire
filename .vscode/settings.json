@@ -26,5 +26,8 @@
         "tests",
         "enhance",
         "docs"
+    ],
+    "cSpell.words": [
+        "Giraudel"
     ]
 }
