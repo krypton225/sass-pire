@@ -1,15 +1,35 @@
+// * Half Function
+// * This function calculates the half of a given number.
+
+// @author Khaled Mohamed
+
+// @module global
+
+// @group global-half
+
+// @param {Number} $number - The number to calculate the half of. It can have a unit or be unitless.
+
+// @throw {Exception} - Throws an exception if the parameter is not a number.
+
+// @example
+// * .example {
+// *   width: half(12);
+// *   font-size: half(130rem);
+// *   margin-top: half(22cm);
+// * }
+
+// @output
+// * .example {
+// *   width: 6;
+// *   font-size: 65rem;
+// *   margin-top: 11cm;
+// * }
+
+// @return {Number} - The half of the given number. If the input has a unit, the result will also have the same unit.
+
 @charset "UTF-8";
 @use "sass:math";
 @use "cut-unit" as func;
-
-// * @explain
-// * This is just a function to get the half of number you pass to it.
-
-// * @group:    functions/global.
-// * @param:    {number} $num - A number to get the half of it. It can be has unit or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as half(12) | half(130rem) | half(22cm).
-// * @return:   {number} - The half of the given number and if it has unit it will be returned with it.
 
 @function half($number) {
     @if type-of($number) != number {
