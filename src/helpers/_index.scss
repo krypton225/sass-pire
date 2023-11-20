@@ -1,1 +1,12 @@
+@charset "UTF-8";
+
+// * This file forwards the "color-generator" module.
+
+// @author Khaled Mohamed
+
+// @module sass-pire
+
+// * Forwarding the "color-generator" module.
+// * The "color-generator" module likely contains mixin for generating color variations.
+// @see color-generator
 @forward "color-generator";

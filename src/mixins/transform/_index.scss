@@ -1,7 +1,42 @@
+@charset "UTF-8";
+
+// * This file forwards various modules for CSS transform properties like translate, rotate, and scale.
+
+// @author Khaled Mohamed
+
+// @module mixins/transform
+
+// * Forwarding the "translate" module.
+// * The "translate" module probably provides utilities for translation in 2D space.
+// @see translate
 @forward "translate";
+
+// * Forwarding the "translate-x" module.
+// * The "translate-x" module likely provides utilities for translation along the X-axis in 2D space.
+// @see translate-x
 @forward "translate-x";
+
+// * Forwarding the "translate-y" module.
+// * The "translate-y" module probably provides utilities for translation along the Y-axis in 2D space.
+// @see translate-y
 @forward "translate-y";
+
+// * Forwarding the "rotate" module.
+// * The "rotate" module probably provides utilities for rotation in 2D space.
+// @see rotate
 @forward "rotate";
+
+// * Forwarding the "rotate-x" module.
+// * The "rotate-x" module likely provides utilities for rotation around the X-axis in 3D space.
+// @see rotate-x
 @forward "rotate-x";
+
+// * Forwarding the "rotate-y" module.
+// * The "rotate-y" module likely provides utilities for rotation around the Y-axis in 3D space.
+// @see rotate-y
 @forward "rotate-y";
+
+// * Forwarding the "scale" module.
+// * The "scale" module probably provides utilities for scaling in 2D space.
+// @see scale
 @forward "scale";

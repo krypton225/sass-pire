@@ -1,2 +1,16 @@
+// * This file forwards key elements from other modules
+// * for convenient inclusion in other stylesheets.
+
+@charset "UTF-8";
+
+// * Forwarding the "banner" mixin from the "banner" module.
+// * The "banner" mixin is used to add a banner to the top
+// * of the compiled CSS file, providing information about
+// * the library, version, authors, and license.
 @forward "banner";
+
+// * Forwarding the "reset" module.
+// * The "reset" module likely contains a set of styles
+// * for resetting default styles to ensure consistent
+// * styling across different browsers.
 @forward "reset";

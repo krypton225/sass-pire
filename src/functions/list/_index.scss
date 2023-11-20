@@ -1,4 +1,24 @@
+// * This file forwards key functionalities from other modules
+// * for easy access in the current stylesheet.
+
+@charset "UTF-8";
+
+// * Forwarding the "get-first-element" module.
+// * This module likely contains a function to get the first
+// * element from a given list.
 @forward "get-first-element";
+
+// * Forwarding the "get-last-element" module.
+// * The "get-last-element" module probably contains a function
+// * to get the last element from a given list.
 @forward "get-last-element";
+
+// * Forwarding the "flatten-list" module.
+// * The "flatten-list" module is likely to have a function
+// * to flatten a given list.
 @forward "flatten-list";
+
+// * Forwarding the "reverse" module.
+// * The "reverse" module likely contains a function to get
+// * the reversed list from a given one.
 @forward "reverse";
