@@ -1,15 +1,31 @@
+// * Inch to Pixel Conversion Function
+// * This function converts a value with inches unit into pixels.
+
+// @author Khaled Mohamed
+
+// @module converters
+
+// @group converters-in-to-px
+
+// @param {Number} $inches-val - The value in inches unit to convert.
+
+// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have an inches unit.
+
+// @example
+// * .example {
+// *   width: in-to-px(12in);
+// * }
+
+// @output
+// * .example {
+// *   width: 1152px;
+// * }
+
+// @return {Number} - Returns the converted value in pixels.
+
 @charset "UTF-8";
 @use "sass:math";
 @use "../global/cut-unit" as func;
-
-// * @explain
-// * This is just a function to convert any value has inch unit into pixel.
-
-// * @group:    functions/converters.
-// * @param:    {number} $inches-val - Value into inches unit.
-// * @throw:    Exceptions if @param not a number, not has unit or not has inches unit.
-// * @example:  call it as in-to-px(12in) | in-to-px(130in) and store value in prop.
-// * @return:   {number} - A converted inches number into pixel.
 
 @function in-to-px($inches-val) {
     @if type-of($inches-val) != number {

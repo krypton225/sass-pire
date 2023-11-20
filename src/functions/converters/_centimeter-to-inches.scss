@@ -1,15 +1,31 @@
+// * Centimeter to Inch Conversion Function
+// * This function converts a value with centimeter unit into inches.
+
+// @author Khaled Mohamed
+
+// @module converters
+
+// @group converters-cm-to-in
+
+// @param {Number} $cm-val - The value in centimeter unit to convert into inch.
+
+// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a centimeter unit.
+
+// @example
+// * .example {
+// *   font-size: cm-to-in(12cm);
+// * }
+
+// @output
+// * .example {
+// *   font-size: 4.7244094488in;
+// * }
+
+// @return {Number} - Returns the converted value in inches.
+
 @charset "UTF-8";
 @use "sass:math";
 @use "../global/cut-unit" as func;
-
-// * @explain
-// * This is just a function to convert any value has centimeter unit into inch.
-
-// * @group:    functions/converters.
-// * @param:    {number} $cm-val - Value into centimeter unit.
-// * @throw:    Exceptions if @param not a number, not has unit or not has cm unit.
-// * @example:  call it as cm-to-in(12cm) | cm-to-in(130cm) and store value in prop.
-// * @return:   {number} - A converted centimeter number into inch.
 
 @function cm-to-in($cm-val) {
     @if type-of($cm-val) != number {
@@ -26,6 +42,6 @@
 
     $actual-number: func.cut-unit($cm-val);
 
-    /* stylelint-disable-next-line number-max-precision */
+    // stylelint-disable-next-line number-max-precision
     @return $actual-number * 0.3937007874in;
 }

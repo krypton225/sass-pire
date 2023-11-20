@@ -1,7 +1,43 @@
+// * Centimeter to Inches Forward
+// * Forwarding the functionality to convert centimeters to inches.
+// * Please see the `cm-to-in` function for details.
+// @see cm-to-in
 @forward "centimeter-to-inches";
+
+// * Centimeter to Pixel Forward
+// * Forwarding the functionality to convert centimeters to pixels.
+// * Please see the `cm-to-px` function for details.
+// @see cm-to-px
 @forward "centimeter-to-pixel";
+
+// * Inches to Centimeter Forward
+// * Forwarding the functionality to convert inches to centimeters.
+// * Please see the `in-to-cm` function for details.
+// @see in-to-cm
 @forward "inches-to-centimeter";
+
+// * Inches to Pixel Forward
+// * Forwarding the functionality to convert inches to pixels.
+// * Please see the `in-to-px` function for details.
+// @see in-to-px
 @forward "inches-to-px";
+
+// * Pixel to Centimeter Forward
+// * Forwarding the functionality to convert pixels to centimeters.
+// * Please see the `px-to-cm` function for details.
+// @see px-to-cm
 @forward "pixel-to-centimeter";
+
+// * Pixel to Inches Forward
+// *
+// * Forwarding the functionality to convert pixels to inches.
+// * Please see the `px-to-in` function for details.
+// @see px-to-in
 @forward "pixel-to-inches";
+
+// * Pixel to Rem Forward
+// *
+// * Forwarding the functionality to convert pixels to rem.
+// * Please see the `px-to-rem` function for details.
+// @see px-to-rem
 @forward "px-to-rem";
