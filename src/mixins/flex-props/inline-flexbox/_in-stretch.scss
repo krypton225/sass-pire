@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module inline-flexbox
+// @namespace inline-flexbox
 
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin inflex-stretch-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-normal($dir: row) {
     @include f.inflex-prop($dir, stretch, normal);
@@ -54,7 +54,7 @@
 
 // @mixin inflex-stretch-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-stretch($dir: row) {
     @include f.inflex-prop($dir, stretch, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin inflex-stretch-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-start($dir: row) {
     @include f.inflex-prop($dir, stretch, start);
@@ -70,7 +70,7 @@
 
 // @mixin inflex-stretch-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-end($dir: row) {
     @include f.inflex-prop($dir, stretch, end);
@@ -78,7 +78,7 @@
 
 // @mixin inflex-stretch-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-fstart($dir: row) {
     @include f.inflex-prop($dir, stretch, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin inflex-stretch-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-fend($dir: row) {
     @include f.inflex-prop($dir, stretch, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin inflex-stretch-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-center($dir: row) {
     @include f.inflex-prop($dir, stretch, center);
@@ -102,7 +102,7 @@
 
 // @mixin inflex-stretch-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-baseline($dir: row) {
     @include f.inflex-prop($dir, stretch, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin inflex-stretch-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-stretch
+// @module inline-flexbox-stretch
 
 @mixin inflex-stretch-inh($dir: row) {
     @include f.inflex-prop($dir, stretch, inherit);

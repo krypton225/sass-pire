@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module flexbox
+// @namespace flexbox
 
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 // @example
 // * .example-class {
@@ -46,7 +46,7 @@
 
 // @mixin flex-inh-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-normal($dir: row) {
     @include f.f-prop($dir, inherit, normal);
@@ -54,7 +54,7 @@
 
 // @mixin flex-inh-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-stretch($dir: row) {
     @include f.f-prop($dir, inherit, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin flex-inh-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-start($dir: row) {
     @include f.f-prop($dir, inherit, start);
@@ -70,7 +70,7 @@
 
 // @mixin flex-inh-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-end($dir: row) {
     @include f.f-prop($dir, inherit, end);
@@ -78,7 +78,7 @@
 
 // @mixin flex-inh-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-fstart($dir: row) {
     @include f.f-prop($dir, inherit, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin flex-inh-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-fend($dir: row) {
     @include f.f-prop($dir, inherit, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin flex-inh-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-center($dir: row) {
     @include f.f-prop($dir, inherit, center);
@@ -102,7 +102,7 @@
 
 // @mixin flex-inh-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-baseline($dir: row) {
     @include f.f-prop($dir, inherit, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin flex-inh-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-inherit
+// @module flexbox-inherit
 
 @mixin flex-inh-inh($dir: row) {
     @include f.f-prop($dir, inherit, inherit);

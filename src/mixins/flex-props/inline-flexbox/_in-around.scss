@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module inline-flexbox
+// @namespace inline-flexbox
 
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 // @example
 // *   .example {
@@ -47,7 +47,7 @@
 
 // @mixin inflex-around-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-normal($dir: row) {
     @include f.inflex-prop($dir, space-around, normal);
@@ -55,7 +55,7 @@
 
 // @mixin inflex-around-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-stretch($dir: row) {
     @include f.inflex-prop($dir, space-around, stretch);
@@ -63,7 +63,7 @@
 
 // @mixin inflex-around-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-start($dir: row) {
     @include f.inflex-prop($dir, space-around, start);
@@ -71,7 +71,7 @@
 
 // @mixin inflex-around-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-end($dir: row) {
     @include f.inflex-prop($dir, space-around, end);
@@ -79,7 +79,7 @@
 
 // @mixin inflex-around-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-fstart($dir: row) {
     @include f.inflex-prop($dir, space-around, flex-start);
@@ -87,7 +87,7 @@
 
 // @mixin inflex-around-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-fend($dir: row) {
     @include f.inflex-prop($dir, space-around, flex-end);
@@ -95,7 +95,7 @@
 
 // @mixin inflex-around-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-center($dir: row) {
     @include f.inflex-prop($dir, space-around, center);
@@ -103,7 +103,7 @@
 
 // @mixin inflex-around-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-baseline($dir: row) {
     @include f.inflex-prop($dir, space-around, baseline);
@@ -111,7 +111,7 @@
 
 // @mixin inflex-around-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-around
+// @module inline-flexbox-around
 
 @mixin inflex-around-inh($dir: row) {
     @include f.inflex-prop($dir, space-around, inherit);

@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-//  @module flexbox
+//  @namespace flexbox
 
-// @group flexbox-right
+// @module flexbox-right
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin flex-right-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-normal($dir: row) {
     @include f.f-prop($dir, right, normal);
@@ -54,7 +54,7 @@
 
 // @mixin flex-right-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-stretch($dir: row) {
     @include f.f-prop($dir, right, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin flex-right-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-start($dir: row) {
     @include f.f-prop($dir, right, start);
@@ -70,7 +70,7 @@
 
 // @mixin flex-right-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-end($dir: row) {
     @include f.f-prop($dir, right, end);
@@ -78,7 +78,7 @@
 
 // @mixin flex-right-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-fstart($dir: row) {
     @include f.f-prop($dir, right, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin flex-right-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-fend($dir: row) {
     @include f.f-prop($dir, right, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin flex-right-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-center($dir: row) {
     @include f.f-prop($dir, right, center);
@@ -102,7 +102,7 @@
 
 // @mixin flex-right-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-baseline($dir: row) {
     @include f.f-prop($dir, right, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin flex-right-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-right
+// @module flexbox-right
 
 @mixin flex-right-inh($dir: row) {
     @include f.f-prop($dir, right, inherit);
