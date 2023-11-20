@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Flexbox Utilities
 // * This SCSS module imports various mixins and utilities related to main flexbox properties
 // * to provide a convenient and modular way to manage flexbox layouts.
@@ -6,30 +8,67 @@
 
 // @module mixins/flex-props/main-props
 
-// @requires flex - Import for basic flex utility mixins.
-// @requires inline-flex - Import for basic inline-flex utility mixins.
-// @requires flex-direction - Import for flex-direction utility mixins.
-// @requires justify-content - Import for justify-content utility mixins.
-// @requires align-items - Import for align-items utility mixins.
-// @requires align-self - Import for align-self utility mixins.
-// @requires flex-grow - Import for flex-grow utility mixins.
-// @requires flex-shrink - Import for flex-shrink utility mixins.
-// @requires flex-wrap - Import for flex-wrap utility mixins.
-// @requires flex-basis - Import for flex-basis utility mixins.
-// @requires flex-prop - Import for a combined flex property utility mixin.
-// @requires inflex-prop - Import for a combined inline-flex property utility mixin.
-// @requires order - Import for order utility mixins.
-
+// * Importing the "flex" module.
+// * This module likely provides styles for general flex container properties.
+// @see flex
 @import "flex";
+
+// * Importing the "inline-flex" module.
+// * The "inline-flex" module probably provides styles for inline flex containers.
+// @see inline-flex
 @import "inline-flex";
+
+// * Importing the "flex-direction" module.
+// * This module likely provides styles for flex container direction.
+// @see flex-direction
 @import "flex-direction";
+
+// * Importing the "justify-content" module.
+// * This module likely provides styles for flex container justification.
+// @see justify-content
 @import "justify-content";
+
+// * Importing the "align-items" module.
+// * This module probably provides styles for flex container item alignment.
+// @see align-items
 @import "align-items";
+
+// * Importing the "align-self" module.
+// * This module likely provides styles for individual flex items alignment.
+// @see align-self
 @import "align-self";
+
+// * Importing the "flex-grow" module.
+// * This module probably provides styles for flex item growth.
+// @see flex-grow
 @import "flex-grow";
+
+// * Importing the "flex-shrink" module.
+// * This module likely provides styles for flex item shrinking.
+// @see flex-shrink
 @import "flex-shrink";
+
+// * Importing the "flex-wrap" module.
+// * This module probably provides styles for flex container wrapping.
+// @see flex-wrap
 @import "flex-wrap";
+
+// * Importing the "flex-basis" module.
+// * This module likely provides styles for flex item basis.
+// @see flex-basis
 @import "flex-basis";
+
+// * Importing the "flex-prop" module.
+// * This module likely provides styles for a generic flex property.
+// @see flex-prop
 @import "flex-prop";
+
+// * Importing the "inflex-prop" module.
+// * The "inflex-prop" module probably provides styles for inline-flex property.
+// @see inflex-prop
 @import "inflex-prop";
+
+// * Importing the "order" module.
+// * This module likely provides styles for flex item ordering.
+// @see order
 @import "order";

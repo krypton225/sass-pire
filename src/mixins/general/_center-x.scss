@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Center-X Mixin
 // * This mixin generates CSS properties to horizontally center an element within its container.
 // * It sets the right and left margins to 'auto'.
@@ -21,8 +23,6 @@
 
 // @note
 // * This mixin is useful for centering block-level elements horizontally within their container.
-
-@charset "UTF-8";
 
 @mixin center-x {
     margin: {

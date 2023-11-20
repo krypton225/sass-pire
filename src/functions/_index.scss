@@ -1,4 +1,27 @@
+@charset "UTF-8";
+
+// * This file forwards the "converters", "list", "global", and "type-checks" modules.
+
+// @author Khaled Mohamed
+
+// @module functions
+
+// * Forwarding the "converters" module.
+// * This module likely contains functions for unit conversions.
+// @see converters
 @forward "converters";
+
+// * Forwarding the "list" module.
+// * This module likely contains functions related to lists in Sass.
+// @see list
 @forward "list";
+
+// * Forwarding the "global" module.
+// * This module likely contains global utilities or functions.
+// @see global
 @forward "global";
+
+// * Forwarding the "type-checks" module.
+// * This module likely contains functions for checking the type of Sass values.
+// @see type-checks
 @forward "type-checks";

@@ -1,2 +1,17 @@
+@charset "UTF-8";
+
+// * This file forwards modules related to CSS property prefixes.
+
+// @author Khaled Mohamed
+
+// @module mixins/vendor-prefixes
+
+// * Forwarding the "prefix" module.
+// * The "prefix" module probably provides utilities for handling CSS property prefixes.
+// @see prefix
 @forward "prefix";
+
+// * Forwarding the "prefix-val" module.
+// * The "prefix-val" module likely provides utilities for handling prefixed values for CSS properties.
+// @see prefix-val
 @forward "prefix-val";

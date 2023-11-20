@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * transition Mixin
 // * Apply transition properties with cross-browser compatibility.
 
@@ -27,7 +29,6 @@
 // * }
 
 // stylelint-disable scss/dollar-variable-empty-line-before
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract/variables" as var;

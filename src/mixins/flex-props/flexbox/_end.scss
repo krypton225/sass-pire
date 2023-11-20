@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Flex End Mixins
 // * These mixins provide a convenient way to apply flexbox properties with the 'end' value
 // * for the 'justify-content' property. The pattern used is (flex)-(justify-content)-(align-items),
@@ -40,7 +42,6 @@
 // *   align-items: normal;
 // * }
 
-@charset "UTF-8";
 @use "../main-props/flex-prop" as f;
 
 // @mixin flex-end-normal

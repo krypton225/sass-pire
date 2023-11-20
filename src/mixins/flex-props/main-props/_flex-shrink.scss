@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Flex Shrink Mixin
 // * This mixin provides a convenient way to set the `flex-shrink` property
 // * with vendor prefixes for better cross-browser compatibility.
@@ -30,7 +32,6 @@
 // * }
 
 // stylelint-disable scss/dollar-variable-empty-line-before
-@charset "UTF-8";
 @use "sass:list";
 @import "../../../functions/global/cut-unit";
 

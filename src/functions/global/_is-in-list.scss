@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Is In List Function
 // * This function checks if a given value exists in a provided list.
 
@@ -30,7 +32,6 @@
 
 // @return {Boolean} - Returns true if the second argument exists in the list, and false otherwise.
 
-@charset "UTF-8";
 @use "sass:list";
 
 @function is-in-list($list-name, $value) {

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * keyframe mixin
 // * Generate keyframes with vendor prefixes.
 
@@ -58,7 +60,6 @@
 // * }
 
 // stylelint-disable at-rule-no-vendor-prefix
-@charset "UTF-8";
 
 @mixin keyframe($name) {
     @if type-of($name) != string {

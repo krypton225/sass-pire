@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Banner Mixin
 // * The `banner` mixin is used to add a banner to the top of the CSS file during compilation.
 // * This banner typically includes information such as library name, version, copyright, and license.
@@ -15,7 +17,6 @@
 // @see reset file
 
 // stylelint-disable comment-empty-line-before
-@charset "UTF-8";
 @use "../abstract/variables" as var;
 
 @mixin banner() {

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Translate Mixin
 // * This mixin provides a convenient way to apply translation using the `transform` property
 // * with proper vendor prefixes. It supports both numerical values for translation distances
@@ -32,7 +34,6 @@
 // *   transform: translate(20px, 20px);
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as prefix;

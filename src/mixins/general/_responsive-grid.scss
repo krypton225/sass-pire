@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * grid mixin
 // * Create a responsive grid layout with specified column width and gap.
 
@@ -23,7 +25,6 @@
 // *   gap: 2rem;
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../functions/global/is-in-list" as func;

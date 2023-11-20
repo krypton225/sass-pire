@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // @mixin mq
 // * Generate a media query with specified type, dimension, and breakpoint.
 
@@ -27,7 +29,6 @@
 // *  }
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
 

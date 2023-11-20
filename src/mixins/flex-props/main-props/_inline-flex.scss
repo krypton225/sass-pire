@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Display Inline-Flex Mixin
 // * This mixin sets the `display` property to inline-flex with vendor prefixes,
 // * providing a convenient way to apply inline-flex styles.
@@ -23,8 +25,6 @@
 // *   display: -webkit-inline-flex;
 // *   display: inline-flex;
 // * }
-
-@charset "UTF-8";
 
 @mixin d-inflex() {
     $inline-flex-prefixes-values: (

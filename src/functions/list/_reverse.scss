@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Reverse Function
 // * This function retrieves the reversed list from the given one.
 
@@ -26,7 +28,6 @@
 
 // @return {Any} - Returns the reversed list from the given list.
 
-@charset "UTF-8";
 @use "sass:list";
 @use "flatten-list" as func;
 

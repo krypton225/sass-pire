@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Pixel to Centimeter Conversion Function
 // * This function converts a value with pixel unit into centimeters.
 
@@ -23,7 +25,6 @@
 
 // @return {Number} - Returns the converted value in centimeters.
 
-@charset "UTF-8";
 @use "sass:math";
 @use "../global/cut-unit" as func;
 

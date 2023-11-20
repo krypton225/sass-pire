@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Main Colors Map
 // * This map contains some colors and their corresponding shades.
 // * It can be used in a loop with the `color-generator-def()` mixin.
@@ -6,8 +8,6 @@
 // @author Khaled Mohamed
 
 // @module abstract
-
-@charset "UTF-8";
 
 $main-colors-map: (
     "red": (

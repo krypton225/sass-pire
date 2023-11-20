@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * square mixin
 // * Create a square shape with equal width and height.
 
@@ -20,7 +22,6 @@
 // *   height: 50px;
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract" as var;

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Get Last From Function
 // * This function retrieves the first element from the given list.
 
@@ -36,7 +38,6 @@
 
 // @return {Any} - Returns the last element from the list.
 
-@charset "UTF-8";
 @use "sass:list";
 @use "../../abstract/variables" as var;
 @use "flatten-list" as func;

@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * has-rel-unit Function
 // * This function checks if the provided argument has relative units.
 
@@ -18,7 +20,6 @@
 
 // @return {boolean} - Returns true if the argument has one of the relative units, otherwise false.
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 

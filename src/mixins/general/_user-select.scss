@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * u-select Mixin
 // * Apply user-select property with cross-browser support.
 
@@ -29,7 +31,6 @@
 // * }
 
 // stylelint-disable scss/dollar-variable-empty-line-before
-@charset "UTF-8";
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
 

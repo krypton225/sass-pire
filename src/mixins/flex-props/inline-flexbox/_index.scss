@@ -1,13 +1,73 @@
+@charset "UTF-8";
+
+// * This file imports various "in-" alignment modules,
+// * each likely providing styles for different alignment properties.
+
+// @author Khaled Mohamed
+
+// @module mixins/flex-props/inline-flexbox
+
+// * Importing the "in-normal" alignment module.
+// * This module likely provides styles for normal inline alignment.
+// @see in-normal
 @import "in-normal";
+
+// * Importing the "in-stretch" alignment module.
+// * The "in-stretch" module probably provides styles for stretching inline elements.
+// @see in-stretch
 @import "in-stretch";
+
+// * Importing the "in-start" alignment module.
+// * This module likely provides styles for starting inline alignment.
+// @see in-start
 @import "in-start";
+
+// * Importing the "in-end" alignment module.
+// * The "in-end" module probably provides styles for ending inline alignment.
+// @see in-end
 @import "in-end";
+
+// * Importing the "in-right" alignment module.
+// * This module likely provides styles for right inline alignment.
+// @see in-right
 @import "in-right";
+
+// * Importing the "in-left" alignment module.
+// * The "in-left" module probably provides styles for left inline alignment.
+// @see in-left
 @import "in-left";
+
+// * Importing the "in-fstart" alignment module.
+// * This module likely provides styles for flex-start inline alignment.
+// @see in-fstart
 @import "in-fstart";
+
+// * Importing the "in-fend" alignment module.
+// * The "in-fend" module probably provides styles for flex-end inline alignment.
+// @see in-fend
 @import "in-fend";
+
+// * Importing the "in-center" alignment module.
+// * This module likely provides styles for center inline alignment.
+// @see in-center
 @import "in-center";
+
+// * Importing the "in-between" alignment module.
+// * The "in-between" module probably provides styles for space-between inline alignment.
+// @see in-between
 @import "in-between";
+
+// * Importing the "in-around" alignment module.
+// * This module likely provides styles for space-around inline alignment.
+// @see in-around
 @import "in-around";
+
+// * Importing the "in-evenly" alignment module.
+// * The "in-evenly" module probably provides styles for space-evenly inline alignment.
+// @see in-evenly
 @import "in-evenly";
+
+// * Importing the "in-inherit" alignment module.
+// * This module likely provides styles for inheriting inline alignment.
+// @see in-inherit
 @import "in-inherit";
