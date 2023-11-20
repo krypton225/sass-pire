@@ -1,8 +1,13 @@
-@charset "UTF-8";
+// * Main Colors Map
+// * This map contains some colors and their corresponding shades.
+// * It can be used in a loop with the `color-generator-def()` mixin.
+// * You are free to use, edit, or update these colors as needed.
 
-// * This is just a map which contains some of colors and its degrees.
-// * You can use this map in a loop to render using color-generator-def() mixin.
-// * You can use this colors or edit or even update them as you need.
+// @author Khaled Mohamed
+
+// @module abstract
+
+@charset "UTF-8";
 
 $main-colors-map: (
     "red": (

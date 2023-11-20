@@ -1,2 +1,11 @@
+// * Forwarded Variables
+// * This module forwards the variables defined in the "variables" module.
+// * It allows you to use these variables in other files.
+// @see variables
 @forward "variables";
+
+// * Forwarded Colors
+// * This module forwards the colors defined in the "colors" module.
+// * It allows you to use these colors in other files.
+// @see colors
 @forward "colors";
