@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Inline Flex Around Mixins
 // * These mixins provide a convenient way to apply inline flexbox properties with the 'space-around' value
 // * for the 'justify-content' property. The pattern used is (inline-flex)-(justify-content)-(align-items),
@@ -41,7 +43,6 @@
 // *   align-items: normal;
 // * }
 
-@charset "UTF-8";
 @use "../main-props/inflex-prop" as f;
 
 // @mixin inflex-around-normal

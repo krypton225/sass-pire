@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Generate Colors Mixin
 // * This mixin generates CSS custom properties for defining colors in the :root
 // * element based on the provided color map. It allows you to create a consistent
@@ -48,7 +50,6 @@
 // @note
 // * Make sure to include the "variables" module where the "$brand-lib-name" variable is defined.
 
-@charset "UTF-8";
 @use "sass:list";
 @use "../../abstract/variables" as var;
 

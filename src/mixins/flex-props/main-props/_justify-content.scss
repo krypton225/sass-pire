@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Justify Content Mixin
 // * This mixin applies the `justify-content` property with vendor prefixes to a container.
 // * It allows you to set the horizontal alignment of flex items along the main axis.
@@ -25,7 +27,6 @@
 // *   justify-content: start;
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "../../../functions/global/is-in-list" as func;
 

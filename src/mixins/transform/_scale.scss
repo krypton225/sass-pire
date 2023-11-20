@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Scale Mixin
 // * This mixin provides a convenient way to apply scaling using the `transform` property
 // * with proper vendor prefixes. It supports both numerical values for scaling factors
@@ -31,7 +33,6 @@
 // *   transform: scale(2, 2);
 // * }
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as prefix;

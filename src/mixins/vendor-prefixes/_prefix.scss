@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Prefixing Mixin
 // * This mixin generates CSS properties with vendor prefixes for cross-browser compatibility.
 // * It applies the specified property and value with prefixes for webkit, moz, ms, and o.
@@ -26,8 +28,6 @@
 // *   -o-transform: rotate(45deg);
 // *   transform: rotate(45deg);
 // * }
-
-@charset "UTF-8";
 
 @mixin prefixing-all($property, $value) {
     -webkit-#{$property}: $value;

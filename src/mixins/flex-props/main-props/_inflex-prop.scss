@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Inline-Flex Property Mixin
 // * This mixin combines several inline-flex properties, providing a convenient way to set
 // * the display, flex-direction, justify-content, and align-items properties at once.
@@ -43,7 +45,6 @@
 // *   align-items: center;
 // * }
 
-@charset "UTF-8";
 @use "../main-props/inline-flex" as f;
 @use "../main-props/flex-direction" as dir;
 @use "../main-props/justify-content" as jc;

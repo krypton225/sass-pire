@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Generate Colors for Dark Mode Mixin
 // * This mixin generates CSS custom properties for defining colors in the :root
 // * element based on the provided color maps for both light and dark modes. It
@@ -93,7 +95,6 @@
 // * with the `html[data-theme="dark"]` selector. Adjust the HTML attribute selector
 // * if your dark mode implementation uses a different attribute.
 
-@charset "UTF-8";
 @use "sass:list";
 
 @mixin generate-colors-dark-mode($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {

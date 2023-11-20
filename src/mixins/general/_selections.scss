@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * select mixin
 // * Apply custom selection styles to the browser's selection highlight.
 
@@ -29,7 +31,6 @@
 // * }
 
 // stylelint-disable selector-no-vendor-prefix
-@charset "UTF-8";
 
 @mixin select($bg-color, $text-color) {
     @if type-of($bg-color) == string {

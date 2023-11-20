@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Order Mixin
 // * This mixin applies the `order` property with vendor prefixes to reorder flex items.
 // * It allows you to control the visual order of flex items within their flex container.
@@ -29,7 +31,6 @@
 // *   order: 2;
 // * }
 
-@charset "UTF-8";
 @use "../../../functions/global/cut-unit" as func;
 
 @mixin order($val) {

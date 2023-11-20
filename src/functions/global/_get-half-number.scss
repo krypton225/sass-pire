@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Half Function
 // * This function calculates the half of a given number.
 
@@ -25,9 +27,9 @@
 // *   margin-top: 11cm;
 // * }
 
-// @return {Number} - The half of the given number. If the input has a unit, the result will also have the same unit.
+// @return {Number} - The half of the given number. If the input has a unit,
+// * the result will also have the same unit.
 
-@charset "UTF-8";
 @use "sass:math";
 @use "cut-unit" as func;
 

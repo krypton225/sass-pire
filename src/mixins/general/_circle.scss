@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Circle Mixin
 // * This mixin generates CSS properties to create a circular element with a specified
 // * side length. It sets the width, height, and border-radius properties to create a perfect circle.
@@ -26,7 +28,6 @@
 // * The mixin assumes that the provided side length will create a circle. It's essential to ensure
 // * that the specified side length is the same for both width and height to maintain a perfect circle.
 
-@charset "UTF-8";
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract/variables" as var;

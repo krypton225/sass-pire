@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * has-ptg Function
 // * This function checks if the provided argument has a percentage unit.
 
@@ -18,7 +20,6 @@
 
 // @return {boolean} - Returns true if the argument has a percentage unit, otherwise false.
 
-@charset "UTF-8";
 @use "sass:math";
 
 @function has-ptg($val) {

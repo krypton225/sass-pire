@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Cut-Unit Function
 // * This function cuts or strips the unit from a given number.
 
@@ -30,7 +32,6 @@
 
 // @return {Number} - A number after cutting or stripping the unit.
 
-@charset "UTF-8";
 @use "sass:math";
 
 @function cut-unit($num) {

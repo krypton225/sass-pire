@@ -1,3 +1,5 @@
+@charset "UTF-8";
+
 // * Inline Flex Right Mixins
 // * These mixins provide a convenient way to apply inline flexbox properties with the 'flex-end' value
 // * for the 'justify-content' property. The pattern used is (inline-flex)-(justify-content)-(align-items),
@@ -40,7 +42,6 @@
 // *   align-items: normal;
 // * }
 
-@charset "UTF-8";
 @use "../main-props/inflex-prop" as f;
 
 // @mixin inflex-right-normal
