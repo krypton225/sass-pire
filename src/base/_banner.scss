@@ -1,21 +1,32 @@
-@charset "UTF-8";
+// * Banner Mixin
+// * The `banner` mixin is used to add a banner to the top of the CSS file during compilation.
+// * This banner typically includes information such as library name, version, copyright, and license.
+
+// @author Khaled Mohamed
+
+// @module base
+
+// @example:
+// * In your base/reset.scss file, include the following line at the top:
+// * @use "../abstract/variables" as var;
+// * @include banner();
+// * This will insert the library banner at the beginning of the compiled CSS file.
+
+// @see reset file
 
 // stylelint-disable comment-empty-line-before
-
-// * This mixin is used for add banner for the library in the top of
-// * CSS file which will be compiled.
-// * It contains all needed information like library name, its current
-// * version, license, .. etc.
-// * It will not be used in any mixins or even functions.
-// * It ONLY will be used in base/reset.scss path to add it before all
-// * codes which will be compiled from SCSS into CSS.
-
+@charset "UTF-8";
 @use "../abstract/variables" as var;
 
 @mixin banner() {
     /*
         ***** #{var.$lib-name} library v0.0.1
+
         ***** Copyright 2023 for #{var.$lib-name} authors.
+
+        ***** Authors:
+        ***** #{var.$author-names}.
+
         ***** Licensed under MIT.
      */
 }
