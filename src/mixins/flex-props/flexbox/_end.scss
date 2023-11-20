@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module flexbox
+// @namespace flexbox
 
-// @group flexbox-end
+// @module flexbox/end
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin flex-end-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-normal($dir: row) {
     @include f.f-prop($dir, end, normal);
@@ -54,7 +54,7 @@
 
 // @mixin flex-end-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-stretch($dir: row) {
     @include f.f-prop($dir, end, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin flex-end-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-start($dir: row) {
     @include f.f-prop($dir, end, start);
@@ -70,7 +70,7 @@
 
 // @mixin flex-end-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-end($dir: row) {
     @include f.f-prop($dir, end, end);
@@ -78,7 +78,7 @@
 
 // @mixin flex-end-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-fstart($dir: row) {
     @include f.f-prop($dir, end, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin flex-end-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-fend($dir: row) {
     @include f.f-prop($dir, end, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin flex-end-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-center($dir: row) {
     @include f.f-prop($dir, end, center);
@@ -102,7 +102,7 @@
 
 // @mixin flex-end-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-baseline($dir: row) {
     @include f.f-prop($dir, end, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin flex-end-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-end
+// @module flexbox-end
 
 @mixin flex-end-inh($dir: row) {
     @include f.f-prop($dir, end, inherit);

@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module inline-flexbox
+// @namespace inline-flexbox
 
-// @group inline-flexbox-fend
+// @module inline-flexbox/fend
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin inflex-fend-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-normal($dir: row) {
     @include f.inflex-prop($dir, flex-end, normal);
@@ -54,7 +54,7 @@
 
 // @mixin inflex-fend-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-stretch($dir: row) {
     @include f.inflex-prop($dir, flex-end, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin inflex-fend-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-start($dir: row) {
     @include f.inflex-prop($dir, flex-end, start);
@@ -70,7 +70,7 @@
 
 // @mixin inflex-fend-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-end($dir: row) {
     @include f.inflex-prop($dir, flex-end, end);
@@ -78,7 +78,7 @@
 
 // @mixin inflex-fend-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-fstart($dir: row) {
     @include f.inflex-prop($dir, flex-end, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin inflex-fend-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-fend($dir: row) {
     @include f.inflex-prop($dir, flex-end, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin inflex-fend-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-center($dir: row) {
     @include f.inflex-prop($dir, flex-end, center);
@@ -102,7 +102,7 @@
 
 // @mixin inflex-fend-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-baseline($dir: row) {
     @include f.inflex-prop($dir, flex-end, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin inflex-fend-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-fend
+// @module inline-flexbox-fend
 
 @mixin inflex-fend-inh($dir: row) {
     @include f.inflex-prop($dir, flex-end, inherit);

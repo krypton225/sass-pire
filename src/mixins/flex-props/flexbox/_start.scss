@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module flexbox
+// @namespace flexbox
 
-// @group flexbox-start
+// @module flexbox/start
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin flex-start-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-normal($dir: row) {
     @include f.f-prop($dir, start, normal);
@@ -54,7 +54,7 @@
 
 // @mixin flex-start-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-stretch($dir: row) {
     @include f.f-prop($dir, start, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin flex-start-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-start($dir: row) {
     @include f.f-prop($dir, start, start);
@@ -70,7 +70,7 @@
 
 // @mixin flex-start-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-end($dir: row) {
     @include f.f-prop($dir, start, end);
@@ -78,7 +78,7 @@
 
 // @mixin flex-start-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-fstart($dir: row) {
     @include f.f-prop($dir, start, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin flex-start-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-fend($dir: row) {
     @include f.f-prop($dir, start, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin flex-start-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-center($dir: row) {
     @include f.f-prop($dir, start, center);
@@ -102,7 +102,7 @@
 
 // @mixin flex-start-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-baseline($dir: row) {
     @include f.f-prop($dir, start, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin flex-start-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group flexbox-start
+// @module flexbox-start
 
 @mixin flex-start-inh($dir: row) {
     @include f.f-prop($dir, start, inherit);

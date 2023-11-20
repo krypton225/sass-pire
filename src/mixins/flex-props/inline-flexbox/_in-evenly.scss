@@ -7,9 +7,9 @@
 
 // @author Khaled Mohamed
 
-// @module inline-flexbox
+// @namespace inline-flexbox
 
-// @group inline-flexbox-evenly
+// @module inline-flexbox/evenly
 
 // @example
 // * .example {
@@ -46,7 +46,7 @@
 
 // @mixin inflex-even-normal
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-normal($dir: row) {
     @include f.inflex-prop($dir, space-evenly, normal);
@@ -54,7 +54,7 @@
 
 // @mixin inflex-even-stretch
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-stretch($dir: row) {
     @include f.inflex-prop($dir, space-evenly, stretch);
@@ -62,7 +62,7 @@
 
 // @mixin inflex-even-start
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-start($dir: row) {
     @include f.inflex-prop($dir, space-evenly, start);
@@ -70,7 +70,7 @@
 
 // @mixin inflex-even-end
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-end($dir: row) {
     @include f.inflex-prop($dir, space-evenly, end);
@@ -78,7 +78,7 @@
 
 // @mixin inflex-even-fstart
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-fstart($dir: row) {
     @include f.inflex-prop($dir, space-evenly, flex-start);
@@ -86,7 +86,7 @@
 
 // @mixin inflex-even-fend
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-fend($dir: row) {
     @include f.inflex-prop($dir, space-evenly, flex-end);
@@ -94,7 +94,7 @@
 
 // @mixin inflex-even-center
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-center($dir: row) {
     @include f.inflex-prop($dir, space-evenly, center);
@@ -102,7 +102,7 @@
 
 // @mixin inflex-even-baseline
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-baseline($dir: row) {
     @include f.inflex-prop($dir, space-evenly, baseline);
@@ -110,7 +110,7 @@
 
 // @mixin inflex-even-inh
 // @param {String} $dir - The flex direction. Default: row.
-// @group inline-flexbox-evenly
+// @module inline-flexbox-evenly
 
 @mixin inflex-even-inh($dir: row) {
     @include f.inflex-prop($dir, space-evenly, inherit);
