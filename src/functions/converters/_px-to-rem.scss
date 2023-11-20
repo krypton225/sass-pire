@@ -1,15 +1,32 @@
+// * Pixel to Rem Conversion Function
+// * This function converts a value with pixel unit into rem.
+
+// @author Khaled Mohamed
+
+// @module converters
+
+// @group converters-px-to-rem
+
+// @param {Number} $px-val - The value in pixel unit to convert.
+
+// @throw {Exception} - Throws an exception if the provided parameter is not a number or parameter not has a unit.
+
+// @example
+// * .example {
+// *   font-size: px-to-rem(12px);
+// * }
+
+// @output
+// * .example {
+// *   font-size: 0.75rem;
+// * }
+
+// @return {Number} - Returns the converted value in rem.
+
 @charset "UTF-8";
 @use "sass:math";
 @use "../../abstract/variables" as var;
-
-// * @explain
-// * This is just a function to convert any value has pixel unit into rem.
-
-// * @group:    functions/converters.
-// * @param:    {number} $px-val - Value into pixel unit.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as px(12px) | px(130px) and store value in prop.
-// * @return:   {number} - A converted pixel number into rem.
+@use "../global/cut-unit" as func;
 
 @function px-to-rem($px-val) {
     @if type-of($px-val) != number {
@@ -20,5 +37,9 @@
         @return 0;
     }
 
-    @return calc($px-val / var.$base-font-size) + rem;
+    @if unitless($px-val) {
+        @error "You must write the unit of the argument";
+    }
+
+    @return calc(func.cut-unit($px-val) / var.$base-font-size) + rem;
 }
