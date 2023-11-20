@@ -1,15 +1,31 @@
+// * Pixel to Centimeter Conversion Function
+// * This function converts a value with pixel unit into centimeters.
+
+// @author Khaled Mohamed
+
+// @module converters
+
+// @group converters-px-to-cm
+
+// @param {Number} $px-val - The value in pixel unit to convert.
+
+// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a pixel unit.
+
+// @example
+// * .example {
+// *   width: px-to-cm(12px);
+// * }
+
+// @output
+// * .example {
+// *   width: 0.3174999996cm;
+// * }
+
+// @return {Number} - Returns the converted value in centimeters.
+
 @charset "UTF-8";
 @use "sass:math";
 @use "../global/cut-unit" as func;
-
-// * @explain
-// * This is just a function to convert any value has pixel unit into centimeter.
-
-// * @group:    functions/converters.
-// * @param:    {number} $px-val - Value into pixel unit.
-// * @throw:    Exceptions if @param not a number, not has unit or not has pixel unit.
-// * @example:  call it as px-to-cm(12px) | px-to-cm(130px) and store value in prop.
-// * @return:   {number} - A converted pixel number into centimeter.
 
 @function px-to-cm($px-val) {
     @if type-of($px-val) != number {
@@ -26,6 +42,6 @@
 
     $actual-number: func.cut-unit($px-val);
 
-    /* stylelint-disable-next-line number-max-precision */
+    // stylelint-disable-next-line number-max-precision
     @return $actual-number * 0.0264583333cm;
 }
