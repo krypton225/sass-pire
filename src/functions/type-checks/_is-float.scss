@@ -1,14 +1,32 @@
 @charset "UTF-8";
+
+// @description
+// * This module provides a function to check if the argument is a floating-point number.
+
+// @author Khaled Mohamed
+
+// @namespace type-checks
+
+// @module type-checks/is-float
+
+// @param {number} $val - A number to check if it is a floating-point number or not.
+
+// @throw {string} "You must pass an argument with number type to the is-float function."
+
+// @example
+// * .example {
+// *   content: is-float(12.66deg);
+// * };
+
+// @output
+// * .example {
+// *   content: true
+// * };
+
+// @returns {boolean} - True if it is a floating-point number, false if not.
+
 @use "sass:math";
-
-// * @explain
-// * This is just a function to check if the argument has floating number or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has floating number or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as is-float(12.22) | is-float(22) | is-float(23.21).
-// * @return:   {boolean} - true if it has floating number and false if not.
+@use "../global/cut-unit" as func;
 
 @function is-float($val) {
     @if type-of($val) != number {
@@ -16,8 +34,9 @@
     }
 
     $flag: false;
+    $actual-number: func.cut-unit($val);
 
-    @if $val % 1 != 0 {
+    @if $actual-number % 1 != 0 {
         $flag: true;
     }
 
