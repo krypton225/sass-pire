@@ -1,24 +1,43 @@
 @charset "UTF-8";
+
+// @description
+// * This module provides a function to check if the argument is a integer number.
+
+// @author Khaled Mohamed
+
+// @namespace type-checks
+
+// @module type-checks/is-int
+
+// @param {number} $val - The number to check.
+
+// @throw Throws an error if the argument is not a number.
+
+// @return {boolean} - True if the number is an integer, false otherwise.
+
+// @example
+// * .example {
+// *   content: is-int(12deg);
+// * };
+
+// @output
+// * .example {
+// *   content: true
+// * };
+
 @use "sass:math";
-
-// * @explain
-// * This is just a function to check if the argument has integer number or not.
-
-// * @group:    functions/type-checks.
-// * @param:    {number} $val - A number to check if it has integer number or not.
-// * @throw:    Exceptions if @param not a number.
-// * @example:  call it as is-int(12) | is-int(22) | is-int(23.21).
-// * @return:   {boolean} - true if it an integer number and false if not.
+@use "../global/cut-unit" as func;
 
 @function is-int($val) {
     @if type-of($val) != number {
         @error "You must pass argument to is-int function with a number type.";
     }
 
-    $flag: true;
+    $flag: false;
+    $actual-number: func.cut-unit($val);
 
-    @if math.round($val) != $val {
-        $flag: false;
+    @if math.round($actual-number) == $actual-number {
+        $flag: true;
     }
 
     @return $flag;
