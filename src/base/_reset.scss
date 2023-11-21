@@ -5,7 +5,6 @@
 // * You can check this here: https://andy-bell.co.uk/a-modern-css-reset/
 // * We updated some of this reset file.
 
-@use "../abstract/variables" as var;
 @use "../mixins/vendor-prefixes/prefix" as prefix;
 @use "../base/banner" as b;
 @include b.banner;
@@ -52,7 +51,9 @@ body {
 
 // * A elements that don't have a class get default styles
 a:not([class]) {
-    @each $prop, $val in var.$text-decoration-ink-props {
+    $text-decoration-ink-props: (-webkit-text-decoration-skip, text-decoration-skip-ink) !default;
+
+    @each $prop, $val in $text-decoration-ink-props {
         #{$prop}: auto;
     }
 }
