@@ -1,11 +1,12 @@
 @charset "UTF-8";
 
+// @description
+// * This file forwards key functionalities from other modules
+// * for easy access in the current stylesheet.
+
 // @author Khaled Mohamed
 
 // @namespace functions/list
-
-// * This file forwards key functionalities from other modules
-// * for easy access in the current stylesheet.
 
 // * Forwarding the "get-first-element" module.
 // * This module likely contains a function to get the first
