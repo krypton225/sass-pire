@@ -36,7 +36,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@import "../../../functions";
+@forward "../../../functions";
 
 @mixin flex-basis($val: auto) {
     $flex-basis-props: (

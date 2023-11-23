@@ -12,64 +12,64 @@
 // * Importing the "flex" module.
 // * This module likely provides styles for general flex container properties.
 // @see flex
-@import "flex";
+@forward "flex";
 
 // * Importing the "inline-flex" module.
 // * The "inline-flex" module probably provides styles for inline flex containers.
 // @see inline-flex
-@import "inline-flex";
+@forward "inline-flex";
 
 // * Importing the "flex-direction" module.
 // * This module likely provides styles for flex container direction.
 // @see flex-direction
-@import "flex-direction";
+@forward "flex-direction";
 
 // * Importing the "justify-content" module.
 // * This module likely provides styles for flex container justification.
 // @see justify-content
-@import "justify-content";
+@forward "justify-content";
 
 // * Importing the "align-items" module.
 // * This module probably provides styles for flex container item alignment.
 // @see align-items
-@import "align-items";
+@forward "align-items";
 
 // * Importing the "align-self" module.
 // * This module likely provides styles for individual flex items alignment.
 // @see align-self
-@import "align-self";
+@forward "align-self";
 
 // * Importing the "flex-grow" module.
 // * This module probably provides styles for flex item growth.
 // @see flex-grow
-@import "flex-grow";
+@forward "flex-grow";
 
 // * Importing the "flex-shrink" module.
 // * This module likely provides styles for flex item shrinking.
 // @see flex-shrink
-@import "flex-shrink";
+@forward "flex-shrink";
 
 // * Importing the "flex-wrap" module.
 // * This module probably provides styles for flex container wrapping.
 // @see flex-wrap
-@import "flex-wrap";
+@forward "flex-wrap";
 
 // * Importing the "flex-basis" module.
 // * This module likely provides styles for flex item basis.
 // @see flex-basis
-@import "flex-basis";
+@forward "flex-basis";
 
 // * Importing the "flex-prop" module.
 // * This module likely provides styles for a generic flex property.
 // @see flex-prop
-@import "flex-prop";
+@forward "flex-prop";
 
 // * Importing the "inflex-prop" module.
 // * The "inflex-prop" module probably provides styles for inline-flex property.
 // @see inflex-prop
-@import "inflex-prop";
+@forward "inflex-prop";
 
 // * Importing the "order" module.
 // * This module likely provides styles for flex item ordering.
 // @see order
-@import "order";
+@forward "order";

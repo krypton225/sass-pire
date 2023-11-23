@@ -11,64 +11,64 @@
 // * Importing the "normal" alignment module.
 // * This module likely provides styles for normal alignment.
 // @see normal
-@import "normal";
+@forward "normal";
 
 // * Importing the "stretch" alignment module.
 // * The "stretch" module probably provides styles for stretching elements.
 // @see stretch
-@import "stretch";
+@forward "stretch";
 
 // * Importing the "start" alignment module.
 // * This module likely provides styles for starting alignment.
 // @see start
-@import "start";
+@forward "start";
 
 // * Importing the "end" alignment module.
 // * The "end" module probably provides styles for ending alignment.
 // @see end
-@import "end";
+@forward "end";
 
 // * Importing the "right" alignment module.
 // * This module likely provides styles for right alignment.
 // @see right
-@import "right";
+@forward "right";
 
 // * Importing the "left" alignment module.
 // * The "left" module probably provides styles for left alignment.
 // @see left
-@import "left";
+@forward "left";
 
 // * Importing the "fstart" alignment module.
 // * This module likely provides styles for flex-start alignment.
 // @see fstart
-@import "fstart";
+@forward "fstart";
 
 // * Importing the "fend" alignment module.
 // * The "fend" module probably provides styles for flex-end alignment.
 // @see fend
-@import "fend";
+@forward "fend";
 
 // * Importing the "center" alignment module.
 // * This module likely provides styles for center alignment.
 // @see center
-@import "center";
+@forward "center";
 
 // * Importing the "between" alignment module.
 // * The "between" module probably provides styles for space-between alignment.
 // @see between
-@import "between";
+@forward "between";
 
 // * Importing the "around" alignment module.
 // * This module likely provides styles for space-around alignment.
 // @see around
-@import "around";
+@forward "around";
 
 // * Importing the "evenly" alignment module.
 // * The "evenly" module probably provides styles for space-evenly alignment.
 // @see evenly
-@import "evenly";
+@forward "evenly";
 
 // * Importing the "inherit" alignment module.
 // * This module likely provides styles for inheriting alignment.
 // @see inherit
-@import "inherit";
+@forward "inherit";

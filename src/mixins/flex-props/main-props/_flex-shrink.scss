@@ -34,7 +34,7 @@
 
 // stylelint-disable scss/dollar-variable-empty-line-before
 @use "sass:list";
-@import "../../../functions/global/cut-unit";
+@use "../../../functions/global/cut-unit" as func;
 
 @mixin flex-shrink($val) {
     $flex-shrink-props: (
@@ -58,6 +58,6 @@
 
     @each $prop in $flex-shrink-props {
         // stylelint-disable-next-line scss/no-global-function-names
-        #{$prop}: if(type-of($val) == string, $val, cut-unit($val));
+        #{$prop}: if(type-of($val) == string, $val, func.cut-unit($val));
     }
 }

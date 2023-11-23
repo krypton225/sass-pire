@@ -36,7 +36,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 @use "sass:list";
 @use "sass:map";
-@import "../../../functions";
+@forward "../../../functions";
 
 // stylelint-disable scss/no-global-function-names
 

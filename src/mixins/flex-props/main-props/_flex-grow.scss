@@ -31,7 +31,7 @@
 // * }
 
 @use "sass:list";
-@import "../../../functions/global/cut-unit";
+@use "../../../functions/global/cut-unit" as func;
 
 @mixin flex-grow($val: 0) {
     $flex-grow-props: (-webkit-flex-grow, -webkit-box-flex, -ms-flex-positive, -moz-box-flex, flex-grow) !default;
@@ -45,6 +45,6 @@
     }
 
     @each $prop in $flex-grow-props {
-        #{$prop}: cut-unit($val);
+        #{$prop}: func.cut-unit($val);
     }
 }

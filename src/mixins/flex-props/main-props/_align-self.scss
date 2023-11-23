@@ -34,7 +34,7 @@
 // * }
 
 @use "sass:list";
-@import "../../../functions";
+@forward "../../../functions";
 
 @mixin align-self($val: auto) {
     $align-self-props: (
