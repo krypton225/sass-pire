@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+// @description
+// * has-pos function
+// * It checks if the provided argument has one of the position values.
+
+// @author Khaled Mohamed
+
+// @namespace global
+
+// @module type-checks/has-pos
+
+// @param {string} $val - The provided value of the position.
+
+// @throws {string} Throws an error if @param is not a string or @param is not in $position-values list.
+
+// @example
+// * .one {
+// *   content: has-pos(right);
+// * }
+
+// @output
+// * .one {
+// *   content: true;
+// * }
+
+// @returns {boolean} - Returns true if the argument has one of the position units, otherwise false.
+
+@use "sass:list";
+@use "sass:math";
+@use "../global/is-in-list" as func;
+
+@function has-pos($val) {
+    $position-values: (top, right, bottom, left) !default;
+    $flag: true !default;
+
+    @if type-of($val) != string {
+        @error "Argument of has-pos function must be of type string.";
+    }
+
+    @if not func.is-in-list($position-values, $val) {
+        $flag: false;
+    }
+
+    @return $flag;
+}
