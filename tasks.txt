@@ -1,2 +1,18 @@
 Mixins:
     - Configuration for RTL & LTR.
+
+===================================================================================
+
+Global:
+    - Update all import functions and mixins in all project with forward statement.
+    
+    - Update all @example statement in functions with (content) property.
+
+    - Add README files in root folder of project to add all rules for writing any
+    functionalities in project like: documentations,.. etc.
+
+    - Try to unit all error messages in one pattern.
+
+    - Try to unit all description ((docs)) in one pattern.
+
+    - Try to unit all example ((docs)) in one pattern.

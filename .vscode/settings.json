@@ -28,7 +28,8 @@
         "docs",
         "upgrade",
         "new-version",
-        "bugs"
+        "bugs",
+        "tasks"
     ],
     "cSpell.words": [
         "Giraudel"
