@@ -32,7 +32,7 @@
 // * }
 
 @use "sass:list";
-@import "../../../functions";
+@forward "../../../functions";
 
 @mixin align-items($value: normal) {
     $align-items-props: (
