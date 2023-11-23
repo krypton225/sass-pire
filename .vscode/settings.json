@@ -25,7 +25,8 @@
         "scripts",
         "tests",
         "enhance",
-        "docs"
+        "docs",
+        "upgrade"
     ],
     "cSpell.words": [
         "Giraudel"
