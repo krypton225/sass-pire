@@ -36,7 +36,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@forward "../../../functions";
+@use "../../../functions/global" as func;
 
 @mixin flex-basis($val: auto) {
     $flex-basis-props: (
@@ -54,14 +54,14 @@
 
     @if type-of($val) == string or type-of($val) == number {
         @if type-of($val) == string {
-            @if is-in-list($flex-basis-values, $val) {
+            @if func.is-in-list($flex-basis-values, $val) {
                 @each $prop in $flex-basis-props {
                     #{$prop}: $val;
                 }
             }
         }
 
-        @if type-of($val) == number and cut-unit($val) != 0 {
+        @if type-of($val) == number and func.cut-unit($val) != 0 {
             @if unitless($val) {
                 @error "Please, Enter the unit of $val argument. It must be one of these units (#{$flex-basis-values})";
             }
