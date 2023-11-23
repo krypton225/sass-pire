@@ -32,7 +32,7 @@
 // * }
 
 @use "sass:list";
-@forward "../../../functions";
+@use "../../../functions/global/is-in-list" as func;
 
 @mixin align-items($value: normal) {
     $align-items-props: (
@@ -46,7 +46,7 @@
     // stylelint-disable-next-line scss/dollar-variable-empty-line-before
     $align-items-values: (normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit) !default;
 
-    @if is-in-list($align-items-values, $value) {
+    @if func.is-in-list($align-items-values, $value) {
         @each $prop in $align-items-props {
             #{$prop}: $value;
         }

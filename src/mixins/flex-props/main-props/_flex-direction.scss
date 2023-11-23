@@ -36,7 +36,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 @use "sass:list";
 @use "sass:map";
-@forward "../../../functions";
+@use "../../../functions/global/is-in-list" as func;
 
 // stylelint-disable scss/no-global-function-names
 
@@ -83,7 +83,7 @@
         flex-direction: row-reverse
     ) !default;
 
-    @if is-in-list($flex-direction-values, $value) {
+    @if func.is-in-list($flex-direction-values, $value) {
         @if $value == column or $value == col or $value == c {
             @each $prop, $val in $merge-flex-direction-column {
                 #{$prop}: $val;

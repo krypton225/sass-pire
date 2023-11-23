@@ -4,7 +4,7 @@ Mixins:
 ===================================================================================
 
 Global:
-    - Update all import functions and mixins in all project with forward statement.
+    - Update all import functions and mixins in all project with forward statement. --- (DONE).
     
     - Update all @example statement in functions with (content) property.
 
@@ -16,3 +16,5 @@ Global:
     - Try to unit all description ((docs)) in one pattern.
 
     - Try to unit all example ((docs)) in one pattern.
+
+    - Try to unit all stylelint in one place.
