@@ -19,7 +19,7 @@
 
 // @example 1
 // * .example1 {
-// *   content: get-first-from((12, 43, 4));
+// *   content: get-last-from((12, 43, 4));
 // * }
 
 // @output 1
@@ -29,12 +29,12 @@
 
 // @example 2
 // * .example2 {
-// *   width: get-first-from((22, 3), 5);
+// *   content: get-last-from((22, 3), 5);
 // * }
 
 // @output 2
 // * .example2 {
-// *   width: 5;
+// *   content: 5;
 // * }
 
 // @return {Any} - Returns the last element from the list.

@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   font-size: cm-to-px(12cm);
+// *   content: cm-to-px(12cm);
 // * }
 
 // @output
 // * .example {
-// *   font-size: 453.5433070872px;
+// *   content: 453.5433070872px;
 // * }
 
 // @return {Number} - Returns the converted value in pixels.

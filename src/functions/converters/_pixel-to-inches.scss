@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   width: px-to-in(12px);
+// *   content: px-to-in(12px);
 // * }
 
 // @output
 // * .example {
-// *   width: 0.125in;
+// *   content: 0.125in;
 // * }
 
 // @return {Number} - Returns the converted value in inches.

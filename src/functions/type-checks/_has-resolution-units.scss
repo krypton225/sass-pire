@@ -15,9 +15,14 @@
 // @throws {string} Throws an error if @param is not a number.
 
 // @example
-// * has-res-unit(12dpi); // Returns true if 'dpi' (dots per inch) is present.
-// * has-res-unit(22dpcm); // Returns true if 'dpcm' (dots per centimeter) is present.
-// * has-res-unit(23dppx); // Returns true if 'dppx' (dots per pixel) is present.
+// * .example {
+// *   content: has-res-unit(12dpi);
+// * }
+
+// @output
+// * .example {
+// *   content: true;
+// * }
 
 // @return {boolean} - Returns true if the argument has one of the resolution units, otherwise false.
 

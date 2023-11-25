@@ -15,9 +15,14 @@
 // @throws {string} Throws an error if @param is not a number or @param is not in $absolute-units list.
 
 // @example
-// * has-abs-unit(12cm); // Returns true if 'cm' (centimeters) is present.
-// * has-abs-unit(22mm); // Returns true if 'mm' (millimeters) is present.
-// * has-abs-unit(23pt); // Returns true if 'pt' (points) is present.
+// * .example {
+// *   content: has-abs-unit(12cm);
+// * }
+
+// @output
+// * .example {
+// *   content: true;
+// * }
 
 // @return {boolean} - Returns true if the argument has an absolute unit, otherwise false.
 

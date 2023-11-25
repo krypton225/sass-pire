@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   width: in-to-cm(12in);
+// *   content: in-to-cm(12in);
 // * }
 
 // @output
 // * .example {
-// *   width: width: 30.48cm;
+// *   content: 30.48cm;
 // * }
 
 // @return {Number} - Returns the converted value in centimeters.

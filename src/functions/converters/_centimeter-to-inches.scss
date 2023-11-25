@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   font-size: cm-to-in(12cm);
+// *   content: cm-to-in(12cm);
 // * }
 
 // @output
 // * .example {
-// *   font-size: 4.7244094488in;
+// *   content: 4.7244094488in;
 // * }
 
 // @return {Number} - Returns the converted value in inches.

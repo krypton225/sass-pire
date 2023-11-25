@@ -16,16 +16,16 @@
 
 // @example
 // * .example {
-// *   width: half(12);
-// *   font-size: half(130rem);
-// *   margin-top: half(22cm);
+// *   content: half(12);
+// *   content: half(130rem);
+// *   content: half(22cm);
 // * }
 
 // @output
 // * .example {
-// *   width: 6;
-// *   font-size: 65rem;
-// *   margin-top: 11cm;
+// *   content: 6;
+// *   content: 65rem;
+// *   content: 11cm;
 // * }
 
 // @return {Number} - The half of the given number. If the input has a unit,

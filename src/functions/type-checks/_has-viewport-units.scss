@@ -15,9 +15,14 @@
 // @throws {string} Throws an error if @param is not a number or @param is not in $viewport-units list.
 
 // @example
-// * has-view-unit(12lvh); // Returns true if 'lvh' (viewport height unit) is present.
-// * has-view-unit(22svmax); // Returns true if 'svmax' (maximum of the viewport width and height) is present.
-// * has-view-unit(23svmin); // Returns true if 'svmin' (minimum of the viewport width and height) is present.
+// * .example {
+// *   content: has-view-unit(12lvh);
+// * }
+
+// @output
+// * .example {
+// *   content: true;
+// * }
 
 // @returns {boolean} - Returns true if the argument has one of the viewport units, otherwise false.
 
