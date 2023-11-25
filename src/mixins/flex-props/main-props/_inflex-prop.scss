@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // @description
-// * Inline-Flex Property mixin
-// * This mixin combines several inline-flex properties, providing a convenient way to set
-// * the display, flex-direction, justify-content, and align-items properties at once.
+// * inline-flex property mixin.
+// * This mixin combines several inline-flex properties, providing
+// * a convenient way to set the display, flex-direction, justify-content,
+// * and align-items properties at once.
 
 // @author Khaled Mohamed
 
@@ -12,8 +13,12 @@
 // @module main-props/inflex-prop
 
 // @param {String} $f-dir - The flex-direction value. Default: row.
-// @param {String} $justify-content-val - The justify-content value. Default: flex-start.
-// @param {String} $align-items-val - The align-items value. Default: normal.
+
+// @param {String} $justify-content-val - The justify-content value.
+// * Default: flex-start.
+
+// @param {String} $align-items-val - The align-items value.
+// * Default: normal.
 
 // @example
 // * .example {

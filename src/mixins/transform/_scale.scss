@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 // @description
-// * Scale mixin
-// * This mixin provides a convenient way to apply scaling using the `transform` property
-// * with proper vendor prefixes. It supports both numerical values for scaling factors
-// * and predefined keywords such as 'inherit', 'initial', 'revert', 'unset', and 'none'.
+// * scale mixin.
+// * This mixin provides a convenient way to apply scaling using the
+// * `transform` property with proper vendor prefixes.
+// * It supports both numerical values for scaling factors and predefined
+// * keywords such as 'inherit', 'initial', 'revert', 'unset', and 'none'.
 
 // @author Khaled Mohamed
 
@@ -12,13 +13,17 @@
 
 // @module transform/scale
 
-// @param {Number|String} $x - The scaling factor for the x-axis. Default: 1.
+// @param {Number|String} $x
+// * The scaling factor for the x-axis.
+// * Default: 1.
 // * If a number, it must be unitless.
-// * If a string, it can be one of: (inherit, initial, revert, unset, none).
+// * If a string, it can be: (inherit, initial, revert, unset, none).
 
-// @param {Number|String} $y - The scaling factor for the y-axis. Default: $x.
+// @param {Number|String} $y
+// * The scaling factor for the y-axis.
+// * Default: $x.
 // * If a number, it must be unitless.
-// * If a string, it can be one of: (inherit, initial, revert, unset, none).
+// * If a string, it can be: (inherit, initial, revert, unset, none).
 
 // @example
 // * .example {

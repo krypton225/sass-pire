@@ -11,10 +11,12 @@
 
 // @module main-props/flex-grow
 
-// @param {Number} $val - The value for the `flex-grow` property. Must be a non-negative number.
+// @param {Number} $val - The value for the `flex-grow` property.
+// * Must be a non-negative number.
 // * Default: 0.
 
-// @throws {Error} Throws an error if the provided $val is not a number or if it's a negative number.
+// @throws {Error} Throws an error if the provided $val is not a number
+// * or if it's a negative number.
 
 // @example
 // *   .example {

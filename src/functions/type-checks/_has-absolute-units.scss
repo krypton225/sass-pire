@@ -12,7 +12,8 @@
 
 // @param {number} $val - The number to check for an absolute unit.
 
-// @throws {string} Throws an error if @param is not a number or @param is not in $absolute-units list.
+// @throws {string} Throws an error if @param is not a number or @param is
+// * not in $absolute-units list.
 
 // @example
 // * .example {
@@ -24,7 +25,8 @@
 // *   content: true;
 // * }
 
-// @return {boolean} - Returns true if the argument has an absolute unit, otherwise false.
+// @return {boolean} - Returns true if the argument has an absolute unit,
+// * otherwise false.
 
 @use "sass:list";
 @use "sass:math";

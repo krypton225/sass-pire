@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * scrolling mixin
+// * scrolling mixin.
 // * Customize the styling of the scrollbar in the browser.
 
 // @author Khaled Mohamed
@@ -10,16 +10,30 @@
 
 // @module general/scrolling
 
-// @param {Number} $widthScrollbar - Width of the scrollbar in rem units.
-// @param {Number} $borderRadiusScrollbar - Border radius of the scrollbar in rem units.
-// @param {Color} $bgColorScrollbar - Background color of the scrollbar.
-// @param {Color} $bgColorThumb - Background color of the scroll thumb.
-// @param {Number} $borderRadiusThumb - Border radius of the scroll thumb in rem units.
-// @param {Color} $bgColorTrack - Background color of the scroll track.
-// @param {Boolean} $bxShadow - Whether to include a box shadow on the scrollbar track.
+// @param {Number} $widthScrollbar
+// * Width of the scrollbar in rem units.
+
+// @param {Number} $borderRadiusScrollbar
+// * Border radius of the scrollbar in rem units.
+
+// @param {Color} $bgColorScrollbar
+// * Background color of the scrollbar.
+
+// @param {Color} $bgColorThumb
+// * Background color of the scroll thumb.
+
+// @param {Number} $borderRadiusThumb
+// * Border radius of the scroll thumb in rem units.
+
+// @param {Color} $bgColorTrack
+// * Background color of the scroll track.
+
+// @param {Boolean} $bxShadow
+// * Whether to include a box shadow on the scrollbar track.
 
 // @example
-// * Use this mixin with a free in the abstract or base file. See example.
+// * Use this mixin with a free in the abstract or base file.
+// * See example.
 // *   @include scrolling(
 // *     $widthScrollbar: 0.3,
 // *     $borderRadiusScrollbar: 0.2,

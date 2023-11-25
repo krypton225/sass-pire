@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * Reverse function
+// * reverse function.
 // * This function retrieves the reversed list from the given one.
 
 // @author Kitty Giraudel
@@ -15,7 +15,8 @@
 
 // @param {List} $list - A list from which to reverse.
 
-// @throw {Exception} - Throws an exception if the provided parameter is not a list.
+// @throw {Exception} - Throws an exception if the provided parameter is
+// * not a list.
 
 // @example
 // * .example {

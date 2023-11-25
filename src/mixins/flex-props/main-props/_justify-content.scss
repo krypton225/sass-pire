@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // @description
-// * Justify Content mixin
-// * This mixin applies the `justify-content` property with vendor prefixes to a container.
-// * It allows you to set the horizontal alignment of flex items along the main axis.
+// * justify content mixin.
+// * This mixin applies the `justify-content` property with vendor
+// * prefixes to a container. It allows you to set the horizontal
+// * alignment of flex items along the main axis.
 
 // @author Khaled Mohamed
 
@@ -11,8 +12,10 @@
 
 // @module main-props/justify-content
 
-// @param {String} $value - The value for `justify-content`. Default: flex-start.
-// * Allowed values: flex-start, flex-end, center, space-between, space-around, space-evenly.
+// @param {String} $value - The value for `justify-content`.
+// * Default: flex-start.
+// * Allowed values: flex-start, flex-end, center, space-between,
+// * space-around, space-evenly.
 
 // @example
 // * .example {

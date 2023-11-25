@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // @description
-// * Display Flex mixin
-// * This mixin provides a convenient way to set the `display` property to a flex value
-// * using the specified vendor prefixes for better cross-browser compatibility.
+// * display flex mixin.
+// * This mixin provides a convenient way to set the `display` property
+// * to a flex value using the specified vendor prefixes for better
+// * cross-browser compatibility.
 
 // @author Khaled Mohamed
 
@@ -11,7 +12,8 @@
 
 // @module main-props/d-flex
 
-// @throws {Error} Throws an error if the $flex-prefixes-values variable is not defined in the "var" abstract.
+// @throws {Error} Throws an error if the $flex-prefixes-values variable
+// * is not defined in the "var" abstract.
 
 // @example
 // * .example {

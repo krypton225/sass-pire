@@ -8,67 +8,69 @@
 
 // @namespace mixins/flex-props/flexbox
 
-// * Importing the "normal" alignment module.
+// * forwarding the "normal" alignment module.
 // * This module likely provides styles for normal alignment.
 // @see normal
 @forward "normal";
 
-// * Importing the "stretch" alignment module.
-// * The "stretch" module probably provides styles for stretching elements.
+// * forwarding the "stretch" alignment module.
+// * The "stretch" module probably provides styles to stretch elements.
 // @see stretch
 @forward "stretch";
 
-// * Importing the "start" alignment module.
+// * forwarding the "start" alignment module.
 // * This module likely provides styles for starting alignment.
 // @see start
 @forward "start";
 
-// * Importing the "end" alignment module.
+// * forwarding the "end" alignment module.
 // * The "end" module probably provides styles for ending alignment.
 // @see end
 @forward "end";
 
-// * Importing the "right" alignment module.
+// * forwarding the "right" alignment module.
 // * This module likely provides styles for right alignment.
 // @see right
 @forward "right";
 
-// * Importing the "left" alignment module.
+// * forwarding the "left" alignment module.
 // * The "left" module probably provides styles for left alignment.
 // @see left
 @forward "left";
 
-// * Importing the "fstart" alignment module.
+// * forwarding the "fstart" alignment module.
 // * This module likely provides styles for flex-start alignment.
 // @see fstart
 @forward "fstart";
 
-// * Importing the "fend" alignment module.
+// * forwarding the "fend" alignment module.
 // * The "fend" module probably provides styles for flex-end alignment.
 // @see fend
 @forward "fend";
 
-// * Importing the "center" alignment module.
+// * forwarding the "center" alignment module.
 // * This module likely provides styles for center alignment.
 // @see center
 @forward "center";
 
-// * Importing the "between" alignment module.
-// * The "between" module probably provides styles for space-between alignment.
+// * forwarding the "between" alignment module.
+// * The "between" module probably provides styles for
+// * space-between alignment.
 // @see between
 @forward "between";
 
-// * Importing the "around" alignment module.
+// * forwarding the "around" alignment module.
 // * This module likely provides styles for space-around alignment.
 // @see around
 @forward "around";
 
-// * Importing the "evenly" alignment module.
-// * The "evenly" module probably provides styles for space-evenly alignment.
+// * forwarding the "evenly" alignment module.
+// * The "evenly" module probably provides styles for
+// * space-evenly alignment.
 // @see evenly
 @forward "evenly";
 
-// * Importing the "inherit" alignment module.
+// * forwarding the "inherit" alignment module.
 // * This module likely provides styles for inheriting alignment.
 // @see inherit
 @forward "inherit";

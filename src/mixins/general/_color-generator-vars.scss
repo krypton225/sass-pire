@@ -1,10 +1,11 @@
 @charset "UTF-8";
 
 // @description
-// * Generate Colors mixin
-// * This mixin generates CSS custom properties for defining colors in the :root
-// * element based on the provided color map. It allows you to create a consistent
-// * color scheme for your application or website.
+// * generate colors mixin.
+// * This mixin generates CSS custom properties for defining colors in the
+// * :root element based on the provided color map.
+// * It allows you to create a consistent color scheme for your
+// * application or website.
 
 // @author Khaled Mohamed
 
@@ -12,13 +13,14 @@
 
 // @module general/generate-colors
 
-// @param {String} $brand-name - The brand name or namespace for the color variables.
-// * Defaults to the value of the "$brand-lib-name" variable
-// * from the "variables" module.
+// @param {String} $brand-name - The brand name or namespace for the
+// * color variables. Defaults to the value of the "$brand-lib-name"
+// * variable from the "variables" module.
 
-// @param {Map} $color-map - A map containing color names and their corresponding values.
-// * Each key-value pair represents a custom property for a color.
-// * The key (color name) must be a string, and the value must be a color.
+// @param {Map} $color-map - A map containing color names and their
+// * corresponding values. Each key-value pair represents a custom
+// * property for a color. The key (color name) must be a string, and the
+// * value must be a color.
 
 // @example 1
 // * @include generate-colors("my-brand", (
@@ -49,7 +51,8 @@
 // * }
 
 // @note
-// * Make sure to include the "variables" module where the "$brand-lib-name" variable is defined.
+// * Make sure to include the "variables" module where the
+// * "$brand-lib-name" variable is defined.
 
 @use "sass:list";
 @use "../../abstract/variables" as var;

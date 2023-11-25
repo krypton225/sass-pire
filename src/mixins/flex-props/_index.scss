@@ -1,23 +1,27 @@
 @charset "UTF-8";
 
 // @description
-// * This file forwards various modules and utilities for main styling properties and flexbox layouts.
+// * This file forwards various modules and utilities for main styling
+// * properties and flexbox layouts.
 
 // @author Khaled Mohamed
 
 // @namespace mixins/flex-props
 
-// * Forwarding the "main-props" module.
-// * The "main-props" module probably contains styles for commonly used main properties.
+// * forwarding the "main-props" module.
+// * The "main-props" module probably contains styles for commonly used
+// * main properties.
 // @see main-props
 @forward "main-props";
 
-// * Forwarding the "flexbox" module.
-// * The "flexbox" module likely provides styles and utilities for flexbox layouts.
+// * forwarding the "flexbox" module.
+// * The "flexbox" module likely provides styles and utilities for
+// * flexbox layouts.
 // @see flexbox
 @forward "flexbox";
 
-// * Forwarding the "inline-flexbox" module.
-// * The "inline-flexbox" module probably provides styles and utilities for inline flexbox layouts.
+// * forwarding the "inline-flexbox" module.
+// * The "inline-flexbox" module probably provides styles and utilities
+// * for inline flexbox layouts.
 // @see inline-flexbox
 @forward "inline-flexbox";

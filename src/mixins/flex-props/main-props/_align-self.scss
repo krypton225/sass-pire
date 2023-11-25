@@ -12,11 +12,12 @@
 // @module main-props/align-self
 
 // @param {String} $val - The value for the `align-self` property.
-// * Allowed values: auto, normal, stretch, start, end, self-start, self-end, center,
-// * flex-start, flex-end, baseline, inherit.
+// * Allowed values: auto, normal, stretch, start, end, self-start,
+// * self-end, center, flex-start, flex-end, baseline, inherit.
 // * Default: auto.
 
-// @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+// @throws {Error} Throws an error if the provided $val is not one of the
+// * allowed values.
 
 // @example
 // * .example {

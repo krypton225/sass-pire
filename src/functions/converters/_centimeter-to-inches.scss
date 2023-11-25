@@ -10,9 +10,11 @@
 
 // @module converters/cm-to-in
 
-// @param {Number} $cm-val - The value in centimeter unit to convert into inch.
+// @param {Number} $cm-val - The value in centimeter unit to convert into
+// * inch.
 
-// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a centimeter unit.
+// @throw {Exception} - Throws exceptions if the provided parameter is not
+// * a number, doesn't have a unit, or doesn't have a centimeter unit.
 
 // @example
 // * .example {

@@ -1,29 +1,33 @@
 @charset "UTF-8";
 
 // @description
-// * This file forwards modules related to CSS vendor prefixes, flex properties,
-// * general utilities, and transforms.
+// * This file forwards modules related to CSS vendor prefixes,
+// * flex properties, general utilities, and transforms.
 
 // @author Khaled Mohamed
 
 // @namespace mixins
 
-// * Forwarding the "vendor-prefixes" module.
-// * The "vendor-prefixes" module likely provides utilities for handling various CSS vendor prefixes.
+// * forwarding the "vendor-prefixes" module.
+// * The "vendor-prefixes" module likely provides utilities for
+// * handling various CSS vendor prefixes.
 // @see vendor-prefixes
 @forward "vendor-prefixes";
 
-// * Forwarding the "flex-props" module.
-// * The "flex-props" module probably provides utilities for working with flexbox-related properties.
+// * forwarding the "flex-props" module.
+// * The "flex-props" module probably provides utilities for
+// * working with flexbox-related properties.
 // @see flex-props
 @forward "flex-props";
 
-// * Forwarding the "general" module.
-// * The "general" module may contain general-purpose utilities for styling and layout.
+// * forwarding the "general" module.
+// * The "general" module may contain general-purpose utilities for
+// * styling and layout.
 // @see general
 @forward "general";
 
-// * Forwarding the "transform" module.
-// * The "transform" module likely provides utilities for handling CSS transformations.
+// * forwarding the "transform" module.
+// * The "transform" module likely provides utilities for handling
+// * CSS transformations.
 // @see transform
 @forward "transform";

@@ -2,7 +2,8 @@
 
 // @description
 // * is-float function
-// * This module provides a function to check if the argument is a floating-point number.
+// * This module provides a function to check if the argument is
+// * a floating-point number.
 
 // @author Khaled Mohamed
 
@@ -10,9 +11,11 @@
 
 // @module type-checks/is-float
 
-// @param {number} $val - A number to check if it is a floating-point number or not.
+// @param {number} $val - A number to check if it is a floating-point
+// * number or not.
 
-// @throw {string} "You must pass an argument with number type to the is-float function."
+// @throw {string} "You must pass an argument with number type to the
+// * is-float function."
 
 // @example
 // * .example {
@@ -24,7 +27,8 @@
 // *   content: true;
 // * };
 
-// @returns {boolean} - True if it is a floating-point number, false if not.
+// @returns {boolean} - True if it is a floating-point number,
+// * false if not.
 
 @use "sass:math";
 @use "../global/cut-unit" as func;

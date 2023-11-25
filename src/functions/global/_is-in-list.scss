@@ -10,11 +10,14 @@
 
 // @module global/is-in-list
 
-// @param {List} $list-name - The list to check if the second argument is in it or not.
+// @param {List} $list-name - The list to check if the second argument is
+// * in it or not.
 
-// @param {Any} $value - The second argument to check for its existence in the provided list at the first parameter.
+// @param {Any} $value - The second argument to check for its existence in
+// * the provided list at the first parameter.
 
-// @throw {Exception} - Throws an exception if the first parameter is not a list or if the second parameter is not found in the list.
+// @throw {Exception} - Throws an exception if the first parameter is not
+// * a list or if the second parameter is not found in the list.
 
 // @example 1
 // * .example {
@@ -36,7 +39,8 @@
 // *   content: false;
 // * }
 
-// @return {Boolean} - Returns true if the second argument exists in the list, and false otherwise.
+// @return {Boolean} - Returns true if the second argument exists in the
+// * list, and false otherwise.
 
 @use "sass:list";
 

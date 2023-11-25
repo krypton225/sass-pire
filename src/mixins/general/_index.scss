@@ -1,88 +1,101 @@
 @charset "UTF-8";
 
 // @description
-// * This file forwards various modules and utilities for styling and layout.
+// * This file forwards various modules and utilities for
+// * styling and layout.
 
 // @author Khaled Mohamed
 
 // @namespace mixins/general
 
-// * Forwarding the "media-query" module.
-// * The "media-query" module likely contains styles for responsive designs.
+// * forwarding the "media-query" module.
+// * The "media-query" module likely contains styles for
+// * responsive designs.
 // @see media-query
 @forward "media-query";
 
-// * Forwarding the "responsive-grid" module.
-// * The "responsive-grid" module probably provides styles for responsive grid layouts.
+// * forwarding the "responsive-grid" module.
+// * The "responsive-grid" module probably provides styles for responsive
+// * grid layouts.
 // @see responsive-grid
 @forward "responsive-grid";
 
-// * Forwarding the "transition" module.
+// * forwarding the "transition" module.
 // * The "transition" module likely contains styles for CSS transitions.
 // @see transition
 @forward "transition";
 
-// * Forwarding the "fade" module.
+// * forwarding the "fade" module.
 // * The "fade" module probably provides styles for creating fade effects.
 // @see fade
 @forward "fade";
 
-// * Forwarding the "color-generator-vars" module.
-// * The "color-generator-vars" module likely contains variables for color generation.
+// * forwarding the "color-generator-vars" module.
+// * The "color-generator-vars" module likely contains variables for
+// * color generation.
 // @see color-generator-vars
 @forward "color-generator-vars";
 
-// * Forwarding the "circle" module.
-// * The "circle" module probably provides styles for creating circular elements.
+// * forwarding the "circle" module.
+// * The "circle" module probably provides styles for
+// * creating circular elements.
 // @see circle
 @forward "circle";
 
-// * Forwarding the "square" module.
-// * The "square" module likely contains styles for creating square elements.
+// * forwarding the "square" module.
+// * The "square" module likely contains styles for
+// * creating square elements.
 // @see square
 @forward "square";
 
-// * Forwarding the "center-x" module.
-// * The "center-x" module probably provides styles for horizontally centering elements.
+// * forwarding the "center-x" module.
+// * The "center-x" module probably provides styles for horizontally
+// * centering elements.
 // @see center-x
 @forward "center-x";
 
-// * Forwarding the "box-shadow" module.
-// * The "box-shadow" module likely contains styles for adding box shadows.
+// * forwarding the "box-shadow" module.
+// * The "box-shadow" module likely contains styles for
+// * adding box shadows.
 // @see box-shadow
 @forward "box-shadow";
 
-// * Forwarding the "scroll" module.
-// * The "scroll" module probably provides styles related to scrolling effects.
+// * forwarding the "scroll" module.
+// * The "scroll" module probably provides styles related to
+// * scrolling effects.
 // @see scroll
 @forward "scroll";
 
-// * Forwarding the "color-generator-dark-mode" module.
-// * The "color-generator-dark-mode" module likely contains styles for dark mode color generation.
+// * forwarding the "color-generator-dark-mode" module.
+// * The "color-generator-dark-mode" module likely contains styles for
+// * dark mode color generation.
 // @see color-generator-dark-mode
 @forward "color-generator-dark-mode";
 
-// * Forwarding the "selections" module.
+// * forwarding the "selections" module.
 // * The "selections" module probably provides styles for text selections.
 // @see selections
 @forward "selections";
 
-// * Forwarding the "keyframe" module.
-// * The "keyframe" module likely contains styles for CSS keyframe animations.
+// * forwarding the "keyframe" module.
+// * The "keyframe" module likely contains styles for
+// * CSS keyframe animations.
 // @see keyframe
 @forward "keyframe";
 
-// * Forwarding the "backdrop" module.
+// * forwarding the "backdrop" module.
 // * The "backdrop" module probably provides styles for backdrop effects.
 // @see backdrop
 @forward "backdrop";
 
-// * Forwarding the "user-select" module.
-// * The "user-select" module likely contains styles for controlling user text selection.
+// * forwarding the "user-select" module.
+// * The "user-select" module likely contains styles for
+// * controlling user text selection.
 // @see user-select
 @forward "user-select";
 
-// * Forwarding the "font-generator-vars" module.
-// * The "font-generator-vars" module probably contains variables for font generation.
+// * forwarding the "font-generator-vars" module.
+// * The "font-generator-vars" module probably contains variables for
+// * font generation.
 // @see font-generator-vars
 @forward "font-generator-vars";
