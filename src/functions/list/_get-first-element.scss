@@ -29,12 +29,12 @@
 
 // @example 2
 // * .example2 {
-// *   width: get-first-from((22, 3), 5);
+// *   content: get-first-from((22, 3), 5);
 // * }
 
 // @output 2
 // * .example2 {
-// *   width: 22;
+// *   content: 22;
 // * }
 
 // @return {Any} - Returns the first element from the list.

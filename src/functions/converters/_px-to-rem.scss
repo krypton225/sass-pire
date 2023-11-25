@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   font-size: px-to-rem(12px);
+// *   content: px-to-rem(12px);
 // * }
 
 // @output
 // * .example {
-// *   font-size: 0.75rem;
+// *   content: 0.75rem;
 // * }
 
 // @return {Number} - Returns the converted value in rem.

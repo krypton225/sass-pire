@@ -18,17 +18,22 @@
 
 // @example 1
 // * .example {
-// *   display: is-in-list((block, inline, flex), inline); // Returns true
+// *   content: is-in-list((block, inline, flex), inline);
 // * }
 
 // @output 1
 // * .example {
-// *   display: true;
+// *   content: true;
 // * }
 
 // @example 2
 // * .example {
-// *   font-size: is-in-list((12px, 14px, 16px), 18px); // Throws an exception
+// *   content: is-in-list((12px, 14px, 16px), 18px);
+// * }
+
+// @output 2
+// * .example {
+// *   content: false;
 // * }
 
 // @return {Boolean} - Returns true if the second argument exists in the list, and false otherwise.

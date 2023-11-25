@@ -19,16 +19,12 @@
 
 // @example
 // * .example {
-// *   width: cut-unit(12cm);
-// *   font-size: cut-unit(130rem);
-// *   margin-top: cut-unit(22px);
+// *   content: cut-unit(12cm);
 // * }
 
 // @output
 // * .example {
-// *   width: 12;
-// *   font-size: 130;
-// *   margin-top: 22;
+// *   content: 12;
 // * }
 
 // @return {Number} - A number after cutting or stripping the unit.

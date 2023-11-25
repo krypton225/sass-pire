@@ -16,12 +16,12 @@
 
 // @example
 // * .example {
-// *   width: px-to-cm(12px);
+// *   content: px-to-cm(12px);
 // * }
 
 // @output
 // * .example {
-// *   width: 0.3174999996cm;
+// *   content: 0.3174999996cm;
 // * }
 
 // @return {Number} - Returns the converted value in centimeters.

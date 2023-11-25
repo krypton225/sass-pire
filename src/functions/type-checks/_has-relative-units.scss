@@ -15,9 +15,14 @@
 // @throws {string} Throws an error if @param is not a number or not in $relative-units list.
 
 // @example
-// * has-rel-unit(12em); // Returns true if 'em' (em units) is present.
-// * has-rel-unit(22vw); // Returns true if 'vw' (viewport width units) is present.
-// * has-rel-unit(23vmin); // Returns true if 'vmin' (viewport minimum units) is present.
+// * .example {
+// *   content: has-rel-unit(12em);
+// * }
+
+// @output
+// * .example {
+// *   content: true;
+// * }
 
 // @return {boolean} - Returns true if the argument has one of the relative units, otherwise false.
 
