@@ -28,12 +28,10 @@
 // * }
 
 // @output
-// * .example {
-// *   @media only screen and (max-height: 1199px) {
+// * @media only screen and (max-height: 1199px) {
 // *   .example {
 // *     width: 100px;
 // *   }
-// *  }
 // * }
 
 @use "sass:list";
