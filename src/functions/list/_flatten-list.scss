@@ -10,27 +10,29 @@
 
 // @module global/flatten
 
-// @param {List} $list - A list that may contain nested lists to be flattened.
+// @param {List} $list
+// * A list that may contain nested lists to be flattened.
 
-// @throw {Exception} - Throws an exception if the provided parameter is not a list.
+// @throw {Exception}
+// * Throws an exception if the provided parameter is not a list.
 
 // @example 1
-// * .example {
+// * .example1 {
 // *   content: flatten((1, 2, 4), 4);
 // * }
 
 // @output 1
-// * .example {
+// * .example1 {
 // *   content: 1, 2, 4, 4;
 // * }
 
 // @example 2
-// * .example {
+// * .example2 {
 // *   content: flatten(((1, 2, 4), (2, ((33, 4), 67))));
 // * }
 
 // @output 2
-// * .example {
+// * .example2 {
 // *   content: 1, 2, 4, 2, 33, 4, 67;
 // * }
 

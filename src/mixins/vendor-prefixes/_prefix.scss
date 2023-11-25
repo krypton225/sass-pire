@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // @description
-// * Prefixing mixin
-// * This mixin generates CSS properties with vendor prefixes for cross-browser compatibility.
-// * It applies the specified property and value with prefixes for webkit, moz, ms, and o.
+// * prefixing mixin.
+// * This mixin generates CSS properties with vendor prefixes for
+// * cross-browser compatibility. It applies the specified property and
+// * value with prefixes for webkit, moz, ms, and o.
 
 // @author Khaled Mohamed
 
@@ -11,10 +12,11 @@
 
 // @module vendor-prefixes/prefix
 
-// @param {String} $property - The CSS property.
-// @param {Any} $value - The CSS value for the property.
+// @param {String} $property
+// * The CSS property.
 
-// @output {CSS} - The prefixed CSS properties.
+// @param {Any} $value
+// * The CSS value for the property.
 
 // @example
 // * .example {

@@ -8,27 +8,27 @@
 
 // @namespace functions/global
 
-// * Importing the "cut-unit" module.
+// * forwarding the "cut-unit" module.
 // * The "cut-unit" module likely contains a function to
 // * cut the unit or strip it from a given number.
 // @see cut-unit
 @forward "cut-unit";
 
-// * Importing the "get-half-number" module.
+// * forwarding the "get-half-number" module.
 // * The "get-half-number" module probably contains a function
 // * to get the half of a number passed to it, whether it has
 // * a unit or not.
 // @see get-half-number
 @forward "get-half-number";
 
-// * Importing the "is-in-list" module.
+// * forwarding the "is-in-list" module.
 // * The "is-in-list" module appears to have a function to check
 // * if a value is in a given list, returning true if the value
 // * exists in the list and false if not.
 // @see is-in-list
 @forward "is-in-list";
 
-// * Importing the "has-pos" module.
+// * forwarding the "has-pos" module.
 // * The "has-pos" module appears to have a function to check
 // * if a value is in a given list, returning true if the value
 // * exists in the list and false if not.

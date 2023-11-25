@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * in-to-cm function
+// * in-to-cm function.
 // * This function converts a value with inches unit into centimeters.
 
 // @author Khaled Mohamed
@@ -10,9 +10,12 @@
 
 // @module converters/in-to-cm
 
-// @param {Number} $inches-val - The value in inches unit to convert.
+// @param {Number} $inches-val
+// * The value in inches unit to convert.
 
-// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have an inches unit.
+// @throw {Exception}
+// * Throws exceptions if the provided parameter is not a number, doesn't
+// * have a unit, or doesn't have an inches unit.
 
 // @example
 // * .example {

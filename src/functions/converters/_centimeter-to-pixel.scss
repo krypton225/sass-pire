@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * cm-to-px function
+// * cm-to-px function.
 // * This function converts a value with centimeter unit into pixels.
 
 // @author Khaled Mohamed
@@ -10,9 +10,12 @@
 
 // @module converters/cm-to-px
 
-// @param {Number} $cm-val - The value in centimeter unit to convert.
+// @param {Number} $cm-val
+// * The value in centimeter unit to convert.
 
-// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a centimeter unit.
+// @throw {Exception}
+// * Throws exceptions if the provided parameter is not a number, doesn't
+// * have a unit, or doesn't have a centimeter unit.
 
 // @example
 // * .example {

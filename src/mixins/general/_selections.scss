@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * select mixin
+// * select mixin.
 // * Apply custom selection styles to the browser's selection highlight.
 
 // @author Khaled Mohamed
@@ -10,10 +10,12 @@
 
 // @module general/select
 
-// @param {String|Color} $bg-color - The background color of the selection.
+// @param {String|Color} $bg-color
+// * The background color of the selection.
 // * If a string, it should represent a CSS variable.
 
-// @param {String|Color} $text-color - The text color of the selection.
+// @param {String|Color} $text-color
+// * The text color of the selection.
 // * If a string, it should represent a CSS variable.
 
 // @example

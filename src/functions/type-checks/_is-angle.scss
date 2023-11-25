@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * is-angle function
+// * is-angle function.
 // * This module provides a function to check if the argument has angle units.
 
 // @author Khaled Mohamed
@@ -10,9 +10,12 @@
 
 // @module type-checks/is-angle
 
-// @param {number} $val - A number to check if it has angle units or not.
+// @param {number} $val
+// * A number to check if it has angle units or not.
 
-// @throw {string} "You must pass an argument with number type to the is-angle function."
+// @throw {string}
+// * You must pass an argument with number type to the
+// * is-angle function.
 
 // @example
 // * .example {
@@ -24,7 +27,8 @@
 // *   content: true;
 // * };
 
-// @returns {boolean} - True if it has one of the angle units, false if not.
+// @returns {boolean} - True if it has one of the angle units,
+// * false if not.
 
 @use "sass:list";
 @use "sass:math";

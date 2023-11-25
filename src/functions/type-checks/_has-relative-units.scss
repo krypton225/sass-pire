@@ -10,9 +10,12 @@
 
 // @module type-checks/has-rel-unit
 
-// @param {number} $val - The number to check for relative units.
+// @param {number} $val
+// * The number to check for relative units.
 
-// @throws {string} Throws an error if @param is not a number or not in $relative-units list.
+// @throws {string}
+// * Throws an error if @param is not a number or not in
+// * $relative-units list.
 
 // @example
 // * .example {
@@ -24,7 +27,8 @@
 // *   content: true;
 // * }
 
-// @return {boolean} - Returns true if the argument has one of the relative units, otherwise false.
+// @return {boolean} - Returns true if the argument has one of the
+// * relative units, otherwise false.
 
 @use "sass:list";
 @use "sass:math";

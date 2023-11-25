@@ -10,9 +10,12 @@
 
 // @module converters/px-to-in
 
-// @param {Number} $pixel-val - The value in pixel unit to convert.
+// @param {Number} $pixel-val
+// * The value in pixel unit to convert.
 
-// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a pixel unit.
+// @throw {Exception}
+// * Throws exceptions if the provided parameter is not a number, doesn't
+// * have a unit, or doesn't have a pixel unit.
 
 // @example
 // * .example {

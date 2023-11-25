@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * Flex Direction mixin
-// * This mixin provides a convenient way to set the `flex-direction` property
-// * with vendor prefixes for better cross-browser compatibility.
+// * flex-direction mixin.
+// * This mixin provides a convenient way to set the `flex-direction`
+// * property with vendor prefixes for better cross-browser compatibility.
 
 // @author Khaled Mohamed
 
@@ -11,11 +11,15 @@
 
 // @module main-props/flex-dir
 
-// @param {String} $value - The value for the `flex-direction` property.
-// * Allowed values: row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev.
+// @param {String} $value
+// * The value for the `flex-direction` property.
+// * Allowed values:
+// * row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev.
 // * Default: row.
 
-// @throws {Error} Throws an error if the provided $value is not one of the allowed values.
+// @throws {Error}
+// * Throws an error if the provided $value is not one of
+// * the allowed values.
 
 // @example
 // * .example {

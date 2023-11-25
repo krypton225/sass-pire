@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * Flex Wrap mixin
+// * flex-wrap mixin.
 // * This mixin provides a convenient way to set the `flex-wrap` property
 // * with vendor prefixes for better cross-browser compatibility.
 
@@ -11,11 +11,15 @@
 
 // @module main-props/flex-wrap
 
-// @param {String} $val - The value for the `flex-wrap` property.
-// * Allowed values: nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit.
+// @param {String} $val
+// * The value for the `flex-wrap` property.
+// * Allowed values:
+// * nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit.
 // * Default: nowrap.
 
-// @throws {Error} Throws an error if the provided $val is not one of the allowed values.
+// @throws {Error}
+// * Throws an error if the provided $val is not one of the
+// * allowed values.
 
 // @example
 // * .example {

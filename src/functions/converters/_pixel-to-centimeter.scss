@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * px-to-cm function
+// * px-to-cm function.
 // * This function converts a value with pixel unit into centimeters.
 
 // @author Khaled Mohamed
@@ -10,9 +10,12 @@
 
 // @module converters/px-to-cm
 
-// @param {Number} $px-val - The value in pixel unit to convert.
+// @param {Number} $px-val
+// * The value in pixel unit to convert.
 
-// @throw {Exception} - Throws exceptions if the provided parameter is not a number, doesn't have a unit, or doesn't have a pixel unit.
+// @throw {Exception}
+// * Throws exceptions if the provided parameter is not a number, doesn't
+// * have a unit, or doesn't have a pixel unit.
 
 // @example
 // * .example {

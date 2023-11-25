@@ -2,7 +2,8 @@
 
 // stylelint-disable scss/dollar-variable-empty-line-before
 
-// * General
+// * General.
+
 $lib-name: sass-pire !default;
 
 $brand-lib-name: sp !default;
@@ -17,7 +18,7 @@ $main-directions: (top, right, bottom, left) !default;
 
 $base-font-size: 16;
 
-// * Units
+// * Units.
 
 $angle-units: (deg, turn, rad, grad) !default;
 
@@ -25,7 +26,7 @@ $main-units: (#{"%"}, rem, px, em) !default;
 
 $time-units: (ms, s) !default;
 
-// * Flexbox
+// * Flexbox.
 
 $flex-direction-props: (
     -webkit-box-orient,
@@ -47,7 +48,8 @@ $flex-direction-row-reverse-values: (horizontal, reverse, row-reverse, row-rever
 
 $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) !default;
 
-// * Grid
+// * Grid.
+
 $grid-prefixes-values: (-ms-grid, grid) !default;
 
 $inline-grid-prefixes-values: (-ms-inline-grid, inline-grid) !default;

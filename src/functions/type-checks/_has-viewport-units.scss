@@ -10,9 +10,12 @@
 
 // @module type-checks/has-view-unit
 
-// @param {number} $val - The number to check for viewport units.
+// @param {number} $val
+// * The number to check for viewport units.
 
-// @throws {string} Throws an error if @param is not a number or @param is not in $viewport-units list.
+// @throws {string}
+// * Throws an error if @param is not a number or param is
+// * not in $viewport-units list.
 
 // @example
 // * .example {
@@ -24,7 +27,8 @@
 // *   content: true;
 // * }
 
-// @returns {boolean} - Returns true if the argument has one of the viewport units, otherwise false.
+// @returns {boolean} - Returns true if the argument has one of the
+// * viewport units, otherwise false.
 
 @use "sass:list";
 @use "sass:math";

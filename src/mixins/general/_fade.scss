@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * Fade mixin
-// * This mixin provides a simple way to control the visibility and opacity
-// * of an element for creating fade-in and fade-out effects.
+// * fade mixin.
+// * This mixin provides a simple way to control the visibility and
+// * opacity of an element for creating fade-in and fade-out effects.
 
 // @author Khaled Mohamed
 
@@ -16,12 +16,12 @@
 // * - "show" or "yes": Sets visibility to visible and opacity to 1.
 
 // @example
-// * .element {
+// * .example {
 // *    @include fade("hide");
 // * }
 
 // @output
-// * .element {
+// * .example {
 // *   visibility: hidden;
 // *   opacity: 0;
 // * }

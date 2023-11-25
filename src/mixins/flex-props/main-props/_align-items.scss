@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * Align Items mixin
-// * This mixin provides a convenient way to set the `align-items` property
-// * with vendor prefixes for better cross-browser compatibility.
+// * align-items mixin.
+// * This mixin provides a convenient way to set the `align-items`
+// * property with vendor prefixes for better cross-browser compatibility.
 
 // @author Khaled Mohamed
 
@@ -11,11 +11,15 @@
 
 // @module main-props/align-items
 
-// @param {String} $value - The value for the `align-items` property.
-// * Allowed values: normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit.
+// @param {String} $value
+// * The value for the `align-items` property.
+// * Allowed values: normal, stretch, start, end, flex-start, flex-end,
+// * center, baseline, inherit.
 // * Default: normal.
 
-// @throws {Error} Throws an error if the provided $value is not one of the allowed values.
+// @throws {Error}
+// * Throws an error if the provided $value is not one of
+// * the allowed values.
 
 // @example
 // * .example {

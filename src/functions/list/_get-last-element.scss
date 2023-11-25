@@ -13,9 +13,12 @@
 
 // @update We updated the use of the list library of Sass.
 
-// @param {List} $list - A list from which to retrieve the last element.
+// @param {List} $list
+// * A list from which to retrieve the last element.
 
-// @throw {Exception} - Throws an exception if the provided parameter is not a list or if the list is empty.
+// @throw {Exception}
+// * Throws an exception if the provided parameter is not a list or if the
+// * list is empty.
 
 // @example 1
 // * .example1 {

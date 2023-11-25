@@ -10,9 +10,12 @@
 
 // @module global/half
 
-// @param {Number} $number - The number to calculate the half of. It can have a unit or be unitless.
+// @param {Number} $number
+// * The number to calculate the half of.
+// * It can have a unit or be unitless.
 
-// @throw {Exception} - Throws an exception if the parameter is not a number.
+// @throw {Exception}
+// * Throws an exception if the parameter is not a number.
 
 // @example
 // * .example {
@@ -28,8 +31,8 @@
 // *   content: 11cm;
 // * }
 
-// @return {Number} - The half of the given number. If the input has a unit,
-// * the result will also have the same unit.
+// @return {Number} - The half of the given number. If the input has
+// * a unit, the result will also have the same unit.
 
 @use "sass:math";
 @use "cut-unit" as func;

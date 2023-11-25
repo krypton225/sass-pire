@@ -10,21 +10,25 @@
 
 // @module type-checks/has-pos
 
-// @param {string} $val - The provided value of the position.
+// @param {string} $val
+// * The provided value of the position.
 
-// @throws {string} Throws an error if @param is not a string or @param is not in $position-values list.
+// @throws {string}
+// * Throws an error if @param is not a string or param is not
+// * in $position-values list.
 
 // @example
-// * .one {
+// * .example {
 // *   content: has-pos(right);
 // * }
 
 // @output
-// * .one {
+// * .example {
 // *   content: true;
 // * }
 
-// @returns {boolean} - Returns true if the argument has one of the position units, otherwise false.
+// @returns {boolean} - Returns true if the argument has one of the
+// * position units, otherwise false.
 
 @use "sass:list";
 @use "sass:math";

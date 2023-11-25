@@ -8,37 +8,42 @@
 
 // @library sass-pire
 
-// * Forwarding the "base" module.
+// * forwarding the "base" module.
 // * The "base" module might contain foundational styles for the project.
 // @see base
 @forward "base";
 
-// * Forwarding the "utils" module.
-// * The "utils" module likely contains utility classes or functions for various purposes.
+// * forwarding the "utils" module.
+// * The "utils" module likely contains utility classes or functions for
+// * various purposes.
 // @see utils
 @forward "utils";
 
-// * Forwarding the "abstract" module.
-// * The "abstract" module may contain abstract styles or variables used throughout the project.
+// * forwarding the "abstract" module.
+// * The "abstract" module may contain abstract styles or variables used
+// * throughout the project.
 // @see abstract
 @forward "abstract";
 
-// * Forwarding the "functions" module.
-// * The "functions" module likely contains custom Sass functions for use in stylesheets.
+// * forwarding the "functions" module.
+// * The "functions" module likely contains custom Sass functions for use
+// * in stylesheets.
 // @see functions
 @forward "functions";
 
-// * Forwarding the "mixins" module.
+// * forwarding the "mixins" module.
 // * The "mixins" module probably contains reusable Sass mixins.
 // @see mixins
 @forward "mixins";
 
-// * Forwarding the "helpers" module.
-// * The "helpers" module may contain helper classes or functions for simplifying styles.
+// * forwarding the "helpers" module.
+// * The "helpers" module may contain helper classes or functions for
+// * simplifying styles.
 // @see helpers
 @forward "helpers";
 
-// * Forwarding the "development-utils" module.
-// * The "development-utils" module might contain utilities helpful during development.
+// * forwarding the "development-utils" module.
+// * The "development-utils" module might contain utilities helpful
+// * during development.
 // @see development-utils
 @forward "development-utils";
