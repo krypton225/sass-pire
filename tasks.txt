@@ -15,7 +15,7 @@ Global:
 
     - Try to unit all description ((docs)) in one pattern.
 
-    - Try to unit all example ((docs)) in one pattern.
+    - Try to unit all example ((docs)) in one pattern (DONE).
 
     - Try to unit all stylelint in one place (DONE).
 
