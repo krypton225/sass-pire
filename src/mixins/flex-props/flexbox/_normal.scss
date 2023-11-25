@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * Flex Normal mixins
+// * flex normal mixins.
 // * These mixins provide a convenient way to apply flexbox properties
 // * with the 'normal' value for the 'justify-content' property. The
 // * pattern used is (flex)-(justify-content)-(align-items), allowing you
@@ -15,7 +15,7 @@
 // @module flexbox/normal
 
 // @example
-// * .example-class {
+// * .example {
 // *   @include flex-normal-normal(row);
 // * }
 

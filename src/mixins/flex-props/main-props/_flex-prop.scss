@@ -12,23 +12,27 @@
 
 // @module main-props/f-prop
 
-// @param {String} $f-dir - The flex direction value.
+// @param {String} $f-dir
+// * The flex direction value.
 // * Allowed values:
 // * row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev.
 // * Default: row.
 
-// @param {String} $justify-content-val - The justify content value.
+// @param {String} $justify-content-val
+// * The justify content value.
 // * Allowed values:
 // * flex-start, start, flex-end, end, center, space-between,
 // * space-around, space-evenly.
 // * Default: flex-start.
 
-// @param {String} $align-items-val - The align items value.
+// @param {String} $align-items-val
+// * The align items value.
 // * Allowed values:
 // * normal, stretch, start, end, flex-start, flex-end, center, baseline.
 // * Default: normal.
 
-// @throws {Error} Throws an error if any of the provided values is not
+// @throws {Error}
+// * Throws an error if any of the provided values is not
 // * one of the allowed values.
 
 // @example

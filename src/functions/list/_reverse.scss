@@ -13,10 +13,11 @@
 
 // @update We updated the use of the list library of Sass.
 
-// @param {List} $list - A list from which to reverse.
+// @param {List} $list
+// * A list from which to reverse.
 
-// @throw {Exception} - Throws an exception if the provided parameter is
-// * not a list.
+// @throw {Exception}
+// * Throws an exception if the provided parameter is not a list.
 
 // @example
 // * .example {

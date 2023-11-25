@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * mq mixin
+// * mq mixin.
 // * Generate a media query with specified type,
 // * dimension, and breakpoint.
 
@@ -11,13 +11,14 @@
 
 // @module general/mq
 
-// @param {String} $type - The type of query you want (min | max).
+// @param {String} $type
+// * The type of query you want (min | max).
 
-// @param {String} $dimension - The dimension you want, which can be
-// * width, height, w, or h.
+// @param {String} $dimension
+// * The dimension you want, which can be width, height, w, or h.
 
-// @param {String} $breakpoint-name - Specify the breakpoint name from
-// * the breakpoints map.
+// @param {String} $breakpoint-name
+// * Specify the breakpoint name from the breakpoints map.
 
 // @example
 // * .example {

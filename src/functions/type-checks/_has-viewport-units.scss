@@ -10,9 +10,11 @@
 
 // @module type-checks/has-view-unit
 
-// @param {number} $val - The number to check for viewport units.
+// @param {number} $val
+// * The number to check for viewport units.
 
-// @throws {string} Throws an error if @param is not a number or param is
+// @throws {string}
+// * Throws an error if @param is not a number or param is
 // * not in $viewport-units list.
 
 // @example

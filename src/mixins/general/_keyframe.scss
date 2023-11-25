@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * keyframe mixin
+// * keyframe mixin.
 // * Generate keyframes with vendor prefixes.
 
 // @author Khaled Mohamed
@@ -10,7 +10,8 @@
 
 // @module general/keyframe
 
-// @param {String} $name - The name of the keyframes.
+// @param {String} $name
+// * The name of the keyframes.
 
 // @example
 // *  @include keyframe(animation-name) {

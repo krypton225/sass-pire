@@ -14,11 +14,11 @@
 // @update We updated the usage of the math library of Sass and added
 // * more validations.
 
-// @param {Number} $num - The value from which the unit will be
-// * cut or stripped.
+// @param {Number} $num
+// * The value from which the unit will be cut or stripped.
 
-// @throw {Exception} - Throws an exception if the parameter is
-// * not a number.
+// @throw {Exception}
+// * Throws an exception if the parameter is not a number.
 
 // @example
 // * .example {

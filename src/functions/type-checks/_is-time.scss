@@ -11,10 +11,12 @@
 
 // @module type-checks/is-time
 
-// @param {number} $val - A number to check if it has a time type or not.
+// @param {number} $val
+// * A number to check if it has a time type or not.
 
-// @throw {string} "You must pass an argument with number type to the
-// * is-time function."
+// @throw {string}
+// * You must pass an argument with number type to the
+// * is-time function.
 
 // @example
 // * .example {

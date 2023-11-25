@@ -16,12 +16,12 @@
 // * - "show" or "yes": Sets visibility to visible and opacity to 1.
 
 // @example
-// * .element {
+// * .example {
 // *    @include fade("hide");
 // * }
 
 // @output
-// * .element {
+// * .example {
 // *   visibility: hidden;
 // *   opacity: 0;
 // * }

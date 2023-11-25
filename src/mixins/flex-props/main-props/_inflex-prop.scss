@@ -12,12 +12,15 @@
 
 // @module main-props/inflex-prop
 
-// @param {String} $f-dir - The flex-direction value. Default: row.
+// @param {String} $f-dir
+// * The flex-direction value. Default: row.
 
-// @param {String} $justify-content-val - The justify-content value.
+// @param {String} $justify-content-val
+// * The justify-content value.
 // * Default: flex-start.
 
-// @param {String} $align-items-val - The align-items value.
+// @param {String} $align-items-val
+// * The align-items value.
 // * Default: normal.
 
 // @example

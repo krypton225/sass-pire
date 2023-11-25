@@ -10,10 +10,12 @@
 
 // @module type-checks/is-angle
 
-// @param {number} $val - A number to check if it has angle units or not.
+// @param {number} $val
+// * A number to check if it has angle units or not.
 
-// @throw {string} "You must pass an argument with number type to the
-// * is-angle function."
+// @throw {string}
+// * You must pass an argument with number type to the
+// * is-angle function.
 
 // @example
 // * .example {

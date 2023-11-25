@@ -10,9 +10,11 @@
 
 // @module type-checks/has-res-unit
 
-// @param {number} $val - The number to check for resolution units.
+// @param {number} $val
+// * The number to check for resolution units.
 
-// @throws {string} Throws an error if @param is not a number.
+// @throws {string}
+// * Throws an error if @param is not a number.
 
 // @example
 // * .example {

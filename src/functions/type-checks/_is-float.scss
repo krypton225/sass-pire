@@ -11,11 +11,13 @@
 
 // @module type-checks/is-float
 
-// @param {number} $val - A number to check if it is a floating-point
+// @param {number} $val
+// * A number to check if it is a floating-point
 // * number or not.
 
-// @throw {string} "You must pass an argument with number type to the
-// * is-float function."
+// @throw {string}
+// * You must pass an argument with number type to the
+// * is-float function.
 
 // @example
 // * .example {

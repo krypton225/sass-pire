@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * generate colors for dark mode mixin.
+// * generate-colors-dark-mode mixin.
 // * This mixin generates CSS custom properties for defining colors in the
 // * :root element based on the provided color maps for both light and
 // * dark modes. It allows you to create a consistent color scheme for
@@ -13,19 +13,22 @@
 
 // @module general/generate-colors-dark-mode
 
-// @param {Map} $light-colors-map - A map containing color names and their
-// * corresponding values for the light mode. Each key-value pair
-// * represents a custom property for a color. The key (color name) must
-// * be a string, and the value must be a color.
+// @param {Map} $light-colors-map
+// * A map containing color names and their corresponding values for the
+// * light mode. Each key-value pair represents a custom property for
+// * a color. The key (color name) must be a string, and the value
+// * must be a color.
 
-// @param {Map} $dark-colors-map - A map containing color names and their
-// * corresponding values for the dark mode. Each key-value pair
-// * represents a custom property for a color. The key (color name) must
-// * be a string, and the value must be a color.
+// @param {Map} $dark-colors-map
+// * A map containing color names and their corresponding values for the
+// * dark mode. Each key-value pair represents a custom property for
+// * a color. The key (color name) must be a string, and the
+// * value must be a color.
 
-// @param {Boolean} $generate-with-attr - An optional boolean flag
-// * indicating whether to generate additional custom properties using
-// * HTML attribute selectors for light mode. Defaults to false.
+// @param {Boolean} $generate-with-attr
+// * An optional boolean flag indicating whether to generate additional
+// * custom properties using HTML attribute selectors for light mode.
+// * Defaults to false.
 
 // @example 1
 // * // Generated CSS custom properties for dark mode:

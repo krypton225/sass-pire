@@ -21,4 +21,6 @@ Global:
 
     - Try to unit all tabs for 75 character in one line (DONE).
 
-    - Try to put dot in the end of each line.
+    - Try to put dot in the end of each line (DONE).
+
+    - Reverse all @error messages in all files.

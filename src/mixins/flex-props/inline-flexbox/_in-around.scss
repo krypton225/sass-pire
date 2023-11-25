@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * inline flex around mixins.
+// * inline-flex around mixins.
 // * These mixins provide a convenient way to apply inline flexbox
 // * properties with the 'space-around' value for the 'justify-content'
 // * property.
@@ -16,10 +16,9 @@
 // @module inline-flexbox/around
 
 // @example
-// *   .example {
-// *     @include inflex-around-normal(row);
-// *   }
-// *
+// * .example {
+// *   @include inflex-around-normal(row);
+// * }
 
 // @output
 // * .example {

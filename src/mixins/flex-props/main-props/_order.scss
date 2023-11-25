@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 // @description
-// * Order mixin
+// * order mixin.
 // * This mixin applies the `order` property with vendor prefixes to
 // * reorder flex items. It allows you to control the visual order of
 // * flex items within their flex container.
@@ -12,9 +12,11 @@
 
 // @module main-props/order
 
-// @param {Number} $val - The order value. Must be a number.
+// @param {Number} $val
+// * The order value. Must be a number.
 
-// @throws Throws an error if the provided value is not a number.
+// @throws {string}
+// * Throws an error if the provided value is not a number.
 
 // @example
 // * .example {
