@@ -6,7 +6,7 @@ Mixins:
 Global:
     - Update all import functions and mixins in all project with forward statement. --- (DONE).
     
-    - Update all @example statement in functions with (content) property.
+    - Update all @example statement in functions with (content) property (DONE).
 
     - Add README files in root folder of project to add all rules for writing any
     functionalities in project like: documentations,.. etc.
@@ -17,4 +17,8 @@ Global:
 
     - Try to unit all example ((docs)) in one pattern.
 
-    - Try to unit all stylelint in one place.
+    - Try to unit all stylelint in one place (DONE).
+
+    - Try to unit all tabs for 80 character in one line.
+
+    - Try to put dot in the end of each line.
