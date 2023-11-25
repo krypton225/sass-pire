@@ -1,6 +1,7 @@
 @charset "UTF-8";
 
 // stylelint-disable scss/dollar-variable-empty-line-before
+
 @use "sass:list";
 @use "sass:map";
 @use "../../functions/list/flatten-list" as f;

@@ -1,12 +1,12 @@
 @charset "UTF-8";
 
 // stylelint-disable scss/dollar-variable-empty-line-before
+// stylelint-disable indentation
+
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as prefix;
 @use "../../abstract" as var;
-
-// stylelint-disable indentation
 
 @mixin shadow($val...) {
     $box-shadow-values: (inherit, initial, revert, revert-layer, unset, none) !default;
