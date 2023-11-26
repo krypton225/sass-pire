@@ -43,7 +43,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as prefix;
+@use "../vendor-prefixes/prefix" as pref;
 
 @mixin scale($x: 1, $y: $x) {
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
@@ -60,5 +60,5 @@
         @error "The value of scale in transform property must be in number or string type.";
     }
 
-    @include prefix.prefixing-all(transform, scale($x, $y));
+    @include pref.prefixing-all(transform, scale($x, $y));
 }
