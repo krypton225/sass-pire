@@ -34,13 +34,13 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
-@function is-angle($val) {
-    @if type-of($val) != number {
+@function is-angle($value) {
+    @if type-of($value) != number {
         @error "You must pass argument to is-angle function with number type.";
     }
 
     $flag: true;
-    $get-unit: math.unit($val);
+    $get-unit: math.unit($value);
 
     @if not list.index(var.$angle-units, $get-unit) {
         $flag: false;

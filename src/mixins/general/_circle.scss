@@ -37,16 +37,16 @@
 @use "../../abstract/variables" as var;
 @use "../../functions/global/is-in-list" as func;
 
-@mixin circle($side) {
-    $get-unit: math.unit($side);
+@mixin circle($one-side) {
+    $get-unit: math.unit($one-side);
 
-    @if type-of($side) != number {
-        @error "$side variable must be of number type.";
+    @if type-of($one-side) != number {
+        @error "$one-side variable must be of number type.";
     }
 
     @if func.is-in-list(var.$main-units, $get-unit) {
-        width: #{$side};
-        height: #{$side};
+        width: #{$one-side};
+        height: #{$one-side};
         border-radius: 50%;
     }
 }

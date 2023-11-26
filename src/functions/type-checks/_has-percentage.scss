@@ -31,14 +31,14 @@
 
 @use "sass:math";
 
-@function has-ptg($val) {
-    @if type-of($val) != number {
+@function has-ptg($value) {
+    @if type-of($value) != number {
         @error "You must pass argument to has-ptg (has-percentage) function with a number type.";
     }
 
     $flag: true;
 
-    @if math.unit($val) != "%" {
+    @if math.unit($value) != "%" {
         $flag: false;
     }
 

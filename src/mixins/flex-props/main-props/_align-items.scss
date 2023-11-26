@@ -35,6 +35,13 @@
 // *   align-items: center;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (align-items) mixin and second is (a-i) mixin.
+// * The second one is for only simplicity when using (align-items) mixin.
+// * The core logic of (a-i) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
 @use "../../../functions/global/is-in-list" as func;
 
@@ -55,4 +62,8 @@
             #{$prop}: $value;
         }
     }
+}
+
+@mixin a-i($value: normal) {
+    @include align-items($value);
 }

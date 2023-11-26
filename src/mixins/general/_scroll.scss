@@ -1,14 +1,14 @@
 @charset "UTF-8";
 
 // @description
-// * scrolling mixin.
+// * scroll mixin.
 // * Customize the styling of the scrollbar in the browser.
 
 // @author Khaled Mohamed
 
 // @namespace general
 
-// @module general/scrolling
+// @module general/scroll
 
 // @param {Number} $widthScrollbar
 // * Width of the scrollbar in rem units.
@@ -34,7 +34,7 @@
 // @example
 // * Use this mixin with a free in the abstract or base file.
 // * See example.
-// *   @include scrolling(
+// *   @include scroll(
 // *     $widthScrollbar: 0.3,
 // *     $borderRadiusScrollbar: 0.2,
 // *     $bgColorScrollbar: #f0f0f0,
@@ -66,7 +66,7 @@
 // *   border-radius: 0.2rem;
 // * }
 
-@mixin scrolling(
+@mixin scroll(
     $widthScrollbar: 0.4,
     $borderRadiusScrollbar: 0.3,
     $bgColorScrollbar: rgb(255, 255, 255),
@@ -126,7 +126,7 @@
     }
 
     @if type-of($bxShadow) != bool {
-        @error "Box shadow value in scrolling mixin must be in boolean type.";
+        @error "Box shadow value in scroll mixin must be in boolean type.";
     }
 
     body {

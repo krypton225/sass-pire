@@ -37,6 +37,13 @@
 // *   flex-direction: column;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (flex-dir) mixin and second is (f-d) mixin.
+// * The second one is for only simplicity when using (flex-dir) mixin.
+// * The core logic of (f-d) mixin is to call the first one.
+// * You can use one of them as you want.
+
 // stylelint-disable scss/dollar-variable-empty-line-before
 // stylelint-disable scss/no-global-function-names
 
@@ -106,4 +113,8 @@
             }
         }
     }
+}
+
+@mixin f-d($value: row) {
+    @include flex-dir($value);
 }

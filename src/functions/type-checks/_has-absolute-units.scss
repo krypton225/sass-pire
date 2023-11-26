@@ -33,16 +33,16 @@
 @use "sass:list";
 @use "sass:math";
 
-@function has-abs-unit($val) {
+@function has-abs-unit($value) {
     $absolute-units: (cm, mm, in, px, pt, pc) !default;
 
-    @if type-of($val) != number {
+    @if type-of($value) != number {
         @error "Argument of has-abs-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index($absolute-units, math.unit($val)) {
+    @if not list.index($absolute-units, math.unit($value)) {
         $flag: false;
     }
 

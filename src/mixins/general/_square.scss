@@ -24,18 +24,71 @@
 // *   height: 50px;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (square) mixin and second is (sq) mixin.
+// * The second one is for only simplicity when using (square) mixin.
+// * The core logic of (sq) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract" as var;
 @use "../../functions/global/is-in-list" as func;
 
-@mixin square($one-side) {
+@mixin square($one-side: 1px) {
+    $all-units: (
+        cm,
+        mm,
+        in,
+        px,
+        pt,
+        pc,
+        "%",
+        em,
+        ex,
+        ch,
+        rem,
+        vw,
+        vh,
+        vmin,
+        vmax,
+        dpi,
+        dpcm,
+        dppx,
+        vw,
+        svw,
+        lvw,
+        dvw,
+        vh,
+        lvh,
+        dvh,
+        vi,
+        svi,
+        lvi,
+        vmin,
+        svmin,
+        lvmin,
+        dvmin,
+        vmax,
+        svmax,
+        lvmax,
+        dvmax,
+        vb,
+        lvb,
+        dvb
+    ) !default;
+
     @if type-of($one-side) != number {
         @error "The side value of square shape must be in number type.";
     }
 
-    @if func.is-in-list(var.$main-units, math.unit($one-side)) {
+    @if func.is-in-list($all-units, math.unit($one-side)) {
         width: $one-side;
         height: $one-side;
     }
+}
+
+@mixin sq($one-side: 1px) {
+    @include square($one-side);
 }

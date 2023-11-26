@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards key functionalities from other modules.
+// * for easy access in the current stylesheet.
+
+// @author Khaled Mohamed
+
+// @namespace functions/map
+
+// * forwarding the "has-same-keys" module.
+// * This module likely contains a function to check if
+// * keys of given maps are the same or not.
+@forward "has-same-keys";

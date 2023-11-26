@@ -95,13 +95,22 @@
 // *   --accent-clr: #3d3d3d;
 // * }
 
-// @note
+// @note 1
 // * The mixin assumes that the light mode is the default, and dark mode
 // * is applied with the `html[data-theme="dark"]` selector.
 // * Adjust the HTML attribute selector if your dark mode implementation
 // * uses a different attribute.
 
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (generate-colors-dark-mode) mixin and second is (gen-clrs-dark) mixin.
+// * The second one is for only simplicity when using (generate-colors-dark-mode) mixin.
+// * The core logic of (gen-clrs-dark) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
+@use "sass:map";
+@use "../../functions/map/has-same-keys" as func;
 
 @mixin generate-colors-dark-mode($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {
     @if type-of($light-colors-map) != map {
@@ -124,22 +133,8 @@
         @error "You must pass the third argument of the generate-colors-dark-mode mixin with boolean value.";
     }
 
-    :root {
-        @each $clr, $val in $light-colors-map {
-            @if type-of($clr) != string {
-                @error "Please, Make the color name in the string type.";
-            }
-
-            @if type-of($val) != color {
-                @error "Please, Make sure the value in the map has a color type.";
-            }
-
-            --#{to-lower-case($clr)}-clr: #{$val};
-        }
-    }
-
-    @if $generate-with-attr {
-        html[data-theme="light"] {
+    @if func.has-same-keys($light-colors-map, $dark-colors-map) {
+        :root {
             @each $clr, $val in $light-colors-map {
                 @if type-of($clr) != string {
                     @error "Please, Make the color name in the string type.";
@@ -152,19 +147,41 @@
                 --#{to-lower-case($clr)}-clr: #{$val};
             }
         }
-    }
 
-    html[data-theme="dark"] {
-        @each $clr, $val in $dark-colors-map {
-            @if type-of($clr) != string {
-                @error "Please, Make the color name in the string type.";
+        @if $generate-with-attr {
+            html[data-theme="light"] {
+                @each $clr, $val in $light-colors-map {
+                    @if type-of($clr) != string {
+                        @error "Please, Make the color name in the string type.";
+                    }
+
+                    @if type-of($val) != color {
+                        @error "Please, Make sure the value in the map has a color type.";
+                    }
+
+                    --#{to-lower-case($clr)}-clr: #{$val};
+                }
             }
-
-            @if type-of($val) != color {
-                @error "Please, Make sure the value in the map has a color type.";
-            }
-
-            --#{to-lower-case($clr)}-clr: #{$val};
         }
+
+        html[data-theme="dark"] {
+            @each $clr, $val in $dark-colors-map {
+                @if type-of($clr) != string {
+                    @error "Please, Make the color name in the string type.";
+                }
+
+                @if type-of($val) != color {
+                    @error "Please, Make sure the value in the map has a color type.";
+                }
+
+                --#{to-lower-case($clr)}-clr: #{$val};
+            }
+        }
+    } @else {
+        @error "Variable for light and dark mode must be in the same names";
     }
+}
+
+@mixin gen-clrs-dark($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {
+    @include generate-colors-dark-mode($light-colors-map, $dark-colors-map, $generate-with-attr);
 }

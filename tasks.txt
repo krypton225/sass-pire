@@ -24,3 +24,9 @@ Global:
     - Try to put dot in the end of each line (DONE).
 
     - Reverse all @error messages in all files.
+
+    - Make sense with the parameter names.
+
+    - Add more new mixins for simplicity (DONE).
+
+    - Add access for all functions and mixins.

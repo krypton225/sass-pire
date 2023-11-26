@@ -32,6 +32,13 @@
 // *   justify-content: start;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (justify-content) mixin and second is (j-c) mixin.
+// * The second one is for only simplicity when using (justify-content) mixin.
+// * The core logic of (j-c) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
 @use "../../../functions/global/is-in-list" as func;
 
@@ -66,4 +73,8 @@
             #{$prop}: $value;
         }
     }
+}
+
+@mixin j-c($value: flex-start) {
+    @include justify-content($value);
 }

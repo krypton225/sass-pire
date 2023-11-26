@@ -39,18 +39,18 @@
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
 
-@mixin u-select($val) {
+@mixin u-select($value: auto) {
     $user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, user-select) !default;
 
     $user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
 
-    @if type-of($val) != string {
+    @if type-of($value) != string {
         @error "You must pass a value to u-select mixin in string type.";
     }
 
-    @if func.is-in-list($user-select-values, $val) {
+    @if func.is-in-list($user-select-values, $value) {
         @each $prop in $user-select-props {
-            #{$prop}: $val;
+            #{$prop}: $value;
         }
     }
 }
