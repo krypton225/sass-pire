@@ -32,13 +32,13 @@
 @use "sass:math";
 @use "../global/cut-unit" as func;
 
-@function is-int($val) {
-    @if type-of($val) != number {
+@function is-int($value) {
+    @if type-of($value) != number {
         @error "You must pass argument to is-int function with a number type.";
     }
 
     $flag: false;
-    $actual-number: func.cut-unit($val);
+    $actual-number: func.cut-unit($value);
 
     @if math.round($actual-number) == $actual-number {
         $flag: true;

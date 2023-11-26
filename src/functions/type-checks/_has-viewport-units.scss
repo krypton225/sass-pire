@@ -33,7 +33,7 @@
 @use "sass:list";
 @use "sass:math";
 
-@function has-view-unit($val) {
+@function has-view-unit($value) {
     $viewport-units: (
         vw,
         svw,
@@ -58,13 +58,13 @@
         dvb
     ) !default;
 
-    @if type-of($val) != number {
+    @if type-of($value) != number {
         @error "Argument of has-view-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index($viewport-units, math.unit($val)) {
+    @if not list.index($viewport-units, math.unit($value)) {
         $flag: false;
     }
 

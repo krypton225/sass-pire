@@ -34,13 +34,13 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 
-@function is-time($val) {
-    @if type-of($val) != number {
+@function is-time($value) {
+    @if type-of($value) != number {
         @error "You must pass argument to is-time function with number type.";
     }
 
     $flag: true;
-    $get-unit: math.unit($val);
+    $get-unit: math.unit($value);
 
     @if not list.index(var.$time-units, $get-unit) {
         $flag: false;

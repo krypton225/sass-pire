@@ -35,7 +35,7 @@
 
 // stylelint-disable selector-no-vendor-prefix
 
-@mixin select($bg-color, $text-color) {
+@mixin select($bg-color: black, $text-color: white) {
     @if type-of($bg-color) == string {
         @if not str-index($bg-color, "var") {
             @error "You must pass a CSS variable in the first argument of select mixin.";

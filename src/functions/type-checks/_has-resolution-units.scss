@@ -32,16 +32,16 @@
 @use "sass:list";
 @use "sass:math";
 
-@function has-res-unit($val) {
+@function has-res-unit($value) {
     $resolution-units: (dpi, dpcm, dppx) !default;
 
-    @if type-of($val) != number {
+    @if type-of($value) != number {
         @error "Argument of has-res-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index($resolution-units, math.unit($val)) {
+    @if not list.index($resolution-units, math.unit($value)) {
         $flag: false;
     }
 

@@ -33,16 +33,16 @@
 @use "sass:list";
 @use "sass:math";
 
-@function has-rel-unit($val) {
+@function has-rel-unit($value) {
     $relative-units: (em, ex, ch, rem, vw, vh, vmin, vmax) !default;
 
-    @if type-of($val) != number {
+    @if type-of($value) != number {
         @error "Argument of has-rel-unit must be of type number.";
     }
 
     $flag: true;
 
-    @if not list.index($relative-units, math.unit($val)) {
+    @if not list.index($relative-units, math.unit($value)) {
         $flag: false;
     }
 

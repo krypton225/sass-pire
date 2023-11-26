@@ -51,9 +51,16 @@
 // *   --sp-accent-clr: #e74c3c;
 // * }
 
-// @note
+// @note 1
 // * Make sure to include the "variables" module where the
 // * "$brand-lib-name" variable is defined.
+
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (generate-colors) mixin and second is (gen-clrs) mixin.
+// * The second one is for only simplicity when using (generate-colors) mixin.
+// * The core logic of (gen-clrs) mixin is to call the first one.
+// * You can use one of them as you want.
 
 @use "sass:list";
 @use "../../abstract/variables" as var;
@@ -88,4 +95,8 @@
             }
         }
     }
+}
+
+@mixin gen-clrs($brand-name: var.$brand-lib-name, $color-map: ()) {
+    @include generate-colors($brand-name, $color-map);
 }

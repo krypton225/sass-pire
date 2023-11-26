@@ -27,7 +27,7 @@
 // *   @include flex-basis(max-content);
 // * }
 
-// @Output:
+// @output:
 // * .example {
 // *   -webkit-flex-basis: max-content;
 // *   -ms-flex-basis: max-content;
@@ -38,11 +38,18 @@
 // *   flex-basis: max-content;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (flex-basis) mixin and second is (f-b) mixin.
+// * The second one is for only simplicity when using (flex-basis) mixin.
+// * The core logic of (f-b) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
 @use "sass:math";
 @use "../../../functions/global" as func;
 
-@mixin flex-basis($val: auto) {
+@mixin flex-basis($value: auto) {
     $flex-basis-props: (
         -webkit-flex-basis,
         -ms-flex-basis,
@@ -56,25 +63,29 @@
     // stylelint-disable-next-line scss/dollar-variable-empty-line-before
     $flex-basis-values: (max-content, min-content, fit-content, content, inherit, auto) !default;
 
-    @if type-of($val) == string or type-of($val) == number {
-        @if type-of($val) == string {
-            @if func.is-in-list($flex-basis-values, $val) {
+    @if type-of($value) == string or type-of($value) == number {
+        @if type-of($value) == string {
+            @if func.is-in-list($flex-basis-values, $value) {
                 @each $prop in $flex-basis-props {
-                    #{$prop}: $val;
+                    #{$prop}: $value;
                 }
             }
         }
 
-        @if type-of($val) == number and func.cut-unit($val) != 0 {
-            @if unitless($val) {
-                @error "Please, Enter the unit of $val argument. It must be one of these units (#{$flex-basis-values})";
+        @if type-of($value) == number and func.cut-unit($value) != 0 {
+            @if unitless($value) {
+                @error "Please, Enter the unit of $value argument. It must be one of these units (#{$flex-basis-values})";
             }
 
             @each $prop in $flex-basis-props {
-                #{$prop}: $val;
+                #{$prop}: $value;
             }
         }
     } @else {
-        @error "$val argument must has be of type number or string.";
+        @error "$value argument must has be of type number or string.";
     }
+}
+
+@mixin f-b($value: auto) {
+    @include flex-basis($value);
 }

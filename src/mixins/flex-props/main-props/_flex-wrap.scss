@@ -33,6 +33,13 @@
 // *   flex-wrap: wrap;
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (flex-wrap) mixin and second is (f-w) mixin.
+// * The second one is for only simplicity when using (flex-wrap) mixin.
+// * The core logic of (f-w) mixin is to call the first one.
+// * You can use one of them as you want.
+
 // stylelint-disable scss/dollar-variable-empty-line-before
 
 @use "sass:list";
@@ -40,7 +47,7 @@
 @use "../../vendor-prefixes/prefix" as pref;
 @use "../../../functions/global/is-in-list" as func;
 
-@mixin flex-wrap($val: nowrap) {
+@mixin flex-wrap($value: nowrap) {
     $flex-wrap-values: (nowrap, wrap, wrap-reverse, "", no, yes, w, wrap-rev, w-rev, inherit) !default;
 
     $flex-wrap-map: (
@@ -56,10 +63,14 @@
         inherit: inherit
     ) !default;
 
-    @if func.is-in-list(map-keys($flex-wrap-map), $val) {
+    @if func.is-in-list(map-keys($flex-wrap-map), $value) {
         // stylelint-disable-next-line scss/no-global-function-names
-        $flex-wrap-value: map-get($flex-wrap-map, $val);
+        $flex-wrap-value: map-get($flex-wrap-map, $value);
 
         @include pref.prefixing-ms(flex-wrap, $flex-wrap-value);
     }
+}
+
+@mixin f-w($value) {
+    @include flex-wrap($value);
 }

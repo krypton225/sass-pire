@@ -29,7 +29,7 @@
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
 
-@mixin fade($type) {
+@mixin fade($type: show) {
     $fade-values: (hide, show, yes, no) !default;
 
     @if func.is-in-list($fade-values, $type) {

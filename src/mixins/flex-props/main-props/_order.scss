@@ -37,7 +37,7 @@
 
 @use "../../../functions/global/cut-unit" as func;
 
-@mixin order($val) {
+@mixin order($value: 0) {
     $order-props: (
         -webkit-box-ordinal-group,
         -moz-box-ordinal-group,
@@ -49,11 +49,11 @@
         order
     ) !default;
 
-    @if type-of($val) != number {
+    @if type-of($value) != number {
         @error "The value of order mixin argument must be of type number.";
     }
 
-    $actual-val: func.cut-unit($val);
+    $actual-val: func.cut-unit($value);
 
     @each $prop in $order-props {
         #{$prop}: $actual-val;
