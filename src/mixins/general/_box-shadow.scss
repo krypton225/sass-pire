@@ -1,5 +1,57 @@
 @charset "UTF-8";
 
+// @description
+// * shadow mixin.
+// * A mixin for creating box-shadow properties with
+// * flexibility and validation with cross-browser support.
+
+// @access public
+
+// @author Khaled Mohamed
+
+// @namespace general
+
+// @module general/shadow
+
+// @param {List} $val
+// * List of values to construct the box-shadow property.
+
+// @throws {Warning}
+// * If no arguments are passed, default value is set to 'none'.
+
+// @throws {Error}
+// * If values are not valid or do not match expected formats.
+
+// @example 1
+// * .example {
+// *   @include shadow(none);
+// * }
+
+// @output 1
+// * .example {
+// *   -webkit-box-shadow: none;
+// *   box-shadow: none;
+// * }
+
+// @example 2
+// * .example {
+// *   @include shadow(
+// *            (10px 15px 15px darkslategrey),
+// *            (20px 20px coral),
+// *            (20px 20px 25px 22px teal)
+// *   );
+// * }
+
+// @output 2
+// * .example {
+// *   -webkit-box-shadow: 10px 15px 15px darkslategrey,
+// *                       20px 20px coral,
+// *                       20px 20px 25px 22px teal;
+// *   box-shadow: 10px 15px 15px darkslategrey,
+// *               20px 20px coral,
+// *               20px 20px 25px 22px teal;
+// * }
+
 // stylelint-disable scss/dollar-variable-empty-line-before
 // stylelint-disable indentation
 
