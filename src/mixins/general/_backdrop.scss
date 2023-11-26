@@ -4,7 +4,6 @@
 
 @use "sass:list";
 @use "sass:map";
-@use "../../functions/list/flatten-list" as f;
 
 @mixin backdrop($val...) {
     $backdrop-props: (-webkit-backdrop-filter, backdrop-filter) !default;
@@ -52,13 +51,4 @@
             }
         }
     }
-}
-
-.one {
-    @include backdrop(
-        (
-            blur: 30px,
-            contrast: 2px
-        )
-    );
 }

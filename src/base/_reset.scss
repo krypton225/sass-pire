@@ -7,7 +7,7 @@
 
 // @access public
 
-@use "../mixins/vendor-prefixes/prefix" as prefix;
+@use "../mixins/vendor-prefixes/prefix" as pref;
 @use "../base/banner" as b;
 @include b.banner;
 
@@ -87,9 +87,9 @@ select {
     *,
     *::before,
     *::after {
-        @include prefix.prefixing-web(animation-duration, 0.01ms);
-        @include prefix.prefixing-web(animation-iteration-count, 1);
-        @include prefix.prefixing-web-o(transition-duration, 0.01ms);
+        @include pref.prefixing-web(animation-duration, 0.01ms);
+        @include pref.prefixing-web(animation-iteration-count, 1);
+        @include pref.prefixing-web-o(transition-duration, 0.01ms);
 
         scroll-behavior: smooth;
     }

@@ -5,7 +5,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as prefix;
+@use "../vendor-prefixes/prefix" as pref;
 @use "../../abstract" as var;
 
 @mixin shadow($val...) {
@@ -15,7 +15,7 @@
 
     @if list.length($val) == 0 {
         @warn "The default value now for shadow is none. So, for more readable in using shadow mixin, please, pass (none) value as argument to it.";
-        @include prefix.prefixing-web(box-shadow, none);
+        @include pref.prefixing-web(box-shadow, none);
     } @else {
         @each $one-list in $val {
             $first-item-val: list.nth($one-list, 1);
@@ -136,6 +136,6 @@
             }
         }
 
-        @include prefix.prefixing-web(box-shadow, $actual-value-box-shadow);
+        @include pref.prefixing-web(box-shadow, $actual-value-box-shadow);
     }
 }

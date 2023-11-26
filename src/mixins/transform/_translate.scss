@@ -45,7 +45,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as prefix;
+@use "../vendor-prefixes/prefix" as pref;
 @use "../../abstract" as var;
 
 @mixin translate($x: 1px, $y: $x) {
@@ -67,5 +67,5 @@
         @error "x and y values of translate in transform property must be in number or string type.";
     }
 
-    @include prefix.prefixing-all(transform, translate($x, $y));
+    @include pref.prefixing-all(transform, translate($x, $y));
 }
