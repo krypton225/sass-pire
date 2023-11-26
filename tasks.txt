@@ -24,3 +24,5 @@ Global:
     - Try to put dot in the end of each line (DONE).
 
     - Reverse all @error messages in all files.
+
+    - Make sense with the parameter names.
