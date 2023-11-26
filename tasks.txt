@@ -4,7 +4,7 @@ Mixins:
 ===================================================================================
 
 Global:
-    - Update all import functions and mixins in all project with forward statement. --- (DONE).
+    - Update all import functions and mixins in all project with forward statement (DONE).
     
     - Update all @example statement in functions with (content) property (DONE).
 
@@ -29,4 +29,4 @@ Global:
 
     - Add more new mixins for simplicity (DONE).
 
-    - Add access for all functions and mixins.
+    - Add access for all functions and mixins (DONE).

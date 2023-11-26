@@ -5,6 +5,8 @@
 // * You can check this here: https://andy-bell.co.uk/a-modern-css-reset/
 // * We updated some of this reset file.
 
+// @access public
+
 @use "../mixins/vendor-prefixes/prefix" as prefix;
 @use "../base/banner" as b;
 @include b.banner;
