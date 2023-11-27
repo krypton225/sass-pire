@@ -27,3 +27,8 @@
 // * The "reverse" module likely contains a function to get
 // * the reversed list from a given one.
 @forward "reverse";
+
+// * forwarding the "get-centered-element-list" module.
+// * The "get-centered-element-list" module likely contains a function to get
+// * the centered element in the list from a given one.
+@forward "get-centered-element-list";
