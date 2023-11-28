@@ -30,3 +30,5 @@ Global:
     - Add more new mixins for simplicity (DONE).
 
     - Add access for all functions and mixins (DONE).
+
+    - Provide more additional comments in documentation of functions and mixins.
