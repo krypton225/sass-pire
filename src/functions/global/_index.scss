@@ -34,3 +34,9 @@
 // * exists in the list and false if not.
 // @see has-pos
 @forward "has-position";
+
+// * forwarding the "get-sum-list" module.
+// * The "get-sum-list" module likely contains a function to get
+// * the centered element in the list from a given one.
+// @see sum
+@forward "sum";
