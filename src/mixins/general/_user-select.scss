@@ -14,14 +14,14 @@
 
 // @param {String} $val
 // * The value for the user-select property.
-// *  - 'none': No text selection is allowed.
-// *  - 'auto': Standard selection behavior.
-// *  - 'text': Only text selection is allowed.
-// *  - 'contain': Text selection is allowed, but not outside of
+// *  - `none`: No text selection is allowed.
+// *  - `auto`: Standard selection behavior.
+// *  - `text`: Only text selection is allowed.
+// *  - `contain`: Text selection is allowed, but not outside of
 // *    the element's boundaries.
-// *  - 'all': Text, image, and other selection is allowed.
-// *  - 'inherit', 'initial', 'revert', 'revert-layer',
-// *    'unset': CSS standard values.
+// *  - `all`: Text, image, and other selection is allowed.
+// *  - `inherit`, `initial`, `revert`, `revert-layer`,
+// *    `unset`: CSS standard values.
 
 // @example
 // * .example {
