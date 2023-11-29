@@ -12,6 +12,11 @@
 
 // @module general/grid
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - prefix-val-ms (mixin).
+// * - is-in-list (function).
+
 // @param {Number} $min-col-size
 // * Minimum width of one column in rem units.
 

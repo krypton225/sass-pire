@@ -13,6 +13,11 @@
 
 // @module general/mq
 
+// @dependencies:
+// * - map.has-key (SASS function).
+// * - map.get (SASS function).
+// * - is-in-list (function).
+
 // @param {String} $type
 // * The type of query you want (min | max).
 

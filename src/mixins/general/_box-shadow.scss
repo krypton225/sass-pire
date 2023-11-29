@@ -13,6 +13,10 @@
 
 // @module general/shadow
 
+// @dependencies:
+// * - $main-units (variable).
+// * - pref.prefixing-web (mixin).
+
 // @param {List} $val
 // * List of values to construct the box-shadow property.
 

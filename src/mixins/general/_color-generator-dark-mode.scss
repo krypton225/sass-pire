@@ -15,6 +15,10 @@
 
 // @module general/generate-colors-dark-mode
 
+// @dependencies:
+// * - list.length (function).
+// * - has-same-keys (function).
+
 // @param {Map} $light-colors-map
 // * A map containing color names and their corresponding values for the
 // * light mode. Each key-value pair represents a custom property for

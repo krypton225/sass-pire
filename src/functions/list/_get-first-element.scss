@@ -15,6 +15,12 @@
 
 // @update We updated the use of the list library of Sass.
 
+// @dependencies:
+// * - list.index (SASS function).
+// * - list.append (SASS function).
+// * - list.nth (SASS function).
+// * - flatten-list (function).
+
 // @param {List} $list
 // * A list from which to retrieve the first element.
 

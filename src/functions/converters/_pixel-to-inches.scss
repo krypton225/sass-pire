@@ -12,6 +12,10 @@
 
 // @module converters/px-to-in
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - cut-unit (function).
+
 // @param {Number} $pixel-val
 // * The value in pixel unit to convert.
 

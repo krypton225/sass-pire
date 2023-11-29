@@ -12,6 +12,10 @@
 
 // @module global/sum
 
+// @dependencies:
+// * - list.nth (SASS function).
+// * - flatten-list (function).
+
 // @param {...Number or List} $args
 // * Variable number of arguments, either numbers or lists of numbers.
 

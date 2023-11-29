@@ -12,6 +12,11 @@
 
 // @module converters/px-to-rem
 
+// @dependencies:
+// * - $base-font-size (variable).
+// * - math.unit (SASS function).
+// * - cut-unit (function).
+
 // @param {Number} $px-val
 // * The value in pixel unit to convert.
 

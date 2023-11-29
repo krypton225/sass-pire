@@ -13,6 +13,10 @@
 
 // @module type-checks/is-int
 
+// @dependencies:
+// * - math.round (SASS function).
+// * - cut-unit (function).
+
 // @param {number} $val
 // * The number to check.
 

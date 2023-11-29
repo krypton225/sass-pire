@@ -12,6 +12,10 @@
 
 // @module list/flatten
 
+// @dependencies:
+// * - list.join (SASS function).
+// * - list.append (SASS function).
+
 // @param {List} $list
 // * A list that may contain nested lists to be flattened.
 

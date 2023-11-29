@@ -12,6 +12,10 @@
 
 // @module general/square
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - is-in-list (function).
+
 // @param {Number} $one-side
 // * The length of one side of the square.
 
@@ -35,7 +39,6 @@
 
 @use "sass:list";
 @use "sass:math";
-@use "../../abstract" as var;
 @use "../../functions/global/is-in-list" as func;
 
 @mixin square($one-side: 1px) {
