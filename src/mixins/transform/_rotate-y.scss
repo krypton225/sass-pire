@@ -15,6 +15,11 @@
 
 // @module transform/rotate-y
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - $angle-units (variable).
+// * - pref.prefixing-all (mixin).
+
 // @param {Number|String} $angle
 // * The rotation angle.
 // * Default: 0deg.

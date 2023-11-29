@@ -13,6 +13,10 @@
 
 // @module main-props/flex-basis
 
+// @dependencies:
+// * - is-in-list (function).
+// * - cut-unit (function).
+
 // @param {String|Number} $val
 // * The value for the `flex-basis` property.
 // * Allowed values: max-content, min-content, fit-content, content,

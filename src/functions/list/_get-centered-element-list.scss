@@ -12,6 +12,12 @@
 
 // @module list/center-of-list
 
+// @dependencies:
+// * - math.div (SASS function).
+// * - list.length (SASS function).
+// * - list.nth (SASS function).
+// * - flatten-list (function).
+
 // @param {List} $list
 // * The input list from which the centered element is retrieved.
 

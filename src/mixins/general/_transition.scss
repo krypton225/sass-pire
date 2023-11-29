@@ -12,6 +12,12 @@
 
 // @module general/transition
 
+// @dependencies:
+// * - $time-units (variable).
+// * - prefix.prefixing-all (mixin).
+// * - is-in-list (function).
+// * - cut-unit (function).
+
 // @param {String} $prop
 // * The CSS property to apply the transition to. Default: `all`.
 

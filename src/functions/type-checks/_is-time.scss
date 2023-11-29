@@ -13,6 +13,11 @@
 
 // @module type-checks/is-time
 
+// @dependencies:
+// * - $time-units (variable).
+// * - list.index (SASS function).
+// * - math.unit (SASS function).
+
 // @param {number} $val
 // * A number to check if it has a time type or not.
 

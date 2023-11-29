@@ -13,6 +13,12 @@
 
 // @module main-props/flex-wrap
 
+// @dependencies:
+// * - map.keys (SASS function).
+// * - map.get (SASS function).
+// * - prefix.prefixing-ms (mixin).
+// * - is-in-list (function).
+
 // @param {String} $val
 // * The value for the `flex-wrap` property.
 // * Allowed values:

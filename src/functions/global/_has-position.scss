@@ -12,6 +12,9 @@
 
 // @module type-checks/has-pos
 
+// @dependencies:
+// * - is-in-list (function).
+
 // @param {string} $val
 // * The provided value of the position.
 
@@ -32,8 +35,6 @@
 // @returns {boolean} - Returns true if the argument has one of the
 // * position units, otherwise false.
 
-@use "sass:list";
-@use "sass:math";
 @use "../global/is-in-list" as func;
 
 @function has-pos($val) {

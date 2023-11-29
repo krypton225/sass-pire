@@ -12,6 +12,10 @@
 
 // @module converters/cm-to-px
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - cut-unit (function).
+
 // @param {Number} $cm-val
 // * The value in centimeter unit to convert.
 
