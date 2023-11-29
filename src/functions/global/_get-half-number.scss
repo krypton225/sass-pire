@@ -12,6 +12,10 @@
 
 // @module global/half
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - cut-unit (function).
+
 // @param {Number} $number
 // * The number to calculate the half of.
 // * It can have a unit or be unitless.

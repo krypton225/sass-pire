@@ -16,6 +16,11 @@
 
 // @module transform/translate-x
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - $main-units (variable).
+// * - pref.prefixing-all (mixin).
+
 // @param {Number|String} $x
 // * The horizontal translation distance.
 // * Default: 1px.

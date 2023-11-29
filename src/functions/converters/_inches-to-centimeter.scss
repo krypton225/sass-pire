@@ -12,6 +12,10 @@
 
 // @module converters/in-to-cm
 
+// @dependencies:
+// * - math.unit (SASS function).
+// * - cut-unit (function).
+
 // @param {Number} $inches-val
 // * The value in inches unit to convert.
 

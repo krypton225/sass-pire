@@ -15,6 +15,9 @@
 
 // @module transform/scale
 
+// @dependencies:
+// * - pref.prefixing-all (mixin).
+
 // @param {Number|String} $x
 // * The scaling factor for the x-axis.
 // * Default: 1.

@@ -15,6 +15,9 @@
 
 // @module general/generate-colors
 
+// @dependencies:
+// * - $brand-lib-name (variable).
+
 // @param {String} $brand-name
 // * The brand name or namespace for the color variables.
 // * Defaults to the value of the "$brand-lib-name"

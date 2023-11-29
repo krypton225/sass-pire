@@ -13,6 +13,9 @@
 
 // @module general/fade
 
+// @dependencies:
+// * - is-in-list (function).
+
 // @param {String} $type - The type of fade effect. Possible values are:
 // * - "hide" or "no": Sets visibility to hidden and opacity to 0.
 // * - "show" or "yes": Sets visibility to visible and opacity to 1.

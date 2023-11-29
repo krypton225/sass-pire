@@ -12,6 +12,10 @@
 
 // @module type-checks/has-view-unit
 
+// @dependencies:
+// * - list.index (SASS function).
+// * - math.unit (SASS function).
+
 // @param {number} $val
 // * The number to check for viewport units.
 
