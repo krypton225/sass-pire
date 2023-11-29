@@ -1,0 +1,61 @@
+@charset "UTF-8";
+
+// @description
+// * ptg-to-dec function.
+// * Converts a percentage value to its decimal equivalent.
+
+// @access public
+
+// @author Khaled Mohamed
+
+// @namespace converters
+
+// @module converters/ptg-to-dec
+
+// @dependencies:
+// * - math.div (SASS function).
+// * - cut-unit (function).
+
+// @param {Number} $ptg-value
+// * The percentage value to be converted into decimal.
+// * Defaults to 0%.
+
+// @throws {Error}
+// * If the input is not a number.
+
+// @example 1
+// * .example {
+// *   content: ptg-to-dec(50%);
+// * }
+
+// @output 1
+// * .example {
+// *   content: 0.5;
+// * }
+
+// @example 2
+// * .example {
+// *   content: ptg-to-dec();
+// * }
+
+// @output 2
+// * .example {
+// *   content: 0;
+// * }
+
+// @return {Number}
+// * The decimal value of the input which is in percentage value.
+
+@use "sass:math";
+@use "sass:list";
+@use "../global/cut-unit" as func;
+
+@function ptg-to-dec($ptg-value: 0%) {
+    @if type-of($ptg-value) != number {
+        @error "Percentage value must be in number type.";
+    }
+
+    $value-without-unit: func.cut-unit($ptg-value);
+
+    @return math.div($value-without-unit, 100);
+}

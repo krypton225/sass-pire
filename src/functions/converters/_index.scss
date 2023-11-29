@@ -26,7 +26,7 @@
 // @see in-to-cm
 @forward "inches-to-centimeter";
 
-// * Inches to Pixel Forward
+// * inches to pixel forward.
 // * forwarding the functionality to convert inches to pixels.
 // * please see the `in-to-px` function for details.
 // @see in-to-px
@@ -49,3 +49,9 @@
 // * please see the `px-to-rem` function for details.
 // @see px-to-rem
 @forward "px-to-rem";
+
+// * percentage to decimal forward.
+// * forwarding the functionality to convert percentage to decimal.
+// * please see the `percentage-to-decimal` function for details.
+// @see ptg-to-dec
+@forward "percentage-to-decimal";
