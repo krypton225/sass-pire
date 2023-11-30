@@ -69,7 +69,3 @@
 
     @return ($value-without-unit * 100) + #{"%"};
 }
-
-.one {
-    content: dec-to-ptg(0.53);
-}
