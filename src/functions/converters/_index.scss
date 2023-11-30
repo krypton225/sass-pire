@@ -55,3 +55,9 @@
 // * please see the `percentage-to-decimal` function for details.
 // @see ptg-to-dec
 @forward "percentage-to-decimal";
+
+// * decimal to percentage forward.
+// * forwarding the functionality to convert decimal to percentage.
+// * please see the `decimal-to-percentage` function for details.
+// @see dec-to-ptg
+@forward "decimal-to-percentage";
