@@ -1,5 +1,6 @@
 Mixins:
     - Configuration for RTL & LTR.
+    - mixin for font sizes responsive once.
 
 ===================================================================================
 
