@@ -7,6 +7,8 @@
 
 // @access public
 
+// @license MIT
+
 @use "../mixins/vendor-prefixes/prefix" as pref;
 @use "../base/banner" as b;
 @include b.banner;
