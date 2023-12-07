@@ -15,3 +15,9 @@
 // * responsive designs.
 // @see media-query
 @forward "media-query";
+
+// * forwarding the "iphone" module.
+// * The "iphone" module likely contains styles for
+// * responsive designs.
+// @see iphone
+@forward "iphone";
