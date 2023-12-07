@@ -1,17 +1,16 @@
 @charset "UTF-8";
 
 // @description
-// * This file forwards various modules for media queries
-// * for all needed devices.
+// * This file forwards various modules for needed media queries.
 
 // @author Khaled Mohamed
 
 // @license MIT
 
-// @namespace mixins/general
+// @namespace mixins/media-queries
 
-// * forwarding the "media-query" module.
-// * The "media-query" module likely contains styles for
-// * responsive designs.
-// @see media-query
-@forward "media-query";
+// * forwarding the "screens" module.
+// * The "screens" module likely contains all needed mixins for
+// * responsive screens.
+// @see screens
+@forward "screens";

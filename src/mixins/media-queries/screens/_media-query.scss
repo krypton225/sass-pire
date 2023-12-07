@@ -14,7 +14,7 @@
 
 // @namespace general
 
-// @module media-queries/mq-general
+// @module screens/mq-general
 
 // @dependencies:
 // * - map.has-key (SASS function).
@@ -52,7 +52,7 @@
 // * You can use one of them as you want.
 
 @use "sass:list";
-@use "../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as func;
 
 @mixin mq-general($type: min, $dimension: w, $breakpoint-name: md) {
     $main-mq-types: (min, max) !default;

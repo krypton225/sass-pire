@@ -30,7 +30,8 @@
         "new-version",
         "bugs",
         "tasks",
-        "mixins-media-queries"
+        "mixins-media-queries",
+        "media-queries-screens"
     ],
     "cSpell.words": [
         "Giraudel"
