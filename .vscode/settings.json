@@ -29,7 +29,8 @@
         "upgrade",
         "new-version",
         "bugs",
-        "tasks"
+        "tasks",
+        "mixins-media-queries"
     ],
     "cSpell.words": [
         "Giraudel"
