@@ -1,9 +1,10 @@
 @charset "UTF-8";
 
 // @description
-// * mq mixin.
+// * mq-general mixin.
 // * Generate a media query with specified type,
 // * dimension, and breakpoint.
+// * There is another mixin (mq-gen) for ONLY sim
 
 // @access public
 
@@ -13,7 +14,7 @@
 
 // @namespace general
 
-// @module general/mq
+// @module media-queries/mq-general
 
 // @dependencies:
 // * - map.has-key (SASS function).
@@ -31,7 +32,7 @@
 
 // @example
 // * .example {
-// *   @include mq($type: max, $dimension: h, $breakpoint-name: lg) {
+// *   @include mq-general($type: max, $dimension: h, $breakpoint-name: lg) {
 // *     width: 100px;
 // *   }
 // * }
@@ -43,10 +44,17 @@
 // *   }
 // * }
 
+// @note
+// * There is two mixins in this file.
+// * The first is the (mq-general) mixin and second is (mq-gen) mixin.
+// * The second one is for only simplicity when using (mq-general) mixin.
+// * The core logic of (mq-gen) mixin is to call the first one.
+// * You can use one of them as you want.
+
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
 
-@mixin mq($type: min, $dimension: w, $breakpoint-name: md) {
+@mixin mq-general($type: min, $dimension: w, $breakpoint-name: md) {
     $main-mq-types: (min, max) !default;
     $main-dimensions: (width, w, height, h) !default;
 
@@ -92,5 +100,11 @@
         } @else {
             @error "Please, Enter the valid breakpoint. #{$breakpoint-name} dose not exist in (#{$breakpoints})";
         }
+    }
+}
+
+@mixin mq-gen($type: min, $dimension: w, $breakpoint-name: md) {
+    @include mq-general($type, $dimension, $breakpoint-name) {
+        @content;
     }
 }

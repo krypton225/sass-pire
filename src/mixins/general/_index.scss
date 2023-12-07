@@ -10,12 +10,6 @@
 
 // @namespace mixins/general
 
-// * forwarding the "media-query" module.
-// * The "media-query" module likely contains styles for
-// * responsive designs.
-// @see media-query
-@forward "media-query";
-
 // * forwarding the "responsive-grid" module.
 // * The "responsive-grid" module probably provides styles for responsive
 // * grid layouts.
