@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all iPhone devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace screens/iphone
+
+// * forwarding the "iphone-4-4S" module.
+// * The "iphone-4-4S" module likely contains styles for
+// * responsive designs.
+// @see iphone-4-4S
+@forward "iphone-4-4S";

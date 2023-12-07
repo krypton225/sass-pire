@@ -1,0 +1,23 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * for all needed devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace media-queries/screens
+
+// * forwarding the "media-query" module.
+// * The "media-query" module likely contains styles for
+// * responsive designs.
+// @see media-query
+@forward "media-query";
+
+// * forwarding the "iphone" module.
+// * The "iphone" module likely contains styles for
+// * responsive designs.
+// @see iphone
+@forward "iphone";
