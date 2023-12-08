@@ -10,14 +10,26 @@
 
 // @namespace screens/iphone
 
-// * forwarding the "iphone-4" module.
-// * The "iphone-4" module likely contains styles for
+// * forwarding the "iphone" module.
+// * The "iphone" module likely contains styles for
 // * responsive designs.
-// @see iphone-4
-@forward "iphone-4";
+// @see iphone
+@forward "iphone";
 
 // * forwarding the "iphone-x" module.
 // * The "iphone-x" module likely contains styles for
 // * responsive designs.
 // @see iphone-x
 @forward "iphone-x";
+
+// * forwarding the "iphone-5" module.
+// * The "iphone-5" module likely contains styles for
+// * responsive designs.
+// @see iphone-5
+@forward "iphone-5";
+
+// * forwarding the "iphone-6" module.
+// * The "iphone-6" module likely contains styles for
+// * responsive designs.
+// @see iphone-6
+@forward "iphone-6";

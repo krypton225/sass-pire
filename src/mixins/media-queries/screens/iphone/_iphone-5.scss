@@ -1,0 +1,101 @@
+@charset "UTF-8";
+
+// @description
+// * iphone-5 mixin.
+// * The iphone-5 mixin is designed to simplify the creation of media
+// * queries targeting apple iphone-5 devices with width 320px × 568px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace iphone
+
+// @module iphone/iphone-5
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include iphone-5(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media only screen and (min-device-width: 320px)
+// * and (max-device-width: 568px)
+// * and (-webkit-min-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @note 1
+// * This mixin implements media query for screens for
+// * iphone-5 normal device. But for simplicity we wrote
+// * the name of the mixin with iphone-5
+
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (iphone-5) mixin and second is (ip) mixin.
+// * The second one is for only simplicity when using (iphone-5) mixin.
+// * The core logic of (ip) mixin is to call the first one.
+// * You can use one of them as you want.
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../functions/global/is-in-list" as func;
+
+@mixin iphone-5($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in iphone-5 mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $min-device-width: 320px !default;
+    $max-device-width: 568px !default;
+    $min-device-pixel-ratio: 2 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin ip-5($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}

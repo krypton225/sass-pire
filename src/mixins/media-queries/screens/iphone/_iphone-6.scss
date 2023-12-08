@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * iphone-4 mixin.
-// * The iphone-4 mixin is designed to simplify the creation of media
-// * queries targeting apple iPhone 4 and 4S devices.
+// * iphone-6 mixin.
+// * The iphone-6 mixin is designed to simplify the creation of media
+// * queries targeting apple iphone-6 devices with width 320px × 568px.
 // * It allows you to specify the orientation type (portrait or landscape)
 // * and includes common device-specific media query conditions.
 
@@ -15,7 +15,7 @@
 
 // @namespace iphone
 
-// @module iphone/iphone-4
+// @module iphone/iphone-6
 
 // @dependencies:
 // * - is-in-list (function).
@@ -26,14 +26,14 @@
 
 // @example
 // * .example {
-// *   @include iphone-4(land) {
+// *   @include iphone-6(land) {
 // *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media only screen and (min-device-width: 320px)
-// * and (max-device-width: 480px)
+// * @media only screen and (min-device-width: 375px)
+// * and (max-device-width: 667px)
 // * and (-webkit-min-device-pixel-ratio: 2)
 // * and (orientation: landscape) {
 // *  .example {
@@ -43,29 +43,35 @@
 
 // @note 1
 // * This mixin implements media query for screens for
-// * iPhone 4 and iPhone 4S. But for simplicity we wrote
-// * the name of the mixin with iphone-4
+// * iphone-6 normal device. But for simplicity we wrote
+// * the name of the mixin with iphone-6
 
 // @note 2
 // * There is two mixins in this file.
-// * The first is the (iphone-4) mixin and second is (ip-4) mixin.
-// * The second one is for only simplicity when using (iphone-4) mixin.
-// * The core logic of (ip-4) mixin is to call the first one.
+// * The first is the (iphone-6) mixin and second is (ip) mixin.
+// * The second one is for only simplicity when using (iphone-6) mixin.
+// * The core logic of (ip) mixin is to call the first one.
 // * You can use one of them as you want.
+
+// @note 3
+// * We added iphone-6s for iPhone 6 devices.
+// * We also added ip-6s mixin for only simplicity.
+// * All following mixins has same dimensions.
+// * So, all mixins called the first one.
 
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
 @use "../../../../functions/global/is-in-list" as func;
 
-@mixin iphone-4($orientation-type: portrait) {
+@mixin iphone-6($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
-        @error "Orientation type in iphone-4 mixin must be in string type.";
+        @error "Orientation type in mixin must be in string type.";
     }
 
     $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
-    $min-device-width: 320px !default;
-    $max-device-width: 480px !default;
+    $min-device-width: 375px !default;
+    $max-device-width: 667px !default;
     $min-device-pixel-ratio: 2 !default;
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
@@ -94,8 +100,20 @@
     }
 }
 
-@mixin ip-4($orientation-type: portrait) {
-    @include iphone-4($orientation-type) {
+@mixin ip-6($orientation-type: portrait) {
+    @include iphone-6($orientation-type) {
+        @content;
+    }
+}
+
+@mixin iphone-6s($orientation-type: portrait) {
+    @include iphone-6($orientation-type) {
+        @content;
+    }
+}
+
+@mixin ip-6s($orientation-type: portrait) {
+    @include iphone-6($orientation-type) {
         @content;
     }
 }
