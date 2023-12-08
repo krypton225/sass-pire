@@ -1,8 +1,11 @@
 @charset "UTF-8";
 
 // @description
-// * iphone-4-4S mixin.
-// * Generate a media query with for iphone-4-4S device.
+// * iphone-4-4s mixin.
+// * The iphone-4-4s mixin is designed to simplify the creation of media
+// * queries targeting Apple iPhone 4 and 4S devices.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
 
 // @access public
 
@@ -12,38 +15,43 @@
 
 // @namespace iphone
 
-// @module iphone/iphone-4-4S
+// @module iphone/iphone-4-4s
 
 // @dependencies:
+// * - is-in-list (function).
 
-// @param {String} $type
-// * The type of query you want (min | max).
-
-// @param {String} $dimension
-// * The dimension you want, which can be width, height, w, or h.
-
-// @param {String} $breakpoint-name
-// * Specify the breakpoint name from the breakpoints map.
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
 
 // @example
 // * .example {
-// *   @include iphone-4-4S($type: max, $dimension: h, $breakpoint-name: lg) {
-// *     width: 100px;
+// *   @include iphone-4-4s(land) {
+// *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media only screen and (max-height: 1199px) {
-// *   .example {
-// *     width: 100px;
-// *   }
+// * @media only screen and (min-device-width: 320px)
+// * and (max-device-width: 480px)
+// * and (-webkit-min-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
 // * }
 
-@use "sass:list";
 @use "../../../../functions/global/is-in-list" as func;
 
-@mixin iphone-4-4S($orientation-type: portrait) {
-    $all-orientations-types: (landscape, land, l, portrait, port, p, all) !default;
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@mixin iphone-4-4s($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in iphone-4-4s mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
     $min-device-width: 320px !default;
     $max-device-width: 480px !default;
     $min-device-pixel-ratio: 2 !default;
@@ -53,7 +61,16 @@
             @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: landscape) {
                 @content;
             }
-        } @else if $orientation-type == portrait or $orientation-type == port or $orientation-type == p {
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
             @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: portrait) {
                 @content;
             }
