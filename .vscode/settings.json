@@ -31,7 +31,8 @@
         "bugs",
         "tasks",
         "mixins-media-queries",
-        "media-queries-screens"
+        "media-queries-screens",
+        "mq-screens-iphone"
     ],
     "cSpell.words": [
         "Giraudel"
