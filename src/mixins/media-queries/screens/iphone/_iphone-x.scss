@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * iphone-4-4s mixin.
-// * The iphone-4-4s mixin is designed to simplify the creation of media
-// * queries targeting Apple iPhone 4 and 4S devices.
+// * iphone-x mixin.
+// * The iphone-x mixin is designed to simplify the creation of media
+// * queries targeting apple iPhone X device.
 // * It allows you to specify the orientation type (portrait or landscape)
 // * and includes common device-specific media query conditions.
 
@@ -15,7 +15,7 @@
 
 // @namespace iphone
 
-// @module iphone/iphone-4-4s
+// @module iphone/iphone-x
 
 // @dependencies:
 // * - is-in-list (function).
@@ -26,35 +26,42 @@
 
 // @example
 // * .example {
-// *   @include iphone-4-4s(land) {
+// *   @include iphone-x(land) {
 // *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media only screen and (min-device-width: 320px)
-// * and (max-device-width: 480px)
-// * and (-webkit-min-device-pixel-ratio: 2)
+// * @media only screen and (min-device-width: 375px)
+// * and (max-device-width: 812px)
+// * and (-webkit-min-device-pixel-ratio: 3)
 // * and (orientation: landscape) {
 // *  .example {
 // *    content: "example";
 // *  }
 // * }
 
-@use "../../../../functions/global/is-in-list" as func;
+// @note
+// * There is two mixins in this file.
+// * The first is the (iphone-x) mixin and second is (ip-x) mixin.
+// * The second one is for only simplicity when using (iphone-x) mixin.
+// * The core logic of (ip-x) mixin is to call the first one.
+// * You can use one of them as you want.
 
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
-@mixin iphone-4-4s($orientation-type: portrait) {
+@use "../../../../functions/global/is-in-list" as func;
+
+@mixin iphone-x($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
-        @error "Orientation type in iphone-4-4s mixin must be in string type.";
+        @error "Orientation type in iphone-x mixin must be in string type.";
     }
 
     $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
-    $min-device-width: 320px !default;
-    $max-device-width: 480px !default;
-    $min-device-pixel-ratio: 2 !default;
+    $min-device-width: 375px !default;
+    $max-device-width: 812px !default;
+    $min-device-pixel-ratio: 3 !default;
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
         @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
@@ -79,5 +86,11 @@
                 @content;
             }
         }
+    }
+}
+
+@mixin ip-x($orientation-type: portrait) {
+    @include iphone-x($orientation-type) {
+        @content;
     }
 }
