@@ -15,3 +15,9 @@
 // * responsive designs.
 // @see ipad-mini
 @forward "ipad-mini";
+
+// * forwarding the "ipad-med" module.
+// * The "ipad-med" module likely contains styles for
+// * responsive designs.
+// @see ipad-med
+@forward "ipad-med";

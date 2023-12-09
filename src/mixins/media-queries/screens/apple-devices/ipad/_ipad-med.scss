@@ -1,0 +1,86 @@
+@charset "UTF-8";
+
+// @description
+// * ipad-med mixin.
+// * The ipad-med mixin is designed to simplify the creation of media
+// * queries targeting apple ipad-med devices with width 768px × 1024px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace ipad
+
+// @module ipad/ipad-med
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include ipad-med(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media only screen and (min-device-width: 768px)
+// * and (max-device-width: 1024px)
+// * and (-webkit-min-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @note
+// * This mixin you can use for iPad 3, 4 and Pro 9.7.
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin ipad-med($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in ipad-med mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $min-device-width: 768px !default;
+    $max-device-width: 1024px !default;
+    $min-device-pixel-ratio: 2 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
