@@ -32,9 +32,9 @@
         "tasks",
         "mixins-media-queries",
         "media-queries-screens",
-        "mq-screens-iphone"
+        "mq-screens-apple",
+        "mq-screens-apple-iphone",
+        "mq-screens-apple-ipad"
     ],
-    "cSpell.words": [
-        "Giraudel"
-    ]
+    "cSpell.words": ["Giraudel"]
 }
