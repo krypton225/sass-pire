@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+// @description
+// * ipad-pro-12 mixin.
+// * The ipad-pro-12 mixin is designed to simplify the creation of media
+// * queries targeting apple iPad pro 12.9 devices.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace ipad
+
+// @module ipad/ipad-pro-12
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example 1
+// * .example {
+// *   @include ipad-pro-12(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output 1
+// * @media only screen and (min-device-width: 1366px)
+// * and (max-device-width: 1366px)
+// * and (-webkit-min-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @example 2
+// * .example {
+// *   @include ipad-pro-12(port) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output 2
+// * @media only screen and (min-device-width: 1024px)
+// * and (max-device-width: 1024px)
+// * and (-webkit-min-device-pixel-ratio: 2)
+// * and (orientation: portrait) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin ipad-pro-12($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in ipad-pro-12 mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $device-width-port: 1024px !default;
+    $device-width-land: 1366px !default;
+    $device-pixel-ratio: 2 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media only screen and (min-device-width: $device-width-land) and (max-device-width: $device-width-land) and (-webkit-min-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media only screen and (min-device-width: $device-width-port) and (max-device-width: $device-width-port) and (-webkit-min-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media only screen and (min-device-width: $device-width-port) and (max-device-width: $device-width-land) and (-webkit-min-device-pixel-ratio: $device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
