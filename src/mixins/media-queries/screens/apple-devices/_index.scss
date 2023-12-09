@@ -15,3 +15,9 @@
 // * responsive designs.
 // @see apple-devices
 @forward "iphone";
+
+// * forwarding the "ipad" module.
+// * The "ipad" module likely contains styles for
+// * responsive designs.
+// @see ipad
+@forward "ipad";

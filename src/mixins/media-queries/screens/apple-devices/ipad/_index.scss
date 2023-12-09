@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all iPad devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @namespace screens/ipad
+
+// * forwarding the "ipad-mini" module.
+// * The "ipad-mini" module likely contains styles for
+// * responsive designs.
+// @see ipad-mini
+@forward "ipad-mini";
