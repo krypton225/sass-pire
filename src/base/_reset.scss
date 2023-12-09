@@ -11,6 +11,8 @@
 
 // @license MIT
 
+// @repository: https://github.com/krypton225/sass-pire
+
 @use "../mixins/vendor-prefixes/prefix" as pref;
 @use "../base/banner" as b;
 @include b.banner;
