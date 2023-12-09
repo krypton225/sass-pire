@@ -48,17 +48,10 @@
 
 // @note 2
 // * There is two mixins in this file.
-// * The first is the (iphone-7) mixin and second is (ip) mixin.
+// * The first is the (iphone-7) mixin and second is (ip-7) mixin.
 // * The second one is for only simplicity when using (iphone-7) mixin.
-// * The core logic of (ip) mixin is to call the first one.
+// * The core logic of (ip-7) mixin is to call the first one.
 // * You can use one of them as you want.
-
-// @note 3
-// * We added iphone-7s for iPhone 7 devices.
-// * We also added ip-7s mixin for only simplicity.
-// * All following mixins has same dimensions.
-// * So, all mixins called the first one.
-// * You can use all following mixins as using in the above example.
 
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
