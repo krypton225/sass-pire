@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * iphone-5 mixin.
-// * The iphone-5 mixin is designed to simplify the creation of media
-// * queries targeting apple iphone-5 devices with width 320px × 568px.
+// * iphone-8 mixin.
+// * The iphone-8 mixin is designed to simplify the creation of media
+// * queries targeting apple iphone-8 devices with width 375px × 667px.
 // * It allows you to specify the orientation type (portrait or landscape)
 // * and includes common device-specific media query conditions.
 
@@ -15,7 +15,7 @@
 
 // @namespace iphone
 
-// @module iphone/iphone-5
+// @module iphone/iphone-8
 
 // @dependencies:
 // * - is-in-list (function).
@@ -26,14 +26,14 @@
 
 // @example
 // * .example {
-// *   @include iphone-5(land) {
+// *   @include iphone-8(land) {
 // *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media only screen and (min-device-width: 320px)
-// * and (max-device-width: 568px)
+// * @media only screen and (min-device-width: 375px)
+// * and (max-device-width: 667px)
 // * and (-webkit-min-device-pixel-ratio: 2)
 // * and (orientation: landscape) {
 // *  .example {
@@ -43,39 +43,36 @@
 
 // @note 1
 // * This mixin implements media query for screens for
-// * iphone-5 normal device. But for simplicity we wrote
-// * the name of the mixin with iphone-5
+// * iphone-8 normal device. But for simplicity we wrote
+// * the name of the mixin with iphone-8.
 
 // @note 2
 // * There is two mixins in this file.
-// * The first is the (iphone-5) mixin and second is (ip) mixin.
-// * The second one is for only simplicity when using (iphone-5) mixin.
-// * The core logic of (ip) mixin is to call the first one.
+// * The first is the (iphone-8) mixin and second is (ip-8) mixin.
+// * The second one is for only simplicity when using (iphone-8) mixin.
+// * The core logic of (ip-8) mixin is to call the first one.
 // * You can use one of them as you want.
 
 // @note 3
-// * We added iphone-5s for iPhone 5 devices.
-// * We also added ip-5s mixin for only simplicity.
+// * We added iphone-8s for iPhone 8 devices.
+// * We also added ip-8s mixin for only simplicity.
 // * All following mixins has same dimensions.
-// * We also added iphone-5c and iphone-se.
-// * For simplicity: you can use iphone-5c as ip-5c.
-// * and iphone-se as ip-se.
-// * All these mixins called the first one.
+// * So, all mixins called the first one.
 // * You can use all following mixins as using in the above example.
 
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
-@use "../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/global/is-in-list" as func;
 
-@mixin iphone-5($orientation-type: portrait) {
+@mixin iphone-8($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
-        @error "Orientation type in iphone-5 mixin must be in string type.";
+        @error "Orientation type in mixin must be in string type.";
     }
 
     $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
-    $min-device-width: 320px !default;
-    $max-device-width: 568px !default;
+    $min-device-width: 375px !default;
+    $max-device-width: 667px !default;
     $min-device-pixel-ratio: 2 !default;
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
@@ -104,44 +101,8 @@
     }
 }
 
-@mixin ip-5($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin iphone-5s($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin ip-5s($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin iphone-5c($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin ip-5c($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin iphone-se($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
-        @content;
-    }
-}
-
-@mixin ip-se($orientation-type: portrait) {
-    @include iphone-5($orientation-type) {
+@mixin ip-8($orientation-type: portrait) {
+    @include iphone-8($orientation-type) {
         @content;
     }
 }

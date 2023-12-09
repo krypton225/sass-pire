@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * iphone-8 mixin.
-// * The iphone-8 mixin is designed to simplify the creation of media
-// * queries targeting apple iphone-8 devices with width 375px × 667px.
+// * iphone-8p mixin.
+// * The iphone-8p mixin is designed to simplify the creation of media
+// * queries targeting apple iphone-8p devices with width 414px × 736px.
 // * It allows you to specify the orientation type (portrait or landscape)
 // * and includes common device-specific media query conditions.
 
@@ -15,7 +15,7 @@
 
 // @namespace iphone
 
-// @module iphone/iphone-8
+// @module iphone/iphone-8p
 
 // @dependencies:
 // * - is-in-list (function).
@@ -26,14 +26,14 @@
 
 // @example
 // * .example {
-// *   @include iphone-8(land) {
+// *   @include iphone-8p(land) {
 // *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media only screen and (min-device-width: 375px)
-// * and (max-device-width: 667px)
+// * @media only screen and (min-device-width: 414px)
+// * and (max-device-width: 736px)
 // * and (-webkit-min-device-pixel-ratio: 2)
 // * and (orientation: landscape) {
 // *  .example {
@@ -43,36 +43,29 @@
 
 // @note 1
 // * This mixin implements media query for screens for
-// * iphone-8 normal device. But for simplicity we wrote
-// * the name of the mixin with iphone-8.
+// * iphone-8p normal device. But for simplicity we wrote
+// * the name of the mixin with ip-8p.
 
 // @note 2
 // * There is two mixins in this file.
-// * The first is the (iphone-8) mixin and second is (ip-8) mixin.
-// * The second one is for only simplicity when using (iphone-8) mixin.
-// * The core logic of (ip-8) mixin is to call the first one.
+// * The first is the (iphone-8p) mixin and second is (ip-8p) mixin.
+// * The second one is for only simplicity when using (iphone-8p) mixin.
+// * The core logic of (ip-8p) mixin is to call the first one.
 // * You can use one of them as you want.
-
-// @note 3
-// * We added iphone-8s for iPhone 8 devices.
-// * We also added ip-8s mixin for only simplicity.
-// * All following mixins has same dimensions.
-// * So, all mixins called the first one.
-// * You can use all following mixins as using in the above example.
 
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
-@use "../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/global/is-in-list" as func;
 
-@mixin iphone-8($orientation-type: portrait) {
+@mixin iphone-8p($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
         @error "Orientation type in mixin must be in string type.";
     }
 
     $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
-    $min-device-width: 375px !default;
-    $max-device-width: 667px !default;
+    $min-device-width: 414px !default;
+    $max-device-width: 736px !default;
     $min-device-pixel-ratio: 2 !default;
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
@@ -101,8 +94,8 @@
     }
 }
 
-@mixin ip-8($orientation-type: portrait) {
-    @include iphone-8($orientation-type) {
+@mixin ip-8p($orientation-type: portrait) {
+    @include iphone-8p($orientation-type) {
         @content;
     }
 }

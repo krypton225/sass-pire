@@ -56,7 +56,7 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
-@use "../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/global/is-in-list" as func;
 
 @mixin iphone($orientation-type: portrait) {
     @if type-of($orientation-type) != string {

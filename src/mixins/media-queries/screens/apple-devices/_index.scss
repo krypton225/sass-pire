@@ -2,22 +2,16 @@
 
 // @description
 // * This file forwards various modules for media queries
-// * for all needed devices.
+// * of screens for all apple-devices.
 
 // @author Khaled Mohamed
 
 // @license MIT
 
-// @namespace media-queries/screens
-
-// * forwarding the "media-query" module.
-// * The "media-query" module likely contains styles for
-// * responsive designs.
-// @see media-query
-@forward "media-query";
+// @namespace screens/apple-devices
 
 // * forwarding the "apple-devices" module.
 // * The "apple-devices" module likely contains styles for
 // * responsive designs.
 // @see apple-devices
-@forward "apple-devices";
+@forward "iphone";
