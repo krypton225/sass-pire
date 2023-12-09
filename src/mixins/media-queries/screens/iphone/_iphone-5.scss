@@ -53,6 +53,16 @@
 // * The core logic of (ip) mixin is to call the first one.
 // * You can use one of them as you want.
 
+// @note 3
+// * We added iphone-5s for iPhone 5 devices.
+// * We also added ip-5s mixin for only simplicity.
+// * All following mixins has same dimensions.
+// * We also added iphone-5c and iphone-se.
+// * For simplicity: you can use iphone-5c as ip-5c.
+// * and iphone-se as ip-se.
+// * All these mixins called the first one.
+// * You can use all following mixins as using in the above example.
+
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
@@ -95,6 +105,42 @@
 }
 
 @mixin ip-5($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin iphone-5s($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin ip-5s($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin iphone-5c($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin ip-5c($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin iphone-se($orientation-type: portrait) {
+    @include iphone-5($orientation-type) {
+        @content;
+    }
+}
+
+@mixin ip-se($orientation-type: portrait) {
     @include iphone-5($orientation-type) {
         @content;
     }
