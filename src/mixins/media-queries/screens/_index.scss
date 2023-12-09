@@ -16,8 +16,14 @@
 // @see media-query
 @forward "media-query";
 
-// * forwarding the "apple-devices" module.
-// * The "apple-devices" module likely contains styles for
+// * forwarding the "phones" module.
+// * The "phones" module likely contains styles for
 // * responsive designs.
-// @see apple-devices
-@forward "apple-devices";
+// @see phones
+@forward "phones";
+
+// * forwarding the "tablets" module.
+// * The "tablets" module likely contains styles for
+// * responsive designs.
+// @see tablets
+@forward "tablets";
