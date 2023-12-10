@@ -1,7 +1,7 @@
 {
     "plugins": ["stylelint-scss"],
     "extends": ["stylelint-config-standard", "stylelint-config-standard-scss"],
-    "ignoreFiles": ["dist/styles.css", "dist/test-styles.css"],
+    "ignoreFiles": ["dist/styles.css", "dist/test-styles.css", "dist/styles.min.css"],
     "rules": {
         "indentation": 4,
         "max-empty-lines": 1,
