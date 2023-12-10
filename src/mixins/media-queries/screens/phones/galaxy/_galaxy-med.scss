@@ -1,0 +1,106 @@
+@charset "UTF-8";
+
+// @description
+// * galaxy-med mixin.
+// * The galaxy-med mixin is designed to simplify the creation of media
+// * queries targeting galaxy devices with width 360px × 640px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+// * This mixin can be used for S4, S5 and Note 3 devices.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace galaxy
+
+// @module galaxy/galaxy-med
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include galaxy-med(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media screen and (device-width: 360px)
+// * and (device-height: 640px)
+// * and (-webkit-device-pixel-ratio: 3)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @note 1
+// * This mixin implements media query for screens for
+// * galaxy-med normal device. But for simplicity we wrote
+// * the name of the mixin with gx-med.
+
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (galaxy-med) mixin and second is (gx-med) mixin.
+// * The second one is for only simplicity when using (galaxy-med) mixin.
+// * The core logic of (gx-med) mixin is to call the first one.
+// * You can use one of them as you want.
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin galaxy-med($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in galaxy-med mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $device-width: 360px !default;
+    $device-height: 640px !default;
+    $device-pixel-ratio: 3 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin gx-med($orientation-type: portrait) {
+    @include galaxy-med($orientation-type) {
+        @content;
+    }
+}
