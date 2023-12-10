@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all windows devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace phones/windows
+
+// * forwarding the "windows-phone" module.
+// * The "windows-phone" module likely contains styles for
+// * responsive designs.
+// @see windows-phone
+@forward "windows-phone";
