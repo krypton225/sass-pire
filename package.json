@@ -2,12 +2,22 @@
     "name": "sass-pire",
     "version": "1.0.0",
     "description": "Just a more mixins and functions with SCSS for more productive projects.",
+    "markdown": "github",
     "license": "MIT",
+    "licenses": [
+        {
+            "type": "MIT",
+            "url": "https://opensource.org/license/mit/"
+        }
+    ],
     "author": {
         "name": "Khaled Mohamed",
         "email": "k.mohamed.11.98@gmail.com",
         "url": "https://github.com/krypton225"
     },
+    "contributors": [
+        "Khaled Mohamed"
+    ],
     "bugs": {
         "url": "https://github.com/krypton225/sass-pire/issues"
     },

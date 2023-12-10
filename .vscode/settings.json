@@ -33,7 +33,8 @@
         "mixins-media-queries",
         "media-queries-screens",
         "mq-screens-phones",
-        "mq-screens-tablets"
+        "mq-screens-tablets",
+        "config-file"
     ],
     "cSpell.words": ["Giraudel"]
 }
