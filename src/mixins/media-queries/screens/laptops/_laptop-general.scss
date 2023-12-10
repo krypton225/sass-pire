@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -62,6 +62,7 @@
 
 @use "sass:list";
 @use "../../../../functions/global/is-in-list" as func;
+@use "../../../../functions/list/merge" as sp-list;
 
 @mixin laptop-general($retina-value) {
     @if type-of($retina-value) != string {
@@ -70,7 +71,7 @@
 
     $accepted-retina-values: (retina, yes, y) !default;
     $unaccepted-retina-values: (non-retina, no, non, n) !default;
-    $all-retina-values: list.join($accepted-retina-values, $unaccepted-retina-values) !default;
+    $all-retina-values: sp-list.merge($accepted-retina-values, $unaccepted-retina-values) !default;
     $min-device-width: 1200px !default;
     $max-device-width: 1600px !default;
     $min-resolution: 192dpi !default;
