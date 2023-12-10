@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all Nexus devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace phones/nexus
+
+// * forwarding the "nexus-4" module.
+// * The "nexus-4" module likely contains styles for
+// * responsive designs.
+// @see nexus-4
+@forward "nexus-4";

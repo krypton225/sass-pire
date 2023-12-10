@@ -29,3 +29,9 @@
 // * responsive designs.
 // @see windows
 @forward "windows";
+
+// * forwarding the "nexus" module.
+// * The "nexus" module likely contains styles for
+// * responsive designs.
+// @see nexus
+@forward "nexus";

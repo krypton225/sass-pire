@@ -1,0 +1,87 @@
+@charset "UTF-8";
+
+// @description
+// * nx-4 mixin.
+// * The nx-4 mixin is designed to simplify the creation of media
+// * queries targeting Nexus 4 device with 384px × 592px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace nexus
+
+// @module nexus/nx-4
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include nx-4(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media screen and (device-width: 384px)
+// * and (device-height: 592px)
+// * and (-webkit-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin nx-4($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in nx-4 mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $device-width: 384px !default;
+    $device-height: 592px !default;
+    $device-pixel-ratio: 2 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
