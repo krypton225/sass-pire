@@ -1,0 +1,109 @@
+@charset "UTF-8";
+
+// @description
+// * windows-phone mixin.
+// * The windows-phone mixin is designed to simplify the creation of media
+// * queries targeting windows phone devices with width 480px × 800px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace windows
+
+// @module windows/windows-phone
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include windows-phone(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media screen and (device-width: 480px)
+// * and (device-height: 800px)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @note 1
+// * This mixin implements media query for screens for
+// * windows-phone normal device. But for simplicity we wrote
+// * the name of the mixin with win-ph.
+
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (windows-phone) mixin and second is (win-ph) mixin.
+// * The second one is for only simplicity when using (windows-phone) mixin.
+// * The core logic of (win-ph) mixin is to call the first one.
+// * You can use one of them as you want.
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin windows-phone($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in windows-phone mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $device-width: 480px !default;
+    $device-height: 800px !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin win-ph($orientation-type: portrait) {
+    @include windows-phone($orientation-type) {
+        @content;
+    }
+}
+
+.one {
+    @include win-ph(all) {
+        width: 100px;
+    }
+}
