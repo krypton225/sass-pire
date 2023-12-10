@@ -101,9 +101,3 @@
         @content;
     }
 }
-
-.one {
-    @include win-ph(all) {
-        width: 100px;
-    }
-}
