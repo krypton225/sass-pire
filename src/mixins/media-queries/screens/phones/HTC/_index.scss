@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all HTC devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace phones/HTC
+
+// * forwarding the "htc-1" module.
+// * The "htc-1" module likely contains styles for
+// * responsive designs.
+// @see htc-1
+@forward "htc-1";
