@@ -41,3 +41,9 @@
 // * the centered element in the list from a given one.
 // @see get-centered-element-list
 @forward "get-centered-element-list";
+
+// * forwarding the "merge" module.
+// * The "merge" module likely contains a function to get
+// * the centered element in the list from a given one.
+// @see merge
+@forward "merge";
