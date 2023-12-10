@@ -10,10 +10,16 @@
 
 // @repository: https://github.com/krypton225/sass-pire
 
-// @namespace screens/galaxy
+// @namespace phones/galaxy
 
 // * forwarding the "galaxy-s3" module.
 // * The "galaxy-s3" module likely contains styles for
 // * responsive designs.
 // @see galaxy-s3
 @forward "galaxy-s3";
+
+// * forwarding the "galaxy-med" module.
+// * The "galaxy-med" module likely contains styles for
+// * responsive designs.
+// @see galaxy-med
+@forward "galaxy-med";
