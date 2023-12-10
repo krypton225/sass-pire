@@ -35,6 +35,7 @@
         "scss-library"
     ],
     "scripts": {
+        "dev": "concurrently --prefix-colors=\"cyan,yellow\" \"npm run sass:watch\" \"npm run sass:comp\"",
         "sass:watch": "sass --no-source-map ./src/sass-pire.scss:dist/styles.css --watch",
         "sass:comp": "sass --no-source-map ./src/sass-pire.scss:dist/styles.min.css --watch --style=compressed",
         "upgrade": "ncu --upgrade",
@@ -44,6 +45,7 @@
         "test": "sass --no-source-map ./tests/test.scss:dist/test-styles.css --watch"
     },
     "devDependencies": {
+        "concurrently": "^8.2.2",
         "cz-conventional-changelog": "^3.3.0",
         "npm-check-updates": "^16.14.11",
         "sass": "^1.69.5",
