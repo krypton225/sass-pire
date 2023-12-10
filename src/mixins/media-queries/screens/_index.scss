@@ -29,3 +29,9 @@
 // * responsive designs.
 // @see tablets
 @forward "tablets";
+
+// * forwarding the "laptops" module.
+// * The "laptops" module likely contains styles for
+// * responsive designs.
+// @see laptops
+@forward "laptops";

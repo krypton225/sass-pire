@@ -1,0 +1,90 @@
+@charset "UTF-8";
+
+// @description
+// * laptop-general mixin.
+// * The laptop-general mixin is designed to simplify the creation of media
+// * queries targeting google pixel xl device with 360px × 640px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace google
+
+// @module laptops/laptop-general
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $retina-screen
+// * If you want to apply mixin with retina screen or not.
+// * It can be (retina, non-retina, yes, no, y, n, "").
+
+// @example
+// * .example {
+// *   @include laptop-general(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media screen and (min-device-width: 360px)
+// * and (device-height: 640px)
+// * and (-webkit-device-pixel-ratio: 4)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "sass:map";
+@use "../../../../functions/global/is-in-list" as func;
+
+@mixin laptop-general($retina-screen) {
+    @if type-of($retina-screen) != string {
+        @error "Retina screen in laptop-general mixin must be in string type.";
+    }
+
+    $retina-values: (retina, yes, y) !default;
+    $non-retina-values: (non-retina, no, non, n) !default;
+    $all-retina-values: map.merge($retina-values, $non-retina-values) !default;
+    $min-device-width: 1200px !default;
+    $max-device-width: 1600px !default;
+    $min-resolution: 192dpi !default;
+
+    @if func.is-in-list($all-retina-values, $retina-screen) {
+        @if $retina-screen == retina or $retina-screen == yes or $retina-screen == y {
+            @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: $min-resolution) {
+                @content;
+            }
+        } @else if $retina-screen == non-retina or $retina-screen == no or $retina-screen == non or $retina-screen == n
+        {
+            @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 1) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin lap-gen($retina-screen) {
+    @include laptop-general($retina-screen) {
+        @content;
+    }
+}
+
+.one {
+    @include lap-gen(no) {
+        width: 100px;
+    }
+}

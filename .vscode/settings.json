@@ -34,6 +34,7 @@
         "media-queries-screens",
         "mq-screens-phones",
         "mq-screens-tablets",
+        "mq-screens-laptops",
         "config-file"
     ],
     "cSpell.words": ["Giraudel"]
