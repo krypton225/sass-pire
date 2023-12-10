@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards various modules for media queries
+// * of screens for all Galaxy devices.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace screens/galaxy
+
+// * forwarding the "galaxy-s3" module.
+// * The "galaxy-s3" module likely contains styles for
+// * responsive designs.
+// @see galaxy-s3
+@forward "galaxy-s3";

@@ -1,0 +1,105 @@
+@charset "UTF-8";
+
+// @description
+// * galaxy-s3 mixin.
+// * The galaxy-s3 mixin is designed to simplify the creation of media
+// * queries targeting apple Galaxy S3 devices with width 360px × 640px.
+// * It allows you to specify the orientation type (portrait or landscape)
+// * and includes common device-specific media query conditions.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace galaxy
+
+// @module galaxy/galaxy-s3
+
+// @dependencies:
+// * - is-in-list (function).
+
+// @param {String} $orientation-type
+// * The type of the orientation for the mixin of the device type.
+// * It can be (landscape, land, l, portrait, port, p, all, "").
+
+// @example
+// * .example {
+// *   @include galaxy-s3(land) {
+// *     content: "example";
+// *   }
+// * }
+
+// @output
+// * @media screen and (device-width: 360px)
+// * and (device-height: 640px)
+// * and (-webkit-device-pixel-ratio: 2)
+// * and (orientation: landscape) {
+// *  .example {
+// *    content: "example";
+// *  }
+// * }
+
+// @note 1
+// * This mixin implements media query for screens for
+// * galaxy-s3 normal device. But for simplicity we wrote
+// * the name of the mixin with gx-s3.
+
+// @note 2
+// * There is two mixins in this file.
+// * The first is the (galaxy-s3) mixin and second is (gx-s3) mixin.
+// * The second one is for only simplicity when using (galaxy-s3) mixin.
+// * The core logic of (gx-s3) mixin is to call the first one.
+// * You can use one of them as you want.
+
+// stylelint-disable media-feature-name-no-vendor-prefix
+// stylelint-disable scss/operator-no-newline-after
+
+@use "../../../../../functions/global/is-in-list" as func;
+
+@mixin galaxy-s3($orientation-type: portrait) {
+    @if type-of($orientation-type) != string {
+        @error "Orientation type in galaxy-s3 mixin must be in string type.";
+    }
+
+    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $device-width: 360px !default;
+    $device-height: 640px !default;
+    $device-pixel-ratio: 2 !default;
+
+    @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
+                @content;
+            }
+        } @else if
+            $orientation-type ==
+            portrait or
+            $orientation-type ==
+            port or
+            $orientation-type ==
+            p or
+            $orientation-type ==
+            ""
+        {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
+                @content;
+            }
+        } @else if $orientation-type == all {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+                @content;
+            }
+        }
+    }
+}
+
+@mixin gx-s3($orientation-type: portrait) {
+    @include galaxy-s3($orientation-type) {
+        @content;
+    }
+}
