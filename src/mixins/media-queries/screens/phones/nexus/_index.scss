@@ -2,7 +2,7 @@
 
 // @description
 // * This file forwards various modules for media queries
-// * of screens for all tablet devices.
+// * of screens for all nexus devices.
 
 // @author Khaled Mohamed
 
@@ -10,10 +10,10 @@
 
 // @repository: https://github.com/krypton225/sass-pire
 
-// @namespace screens/apple-devices
+// @namespace phones/nexus
 
-// * forwarding the "ipad" module.
-// * The "ipad" module likely contains styles for
+// * forwarding the "nexus-4" module.
+// * The "nexus-4" module likely contains styles for
 // * responsive designs.
-// @see ipad
-@forward "ipad";
+// @see nexus-4
+@forward "nexus-4";

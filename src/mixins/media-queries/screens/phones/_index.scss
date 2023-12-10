@@ -2,7 +2,7 @@
 
 // @description
 // * This file forwards various modules for media queries
-// * of screens for all iphone.
+// * of screens for all phone devices.
 
 // @author Khaled Mohamed
 
@@ -29,3 +29,9 @@
 // * responsive designs.
 // @see windows
 @forward "windows";
+
+// * forwarding the "nexus" module.
+// * The "nexus" module likely contains styles for
+// * responsive designs.
+// @see nexus
+@forward "nexus";

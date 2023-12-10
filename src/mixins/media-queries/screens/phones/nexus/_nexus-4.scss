@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 // @description
-// * windows-phone mixin.
-// * The windows-phone mixin is designed to simplify the creation of media
-// * queries targeting windows phone devices with width 480px × 800px.
+// * nx-4 mixin.
+// * The nx-4 mixin is designed to simplify the creation of media
+// * queries targeting nexus 4 device with 384px × 592px.
 // * It allows you to specify the orientation type (portrait or landscape)
 // * and includes common device-specific media query conditions.
 
@@ -17,9 +17,9 @@
 
 // @repository: https://github.com/krypton225/sass-pire
 
-// @namespace windows
+// @namespace nexus
 
-// @module windows/windows-phone
+// @module nexus/nx-4
 
 // @dependencies:
 // * - is-in-list (function).
@@ -30,49 +30,39 @@
 
 // @example
 // * .example {
-// *   @include windows-phone(land) {
+// *   @include nx-4(land) {
 // *     content: "example";
 // *   }
 // * }
 
 // @output
-// * @media screen and (device-width: 480px)
-// * and (device-height: 800px)
+// * @media screen and (device-width: 384px)
+// * and (device-height: 592px)
+// * and (-webkit-device-pixel-ratio: 2)
 // * and (orientation: landscape) {
 // *  .example {
 // *    content: "example";
 // *  }
 // * }
 
-// @note 1
-// * This mixin implements media query for screens for
-// * windows-phone normal device. But for simplicity we wrote
-// * the name of the mixin with win-ph.
-
-// @note 2
-// * There is two mixins in this file.
-// * The first is the (windows-phone) mixin and second is (win-ph) mixin.
-// * The second one is for only simplicity when using (windows-phone) mixin.
-// * The core logic of (win-ph) mixin is to call the first one.
-// * You can use one of them as you want.
-
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
 @use "../../../../../functions/global/is-in-list" as func;
 
-@mixin windows-phone($orientation-type: portrait) {
+@mixin nx-4($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
-        @error "Orientation type in windows-phone mixin must be in string type.";
+        @error "Orientation type in nx-4 mixin must be in string type.";
     }
 
     $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
-    $device-width: 480px !default;
-    $device-height: 800px !default;
+    $device-width: 384px !default;
+    $device-height: 592px !default;
+    $device-pixel-ratio: 2 !default;
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
         @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: landscape) {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
                 @content;
             }
         } @else if
@@ -85,19 +75,13 @@
             $orientation-type ==
             ""
         {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: portrait) {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
                 @content;
             }
         } @else if $orientation-type == all {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) {
+            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
                 @content;
             }
         }
-    }
-}
-
-@mixin win-ph($orientation-type: portrait) {
-    @include windows-phone($orientation-type) {
-        @content;
     }
 }
