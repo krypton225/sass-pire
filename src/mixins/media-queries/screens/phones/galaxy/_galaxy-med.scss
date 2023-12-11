@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -23,7 +23,9 @@
 // @module galaxy/galaxy-med
 
 // @dependencies:
+// * - list.index (SASS function).
 // * - is-in-list (function).
+// * - merge (function).
 
 // @param {String} $orientation-type
 // * The type of the orientation for the mixin of the device type.
@@ -61,38 +63,44 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:list";
 @use "../../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/list/merge" as sp;
 
 @mixin galaxy-med($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
         @error "Orientation type in galaxy-med mixin must be in string type.";
     }
 
-    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $landscape-values: (landscape, land, l) !default;
+    $portrait-values: (portrait, port, p, "") !default;
+    $all-values: (all) !default;
+    $all-orientations-types: sp.merge($landscape-values, $portrait-values, $all-values) !default;
     $device-width: 360px !default;
     $device-height: 640px !default;
     $device-pixel-ratio: 3 !default;
 
+    @if $orientation-type == all {
+        @media screen and (device-width: $device-width)
+            and (device-height: $device-height)
+            and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+            @content;
+        }
+    }
+
     @if func.is-in-list($all-orientations-types, $orientation-type) {
-        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: landscape) {
+        @if list.index($landscape-values, $orientation-type) {
+            @media screen and (device-width: $device-width)
+                and (device-height: $device-height)
+                and (-webkit-device-pixel-ratio: $device-pixel-ratio)
+                and (orientation: landscape) {
                 @content;
             }
-        } @else if
-            $orientation-type ==
-            portrait or
-            $orientation-type ==
-            port or
-            $orientation-type ==
-            p or
-            $orientation-type ==
-            ""
-        {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) and (orientation: portrait) {
-                @content;
-            }
-        } @else if $orientation-type == all {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+        } @else if list.index($portrait-values, $orientation-type) {
+            @media screen and (device-width: $device-width)
+                and (device-height: $device-height)
+                and (-webkit-device-pixel-ratio: $device-pixel-ratio)
+                and (orientation: portrait) {
                 @content;
             }
         }
@@ -102,5 +110,11 @@
 @mixin gx-med($orientation-type: portrait) {
     @include galaxy-med($orientation-type) {
         @content;
+    }
+}
+
+.example {
+    @include galaxy-med(all) {
+        content: "example";
     }
 }
