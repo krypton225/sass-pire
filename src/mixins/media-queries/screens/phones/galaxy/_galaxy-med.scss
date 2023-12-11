@@ -74,10 +74,19 @@
 
     $landscape-values: (landscape, land, l) !default;
     $portrait-values: (portrait, port, p, "") !default;
-    $all-orientations-types: sp.merge($landscape-values, $portrait-values) !default;
+    $all-values: (all) !default;
+    $all-orientations-types: sp.merge($landscape-values, $portrait-values, $all-values) !default;
     $device-width: 360px !default;
     $device-height: 640px !default;
     $device-pixel-ratio: 3 !default;
+
+    @if $orientation-type == all {
+        @media screen and (device-width: $device-width)
+            and (device-height: $device-height)
+            and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
+            @content;
+        }
+    }
 
     @if func.is-in-list($all-orientations-types, $orientation-type) {
         @if list.index($landscape-values, $orientation-type) {
@@ -94,12 +103,6 @@
                 and (orientation: portrait) {
                 @content;
             }
-        } @else if $orientation-type == all {
-            @media screen and (device-width: $device-width)
-                and (device-height: $device-height)
-                and (-webkit-device-pixel-ratio: $device-pixel-ratio) {
-                @content;
-            }
         }
     }
 }
@@ -107,5 +110,11 @@
 @mixin gx-med($orientation-type: portrait) {
     @include galaxy-med($orientation-type) {
         @content;
+    }
+}
+
+.example {
+    @include galaxy-med(all) {
+        content: "example";
     }
 }
