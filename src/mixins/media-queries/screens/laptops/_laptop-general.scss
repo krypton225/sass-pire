@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.1.1
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -77,11 +77,11 @@
     $min-resolution: 192dpi !default;
 
     @if func.is-in-list($all-retina-values, $retina-value) {
-        @if $retina-value == retina or $retina-value == yes or $retina-value == y {
+        @if list.index($accepted-retina-values, $retina-value) {
             @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: $min-resolution) {
                 @content;
             }
-        } @else if $retina-value == non-retina or $retina-value == no or $retina-value == non or $retina-value == n {
+        } @else if list.index($unaccepted-retina-values, $retina-value) {
             @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 1) {
                 @content;
             }
