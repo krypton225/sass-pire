@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -51,39 +51,44 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:list";
 @use "../../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/list/merge" as sp;
 
 @mixin ipad-mini($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
         @error "Orientation type in ipad-mini mixin must be in string type.";
     }
 
-    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $landscape-values: (landscape, land, l) !default;
+    $portrait-values: (portrait, port, p, "") !default;
+    $all-orientations-types: sp.merge($landscape-values, $portrait-values) !default;
     $min-device-width: 768px !default;
     $max-device-width: 1024px !default;
     $min-device-pixel-ratio: 1 !default;
 
-    @if func.is-in-list($all-orientations-types, $orientation-type) {
-        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
-            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: landscape) {
-                @content;
-            }
-        } @else if
-            $orientation-type ==
-            portrait or
-            $orientation-type ==
-            port or
-            $orientation-type ==
-            p or
-            $orientation-type ==
-            ""
-        {
-            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: portrait) {
-                @content;
-            }
-        } @else if $orientation-type == all {
-            @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) {
-                @content;
+    @if $orientation-type == all {
+        @media screen and (min-device-width: $min-device-width)
+            and (max-device-width: $max-device-width)
+            and (-webkit-device-pixel-ratio: $min-device-pixel-ratio) {
+            @content;
+        }
+    } @else {
+        @if func.is-in-list($all-orientations-types, $orientation-type) {
+            @if list.index($landscape-values, $orientation-type) {
+                @media only screen and (min-device-width: $min-device-width)
+                    and (max-device-width: $max-device-width)
+                    and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio)
+                    and (orientation: landscape) {
+                    @content;
+                }
+            } @else if list.index($portrait-values, $orientation-type) {
+                @media only screen and (min-device-width: $min-device-width)
+                    and (max-device-width: $max-device-width)
+                    and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio)
+                    and (orientation: portrait) {
+                    @content;
+                }
             }
         }
     }
