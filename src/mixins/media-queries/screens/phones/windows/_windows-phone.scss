@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -22,7 +22,9 @@
 // @module windows/windows-phone
 
 // @dependencies:
+// * - list.index (SASS function).
 // * - is-in-list (function).
+// * - merge (function).
 
 // @param {String} $orientation-type
 // * The type of the orientation for the mixin of the device type.
@@ -59,38 +61,40 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:list";
 @use "../../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/list/merge" as sp;
 
 @mixin windows-phone($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
         @error "Orientation type in windows-phone mixin must be in string type.";
     }
 
-    $all-orientations-types: (landscape, land, l, portrait, port, p, all, "") !default;
+    $landscape-values: (landscape, land, l) !default;
+    $portrait-values: (portrait, port, p, "") !default;
+    $all-orientations-types: sp.merge($landscape-values, $portrait-values) !default;
     $device-width: 480px !default;
     $device-height: 800px !default;
 
-    @if func.is-in-list($all-orientations-types, $orientation-type) {
-        @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: landscape) {
-                @content;
-            }
-        } @else if
-            $orientation-type ==
-            portrait or
-            $orientation-type ==
-            port or
-            $orientation-type ==
-            p or
-            $orientation-type ==
-            ""
-        {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) and (orientation: portrait) {
-                @content;
-            }
-        } @else if $orientation-type == all {
-            @media screen and (device-width: $device-width) and (device-height: $device-height) {
-                @content;
+    @if $orientation-type == all {
+        @media screen and (device-width: $device-width)
+            and (device-height: $device-height) {
+            @content;
+        }
+    } @else {
+        @if func.is-in-list($all-orientations-types, $orientation-type) {
+            @if list.index($landscape-values, $orientation-type) {
+                @media screen and (device-width: $device-width)
+                    and (device-height: $device-height)
+                    and (orientation: landscape) {
+                    @content;
+                }
+            } @else if list.index($portrait-values, $orientation-type) {
+                @media screen and (device-width: $device-width)
+                    and (device-height: $device-height)
+                    and (orientation: portrait) {
+                    @content;
+                }
             }
         }
     }
