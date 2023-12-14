@@ -42,13 +42,17 @@
         "lint": "npx stylelint ./src/**/*.scss",
         "cmt": "cz",
         "gen:lock": "npm i --package-lock-only",
-        "test": "sass --no-source-map ./tests/test.scss:dist/test-styles.css --watch"
+        "test:scss": "sass --no-source-map ./tests/test.scss:dist/test-styles.css --watch",
+        "test:jest": "jest ./tests/sass.test.js --watchAll #runs all tests",
+        "test": "concurrently \"npm run test:jest\" \"npm run test:css\""
     },
     "devDependencies": {
         "concurrently": "^8.2.2",
         "cz-conventional-changelog": "^3.3.0",
+        "jest": "^29.7.0",
         "npm-check-updates": "^16.14.11",
         "sass": "^1.69.5",
+        "sass-true": "^7.0.0",
         "stylelint": "^15.11.0",
         "stylelint-config-standard-scss": "^11.1.0"
     },

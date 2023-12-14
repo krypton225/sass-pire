@@ -35,7 +35,8 @@
         "mq-screens-phones",
         "mq-screens-tablets",
         "mq-screens-laptops",
-        "config-file"
+        "config-file",
+        "testing"
     ],
     "cSpell.words": ["Giraudel"]
 }
