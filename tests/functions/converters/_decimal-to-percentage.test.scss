@@ -22,18 +22,28 @@
 // * - true.describe (true function).
 // * - true.it (true function).
 // * - true.assert-equal (true function).
+// * - err (function).
 
 // stylelint-disable number-max-precision
 
 @use "../../../node_modules/sass-true/sass/true" as *;
 @use "../../../src/functions/converters/decimal-to-percentage" as func;
+@use "../../../src/development-utils/error" as dev;
 
 $test-cases-dec-to-ptg-map: (
     0: 0,
     0.5: "50%",
+    -0.5: dev.err("The decimal value should be bigger than 0."),
+    -0.92: dev.err("The decimal value should be bigger than 0."),
     0.7: "70%",
+    0.82: "82%",
     1: "100%",
-    // 2: => Error.
+    "Just a number": dev.err("The parameter of dec-to-ptg function must be in a number type."),
+    true: dev.err("The parameter of dec-to-ptg function must be in a number type."),
+    false: dev.err("The parameter of dec-to-ptg function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of dec-to-ptg function must be in a number type."),
+    2: dev.err("The decimal value should be smaller than 1."),
+    52: dev.err("The decimal value should be smaller than 1.")
 );
 
 @each $case, $result in $test-cases-dec-to-ptg-map {

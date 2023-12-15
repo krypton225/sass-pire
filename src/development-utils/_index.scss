@@ -7,3 +7,9 @@
 // @repository: https://github.com/krypton225/sass-pire
 
 // @namespace development-utils
+
+// * forwarding the "error" module.
+// * The "error" module likely contains mixin for generating
+// * color variations.
+// @see error
+@forward "error";
