@@ -57,19 +57,19 @@
 @use "sass:math";
 @use "sass:list";
 @use "../global/cut-unit" as func;
-@use "../../development-utils/error" as dev;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function dec-to-ptg($dec-value: 0) {
     @if type-of($dec-value) != number {
-        @return dev.err("The parameter of dec-to-ptg function must be in a number type.");
+        @return Error.toggle("The parameter of dec-to-ptg function must be in a number type.");
     }
 
     @if $dec-value < 0 {
-        @return dev.err("The decimal value should be bigger than 0.");
+        @return Error.toggle("The parameter value should be bigger than 0.");
     }
 
     @if $dec-value > 1 {
-        @return dev.err("The decimal value should be smaller than 1.");
+        @return Error.toggle("The parameter value should be smaller than 1.");
     }
 
     $value-without-unit: func.cut-unit($dec-value);

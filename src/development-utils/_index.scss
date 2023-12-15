@@ -9,7 +9,13 @@
 // @namespace development-utils
 
 // * forwarding the "error" module.
-// * The "error" module likely contains mixin for generating
-// * color variations.
+// * The "error" module likely contains mixin for custom
+// * error messages for testing environment..
 // @see error
 @forward "error";
+
+// * forwarding the "toggle-error-message" module.
+// * The "toggle-error-message" module likely contains mixin for generating
+// * two error messages when development and testing environment.
+// @see toggle-error-message
+@forward "toggle-error-message";

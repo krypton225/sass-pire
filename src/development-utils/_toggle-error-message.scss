@@ -1,0 +1,63 @@
+@charset "UTF-8";
+
+// @description
+// * err function.
+// * This function accepts error message to toggle the output
+// * when you are in testing or development environment.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace development-utils
+
+// @module development-utils/toggle-error-message
+
+// @dependencies:
+// * - $test-environment (variable).
+// * - err (function).
+
+// @param {String} $message
+// * The error message to be printed as expected value.
+// * in two environment (testing or development).
+
+// @throw {Exception}
+// * Throws exceptions if the $test-environment variable is true.
+
+// @example
+// * If $test-environment variable is false.
+// * .example {
+// *   content: toggle-error-message("This is just an error message.");
+// * }
+
+// @output
+// * .example {
+// *   content: "ERROR: This is just an error message.";
+// * }
+
+// @return {String} - Returns the provided error message.
+
+@use "../abstract/variables" as var;
+@use "./error" as dev;
+
+@function toggle-error-message($error-msg) {
+    @if type-of($error-msg) != string {
+        @error "Error message in toggle-error-message function must be in type string.";
+    }
+
+    @if var.$test-environment == true {
+        @return dev.err($error-msg);
+    } @else {
+        @error $error-msg;
+    }
+}
+
+@function toggle($error-msg) {
+    @return toggle-error-message($error-msg);
+}
