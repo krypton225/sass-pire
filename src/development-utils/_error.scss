@@ -43,14 +43,14 @@
 
 // @return {String} - Returns the provided error message.
 
+@use "../abstract/variables" as var;
+
 @function err($message) {
     @if type-of($message) != string {
         @error "Error message must be in type string.";
     }
 
-    $test-environment: true !default;
-
-    @if $test-environment {
+    @if var.$test-environment {
         @return "ERROR: #{$message}";
     }
 }
