@@ -49,6 +49,16 @@
         @error "$cm-val as argument of cm-to-px function must be in number type.";
     }
 
+    @if $cm-val < 0 {
+        // * @error "A parameter of cm-to-in function must be bigger than or equal to zero.";
+        $cm-val: $cm-val * -1;
+    }
+
+    // stylelint-disable-next-line length-zero-no-unit
+    @if $cm-val == 0cm or $cm-val == 0 {
+        @return 0;
+    }
+
     @if unitless($cm-val) {
         @error "You must write the unit of the argument";
     }

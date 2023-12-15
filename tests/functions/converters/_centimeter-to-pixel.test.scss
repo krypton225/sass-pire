@@ -1,0 +1,46 @@
+@charset "UTF-8";
+
+// @description
+// * cm-to-px function.
+// * This module tests a functionality of cm-to-px function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/cm-to-px.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/converters/centimeter-to-pixel" as func;
+
+$test-cases-cm-to-px-map: (
+    -12cm: 453.5433070872px,
+    0cm: 0,
+    0: 0,
+    12cm: 453.5433070872px,
+    20cm: 755.905511812px,
+    33cm: 1247.2440944898px
+);
+
+@each $case, $result in $test-cases-cm-to-px-map {
+    @include describe("[Function] cm-to-px(#{$case}), Result: #{$result}") {
+        @include it("Convert a value in centimeter into pixels.") {
+            @include assert-equal(func.cm-to-px($case), $result);
+        }
+    }
+}
