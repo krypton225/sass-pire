@@ -27,14 +27,19 @@
 
 @use "../../../node_modules/sass-true/sass/true" as *;
 @use "../../../src/functions/converters/centimeter-to-inches" as func;
+@use "../../../src/development-utils/error" as dev;
 
 $test-cases-cm-to-in-map: (
-    -33cm: 12.9921259842in,
-    12cm: 4.7244094488in,
     // stylelint-disable-next-line length-zero-no-unit
-    0cm: 0,
+    0cm: dev.err("The parameter don't need a unit if it equals to zero."),
     0: 0,
-    20cm: 7.874015748in
+    -33cm: dev.err("The parameter value should be bigger than 0."),
+    12cm: 4.7244094488in,
+    20cm: 7.874015748in,
+    "Just a number": dev.err("The parameter of cm-to-in function must be in a number type."),
+    true: dev.err("The parameter of cm-to-in function must be in a number type."),
+    false: dev.err("The parameter of cm-to-in function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of cm-to-in function must be in a number type."),
 );
 
 @each $case, $result in $test-cases-cm-to-in-map {
