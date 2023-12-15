@@ -1,2 +1,10 @@
-@import "mixins";
-@debug "========== TESTING ==========";
+@use "sass:string";
+@use "sass:math";
+@use "sass:map";
+@use "sass:meta";
+@use "../node_modules/sass-true/sass/true" as *;
+@use "./functions" as *;
+
+$catch-errors: true;
+
+@include report;
