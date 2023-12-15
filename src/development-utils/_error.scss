@@ -1,3 +1,48 @@
+@charset "UTF-8";
+
+// @description
+// * err function.
+// * This function accepts error message to only appear it when you
+// * need to generate custom message when using testing module.
+
+// @access private
+
+// @version 1.1.0
+
+// @author Miriam Suzanne
+// @link: https://github.com/oddbird/true/issues/92
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace development-utils
+
+// @module development-utils/err
+
+// @dependencies:
+// * - Nothing.
+
+// @update We updated the function with validations
+
+// @param {Number} $message
+// * The error message to be printed as expected value.
+
+// @throw {Exception}
+// * Throws exceptions if the provided parameter is not a string.
+
+// @example
+// * .example {
+// *   content: err("This is just an error message.");
+// * }
+
+// @output
+// * .example {
+// *   content: "ERROR: This is just an error message.";
+// * }
+
+// @return {String} - Returns the provided error message.
+
 @function err($message) {
     @if type-of($message) != string {
         @error "Error message must be in type string.";
