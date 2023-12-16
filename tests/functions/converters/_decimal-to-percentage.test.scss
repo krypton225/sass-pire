@@ -33,8 +33,8 @@
 $test-cases-dec-to-ptg-map: (
     0: 0,
     0.5: "50%",
-    -0.5: dev.err("The parameter value should be bigger than 0."),
-    -0.92: dev.err("The parameter value should be bigger than 0."),
+    -0.5: "-50%",
+    -0.92: "-92%",
     0.7: "70%",
     0.82: "82%",
     1: "100%",
