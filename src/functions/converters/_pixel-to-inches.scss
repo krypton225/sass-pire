@@ -22,7 +22,7 @@
 // * - math.unit (SASS function).
 // * - cut-unit (function).
 
-// @param {Number} $pixel-val
+// @param {Number} $px-val
 // * The value in pixel unit to convert.
 
 // @throw {Exception}
@@ -43,21 +43,33 @@
 
 @use "sass:math";
 @use "../global/cut-unit" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
-@function px-to-in($pixel-val) {
-    @if type-of($pixel-val) != number {
-        @error "$pixel-val as argument of px-to-in function must be in number type.";
+@function px-to-in($px-val) {
+    @if type-of($px-val) != number {
+        @return Error.toggle("$px-val as argument of px-to-in function must be in number type.");
     }
 
-    @if unitless($pixel-val) {
-        @error "You must write the unit of the argument";
+    // @if $px-val < 0 {
+    //     @return Error.toggle("The parameter value should be bigger than 0.");
+    // }
+
+    @if $px-val == 0 {
+        @return 0;
     }
 
-    @if math.unit($pixel-val) != px {
-        @error "$pixel-val as argument must be with pixel unit. The function is used to convert from pixel to inches only.";
+    // stylelint-disable-next-line length-zero-no-unit
+    @if $px-val == 0px {
+        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
     }
 
-    $actual-number: func.cut-unit($pixel-val);
+    @if math.unit($px-val) != px {
+        @return Error.toggle(
+            "$px-val as argument must be with pixel unit. The function is used to convert from pixel to inches only."
+        );
+    }
+
+    $actual-number: func.cut-unit($px-val);
 
     // stylelint-disable-next-line number-max-precision
     @return $actual-number * 0.0104166666666667in;
