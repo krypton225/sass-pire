@@ -45,20 +45,15 @@
 @use "../../abstract/variables" as var;
 @use "../global/cut-unit" as func;
 @use "../../development-utils/error" as dev;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function cm-to-in($cm-val) {
     @if type-of($cm-val) != number {
-        @return dev.err("The parameter of cm-to-in function must be in a number type.");
+        @return Error.toggle("The parameter of cm-to-in function must be in a number type.");
     }
 
     @if $cm-val < 0 {
-        $error-msg: "The parameter value should be bigger than 0.";
-
-        @if var.$test-environment == true {
-            @return dev.err($error-msg);
-        } @else {
-            @error $error-msg;
-        }
+        @return Error.toggle("The parameter value should be bigger than 0.");
     }
 
     @if $cm-val == 0 {
@@ -67,23 +62,13 @@
 
     // stylelint-disable-next-line length-zero-no-unit
     @if $cm-val == 0cm {
-        $error-msg: "The parameter don't need a unit if it equals to zero.";
-
-        @if var.$test-environment == true {
-            @return dev.err($error-msg);
-        } @else {
-            @error $error-msg;
-        }
+        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
     }
 
     @if math.unit($cm-val) != cm and $cm-val != 0 {
-        $error-msg: "$cm-val as argument must be with cm unit. The function is used to convert from centimeter to inches only.";
-
-        @if var.$test-environment == true {
-            @return dev.err($error-msg);
-        } @else {
-            @error $error-msg;
-        }
+        @return Error.toggle(
+            "$cm-val as argument must be with cm unit. The function is used to convert from centimeter to inches only."
+        );
     }
 
     $actual-number: func.cut-unit($cm-val);
