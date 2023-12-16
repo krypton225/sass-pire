@@ -50,7 +50,11 @@
         @error "Error message must be in type string.";
     }
 
+    $testing-message: "";
+
     @if var.$test-environment {
-        @return "ERROR: #{$message}";
+        $testing-message: "ERROR: #{$message}";
     }
+
+    @return $testing-message;
 }
