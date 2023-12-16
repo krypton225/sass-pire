@@ -44,10 +44,11 @@
 // @return {Number} - A number after cutting or stripping the unit.
 
 @use "sass:math";
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function cut-unit($num) {
     @if type-of($num) != number {
-        @error "You must pass a value in type number to cut-unit function.";
+        @return Error.toggle("You must pass a value in type number to cut-unit function.");
     }
 
     @if type-of($num) == "number" and not unitless($num) {

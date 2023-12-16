@@ -42,13 +42,14 @@
 // * position units, otherwise false.
 
 @use "../global/is-in-list" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function has-pos($val) {
     $position-values: (top, right, bottom, left) !default;
     $flag: true !default;
 
     @if type-of($val) != string {
-        @error "Argument of has-pos function must be of type string.";
+        @return Error.toggle("Argument of has-pos function must be of type string.");
     }
 
     @if not func.is-in-list($position-values, $val) {

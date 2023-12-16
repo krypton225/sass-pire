@@ -48,10 +48,11 @@
 
 @use "sass:math";
 @use "cut-unit" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function half($number) {
     @if type-of($number) != number {
-        @error "Please, Enter a number to half function";
+        @return Error.toggle("You must pass a value in type number to cut-unit function.");
     }
 
     @if not unitless($number) {

@@ -56,14 +56,15 @@
 // * list, and false otherwise.
 
 @use "sass:list";
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function is-in-list($list-name, $value) {
     @if type-of($list-name) != list {
-        @error "First argument must be in list type.";
+        @return Error.toggle("First argument must be in list type.");
     }
 
     @if not list.index($list-name, $value) {
-        @error "Second argument must be one of these units: (#{$list-name})";
+        @return Error.toggle("Second argument must be one of these units: (#{$list-name})");
     }
 
     @return true;
