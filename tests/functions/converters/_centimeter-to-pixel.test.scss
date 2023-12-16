@@ -31,7 +31,7 @@
 
 $test-cases-cm-to-px-map: (
     -12cm: -453.5433070872px,
-    0cm: dev.err("The parameter don't need a unit if it equals to zero."),
+    0cm: dev.err("The parameter dose not need a unit if it equals to zero."),
     0: 0,
     12cm: 453.5433070872px,
     20cm: 755.905511812px,

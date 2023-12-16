@@ -59,7 +59,7 @@
 
 @function ptg-to-dec($ptg-value: 0%) {
     @if type-of($ptg-value) != number {
-        @return Error.toggle("Percentage value must be in number type.");
+        @return Error.toggle("The parameter of ptg-to-dec function must be in a number type.");
     }
 
     // @if $ptg-value < 0 {
@@ -72,13 +72,11 @@
 
     // stylelint-disable-next-line length-zero-no-unit
     @if $ptg-value == 0% {
-        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
+        @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
     @if math.unit($ptg-value) != "%" {
-        @return Error.toggle(
-            "$$ptg-value as argument must be with percentage unit. The function is used to convert from percentage to decimal only."
-        );
+        @return Error.toggle("The ptg-to-dec function accepts argument with percentage unit only.");
     }
 
     $value-without-unit: func.cut-unit($ptg-value);
