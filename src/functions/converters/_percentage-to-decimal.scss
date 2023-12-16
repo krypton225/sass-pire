@@ -62,9 +62,9 @@
         @return Error.toggle("Percentage value must be in number type.");
     }
 
-    @if $ptg-value < 0 {
-        @return Error.toggle("The parameter value should be bigger than 0.");
-    }
+    // @if $ptg-value < 0 {
+    //     @return Error.toggle("The parameter value should be bigger than 0.");
+    // }
 
     @if $ptg-value == 0 {
         @return 0;

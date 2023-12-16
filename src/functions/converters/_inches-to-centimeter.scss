@@ -50,9 +50,9 @@
         @return Error.toggle("$inches-val as argument of in-to-cm function must be in number type.");
     }
 
-    @if $inches-val < 0 {
-        @return Error.toggle("The parameter value should be bigger than 0.");
-    }
+    // @if $inches-val < 0 {
+    //     @return Error.toggle("The parameter value should be bigger than 0.");
+    // }
 
     @if $inches-val == 0 {
         @return 0;

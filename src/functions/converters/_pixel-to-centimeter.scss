@@ -50,9 +50,9 @@
         @return Error.toggle("$px-val as argument of px-to-cm function must be in number type.");
     }
 
-    @if $px-val < 0 {
-        @return Error.toggle("The parameter value should be bigger than 0.");
-    }
+    // @if $px-val < 0 {
+    //     @return Error.toggle("The parameter value should be bigger than 0.");
+    // }
 
     @if $px-val == 0 {
         @return 0;

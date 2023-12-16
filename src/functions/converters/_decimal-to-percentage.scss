@@ -64,9 +64,9 @@
         @return Error.toggle("The parameter of dec-to-ptg function must be in a number type.");
     }
 
-    @if $dec-value < 0 {
-        @return Error.toggle("The parameter value should be bigger than 0.");
-    }
+    // @if $dec-value < 0 {
+    //     @return Error.toggle("The parameter value should be bigger than 0.");
+    // }
 
     @if $dec-value > 1 {
         @return Error.toggle("The parameter value should be smaller than 1.");
