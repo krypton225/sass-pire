@@ -47,7 +47,7 @@
 
 @function px-to-in($px-val) {
     @if type-of($px-val) != number {
-        @return Error.toggle("$px-val as argument of px-to-in function must be in number type.");
+        @return Error.toggle("The parameter of px-to-in function must be in a number type.");
     }
 
     // @if $px-val < 0 {
@@ -60,13 +60,11 @@
 
     // stylelint-disable-next-line length-zero-no-unit
     @if $px-val == 0px {
-        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
+        @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
     @if math.unit($px-val) != px {
-        @return Error.toggle(
-            "$px-val as argument must be with pixel unit. The function is used to convert from pixel to inches only."
-        );
+        @return Error.toggle("The px-to-in function accepts argument with pixel unit only.");
     }
 
     $actual-number: func.cut-unit($px-val);

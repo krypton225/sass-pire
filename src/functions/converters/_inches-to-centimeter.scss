@@ -60,7 +60,7 @@
 
     // stylelint-disable-next-line length-zero-no-unit
     @if $inches-val == 0in {
-        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
+        @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
     @if math.unit($inches-val) != in {

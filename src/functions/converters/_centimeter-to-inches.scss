@@ -62,13 +62,11 @@
 
     // stylelint-disable-next-line length-zero-no-unit
     @if $cm-val == 0cm {
-        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
+        @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
-    @if math.unit($cm-val) != cm and $cm-val != 0 {
-        @return Error.toggle(
-            "$cm-val as argument must be with cm unit. The function is used to convert from centimeter to inches only."
-        );
+    @if math.unit($cm-val) != cm {
+        @return Error.toggle("The cm-to-in function accepts argument with centimeter unit only.");
     }
 
     $actual-number: func.cut-unit($cm-val);
