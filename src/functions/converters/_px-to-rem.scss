@@ -45,18 +45,20 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 @use "../global/cut-unit" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function px-to-rem($px-val) {
     @if type-of($px-val) != number {
-        @error "Please, Enter a number to px function";
+        @return Error.toggle("$px-val as argument of px-to-rem function must be in number type.");
     }
 
     @if $px-val == 0 {
         @return 0;
     }
 
-    @if unitless($px-val) {
-        @error "You must write the unit of the argument";
+    // stylelint-disable-next-line length-zero-no-unit
+    @if $px-val == 0px {
+        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
     }
 
     @return calc(func.cut-unit($px-val) / var.$base-font-size) + rem;
