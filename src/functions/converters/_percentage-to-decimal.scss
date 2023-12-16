@@ -55,10 +55,30 @@
 @use "sass:math";
 @use "sass:list";
 @use "../global/cut-unit" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function ptg-to-dec($ptg-value: 0%) {
     @if type-of($ptg-value) != number {
-        @error "Percentage value must be in number type.";
+        @return Error.toggle("Percentage value must be in number type.");
+    }
+
+    @if $ptg-value < 0 {
+        @return Error.toggle("The parameter value should be bigger than 0.");
+    }
+
+    @if $ptg-value == 0 {
+        @return 0;
+    }
+
+    // stylelint-disable-next-line length-zero-no-unit
+    @if $ptg-value == 0% {
+        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
+    }
+
+    @if math.unit($ptg-value) != "%" {
+        @return Error.toggle(
+            "$$ptg-value as argument must be with percentage unit. The function is used to convert from percentage to decimal only."
+        );
     }
 
     $value-without-unit: func.cut-unit($ptg-value);
