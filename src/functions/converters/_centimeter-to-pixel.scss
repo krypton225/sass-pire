@@ -43,28 +43,30 @@
 
 @use "sass:math";
 @use "../global/cut-unit" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function cm-to-px($cm-val) {
     @if type-of($cm-val) != number {
-        @error "$cm-val as argument of cm-to-px function must be in number type.";
+        @return Error.toggle("$cm-val as argument of cm-to-px function must be in number type.");
     }
 
     @if $cm-val < 0 {
-        // * @error "A parameter of cm-to-in function must be bigger than or equal to zero.";
-        $cm-val: $cm-val * -1;
+        @return Error.toggle("The parameter value should be bigger than 0.");
     }
 
-    // stylelint-disable-next-line length-zero-no-unit
-    @if $cm-val == 0cm or $cm-val == 0 {
+    @if $cm-val == 0 {
         @return 0;
     }
 
-    @if unitless($cm-val) {
-        @error "You must write the unit of the argument";
+    // stylelint-disable-next-line length-zero-no-unit
+    @if $cm-val == 0cm {
+        @return Error.toggle("The parameter don't need a unit if it equals to zero.");
     }
 
     @if math.unit($cm-val) != cm {
-        @error "$cm-val as argument must be with centimeter unit. The function is used to convert from centimeter to pixel only.";
+        @return Error.toggle(
+            "$cm-val as argument must be with centimeter unit. The function is used to convert from centimeter to pixel only."
+        );
     }
 
     $actual-number: func.cut-unit($cm-val);
