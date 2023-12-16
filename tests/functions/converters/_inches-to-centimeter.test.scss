@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// @description
+// * in-to-cm function.
+// * This module tests a functionality of in-to-cm function.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/in-to-cm.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/converters/inches-to-centimeter" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-in-to-cm-map: (
+    0: 0,
+    0.5in: 1.27cm,
+    -0.5in: -1.27cm,
+    -92in: -233.68cm,
+    80in: 203.2cm,
+    5.82in: 14.7828cm,
+    212in: 538.48cm,
+    "Just a number": dev.err("The parameter of in-to-cm function must be in a number type."),
+    true: dev.err("The parameter of in-to-cm function must be in a number type."),
+    false: dev.err("The parameter of in-to-cm function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of in-to-cm function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-in-to-cm-map {
+    @include describe("[Function] dec-to-ptg(#{$case}), Result: #{$result}") {
+        @include it("Convert a value in inch to centimeter.") {
+            @include assert-equal(func.in-to-cm($case), $result);
+        }
+    }
+}

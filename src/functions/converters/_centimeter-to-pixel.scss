@@ -47,7 +47,7 @@
 
 @function cm-to-px($cm-val) {
     @if type-of($cm-val) != number {
-        @return Error.toggle("$cm-val as argument of cm-to-px function must be in number type.");
+        @return Error.toggle("The parameter of cm-to-px function must be in a number type.");
     }
 
     // @if $cm-val < 0 {
@@ -64,9 +64,7 @@
     }
 
     @if math.unit($cm-val) != cm {
-        @return Error.toggle(
-            "$cm-val as argument must be with centimeter unit. The function is used to convert from centimeter to pixel only."
-        );
+        @return Error.toggle("The cm-to-px function accepts argument with centimeter unit only.");
     }
 
     $actual-number: func.cut-unit($cm-val);
