@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @dependencies:
 // * - list.join (SASS function).
 // * - flatten-list (function).
+// * - toggle-error-message (function).
 
 // @param {List} $list...
 // * A group of lists that may contain nested lists.
@@ -42,13 +43,14 @@
 
 @use "sass:list";
 @use "./flatten-list" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function merge($lists...) {
     $merged-list: ();
 
     @each $value in $lists {
         @if type-of($value) != list {
-            @error "merge function only accepts lists.";
+            @return Error.toggle("The parameter of merge function must be in a list type.");
         }
 
         $flatten-one-list: func.flatten($value);
