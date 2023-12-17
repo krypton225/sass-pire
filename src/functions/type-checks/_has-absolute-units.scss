@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @dependencies:
 // * - list.index (SASS function).
 // * - math.unit (SASS function).
+// * - toggle-error-message (function).
 
 // @param {number} $val
 // * The number to check for an absolute unit.
@@ -44,14 +45,14 @@
 
 @use "sass:list";
 @use "sass:math";
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function has-abs-unit($value) {
-    $absolute-units: (cm, mm, in, px, pt, pc) !default;
-
     @if type-of($value) != number {
-        @error "Argument of has-abs-unit must be of type number.";
+        @return Error.toggle("The parameter of has-abs-unit function must be in a number type.");
     }
 
+    $absolute-units: (cm, mm, in, px, pt, pc) !default;
     $flag: true;
 
     @if not list.index($absolute-units, math.unit($value)) {
