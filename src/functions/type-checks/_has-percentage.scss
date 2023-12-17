@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 
 // @dependencies:
 // * - math.unit (SASS function).
+// * - toggle-error-message (function).
 
 // @param {number} $val
 // * The number to check for a percentage unit.
@@ -41,10 +42,11 @@
 // * otherwise false.
 
 @use "sass:math";
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function has-ptg($value) {
     @if type-of($value) != number {
-        @error "You must pass argument to has-ptg (has-percentage) function with a number type.";
+        @return Error.toggle("The parameter of has-ptg function must be in a number type.");
     }
 
     $flag: true;

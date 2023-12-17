@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @dependencies:
 // * - list.index (SASS function).
 // * - math.unit (SASS function).
+// * - toggle-error-message (function).
 
 // @param {number} $val
 // * The number to check for resolution units.
@@ -43,14 +44,14 @@
 
 @use "sass:list";
 @use "sass:math";
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function has-res-unit($value) {
-    $resolution-units: (dpi, dpcm, dppx) !default;
-
     @if type-of($value) != number {
-        @error "Argument of has-res-unit must be of type number.";
+        @return Error.toggle("The parameter of has-res-unit function must be in a number type.");
     }
 
+    $resolution-units: (dpi, dpcm, dppx) !default;
     $flag: true;
 
     @if not list.index($resolution-units, math.unit($value)) {

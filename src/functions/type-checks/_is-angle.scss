@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -19,8 +19,10 @@
 // @module type-checks/is-angle
 
 // @dependencies:
+// * - $angle-units (variable).
 // * - list.index (SASS function).
 // * - math.unit (SASS function).
+// * - toggle-error-message (function).
 
 // @param {number} $val
 // * A number to check if it has angle units or not.
@@ -45,10 +47,11 @@
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract/variables" as var;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function is-angle($value) {
     @if type-of($value) != number {
-        @error "You must pass argument to is-angle function with number type.";
+        @return Error.toggle("The parameter of is-angle function must be in a number type.");
     }
 
     $flag: true;
