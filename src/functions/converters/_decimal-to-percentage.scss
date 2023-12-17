@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 
 // @dependencies:
 // * - cut-unit (function).
+// * - toggle-error-message (function).
 
 // @param {Number} $ptg-value
 // * The decimal value to be converted into percentage.
@@ -55,7 +56,6 @@
 // * The percentage value of the input which is in decimal value.
 
 @use "sass:math";
-@use "sass:list";
 @use "../global/cut-unit" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
