@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.0.0
+// @version 1.3.0
 
 // @author Kitty Giraudel
 // @link https://kittygiraudel.com/
@@ -26,6 +26,7 @@
 // * - list.append (SASS function).
 // * - list.nth (SASS function).
 // * - flatten-list (function).
+// * - toggle-error-message (function).
 
 // @param {List} $list
 // * A list from which to retrieve the first element.
@@ -59,10 +60,15 @@
 @use "sass:list";
 @use "../../abstract/variables" as var;
 @use "flatten-list" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @function get-first-from($list: ()) {
+    @if type-of($list) != list {
+        @return Error.toggle("The parameter of get-first-from function must be in a list type.");
+    }
+
     @if length($list) == 0 {
-        @error "You must enter the values of the list to get the first element form it.";
+        @return Error.toggle("You must enter the list values of the list in get-first-from function.");
     }
 
     @if type-of($list) != list {
