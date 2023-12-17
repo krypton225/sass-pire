@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.3.2
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @dependencies:
 // * - math.unit (SASS function).
 // * - cut-unit (function).
+// * - toggle-error-message (function).
 
 // @param {Number} $cm-val
 // * The value in centimeter unit to convert into inch.
@@ -42,9 +43,7 @@
 // @return {Number} - Returns the converted value in inches.
 
 @use "sass:math";
-@use "../../abstract/variables" as var;
 @use "../global/cut-unit" as func;
-@use "../../development-utils/error" as dev;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function cm-to-in($cm-val) {
