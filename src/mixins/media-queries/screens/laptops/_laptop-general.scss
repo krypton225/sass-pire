@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.2.1
+// @version 1.3.1
 
 // @author Khaled Mohamed
 
@@ -25,6 +25,7 @@
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
+// * - toggle (function).
 
 // @param {String} $retina-value
 // * If you want to apply mixin with retina screen or not.
@@ -65,10 +66,11 @@
 @use "sass:list";
 @use "../../../../functions/global/is-in-list" as func;
 @use "../../../../functions/list/merge" as sp-list;
+@use "../../../../development-utils/toggle-error-message" as Error;
 
 @mixin laptop-general($retina-value) {
     @if type-of($retina-value) != string {
-        @error "Retina screen in laptop-general mixin must be in string type.";
+        content: Error.toggle("The parameter of laptop-general mixin must be in a string type.");
     }
 
     $accepted-retina-values: (retina, yes, y) !default;
@@ -80,13 +82,22 @@
 
     @if func.is-in-list($all-retina-values, $retina-value) {
         @if list.index($accepted-retina-values, $retina-value) {
-            @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: $min-resolution) {
+            @media screen and (min-device-width: $min-device-width)
+                and (max-device-width: $max-device-width)
+                and (-webkit-min-device-pixel-ratio: 2)
+                and (min-resolution: $min-resolution) {
                 @content;
             }
         } @else if list.index($unaccepted-retina-values, $retina-value) {
-            @media screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: 1) {
+            @media screen and (min-device-width: $min-device-width)
+                and (max-device-width: $max-device-width)
+                and (-webkit-min-device-pixel-ratio: 1) {
                 @content;
             }
+        } @else {
+            content: Error.toggle(
+                "The parameter of laptop-general mixin must be one value of (#{$all-retina-values})."
+            );
         }
     }
 }
