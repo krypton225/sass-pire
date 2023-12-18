@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.1.1
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -25,6 +25,7 @@
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
+// * - toggle (function).
 
 // @param {String} $orientation-type
 // * The type of the orientation for the mixin of the device type.
@@ -65,10 +66,11 @@
 @use "sass:list";
 @use "../../../../../functions/global/is-in-list" as func;
 @use "../../../../../functions/list/merge" as sp;
+@use "../../../../../development-utils/toggle-error-message" as Error;
 
 @mixin galaxy-s6($orientation-type: portrait) {
     @if type-of($orientation-type) != string {
-        @error "Orientation type in galaxy-s6 mixin must be in string type.";
+        content: Error.toggle("The parameter of galaxy-s6 mixin must be in a string type.");
     }
 
     $landscape-values: (landscape, land, l) !default;
