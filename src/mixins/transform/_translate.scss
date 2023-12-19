@@ -63,20 +63,38 @@
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
 
     @if type-of($x) == number and type-of($y) == number {
-        @if not index(var.$main-units, math.unit($x)) {
-            @error "$x must has one of these units: (#{var.$main-units})";
+        @if not index(var.$main-units, math.unit($x)) or not index(var.$main-units, math.unit($y)) {
+            content: Error.toggle(
+                "The parameter of translate mixin must has one of these units: (#{var.$main-units})."
+            );
+        } @else {
+            @include pref.prefixing-all(transform, translate($x, $y));
         }
-
-        @if not index(var.$main-units, math.unit($y)) {
-            @error "$y must has one of these units: (#{var.$main-units})";
+    } @else if type-of($x) == string and type-of($y) == string {
+        @if not index($transform-props-values, $x) and not index($transform-props-values, $y) {
+            content: Error.toggle(
+                "The parameter of translate mixin must has one of these values: (#{$transform-props-values})."
+            );
+        } @else {
+            @include pref.prefixing-all(transform, translate($x, $y));
         }
-    } @else if type-of($x) == string {
-        @if not index($transform-props-values, $x) {
-            @error "The value of transform property with translate value must has one of these: (#{$transform-props-values})";
+    } @else if type-of($x) == number and type-of($y) == string {
+        @if not index(var.$main-units, math.unit($x)) or not index($transform-props-values, $y) {
+            content: Error.toggle(
+                "The parameter of translate mixin must has one of these units: (#{var.$main-units})."
+            );
+        } @else {
+            @include pref.prefixing-all(transform, translate($x, $y));
+        }
+    } @else if type-of($x) == string and type-of($y) == number {
+        @if not index(var.$main-units, math.unit($y)) or not index($transform-props-values, $x) {
+            content: Error.toggle(
+                "The parameter of translate mixin must has one of these units: (#{var.$main-units})."
+            );
+        } @else {
+            @include pref.prefixing-all(transform, translate($x, $y));
         }
     } @else {
-        @error "x and y values of translate in transform property must be in number or string type.";
+        content: Error.toggle("The value of translate mixin must be in a number or a string type.");
     }
-
-    @include pref.prefixing-all(transform, translate($x, $y));
 }
