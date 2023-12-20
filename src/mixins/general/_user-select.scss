@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 
 // @dependencies:
 // * - is-in-list (function).
+// * - toggle (function).
 
 // @param {String} $val
 // * The value for the user-select property.
@@ -49,19 +50,21 @@
 
 @use "sass:list";
 @use "../../functions/global/is-in-list" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @mixin u-select($value: auto) {
     $user-select-props: (-webkit-user-select, -moz-user-select, -ms-user-select, user-select) !default;
 
     $user-select-values: (none, auto, text, contain, all, inherit, initial, revert, revert-layer, unset) !default;
 
-    @if type-of($value) != string {
-        @error "You must pass a value to u-select mixin in string type.";
+    @if type-of($value) == string {
+        @if func.is-in-list($user-select-values, $value) {
+            @each $prop in $user-select-props {
+                #{$prop}: $value;
+            }
+        }
+    } @else {
+        content: Error.toggle("The parameter of u-select mixin must be in a string type.");
     }
 
-    @if func.is-in-list($user-select-values, $value) {
-        @each $prop in $user-select-props {
-            #{$prop}: $value;
-        }
-    }
 }
