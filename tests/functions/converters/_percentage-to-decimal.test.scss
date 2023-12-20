@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// @description
+// * ptg-to-dec function.
+// * This module tests a functionality of ptg-to-dec function.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/ptg-to-dec.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/converters/percentage-to-decimal" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-ptg-to-dec-map: (
+    0: 0,
+    0.5%: 0.005,
+    -0.5%: -0.005,
+    -92%: -0.92,
+    80%: 0.8,
+    5.82%: 0.0582,
+    212%: 2.12,
+    "Just a number": dev.err("The parameter of ptg-to-dec function must be in a number type."),
+    true: dev.err("The parameter of ptg-to-dec function must be in a number type."),
+    false: dev.err("The parameter of ptg-to-dec function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of ptg-to-dec function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-ptg-to-dec-map {
+    @include describe("[Function] ptg-to-dec(#{$case}), Result: #{$result}") {
+        @include it("Convert a value in percentage to decimal.") {
+            @include assert-equal(func.ptg-to-dec($case), $result);
+        }
+    }
+}
