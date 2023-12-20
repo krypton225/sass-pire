@@ -11,7 +11,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -27,6 +27,7 @@
 // * - math.unit (SASS function).
 // * - $main-units (variable).
 // * - pref.prefixing-all (mixin).
+// * - toggle (function).
 
 // @param {Number|String} $x
 // * The horizontal translation distance.
@@ -57,8 +58,6 @@
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as pref;
-@use "../../abstract" as var;
-@use "../../functions/global/is-in-list" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @mixin translate($x: 1px, $y: $x) {
