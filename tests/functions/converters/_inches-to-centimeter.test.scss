@@ -32,12 +32,12 @@
 
 $test-cases-in-to-cm-map: (
     0: 0,
-    0.5in: 1.27cm,
-    -0.5in: -1.27cm,
-    -92in: -233.68cm,
-    80in: 203.2cm,
-    5.82in: 14.7828cm,
-    212in: 538.48cm,
+    0.5in: "1.27cm",
+    -0.5in: "-1.27cm",
+    -92in: "-233.68cm",
+    80in: "203.2cm",
+    5.82in: "14.783cm",
+    212in: "538.48cm",
     "Just a number": dev.err("The parameter of in-to-cm function must be in a number type."),
     true: dev.err("The parameter of in-to-cm function must be in a number type."),
     false: dev.err("The parameter of in-to-cm function must be in a number type."),
@@ -45,7 +45,7 @@ $test-cases-in-to-cm-map: (
 );
 
 @each $case, $result in $test-cases-in-to-cm-map {
-    @include describe("[Function] dec-to-ptg(#{$case}), Result: #{$result}") {
+    @include describe("[Function] in-to-cm(#{$case}), Result: #{$result}") {
         @include it("Convert a value in inch to centimeter.") {
             @include assert-equal(func.in-to-cm($case), $result);
         }
