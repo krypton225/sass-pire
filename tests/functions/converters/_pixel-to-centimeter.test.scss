@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// @description
+// * px-to-cm function.
+// * This module tests a functionality of px-to-cm function.
+
+// @access public
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/px-to-cm.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/converters/pixel-to-centimeter" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-px-to-cm-map: (
+    0: 0,
+    0px: dev.err("The parameter dose not need a unit if it equals to zero."),
+    344px: "9.102cm",
+    -0.5px: "-0.013cm",
+    -92px: "-2.434cm",
+    80px: "2.117cm",
+    5.82px: "0.154cm",
+    212px: "5.609cm",
+    "Just a number": dev.err("The parameter of px-to-cm function must be in a number type."),
+    true: dev.err("The parameter of px-to-cm function must be in a number type."),
+    false: dev.err("The parameter of px-to-cm function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of px-to-cm function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-px-to-cm-map {
+    @include describe("[Function] px-to-cm(#{$case}), Result: #{$result}") {
+        @include it("Convert a value in pixel to centimeter.") {
+            @include assert-equal(func.px-to-cm($case), $result);
+        }
+    }
+}

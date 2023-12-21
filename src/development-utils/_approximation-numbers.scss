@@ -1,0 +1,112 @@
+@charset "UTF-8";
+
+// @description
+// * approx function.
+// * This function accepts an number for approximation it with
+// * the number of digits you want.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Takeru Suzuki
+// @link: https://gist.github.com/terkel/4373420
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace development-utils
+
+// @module development-utils/approx
+
+// @dependencies:
+// * - meta.type-of (SASS function).
+// * - math.div (SASS function).
+// * - math.round (SASS function).
+// * - math.ceil (SASS function).
+// * - math.floor (SASS function).
+// * - cut-unit (function).
+// * - toggle (function).
+
+// @update We updated the function with validations
+
+// @param {Number} $num
+// * The number you want to make approximation for it.
+
+// @param {Number} $digits
+// * The number of digits you want to make approximation for it.
+// * Default: 3.
+
+// @param {String} $mode
+// * The mode you want to make the approximation.
+// * It has three value: (floor, round, ceil).
+// * Default: round.
+
+// @throw {Exception}
+// * Throws exceptions if the provided first parameter is not a number.
+// * Throws exceptions if the provided second parameter is not a string
+// * or dose not equal to one of these values: (floor, round, ceil).
+
+// @example
+// * .example {
+// *   content: approx(12.36154vh, 2, round);
+// * }
+
+// @output
+// * .example {
+// *   content: 12.36vh;
+// * }
+
+// @note
+// * There are two functions in this file.
+// * The first is the (approx) function and second is (of) function.
+// * The second one is for only simplicity when using (approx) function.
+// * The core logic of (of) function is to call the first one.
+// * You can use one of them as you want.
+
+// @return {String} - Returns the provided output after approximation.
+
+@use "sass:meta";
+@use "sass:math";
+@use "../functions/global/cut-unit" as func;
+@use "../development-utils/toggle-error-message" as Error;
+
+@function approx($num, $digits: 3, $mode: round) {
+    $node: 1;
+    $num-unit: "";
+    $num-without-unit: func.cut-unit($num);
+    $mode-values: (round, ceil, floor) !default;
+
+    @if meta.type-of($num) != number or meta.type-of($digits) != number {
+        @return Error.toggle("The parameters of approx function must be in a number type.");
+    }
+
+    @if meta.type-of($mode) != string {
+        @return Error.toggle("The mode parameter of approx function must be in a string type.");
+    }
+
+    @if not unitless($num) {
+        $num-unit: math.unit($num);
+    }
+
+    @if $digits > 0 {
+        @for $i from 1 through $digits {
+            $node: $node * 10;
+        }
+    }
+
+    @if $mode == round {
+        @return math.div(math.round($num-without-unit * $node), $node) + #{$num-unit};
+    } @else if $mode == ceil {
+        @return math.div(math.ceil($num-without-unit * $node), $node) + #{$num-unit};
+    } @else if $mode == floor {
+        @return math.div(math.floor($num-without-unit * $node), $node) + #{$num-unit};
+    } @else {
+        @return Error.toggle("The mode parameter of approx function must be one of these values: (#{$mode-values}).");
+    }
+}
+
+@function of($num, $digits: 3, $mode: round) {
+    @return approx($num, $digits, $mode);
+}
