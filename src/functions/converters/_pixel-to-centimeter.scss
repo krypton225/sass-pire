@@ -53,10 +53,6 @@
         @return Error.toggle("The parameter of px-to-cm function must be in a number type.");
     }
 
-    // @if $px-val < 0 {
-    //     @return Error.toggle("The parameter value should be bigger than 0.");
-    // }
-
     @if $px-val == 0 {
         @return 0;
     }
