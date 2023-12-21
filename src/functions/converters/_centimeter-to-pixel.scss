@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.3.2
+// @version 1.4.2
 
 // @author Khaled Mohamed
 
@@ -37,13 +37,14 @@
 
 // @output
 // * .example {
-// *   content: 453.5433070872px;
+// *   content: 453.543px;
 // * }
 
 // @return {Number} - Returns the converted value in pixels.
 
 @use "sass:math";
 @use "../global/cut-unit" as func;
+@use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function cm-to-px($cm-val) {
@@ -69,7 +70,8 @@
     }
 
     $actual-number: func.cut-unit($cm-val);
-
     // stylelint-disable-next-line number-max-precision
-    @return $actual-number * 37.7952755906px;
+    $final-result: Approx.of(($actual-number * 37.7952755906px));
+
+    @return $final-result;
 }
