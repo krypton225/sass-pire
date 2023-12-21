@@ -73,7 +73,7 @@
     $actual-number: func.cut-unit($px-val);
 
     // stylelint-disable-next-line number-max-precision
-    $final-result: Approx.of(($actual-number * 0.0264583333cm), 3);
+    $final-result: Approx.of(($actual-number * 0.0264583333cm));
 
     /* stylelint-disable-next-line length-zero-no-unit */
     @if $final-result == 0px {
