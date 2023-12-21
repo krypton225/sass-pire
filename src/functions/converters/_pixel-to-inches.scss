@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.2.1
+// @version 1.3.1
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @dependencies:
 // * - math.unit (SASS function).
 // * - cut-unit (function).
+// * - approx (function).
 // * - toggle (function).
 
 // @param {Number} $px-val
@@ -44,6 +45,7 @@
 
 @use "sass:math";
 @use "../global/cut-unit" as func;
+@use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function px-to-in($px-val) {
@@ -65,7 +67,8 @@
     }
 
     $actual-number: func.cut-unit($px-val);
-
     // stylelint-disable-next-line number-max-precision
-    @return $actual-number * 0.0104166666666667in;
+    $final-result: Approx.of($actual-number * 0.0104166666666667in);
+
+    @return $final-result;
 }
