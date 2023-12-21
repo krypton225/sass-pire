@@ -53,3 +53,9 @@
 // * please see the `px-to-cm` function for details.
 // @see px-to-cm
 @forward "pixel-to-centimeter.test";
+
+// * pixel to inches forward.
+// * forwarding the testing px-to-in function.
+// * please see the `px-to-in` function for details.
+// @see px-to-in
+@forward "pixel-to-inches.test";
