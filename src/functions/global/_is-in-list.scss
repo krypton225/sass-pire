@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.1.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module global/is-in-list
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - toggle (function).
 
@@ -56,11 +57,12 @@
 // @return {Boolean} - Returns true if the second argument exists in the
 // * list, and false otherwise.
 
+@use "sass:meta";
 @use "sass:list";
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function is-in-list($list-name, $value) {
-    @if type-of($list-name) != list {
+    @if meta.type-of($list-name) != list {
         @return Error.toggle("First argument must be in list type.");
     }
 
