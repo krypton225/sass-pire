@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.3.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module list/merge
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.join (SASS function).
 // * - flatten-list (function).
 // * - toggle (function).
@@ -41,6 +42,7 @@
 
 // @return {List} - Returns a merged list.
 
+@use "sass:meta";
 @use "sass:list";
 @use "./flatten-list" as func;
 @use "../../development-utils/toggle-error-message" as Error;
@@ -49,7 +51,7 @@
     $merged-list: ();
 
     @each $value in $lists {
-        @if type-of($value) != list {
+        @if meta.type-of($value) != list {
             @return Error.toggle("The parameter of merge function must be in a list type.");
         }
 
