@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.3.0
+// @version 1.4.0
 
 // @author Kitty Giraudel
 // @link https://kittygiraudel.com/
@@ -22,6 +22,7 @@
 // @update We updated the use of the list library of Sass.
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.length (SASS function).
 // * - list.append (SASS function).
 // * - list.nth (SASS function).
@@ -36,7 +37,7 @@
 
 // @example
 // * .example {
-// *   content: reverse((12, 43, 4, (33, 555, 6));
+// *   content: reverse((12, 43, 4), (33, 555, 6));
 // * }
 
 // @output
@@ -46,12 +47,13 @@
 
 // @return {Any} - Returns the reversed list from the given list.
 
+@use "sass:meta";
 @use "sass:list";
 @use "flatten-list" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function reverse($list: ()) {
-    @if type-of($list) != list {
+    @if meta.type-of($list) != list {
         @return Error.toggle("The parameter of reverse function must be in a list type.");
     }
 
