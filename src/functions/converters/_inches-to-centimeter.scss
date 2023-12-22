@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.4.2
+// @version 1.5.2
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module converters/in-to-cm
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - cut-unit (function).
 // * - approx (function).
@@ -43,13 +44,14 @@
 
 // @return {Number} - Returns the converted value in centimeters.
 
+@use "sass:meta";
 @use "sass:math";
 @use "../global/cut-unit" as func;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function in-to-cm($inches-val) {
-    @if type-of($inches-val) != number {
+    @if meta.type-of($inches-val) != number {
         @return Error.toggle("The parameter of in-to-cm function must be in a number type.");
     }
 

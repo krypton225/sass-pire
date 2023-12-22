@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 
 // @dependencies:
 // * - $base-font-size (variable).
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - cut-unit (function).
 // * - approx (function).
@@ -44,6 +45,7 @@
 
 // @return {Number} - Returns the converted value in rem.
 
+@use "sass:meta";
 @use "sass:math";
 @use "../../abstract/variables" as var;
 @use "../global/cut-unit" as func;
@@ -51,7 +53,7 @@
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function px-to-rem($px-val) {
-    @if type-of($px-val) != number {
+    @if meta.type-of($px-val) != number {
         @return Error.toggle("The parameter of px-to-rem function must be in a number type.");
     }
 

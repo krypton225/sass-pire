@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.1.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -19,7 +19,7 @@
 // @module type-checks/has-pos
 
 // @dependencies:
-// * - is-in-list (function).
+// * - meta.type-of (SASS function).
 // * - toggle (function).
 
 // @param {string} $val
@@ -42,18 +42,19 @@
 // @returns {boolean} - Returns true if the argument has one of the
 // * position units, otherwise false.
 
-@use "../global/is-in-list" as func;
+@use "sass:meta";
+@use "sass:list";
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function has-pos($val) {
     $position-values: (top, right, bottom, left) !default;
     $flag: true !default;
 
-    @if type-of($val) != string {
+    @if meta.type-of($val) != string {
         @return Error.toggle("Argument of has-pos function must be of type string.");
     }
 
-    @if not func.is-in-list($position-values, $val) {
+    @if not list.index($position-values, $val) {
         $flag: false;
     }
 
