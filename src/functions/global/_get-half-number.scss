@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.1.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module global/half
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - cut-unit (function).
 // * - toggle (function).
@@ -47,12 +48,13 @@
 // @return {Number} - The half of the given number. If the input has
 // * a unit, the result will also have the same unit.
 
+@use "sass:meta";
 @use "sass:math";
 @use "cut-unit" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function half($number) {
-    @if type-of($number) != number {
+    @if meta.type-of($number) != number {
         @return Error.toggle("You must pass a value in type number to cut-unit function.");
     }
 
