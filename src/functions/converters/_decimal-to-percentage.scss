@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.2.1
+// @version 1.3.1
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module converters/dec-to-ptg
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - cut-unit (function).
 // * - toggle (function).
 
@@ -28,9 +29,6 @@
 
 // @throws {Error}
 // * If the input is not a number.
-
-// @warn
-// * If the input is not be passed or it equals to zero.
 
 // @example 1
 // * .example {
@@ -55,12 +53,13 @@
 // @return {Number}
 // * The percentage value of the input which is in decimal value.
 
+@use "sass:meta";
 @use "sass:math";
 @use "../global/cut-unit" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function dec-to-ptg($dec-value: 0) {
-    @if type-of($dec-value) != number {
+    @if meta.type-of($dec-value) != number {
         @return Error.toggle("The parameter of dec-to-ptg function must be in a number type.");
     }
 
