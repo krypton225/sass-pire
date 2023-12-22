@@ -1,0 +1,54 @@
+@charset "UTF-8";
+
+// @description
+// * px-to-rem function.
+// * This module tests a functionality of px-to-rem function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/px-to-rem.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/converters/pixel-to-rem" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-px-to-rem-map: (
+    0: 0,
+    0px: dev.err("The parameter dose not need a unit if it equals to zero."),
+    344px: "21.5rem",
+    -0.5px: "-0.031rem",
+    -92px: "-5.75rem",
+    80px: "5rem",
+    5.82px: "0.364rem",
+    212px: "13.25rem",
+    "Just a number": dev.err("The parameter of px-to-rem function must be in a number type."),
+    true: dev.err("The parameter of px-to-rem function must be in a number type."),
+    false: dev.err("The parameter of px-to-rem function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of px-to-rem function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-px-to-rem-map {
+    @include describe("[Function] px-to-rem(#{$case}), Result: #{$result}") {
+        @include it("Convert a value in pixel to inches.") {
+            @include assert-equal(func.px-to-rem($case), $result);
+        }
+    }
+}

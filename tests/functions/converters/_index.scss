@@ -24,12 +24,6 @@
 // @see cm-to-px
 @forward "centimeter-to-pixel.test";
 
-// * decimal to percentage forward.
-// * forwarding the testing dec-to-ptg function.
-// * please see the `dec-to-ptg` function for details.
-// @see dec-to-ptg
-@forward "decimal-to-percentage.test";
-
 // * inches to centimeter forward.
 // * forwarding the testing in-to-cm function.
 // * please see the `in-to-cm` function for details.
@@ -42,12 +36,6 @@
 // @see in-to-px
 @forward "inches-to-px.test";
 
-// * percentage to decimal forward.
-// * forwarding the testing ptg-to-dec function.
-// * please see the `ptg-to-dec` function for details.
-// @see ptg-to-dec
-@forward "percentage-to-decimal.test";
-
 // * pixel to centimeter forward.
 // * forwarding the testing px-to-cm function.
 // * please see the `px-to-cm` function for details.
@@ -59,3 +47,21 @@
 // * please see the `px-to-in` function for details.
 // @see px-to-in
 @forward "pixel-to-inches.test";
+
+// * pixel to rem forward.
+// * forwarding the testing px-to-rem function.
+// * please see the `px-to-rem` function for details.
+// @see px-to-rem
+@forward "pixel-to-rem.test";
+
+// * percentage to decimal forward.
+// * forwarding the testing ptg-to-dec function.
+// * please see the `ptg-to-dec` function for details.
+// @see ptg-to-dec
+@forward "percentage-to-decimal.test";
+
+// * decimal to percentage forward.
+// * forwarding the testing dec-to-ptg function.
+// * please see the `dec-to-ptg` function for details.
+// @see dec-to-ptg
+@forward "decimal-to-percentage.test";
