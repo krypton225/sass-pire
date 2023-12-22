@@ -22,6 +22,7 @@
 // * - $base-font-size (variable).
 // * - math.unit (SASS function).
 // * - cut-unit (function).
+// * - approx (function).
 // * - toggle (function).
 
 // @param {Number} $px-val
@@ -46,6 +47,7 @@
 @use "sass:math";
 @use "../../abstract/variables" as var;
 @use "../global/cut-unit" as func;
+@use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function px-to-rem($px-val) {
@@ -62,5 +64,5 @@
         @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
-    @return calc(func.cut-unit($px-val) / var.$base-font-size) + rem;
+    @return Approx.of(calc(func.cut-unit($px-val) / var.$base-font-size)) + rem;
 }
