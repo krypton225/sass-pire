@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.3.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 // @module type-checks/is-float
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - cut-unit (function).
 // * - toggle (function).
 
@@ -44,12 +45,13 @@
 // @returns {boolean} - True if it is a floating-point number,
 // * false if not.
 
+@use "sass:meta";
 @use "sass:math";
 @use "../global/cut-unit" as func;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function is-float($value) {
-    @if type-of($value) != number {
+    @if meta.type-of($value) != number {
         @return Error.toggle("The parameter of is-float function must be in a number type.");
     }
 
