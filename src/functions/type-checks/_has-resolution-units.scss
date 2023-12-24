@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.3.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module type-checks/has-res-unit
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - math.unit (SASS function).
 // * - toggle (function).
@@ -42,12 +43,13 @@
 // @return {boolean} - Returns true if the argument has one of the
 // * resolution units, otherwise false.
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function has-res-unit($value) {
-    @if type-of($value) != number {
+    @if meta.type-of($value) != number {
         @return Error.toggle("The parameter of has-res-unit function must be in a number type.");
     }
 
