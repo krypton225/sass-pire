@@ -16,3 +16,8 @@
 // * This module likely contains functions for unit conversions.
 // @see converters
 @forward "converters";
+
+// * forwarding the "global" module.
+// * This module likely contains global utilities or functions.
+// @see global
+@forward "global";

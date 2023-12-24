@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards key functionalities from other modules.
+// * for easy access in the current stylesheet.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace functions/global
+
+// * cut-unit forward.
+// * forwarding the testing cut-unit function.
+// * please see testing `cut-unit` function for details.
+// @see cut-unit
+@forward "cut-unit.test";
