@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.2.0
+// @version 1.2.1
 
 // @author Kitty Giraudel
 // @link https://css-tricks.com/snippets/sass/strip-unit-function/
@@ -51,7 +51,12 @@
 
 @function cut-unit($num) {
     @if meta.type-of($num) != number {
-        @return Error.toggle("You must pass a value in type number to cut-unit function.");
+        @return Error.toggle("The parameter of cut-unit function must be in a number type.");
+    }
+
+    // stylelint-disable-next-line length-zero-no-unit
+    @if math.unit($num) == "" and not unitless($num) {
+        @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
     @if meta.type-of($num) == number and not unitless($num) {
