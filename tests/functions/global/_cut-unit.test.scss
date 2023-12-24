@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+// @description
+// * cut-unit function.
+// * This module tests a functionality of cut-unit function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/cut-unit.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/global/cut-unit" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-cut-unit-map: (
+    0: 0,
+    0px: 0,
+    344px: 344,
+    -0.5px: -0.5,
+    -92px: -92,
+    94vh: 94,
+    80px: 80,
+    5.82px: 5.82,
+    212px: 212,
+    "Just a number": dev.err("The parameter of cut-unit function must be in a number type."),
+    true: dev.err("The parameter of cut-unit function must be in a number type."),
+    false: dev.err("The parameter of cut-unit function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of cut-unit function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-cut-unit-map {
+    @include describe("[Function] cut-unit(#{$case}), Result: #{$result}") {
+        @include it("Cut the unit of (#{$case}) value.") {
+            @include assert-equal(func.cut-unit($case), $result);
+        }
+    }
+}
