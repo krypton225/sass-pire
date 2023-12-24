@@ -8,7 +8,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -21,6 +21,7 @@
 // @module general/circle
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $main-units (variable).
 // * - is-in-list (function).
@@ -45,6 +46,7 @@
 // * It's essential to ensure that the specified side length is the same
 // * for both width and height to maintain a perfect circle.
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract/variables" as var;
@@ -53,7 +55,7 @@
 @mixin circle($one-side) {
     $get-unit: math.unit($one-side);
 
-    @if type-of($one-side) != number {
+    @if meta.type-of($one-side) != number {
         @error "$one-side variable must be of number type.";
     }
 

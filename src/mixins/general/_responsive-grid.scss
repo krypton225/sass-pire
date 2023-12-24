@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module general/grid
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - prefix-val-ms (mixin).
 // * - is-in-list (function).
@@ -43,17 +44,18 @@
 // *   gap: 2rem;
 // * }
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../functions/global/is-in-list" as func;
 @use "../vendor-prefixes/prefix-val" as pref;
 
 @mixin grid($min-col-size: 4rem, $gap: 1rem) {
-    @if type-of($min-col-size) != number {
+    @if meta.type-of($min-col-size) != number {
         @error "$min-col-size argument must be of type number.";
     }
 
-    @if type-of($gap) != number {
+    @if meta.type-of($gap) != number {
         @error "$gap argument must be of type number.";
     }
 
