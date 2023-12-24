@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 
 // @dependencies:
 // * - $time-units (variable).
+// * - meta.type-of (SASS function).
 // * - prefix.prefixing-all (mixin).
 // * - is-in-list (function).
 // * - cut-unit (function).
@@ -52,6 +53,7 @@
 
 // stylelint-disable scss/dollar-variable-empty-line-before
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../abstract/variables" as var;
@@ -76,7 +78,7 @@
         func.is-in-list(var.$time-units, $delaying-unit)
     {
         @each $custom, $val in $params-with-types-map {
-            @if type-of($custom) != $val {
+            @if meta.type-of($custom) != $val {
                 @error "#{$custom} parameter must be in type #{$val}.";
             }
         }
