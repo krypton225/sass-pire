@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.3.1
+// @version 1.4.1
 
 // @author Khaled Mohamed
 
@@ -19,6 +19,7 @@
 // @module general/square
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - is-in-list (function).
 // * - toggle (function).
@@ -44,6 +45,7 @@
 // * The core logic of (sq) mixin is to call the first one.
 // * You can use one of them as you want.
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../functions/global/is-in-list" as func;
@@ -92,7 +94,7 @@
         dvb
     ) !default;
 
-    @if type-of($one-side) == number {
+    @if meta.type-of($one-side) == number {
         @if not unitless($one-side) {
             @if func.is-in-list($all-units, math.unit($one-side)) {
                 width: $one-side;
