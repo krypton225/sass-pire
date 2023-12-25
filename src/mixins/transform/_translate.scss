@@ -11,7 +11,7 @@
 
 // @access public
 
-// @version 1.4.0
+// @version 1.5.0
 
 // @author Khaled Mohamed
 
@@ -24,6 +24,7 @@
 // @module transform/translate
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $main-units (variable).
 // * - pref.prefixing-all (mixin).
@@ -55,6 +56,7 @@
 // *   transform: translate(20px, 20px);
 // * }
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as pref;
@@ -104,7 +106,7 @@
         dvb
     ) !default;
 
-    @if type-of($x) == number and type-of($y) == number {
+    @if meta.type-of($x) == number and meta.type-of($y) == number {
         @if not index($main-units, math.unit($x)) or not index($main-units, math.unit($y)) {
             content: Error.toggle(
                 "The parameter of translate mixin must has one of these units: (#{$main-units})."
@@ -112,7 +114,7 @@
         } @else {
             @include pref.prefixing-all(transform, translate($x, $y));
         }
-    } @else if type-of($x) == string and type-of($y) == string {
+    } @else if meta.type-of($x) == string and meta.type-of($y) == string {
         @if index($transform-props-values, $x) and index($transform-props-values, $y) {
             @include pref.prefixing-all(transform, translate($x, $y));
         } @else {
@@ -120,7 +122,7 @@
                 "The parameter of translate mixin must has one of these values: (#{$transform-props-values})."
             );
         }
-    } @else if type-of($x) == number and type-of($y) == string {
+    } @else if meta.type-of($x) == number and meta.type-of($y) == string {
         @if index($main-units, math.unit($x)) and index($transform-props-values, $y) {
             @include pref.prefixing-all(transform, translate($x, $y));
         } @else {
@@ -128,7 +130,7 @@
                 "The parameter of translate mixin must has one of these units: (#{$main-units})."
             );
         }
-    } @else if type-of($x) == string and type-of($y) == number {
+    } @else if meta.type-of($x) == string and meta.type-of($y) == number {
         @if index($main-units, math.unit($y)) and index($transform-props-values, $x) {
             @include pref.prefixing-all(transform, translate($x, $y));
         } @else {
