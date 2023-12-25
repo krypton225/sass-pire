@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.2.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -23,6 +23,7 @@
 // @module transform/translate-x
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $main-units (variable).
 // * - pref.prefixing-all (mixin).
@@ -48,6 +49,7 @@
 // *   transform: translateX(10px);
 // * }
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as pref;
@@ -57,7 +59,7 @@
 @mixin translate-x($x: 1px) {
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
 
-    @if type-of($x) == number {
+    @if meta.type-of($x) == number {
         @if not index(var.$main-units, math.unit($x)) {
             content: Error.toggle(
                 "The parameter of translate-x mixin must has one of these units: (#{var.$main-units})."
@@ -65,7 +67,7 @@
         } @else {
             @include pref.prefixing-all(transform, translateX($x));
         }
-    } @else if type-of($x) == string {
+    } @else if meta.type-of($x) == string {
         @if not index($transform-props-values, $x) {
             content: Error.toggle(
                 "The parameter of translate-x mixin must has one of these values: (#{$transform-props-values})."
