@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.2.1
+// @version 1.3.1
 
 // @author Khaled Mohamed
 
@@ -22,6 +22,7 @@
 // @module iphone/iphone-8
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
@@ -70,13 +71,14 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:meta";
 @use "sass:list";
 @use "../../../../../functions/global/is-in-list" as func;
 @use "../../../../../functions/list/merge" as sp;
 @use "../../../../../development-utils/toggle-error-message" as Error;
 
 @mixin iphone-8($orientation-type: portrait) {
-    @if type-of($orientation-type) != string {
+    @if meta.type-of($orientation-type) != string {
         content: Error.toggle("The parameter of iphone-8 mixin must be in a string type.");
     }
 
