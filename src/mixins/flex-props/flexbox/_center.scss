@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-center-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-center
 
 @mixin flex-center-normal($dir: row) {
-    @include f.f-prop($dir, center, normal);
+    @include LibMixin.f-prop($dir, center, normal);
 }
 
 // @mixin flex-center-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-center
 
 @mixin flex-center-stretch($dir: row) {
-    @include f.f-prop($dir, center, stretch);
+    @include LibMixin.f-prop($dir, center, stretch);
 }
 
 // @mixin flex-center-start
@@ -79,7 +79,7 @@
 // @module flexbox-center
 
 @mixin flex-center-start($dir: row) {
-    @include f.f-prop($dir, center, start);
+    @include LibMixin.f-prop($dir, center, start);
 }
 
 // @mixin flex-center-end
@@ -87,7 +87,7 @@
 // @module flexbox-center
 
 @mixin flex-center-end($dir: row) {
-    @include f.f-prop($dir, center, end);
+    @include LibMixin.f-prop($dir, center, end);
 }
 
 // @mixin flex-center-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-center
 
 @mixin flex-center-fstart($dir: row) {
-    @include f.f-prop($dir, center, flex-start);
+    @include LibMixin.f-prop($dir, center, flex-start);
 }
 
 // @mixin flex-center-fend
@@ -103,7 +103,7 @@
 // @module flexbox-center
 
 @mixin flex-center-fend($dir: row) {
-    @include f.f-prop($dir, center, flex-end);
+    @include LibMixin.f-prop($dir, center, flex-end);
 }
 
 // @mixin flex-center-center
@@ -111,7 +111,7 @@
 // @module flexbox-center
 
 @mixin flex-center-center($dir: row) {
-    @include f.f-prop($dir, center, center);
+    @include LibMixin.f-prop($dir, center, center);
 }
 
 // @mixin flex-center-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-center
 
 @mixin flex-center-baseline($dir: row) {
-    @include f.f-prop($dir, center, baseline);
+    @include LibMixin.f-prop($dir, center, baseline);
 }
 
 // @mixin flex-center-inh
@@ -127,5 +127,5 @@
 // @module flexbox-center
 
 @mixin flex-center-inh($dir: row) {
-    @include f.f-prop($dir, center, inherit);
+    @include LibMixin.f-prop($dir, center, inherit);
 }

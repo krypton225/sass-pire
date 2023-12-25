@@ -46,7 +46,7 @@
 // *   order: 2;
 // * }
 
-@use "../../../functions/global/cut-unit" as func;
+@use "../../../functions/global/cut-unit" as LibFunc;
 
 @mixin order($value: 0) {
     $order-props: (
@@ -64,7 +64,7 @@
         @error "The value of order mixin argument must be of type number.";
     }
 
-    $actual-val: func.cut-unit($value);
+    $actual-val: LibFunc.cut-unit($value);
 
     @each $prop in $order-props {
         #{$prop}: $actual-val;

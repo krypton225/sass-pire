@@ -46,7 +46,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
@@ -68,7 +68,7 @@
         @return Error.toggle("The px-to-in function accepts argument with pixel unit only.");
     }
 
-    $actual-number: func.cut-unit($px-val);
+    $actual-number: LibFunc.cut-unit($px-val);
     // stylelint-disable-next-line number-max-precision
     $final-result: Approx.of($actual-number * 0.0104166666666667in);
 

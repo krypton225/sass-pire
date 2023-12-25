@@ -55,7 +55,7 @@
 // * You can use one of them as you want.
 
 @use "sass:list";
-@use "../../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin align-self($value: auto) {
     $align-self-props: (
@@ -87,7 +87,7 @@
         @error "$value of align-self argument must be of type string.";
     }
 
-    @if func.is-in-list($align-self-values, $value) {
+    @if LibFunc.is-in-list($align-self-values, $value) {
         @each $prop in $align-self-props {
             #{$prop}: $value;
         }

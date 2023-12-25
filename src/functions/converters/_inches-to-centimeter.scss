@@ -46,7 +46,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
@@ -68,7 +68,7 @@
         @return Error.toggle("The in-to-cm function accepts argument with inch unit only.");
     }
 
-    $actual-number: func.cut-unit($inches-val);
+    $actual-number: LibFunc.cut-unit($inches-val);
     $final-result: Approx.of(($actual-number * 2.54cm));
 
     @return $final-result;

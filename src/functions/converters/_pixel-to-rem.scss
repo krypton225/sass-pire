@@ -48,7 +48,7 @@
 @use "sass:meta";
 @use "sass:math";
 @use "../../abstract/variables" as var;
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
@@ -66,5 +66,5 @@
         @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
-    @return Approx.of(calc(func.cut-unit($px-val) / var.$base-font-size)) + rem;
+    @return Approx.of(calc(LibFunc.cut-unit($px-val) / var.$base-font-size)) + rem;
 }

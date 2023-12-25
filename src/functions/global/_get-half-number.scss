@@ -50,7 +50,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "cut-unit" as func;
+@use "cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function half($number) {
@@ -59,7 +59,7 @@
     }
 
     @if not unitless($number) {
-        $num-after-cut-unit: func.cut-unit($number);
+        $num-after-cut-unit: LibFunc.cut-unit($number);
         $unit-of-number: math.unit($number);
 
         @return unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");

@@ -57,7 +57,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 
 @use "sass:list";
-@use "../../../functions/global" as func;
+@use "../../../functions/global" as LibFunc;
 
 @mixin flex-shrink($value) {
     $flex-shrink-props: (
@@ -71,7 +71,7 @@
 
     $flex-shrink-values: (initial, inherit) !default;
 
-    @if type-of($value) == string and not func.is-in-list($flex-shrink-values, $value) {
+    @if type-of($value) == string and not LibFunc.is-in-list($flex-shrink-values, $value) {
         @error "$value is not a valid value for flex-shrink. Allowed string values: #{$flex-shrink-values}.";
     }
 
@@ -81,7 +81,7 @@
 
     @each $prop in $flex-shrink-props {
         // stylelint-disable-next-line scss/no-global-function-names
-        #{$prop}: if(type-of($value) == string, $value, func.cut-unit($value));
+        #{$prop}: if(type-of($value) == string, $value, LibFunc.cut-unit($value));
     }
 }
 
