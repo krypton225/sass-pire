@@ -45,7 +45,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function in-to-px($inches-val) {
@@ -66,7 +66,7 @@
         @return Error.toggle("The in-to-px function accepts argument with inch unit only.");
     }
 
-    $actual-number: func.cut-unit($inches-val);
+    $actual-number: LibFunc.cut-unit($inches-val);
 
     @return $actual-number * 96px;
 }

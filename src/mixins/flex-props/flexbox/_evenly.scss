@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-even-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-evenly
 
 @mixin flex-even-normal($dir: row) {
-    @include f.f-prop($dir, space-evenly, normal);
+    @include LibMixin.f-prop($dir, space-evenly, normal);
 }
 
 // @mixin flex-even-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-stretch($dir: row) {
-    @include f.f-prop($dir, space-evenly, stretch);
+    @include LibMixin.f-prop($dir, space-evenly, stretch);
 }
 
 // @mixin flex-even-start
@@ -79,7 +79,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-start($dir: row) {
-    @include f.f-prop($dir, space-evenly, start);
+    @include LibMixin.f-prop($dir, space-evenly, start);
 }
 
 // @mixin flex-even-end
@@ -87,7 +87,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-end($dir: row) {
-    @include f.f-prop($dir, space-evenly, end);
+    @include LibMixin.f-prop($dir, space-evenly, end);
 }
 
 // @mixin flex-even-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-fstart($dir: row) {
-    @include f.f-prop($dir, space-evenly, flex-start);
+    @include LibMixin.f-prop($dir, space-evenly, flex-start);
 }
 
 // @mixin flex-even-fend
@@ -103,7 +103,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-fend($dir: row) {
-    @include f.f-prop($dir, space-evenly, flex-end);
+    @include LibMixin.f-prop($dir, space-evenly, flex-end);
 }
 
 // @mixin flex-even-center
@@ -111,7 +111,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-center($dir: row) {
-    @include f.f-prop($dir, space-evenly, center);
+    @include LibMixin.f-prop($dir, space-evenly, center);
 }
 
 // @mixin flex-even-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-evenly
 
 @mixin flex-even-baseline($dir: row) {
-    @include f.f-prop($dir, space-evenly, baseline);
+    @include LibMixin.f-prop($dir, space-evenly, baseline);
 }
 
 // @mixin flex-even-inh
@@ -127,5 +127,5 @@
 // @module flexbox-evenly
 
 @mixin flex-even-inh($dir: row) {
-    @include f.f-prop($dir, space-evenly, inherit);
+    @include LibMixin.f-prop($dir, space-evenly, inherit);
 }

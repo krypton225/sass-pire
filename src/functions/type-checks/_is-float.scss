@@ -35,19 +35,19 @@
 // @example
 // * .example {
 // *   content: is-float(12.66deg);
-// * };
+// * }
 
 // @output
 // * .example {
 // *   content: true;
-// * };
+// * }
 
 // @returns {boolean} - True if it is a floating-point number,
 // * false if not.
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function is-float($value) {
@@ -56,7 +56,7 @@
     }
 
     $flag: false;
-    $actual-number: func.cut-unit($value);
+    $actual-number: LibFunc.cut-unit($value);
 
     @if $actual-number % 1 != 0 {
         $flag: true;

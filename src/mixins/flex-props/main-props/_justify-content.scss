@@ -51,7 +51,7 @@
 // * You can use one of them as you want.
 
 @use "sass:list";
-@use "../../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin justify-content($value: flex-start) {
     $justify-content-props: (
@@ -79,7 +79,7 @@
         inherit
     ) !default;
 
-    @if func.is-in-list($justify-content-values, $value) {
+    @if LibFunc.is-in-list($justify-content-values, $value) {
         @each $prop in $justify-content-props {
             #{$prop}: $value;
         }

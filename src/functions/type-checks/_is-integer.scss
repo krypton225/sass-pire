@@ -36,16 +36,16 @@
 // @example
 // * .example {
 // *   content: is-int(12deg);
-// * };
+// * }
 
 // @output
 // * .example {
 // *   content: true;
-// * };
+// * }
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function is-int($value) {
@@ -54,7 +54,7 @@
     }
 
     $flag: false;
-    $actual-number: func.cut-unit($value);
+    $actual-number: LibFunc.cut-unit($value);
 
     @if math.round($actual-number) == $actual-number {
         $flag: true;

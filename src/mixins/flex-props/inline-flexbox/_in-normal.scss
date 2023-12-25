@@ -57,14 +57,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/inflex-prop" as f;
+@use "../main-props/inflex-prop" as LibMixin;
 
 // @mixin inflex-normal-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-normal($dir: row) {
-    @include f.inflex-prop($dir, normal, normal);
+    @include LibMixin.inflex-prop($dir, normal, normal);
 }
 
 // @mixin inflex-normal-stretch
@@ -72,7 +72,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-stretch($dir: row) {
-    @include f.inflex-prop($dir, normal, stretch);
+    @include LibMixin.inflex-prop($dir, normal, stretch);
 }
 
 // @mixin inflex-normal-start
@@ -80,7 +80,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-start($dir: row) {
-    @include f.inflex-prop($dir, normal, start);
+    @include LibMixin.inflex-prop($dir, normal, start);
 }
 
 // @mixin inflex-normal-end
@@ -88,7 +88,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-end($dir: row) {
-    @include f.inflex-prop($dir, normal, end);
+    @include LibMixin.inflex-prop($dir, normal, end);
 }
 
 // @mixin inflex-normal-fstart
@@ -96,7 +96,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-fstart($dir: row) {
-    @include f.inflex-prop($dir, normal, flex-start);
+    @include LibMixin.inflex-prop($dir, normal, flex-start);
 }
 
 // @mixin inflex-normal-fend
@@ -104,7 +104,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-fend($dir: row) {
-    @include f.inflex-prop($dir, normal, flex-end);
+    @include LibMixin.inflex-prop($dir, normal, flex-end);
 }
 
 // @mixin inflex-normal-center
@@ -112,7 +112,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-center($dir: row) {
-    @include f.inflex-prop($dir, normal, center);
+    @include LibMixin.inflex-prop($dir, normal, center);
 }
 
 // @mixin inflex-normal-baseline
@@ -120,7 +120,7 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-baseline($dir: row) {
-    @include f.inflex-prop($dir, normal, baseline);
+    @include LibMixin.inflex-prop($dir, normal, baseline);
 }
 
 // @mixin inflex-normal-inh
@@ -128,5 +128,5 @@
 // @module inline-flexbox-normal
 
 @mixin inflex-normal-inh($dir: row) {
-    @include f.inflex-prop($dir, normal, inherit);
+    @include LibMixin.inflex-prop($dir, normal, inherit);
 }

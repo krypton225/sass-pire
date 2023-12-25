@@ -59,7 +59,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "flatten-list" as func;
+@use "flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function center-of-list($list: ()) {
@@ -71,7 +71,7 @@
         @return 0;
     }
 
-    $flatten-list: func.flatten($list);
+    $flatten-list: LibFunc.flatten($list);
     $flatten-list-length: list.length($flatten-list);
 
     @if $flatten-list-length % 2 == 0 {

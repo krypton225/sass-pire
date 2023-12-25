@@ -61,7 +61,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "../../abstract/variables" as var;
-@use "flatten-list" as func;
+@use "flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function get-last-from($list: ()) {
@@ -81,7 +81,7 @@
         }
     }
 
-    $new-list: func.flatten($list);
+    $new-list: LibFunc.flatten($list);
 
     @return nth($new-list, length($new-list));
 }

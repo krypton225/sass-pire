@@ -44,7 +44,7 @@
 
 @use "sass:meta";
 @use "sass:list";
-@use "./flatten-list" as func;
+@use "./flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function merge($lists...) {
@@ -55,7 +55,7 @@
             @return Error.toggle("The parameter of merge function must be in a list type.");
         }
 
-        $flatten-one-list: func.flatten($value);
+        $flatten-one-list: LibFunc.flatten($value);
         $merged-list: list.join($merged-list, $flatten-one-list, space);
     }
 

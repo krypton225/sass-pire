@@ -55,7 +55,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function dec-to-ptg($dec-value: 0) {
@@ -67,7 +67,7 @@
         @return Error.toggle("The parameter value should be smaller than 1.");
     }
 
-    $value-without-unit: func.cut-unit($dec-value);
+    $value-without-unit: LibFunc.cut-unit($dec-value);
 
     @if $dec-value == 0 {
         @return $value-without-unit;

@@ -59,7 +59,7 @@
 
 @use "sass:list";
 @use "sass:math";
-@use "../../../functions/global" as func;
+@use "../../../functions/global" as LibFunc;
 
 @mixin flex-basis($value: auto) {
     $flex-basis-props: (
@@ -77,14 +77,14 @@
 
     @if type-of($value) == string or type-of($value) == number {
         @if type-of($value) == string {
-            @if func.is-in-list($flex-basis-values, $value) {
+            @if LibFunc.is-in-list($flex-basis-values, $value) {
                 @each $prop in $flex-basis-props {
                     #{$prop}: $value;
                 }
             }
         }
 
-        @if type-of($value) == number and func.cut-unit($value) != 0 {
+        @if type-of($value) == number and LibFunc.cut-unit($value) != 0 {
             @if unitless($value) {
                 @error "Please, Enter the unit of $value argument. It must be one of these units (#{$flex-basis-values})";
             }

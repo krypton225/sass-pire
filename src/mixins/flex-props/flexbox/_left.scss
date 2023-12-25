@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-left-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-left
 
 @mixin flex-left-normal($dir: row) {
-    @include f.f-prop($dir, left, normal);
+    @include LibMixin.f-prop($dir, left, normal);
 }
 
 // @mixin flex-left-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-left
 
 @mixin flex-left-stretch($dir: row) {
-    @include f.f-prop($dir, left, stretch);
+    @include LibMixin.f-prop($dir, left, stretch);
 }
 
 // @mixin flex-left-start
@@ -79,7 +79,7 @@
 // @module flexbox-left
 
 @mixin flex-left-start($dir: row) {
-    @include f.f-prop($dir, left, start);
+    @include LibMixin.f-prop($dir, left, start);
 }
 
 // @mixin flex-left-end
@@ -87,7 +87,7 @@
 // @module flexbox-left
 
 @mixin flex-left-end($dir: row) {
-    @include f.f-prop($dir, left, end);
+    @include LibMixin.f-prop($dir, left, end);
 }
 
 // @mixin flex-left-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-left
 
 @mixin flex-left-fstart($dir: row) {
-    @include f.f-prop($dir, left, flex-start);
+    @include LibMixin.f-prop($dir, left, flex-start);
 }
 
 // @mixin flex-left-fend
@@ -103,7 +103,7 @@
 // @module flexbox-left
 
 @mixin flex-left-fend($dir: row) {
-    @include f.f-prop($dir, left, flex-end);
+    @include LibMixin.f-prop($dir, left, flex-end);
 }
 
 // @mixin flex-left-center
@@ -111,7 +111,7 @@
 // @module flexbox-left
 
 @mixin flex-left-center($dir: row) {
-    @include f.f-prop($dir, left, center);
+    @include LibMixin.f-prop($dir, left, center);
 }
 
 // @mixin flex-left-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-left
 
 @mixin flex-left-baseline($dir: row) {
-    @include f.f-prop($dir, left, baseline);
+    @include LibMixin.f-prop($dir, left, baseline);
 }
 
 // @mixin flex-left-inh
@@ -127,5 +127,5 @@
 // @module flexbox-left
 
 @mixin flex-left-inh($dir: row) {
-    @include f.f-prop($dir, left, inherit);
+    @include LibMixin.f-prop($dir, left, inherit);
 }
