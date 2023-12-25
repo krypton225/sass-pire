@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.3.1
+// @version 1.4.1
 
 // @author Khaled Mohamed
 
@@ -22,6 +22,7 @@
 // @module laptops/laptop-general
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
@@ -63,13 +64,14 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:meta";
 @use "sass:list";
 @use "../../../../functions/global/is-in-list" as func;
 @use "../../../../functions/list/merge" as sp-list;
 @use "../../../../development-utils/toggle-error-message" as Error;
 
 @mixin laptop-general($retina-value) {
-    @if type-of($retina-value) != string {
+    @if meta.type-of($retina-value) != string {
         content: Error.toggle("The parameter of laptop-general mixin must be in a string type.");
     }
 
