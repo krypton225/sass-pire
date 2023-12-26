@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,8 @@
 // @module main-props/align-self
 
 // @dependencies:
-// * - is-in-list (function).
+// * - meta.type-of (SASS function).
+// * - LibFunc.is-in-list (function).
 
 // @param {String} $val
 // * The value for the `align-self` property.
@@ -54,7 +55,7 @@
 // * The core logic of (a-s) mixin is to call the first one.
 // * You can use one of them as you want.
 
-@use "sass:list";
+@use "sass:meta";
 @use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin align-self($value: auto) {
@@ -83,7 +84,7 @@
         inherit
     ) !default;
 
-    @if type-of($value) != string {
+    @if meta.type-of($value) != string {
         @error "$value of align-self argument must be of type string.";
     }
 

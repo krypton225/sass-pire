@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,7 @@
 // @module main-props/flex-dir
 
 // @dependencies:
-// * - is-in-list (function).
+// * - LibFunc.is-in-list (function).
 
 // @param {String} $value
 // * The value for the `flex-direction` property.
@@ -58,8 +58,6 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 // stylelint-disable scss/no-global-function-names
 
-@use "sass:list";
-@use "sass:map";
 @use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin flex-dir($value: row) {

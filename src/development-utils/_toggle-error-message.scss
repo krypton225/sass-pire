@@ -7,7 +7,7 @@
 
 // @access private
 
-// @version 1.1.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -21,8 +21,8 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - $test-environment (variable).
-// * - err (function).
+// * - var.$test-environment (variable).
+// * - Dev.err (function).
 
 // @param {String} $message
 // * The error message to be printed as expected value.

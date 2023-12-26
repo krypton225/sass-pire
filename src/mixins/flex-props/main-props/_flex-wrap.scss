@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -22,8 +22,8 @@
 // @dependencies:
 // * - map.keys (SASS function).
 // * - map.get (SASS function).
-// * - prefix.prefixing-ms (mixin).
-// * - is-in-list (function).
+// * - LibMixin.prefixing-ms (mixin).
+// * - LibFunc.is-in-list (function).
 
 // @param {String} $val
 // * The value for the `flex-wrap` property.
@@ -56,8 +56,6 @@
 
 // stylelint-disable scss/dollar-variable-empty-line-before
 
-@use "sass:list";
-@use "sass:math";
 @use "../../vendor-prefixes/prefix" as LibMixin;
 @use "../../../functions/global/is-in-list" as LibFunc;
 

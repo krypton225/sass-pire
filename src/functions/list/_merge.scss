@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.4.0
+// @version 1.5.0
 
 // @author Khaled Mohamed
 
@@ -21,8 +21,8 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - list.join (SASS function).
-// * - flatten-list (function).
-// * - toggle (function).
+// * - LibFunc.flatten-list (function).
+// * - Error.toggle (function).
 
 // @param {List} $list...
 // * A group of lists that may contain nested lists.

@@ -55,7 +55,7 @@
 // * You can use one of them as you want.
 
 @use "sass:list";
-@use "../../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin mq-general($type: min, $dimension: w, $breakpoint-name: md) {
     $main-mq-types: (min, max) !default;
@@ -83,7 +83,7 @@
         "xxl": 3000px
     ) !default;
 
-    @if func.is-in-list($main-mq-types, $type) and func.is-in-list($main-dimensions, $dimension) {
+    @if LibFunc.is-in-list($main-mq-types, $type) and LibFunc.is-in-list($main-dimensions, $dimension) {
         @if map-has-key($breakpoints, $breakpoint-name) {
             $actual-dimension: map_get($breakpoints, $breakpoint-name);
 

@@ -65,7 +65,7 @@
 // stylelint-disable scss/operator-no-newline-after
 
 @use "sass:meta";
-@use "../../../../../functions/global/is-in-list" as func;
+@use "../../../../../functions/global/is-in-list" as LibFunc;
 @use "../../../../../development-utils/toggle-error-message" as Error;
 
 @mixin iphone-6p($orientation-type: portrait) {
@@ -78,7 +78,7 @@
     $max-device-width: 736px !default;
     $min-device-pixel-ratio: 2 !default;
 
-    @if func.is-in-list($all-orientations-types, $orientation-type) {
+    @if LibFunc.is-in-list($all-orientations-types, $orientation-type) {
         @if $orientation-type == landscape or $orientation-type == land or $orientation-type == l {
             @media only screen and (min-device-width: $min-device-width) and (max-device-width: $max-device-width) and (-webkit-min-device-pixel-ratio: $min-device-pixel-ratio) and (orientation: landscape) {
                 @content;

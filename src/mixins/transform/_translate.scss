@@ -27,7 +27,7 @@
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $main-units (variable).
-// * - pref.prefixing-all (mixin).
+// * - LibMixin.prefixing-all (mixin).
 // * - toggle (function).
 
 // @param {Number|String} $x
@@ -59,7 +59,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as pref;
+@use "../vendor-prefixes/prefix" as LibMixin;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @mixin translate($x: 1px, $y: $x) {
@@ -112,11 +112,11 @@
                 "The parameter of translate mixin must has one of these units: (#{$main-units})."
             );
         } @else {
-            @include pref.prefixing-all(transform, translate($x, $y));
+            @include LibMixin.prefixing-all(transform, translate($x, $y));
         }
     } @else if meta.type-of($x) == string and meta.type-of($y) == string {
         @if index($transform-props-values, $x) and index($transform-props-values, $y) {
-            @include pref.prefixing-all(transform, translate($x, $y));
+            @include LibMixin.prefixing-all(transform, translate($x, $y));
         } @else {
             content: Error.toggle(
                 "The parameter of translate mixin must has one of these values: (#{$transform-props-values})."
@@ -124,7 +124,7 @@
         }
     } @else if meta.type-of($x) == number and meta.type-of($y) == string {
         @if index($main-units, math.unit($x)) and index($transform-props-values, $y) {
-            @include pref.prefixing-all(transform, translate($x, $y));
+            @include LibMixin.prefixing-all(transform, translate($x, $y));
         } @else {
             content: Error.toggle(
                 "The parameter of translate mixin must has one of these units: (#{$main-units})."
@@ -132,7 +132,7 @@
         }
     } @else if meta.type-of($x) == string and meta.type-of($y) == number {
         @if index($main-units, math.unit($y)) and index($transform-props-values, $x) {
-            @include pref.prefixing-all(transform, translate($x, $y));
+            @include LibMixin.prefixing-all(transform, translate($x, $y));
         } @else {
             content: Error.toggle(
                 "The parameter of translate mixin must has one of these units: (#{$main-units})."

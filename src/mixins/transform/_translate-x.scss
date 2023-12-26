@@ -26,7 +26,7 @@
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $main-units (variable).
-// * - pref.prefixing-all (mixin).
+// * - LibMixin.prefixing-all (mixin).
 // * - toggle (function).
 
 // @param {Number|String} $x
@@ -52,8 +52,8 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as pref;
 @use "../../abstract" as var;
+@use "../vendor-prefixes/prefix" as LibMixin;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @mixin translate-x($x: 1px) {
@@ -65,7 +65,7 @@
                 "The parameter of translate-x mixin must has one of these units: (#{var.$main-units})."
             );
         } @else {
-            @include pref.prefixing-all(transform, translateX($x));
+            @include LibMixin.prefixing-all(transform, translateX($x));
         }
     } @else if meta.type-of($x) == string {
         @if not index($transform-props-values, $x) {
@@ -73,7 +73,7 @@
                 "The parameter of translate-x mixin must has one of these values: (#{$transform-props-values})."
             );
         } @else {
-            @include pref.prefixing-all(transform, translateX($x));
+            @include LibMixin.prefixing-all(transform, translateX($x));
         }
     } @else {
         content: Error.toggle("The value of translate-x mixin must be in a number or a string type.");
