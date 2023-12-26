@@ -22,7 +22,7 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - var.$test-environment (variable).
+// * - Config.$test-environment (config variable).
 
 // @update We updated the function with validations
 
@@ -45,7 +45,7 @@
 // @return {String} - Returns the provided error message.
 
 @use "sass:meta";
-@use "../abstract/variables" as var;
+@use "../abstract/config" as Config;
 
 @function err($message) {
     @if meta.type-of($message) != string {
@@ -54,7 +54,7 @@
 
     $testing-message: "";
 
-    @if var.$test-environment {
+    @if Config.$test-environment {
         $testing-message: "ERROR: #{$message}";
     }
 

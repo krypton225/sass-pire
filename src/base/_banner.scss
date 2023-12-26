@@ -30,16 +30,16 @@
 
 // stylelint-disable comment-empty-line-before
 
-@use "../abstract/variables" as var;
+@use "../abstract/config" as Config;
 
 @mixin banner() {
     /*
-        ***** #{var.$lib-name} library v0.0.1
+        ***** #{Config.$lib-name} library v0.0.1
 
-        ***** Copyright 2023 for #{var.$lib-name} authors.
+        ***** Copyright 2023 for #{Config.$lib-name} authors.
 
         ***** Author(s):
-        ***** #{var.$author-names}.
+        ***** #{Config.$author-names}.
 
         ***** Licensed under MIT.
      */
