@@ -19,7 +19,7 @@
 // @module converters/px-to-rem
 
 // @dependencies:
-// * - var.$base-font-size (variable).
+// * - Config.$base-font-size (config variable).
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - LibFunc.cut-unit (function).
@@ -47,7 +47,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../../abstract/variables" as var;
+@use "../../abstract/config" as Config;
 @use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
@@ -66,5 +66,5 @@
         @return Error.toggle("The parameter dose not need a unit if it equals to zero.");
     }
 
-    @return Approx.of(calc(LibFunc.cut-unit($px-val) / var.$base-font-size)) + rem;
+    @return Approx.of(calc(LibFunc.cut-unit($px-val) / Config.$base-font-size)) + rem;
 }
