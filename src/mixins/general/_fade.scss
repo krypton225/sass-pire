@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,9 @@
 // @module general/fade
 
 // @dependencies:
-// * - is-in-list (function).
+// * - meta.type-of (SASS function).
+// * - list.index (SASS function).
+// * - Error.toggle (function).
 
 // @param {String} $type - The type of fade effect. Possible values are:
 // * - "hide" or "no": Sets visibility to hidden and opacity to 0.
@@ -28,7 +30,7 @@
 
 // @example
 // * .example {
-// *    @include fade("hide");
+// *    @include fade(hide);
 // * }
 
 // @output
@@ -37,21 +39,30 @@
 // *   opacity: 0;
 // * }
 
+@use "sass:meta";
 @use "sass:list";
-@use "../../functions/global/is-in-list" as func;
+@use "../../development-utils/toggle-error-message" as Error;
 
 @mixin fade($type: show) {
-    $fade-values: (hide, show, yes, no) !default;
+    @if meta.type-of($type) != string {
+        content: Error.toggle("The parameters of fade mixin must be in a string type.");
+    } @else {
+        $fade-values: (hide, show, yes, no) !default;
 
-    @if func.is-in-list($fade-values, $type) {
-        @if $type == "hide" or $type == "no" {
-            visibility: hidden;
-            opacity: 0;
-        } @else if $type == "show" or $type == "yes" {
-            visibility: visible;
-            opacity: 1;
+        @if list.index($fade-values, $type) {
+            @if $type == "hide" or $type == "no" {
+                visibility: hidden;
+                opacity: 0;
+            } @else if $type == "show" or $type == "yes" {
+                visibility: visible;
+                opacity: 1;
+            } @else {
+                content: Error.toggle(
+                    "The type parameter of fade mixin must be one of these values: (#{$fade-values})."
+                );
+            }
         } @else {
-            @error "You must pass a value to fade mixin. It must receive one of these values: (#{var.$fade-values})";
+            content: Error.toggle("The type parameter of fade mixin must be one of these values: (#{$fade-values}).");
         }
     }
 }
