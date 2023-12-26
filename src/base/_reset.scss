@@ -13,9 +13,9 @@
 
 // @repository: https://github.com/krypton225/sass-pire
 
-@use "../mixins/vendor-prefixes/prefix" as pref;
-@use "../base/banner" as b;
-@include b.banner;
+@use "../mixins/vendor-prefixes/prefix" as LibMixin1;
+@use "../base/banner" as LibMixin2;
+@include LibMixin2.banner;
 
 // * Box sizing rules.
 *,
@@ -93,9 +93,9 @@ select {
     *,
     *::before,
     *::after {
-        @include pref.prefixing-web(animation-duration, 0.01ms);
-        @include pref.prefixing-web(animation-iteration-count, 1);
-        @include pref.prefixing-web-o(transition-duration, 0.01ms);
+        @include LibMixin1.prefixing-web(animation-duration, 0.01ms);
+        @include LibMixin1.prefixing-web(animation-iteration-count, 1);
+        @include LibMixin1.prefixing-web-o(transition-duration, 0.01ms);
 
         scroll-behavior: smooth;
     }
