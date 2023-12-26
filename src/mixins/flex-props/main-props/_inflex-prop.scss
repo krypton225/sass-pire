@@ -8,7 +8,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -21,10 +21,10 @@
 // @module main-props/inflex-prop
 
 // @dependencies:
-// * - inflex (mixin).
-// * - flex-direction (mixin).
-// * - justify-content (mixin).
-// * - align-items (mixin).
+// * - f.inflex (mixin).
+// * - dir.flex-direction (mixin).
+// * - jc.justify-content (mixin).
+// * - ai.align-items (mixin).
 
 // @param {String} $f-dir
 // * The flex-direction value. Default: row.

@@ -73,8 +73,8 @@
 
 @use "sass:meta";
 @use "sass:list";
-@use "../../../../../functions/global/is-in-list" as func;
-@use "../../../../../functions/list/merge" as sp;
+@use "../../../../../functions/global/is-in-list" as LibFunc1;
+@use "../../../../../functions/list/merge" as LibFunc2;
 @use "../../../../../development-utils/toggle-error-message" as Error;
 
 @mixin iphone-8($orientation-type: portrait) {
@@ -84,7 +84,7 @@
 
     $landscape-values: (landscape, land, l) !default;
     $portrait-values: (portrait, port, p, "") !default;
-    $all-orientations-types: sp.merge($landscape-values, $portrait-values) !default;
+    $all-orientations-types: LibFunc2.merge($landscape-values, $portrait-values) !default;
     $min-device-width: 375px !default;
     $max-device-width: 667px !default;
     $min-device-pixel-ratio: 2 !default;
@@ -96,7 +96,7 @@
             @content;
         }
     } @else {
-        @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if LibFunc1.is-in-list($all-orientations-types, $orientation-type) {
             @if list.index($landscape-values, $orientation-type) {
                 @media only screen and (min-device-width: $min-device-width)
                     and (max-device-width: $max-device-width)

@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.2.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,8 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - toggle (function).
+// * - list.index (SASS function).
+// * - Error.toggle (function).
 
 // @param {string} $val
 // * The provided value of the position.

@@ -23,7 +23,7 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - pref.prefixing-all (mixin).
+// * - LibMixin.prefixing-all (mixin).
 // * - toggle (function).
 
 // @param {Number|String} $x
@@ -55,7 +55,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as pref;
+@use "../vendor-prefixes/prefix" as LibMixin;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @mixin scale($x: 1px, $y: $x) {
@@ -106,11 +106,11 @@
         @if not index($main-units, math.unit($x)) or not index($main-units, math.unit($y)) {
             content: Error.toggle("The parameter of scale mixin must has one of these units: (#{$main-units}).");
         } @else {
-            @include pref.prefixing-all(transform, scale($x, $y));
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
         }
     } @else if meta.type-of($x) == string and meta.type-of($y) == string {
         @if index($transform-props-values, $x) and index($transform-props-values, $y) {
-            @include pref.prefixing-all(transform, scale($x, $y));
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
         } @else {
             content: Error.toggle(
                 "The parameter of scale mixin must has one of these values: (#{$transform-props-values})."
@@ -118,13 +118,13 @@
         }
     } @else if meta.type-of($x) == number and meta.type-of($y) == string {
         @if index($main-units, math.unit($x)) and index($transform-props-values, $y) {
-            @include pref.prefixing-all(transform, scale($x, $y));
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
         } @else {
             content: Error.toggle("The parameter x of scale mixin must has one of these units: (#{$main-units}).");
         }
     } @else if meta.type-of($x) == string and meta.type-of($y) == number {
         @if index($main-units, math.unit($y)) and index($transform-props-values, $x) {
-            @include pref.prefixing-all(transform, scale($x, $y));
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
         } @else {
             content: Error.toggle("The parameter y of scale mixin must has one of these units: (#{$main-units}).");
         }

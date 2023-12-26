@@ -8,7 +8,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -21,10 +21,10 @@
 // @module main-props/f-prop
 
 // @dependencies:
-// * - d-flex (mixin).
-// * - flex-direction (mixin).
-// * - justify-content (mixin).
-// * - align-items (mixin).
+// * - f.d-flex (mixin).
+// * - dir.flex-direction (mixin).
+// * - jc.justify-content (mixin).
+// * - ai.align-items (mixin).
 
 // @param {String} $f-dir
 // * The flex direction value.

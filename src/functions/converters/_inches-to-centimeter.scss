@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.5.2
+// @version 1.6.2
 
 // @author Khaled Mohamed
 
@@ -21,9 +21,9 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
-// * - cut-unit (function).
-// * - approx (function).
-// * - toggle (function).
+// * - LibFunc.cut-unit (function).
+// * - Approx.approx (function).
+// * - Error.toggle (function).
 
 // @param {Number} $inches-val
 // * The value in inches unit to convert.

@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.2.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -21,8 +21,10 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
-// * - cut-unit (function).
-// * - toggle (function).
+// * - math.unitless (SASS function).
+// * - string.unquote (SASS function).
+// * - LibFunc.cut-unit (function).
+// * - Error.toggle (function).
 
 // @param {Number} $number
 // * The number to calculate the half of.

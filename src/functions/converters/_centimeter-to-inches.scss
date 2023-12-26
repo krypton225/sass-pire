@@ -21,9 +21,9 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
-// * - cut-unit (function).
-// * - approx (function).
-// * - toggle (function).
+// * - LibFunc.cut-unit (function).
+// * - Approx.approx (function).
+// * - Error.toggle (function).
 
 // @param {Number} $cm-val
 // * The value in centimeter unit to convert into inch.

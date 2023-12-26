@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.3.1
+// @version 1.4.1
 
 // @author Khaled Mohamed
 
@@ -20,8 +20,8 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - cut-unit (function).
-// * - toggle (function).
+// * - LibFunc.cut-unit (function).
+// * - Error.toggle (function).
 
 // @param {Number} $ptg-value
 // * The decimal value to be converted into percentage.
