@@ -17,3 +17,9 @@
 // * please see testing `cut-unit` function for details.
 // @see cut-unit
 @forward "cut-unit.test";
+
+// * half forward.
+// * forwarding the testing half function.
+// * please see testing `half` function for details.
+// @see half
+@forward "get-half-number.test";

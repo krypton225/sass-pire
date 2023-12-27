@@ -61,7 +61,6 @@
     }
 
     @if LibFunc.cut-unit($number) == 0 {
-        @debug math.unit($number);
         @return 0;
     }
 
