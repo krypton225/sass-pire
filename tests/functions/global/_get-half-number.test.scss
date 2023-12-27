@@ -1,0 +1,55 @@
+@charset "UTF-8";
+
+// @description
+// * half function.
+// * This module tests a functionality of half function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/get-half-number.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/global/get-half-number" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-half-map: (
+    0: 0,
+    0px: 0,
+    344px: "172px",
+    -0.5px: "-0.25px",
+    -92rem: "-46rem",
+    94vh: "47vh",
+    80px: "40px",
+    5.82px: "2.91px",
+    212px: "106px",
+    "Just a number": dev.err("The parameter of half function must be in a number type."),
+    true: dev.err("The parameter of half function must be in a number type."),
+    false: dev.err("The parameter of half function must be in a number type."),
+    (1, 2, 4): dev.err("The parameter of half function must be in a number type.")
+);
+
+@each $case, $result in $test-cases-half-map {
+    @include describe("[Function] half(#{$case}), Result: #{$result}") {
+        @include it("Cut the unit of (#{$case}) value.") {
+            @include assert-equal(func.half($case), $result);
+        }
+    }
+}
