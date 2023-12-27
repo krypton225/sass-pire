@@ -52,7 +52,7 @@
     $flag: true !default;
 
     @if meta.type-of($val) != string {
-        @return Error.toggle("Argument of has-pos function must be of type string.");
+        @return Error.toggle("The parameter of has-pos function must be in a string type.");
     }
 
     @if not list.index($position-values, $val) {
