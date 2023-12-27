@@ -57,7 +57,12 @@
 
 @function half($number) {
     @if meta.type-of($number) != number {
-        @return Error.toggle("You must pass a value in type number to cut-unit function.");
+        @return Error.toggle("The parameter of half function must be in a number type.");
+    }
+
+    @if LibFunc.cut-unit($number) == 0 {
+        @debug math.unit($number);
+        @return 0;
     }
 
     @if not unitless($number) {
@@ -68,4 +73,8 @@
     }
 
     @return calc($number / 2);
+}
+
+.example {
+    font-size: half(10rem);
 }
