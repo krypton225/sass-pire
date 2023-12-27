@@ -1,0 +1,59 @@
+@charset "UTF-8";
+
+// @description
+// * has-pos function.
+// * This module tests a functionality of has-pos function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace converters
+
+// @module converters/has-position.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+// stylelint-disable number-max-precision
+
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/global/has-position" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-has-position-map: (
+    0: dev.err("The parameter of has-pos function must be in a string type."),
+    bottom-right: false,
+    0px: dev.err("The parameter of has-pos function must be in a string type."),
+    344px: dev.err("The parameter of has-pos function must be in a string type."),
+    -0.5px: dev.err("The parameter of has-pos function must be in a string type."),
+    left: true,
+    -92rem: dev.err("The parameter of has-pos function must be in a string type."),
+    94vh: dev.err("The parameter of has-pos function must be in a string type."),
+    top: true,
+    80px: dev.err("The parameter of has-pos function must be in a string type."),
+    bottom: true,
+    5.82px: dev.err("The parameter of has-pos function must be in a string type."),
+    "Just a string": false,
+    212px: dev.err("The parameter of has-pos function must be in a string type."),
+    true: dev.err("The parameter of has-pos function must be in a string type."),
+    false: dev.err("The parameter of has-pos function must be in a string type."),
+    (1, 2, 4): dev.err("The parameter of has-pos function must be in a string type.")
+);
+
+@each $case, $result in $test-cases-has-position-map {
+    @include describe("[Function] has-pos(#{$case}), Result: #{$result}") {
+        @include it("has-pos(#{$case}) value.") {
+            @include assert-equal(func.has-pos($case), $result);
+        }
+    }
+}
