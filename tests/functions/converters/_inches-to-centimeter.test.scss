@@ -19,16 +19,17 @@
 // @module converters/in-to-cm.test
 
 // @dependencies:
-// * - true.describe (true function).
-// * - true.it (true function).
-// * - true.assert-equal (true function).
+// * - True.describe (true function).
+// * - True.it (true function).
+// * - True.assert-equal (true function).
 // * - err (function).
 
 // stylelint-disable number-max-precision
+// stylelint-disable function-name-case
 
-@use "../../../node_modules/sass-true/sass/true" as *;
-@use "../../../src/functions/converters/inches-to-centimeter" as func;
-@use "../../../src/development-utils/error" as dev;
+@use "../../../node_modules/sass-true/sass/true" as True;
+@use "../../../src/functions/converters/inches-to-centimeter" as LibFunc;
+@use "../../../src/development-utils/error" as Dev;
 
 $test-cases-in-to-cm-map: (
     0: 0,
@@ -38,16 +39,16 @@ $test-cases-in-to-cm-map: (
     80in: "203.2cm",
     5.82in: "14.783cm",
     212in: "538.48cm",
-    "Just a number": dev.err("The parameter of in-to-cm function must be in a number type."),
-    true: dev.err("The parameter of in-to-cm function must be in a number type."),
-    false: dev.err("The parameter of in-to-cm function must be in a number type."),
-    (1, 2, 4): dev.err("The parameter of in-to-cm function must be in a number type.")
+    "Just a number": Dev.err("The parameter of in-to-cm function must be in a number type."),
+    true: Dev.err("The parameter of in-to-cm function must be in a number type."),
+    false: Dev.err("The parameter of in-to-cm function must be in a number type."),
+    (1, 2, 4): Dev.err("The parameter of in-to-cm function must be in a number type.")
 );
 
 @each $case, $result in $test-cases-in-to-cm-map {
-    @include describe("[Function] in-to-cm(#{$case}), Result: #{$result}") {
-        @include it("Convert a value in inch to centimeter.") {
-            @include assert-equal(func.in-to-cm($case), $result);
+    @include True.describe("[Function] in-to-cm(#{$case}), Result: #{$result}") {
+        @include True.it("Convert a value in inch to centimeter.") {
+            @include True.assert-equal(LibFunc.in-to-cm($case), $result);
         }
     }
 }

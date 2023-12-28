@@ -19,16 +19,17 @@
 // @module global/cut-unit.test
 
 // @dependencies:
-// * - true.describe (true function).
-// * - true.it (true function).
-// * - true.assert-equal (true function).
+// * - True.describe (true function).
+// * - True.it (true function).
+// * - True.assert-equal (true function).
 // * - err (function).
 
 // stylelint-disable number-max-precision
+// stylelint-disable function-name-case
 
-@use "../../../node_modules/sass-true/sass/true" as *;
-@use "../../../src/functions/global/cut-unit" as func;
-@use "../../../src/development-utils/error" as dev;
+@use "../../../node_modules/sass-true/sass/true" as True;
+@use "../../../src/functions/global/cut-unit" as LibFunc;
+@use "../../../src/development-utils/error" as Dev;
 
 $test-cases-cut-unit-map: (
     0: 0,
@@ -40,16 +41,16 @@ $test-cases-cut-unit-map: (
     80px: 80,
     5.82px: 5.82,
     212px: 212,
-    "Just a number": dev.err("The parameter of cut-unit function must be in a number type."),
-    true: dev.err("The parameter of cut-unit function must be in a number type."),
-    false: dev.err("The parameter of cut-unit function must be in a number type."),
-    (1, 2, 4): dev.err("The parameter of cut-unit function must be in a number type.")
+    "Just a number": Dev.err("The parameter of cut-unit function must be in a number type."),
+    true: Dev.err("The parameter of cut-unit function must be in a number type."),
+    false: Dev.err("The parameter of cut-unit function must be in a number type."),
+    (1, 2, 4): Dev.err("The parameter of cut-unit function must be in a number type.")
 );
 
 @each $case, $result in $test-cases-cut-unit-map {
-    @include describe("[Function] cut-unit(#{$case}), Result: #{$result}") {
-        @include it("Cut the unit of (#{$case}) value.") {
-            @include assert-equal(func.cut-unit($case), $result);
+    @include True.describe("[Function] cut-unit(#{$case}), Result: #{$result}") {
+        @include True.it("Cut the unit of (#{$case}) value.") {
+            @include True.assert-equal(LibFunc.cut-unit($case), $result);
         }
     }
 }

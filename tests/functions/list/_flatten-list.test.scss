@@ -19,31 +19,33 @@
 // @module global/flatten.test
 
 // @dependencies:
-// * - true.describe (true function).
-// * - true.it (true function).
-// * - true.assert-equal (true function).
-// * - err (function).
+// * - True.describe (true function).
+// * - True.it (true function).
+// * - True.assert-equal (true function).
+// * - Dev.err (function).
+
+// stylelint-disable function-name-case
 
 @use "sass:map";
 @use "../../../node_modules/sass-true/sass/true" as True;
-@use "../../../src/functions/list/flatten-list" as func;
-@use "../../../src/development-utils/error" as dev;
+@use "../../../src/functions/list/flatten-list" as LibFunc;
+@use "../../../src/development-utils/error" as Dev;
 
 $test-cases-flatten-list-map: (
     (1, 2, 4): (1 2 4),
-    344px: dev.err("The parameter of flatten function must be in a list type."),
+    344px: Dev.err("The parameter of flatten function must be in a list type."),
     (69, 48, 54, (32, (11, 43))): (69 48 54 32 11 43),
     ((true, false), (0, "Just a text"), (2, 32, 4)): (true false 0 "Just a text" 2 32 4),
     (69, 48, 54, (32, (11, 43, (21, (11, "Yes"))))): (69 48 54 32 11 43 21 11 "Yes"),
-    true: dev.err("The parameter of flatten function must be in a list type."),
-    "Just a number": dev.err("The parameter of flatten function must be in a list type."),
-    false: dev.err("The parameter of flatten function must be in a list type."),
+    true: Dev.err("The parameter of flatten function must be in a list type."),
+    "Just a number": Dev.err("The parameter of flatten function must be in a list type."),
+    false: Dev.err("The parameter of flatten function must be in a list type."),
 );
 
 @each $case, $result in $test-cases-flatten-list-map {
     @include True.describe("[Function] flatten(#{$case}), Result: #{$result}") {
         @include True.it("Cut the unit of (#{$case}) value.") {
-            @include True.assert-equal(func.flatten($case), $result);
+            @include True.assert-equal(LibFunc.flatten($case), $result);
         }
     }
 }
