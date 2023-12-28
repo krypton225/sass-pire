@@ -19,17 +19,18 @@
 // @module global/is-in-list.test
 
 // @dependencies:
-// * - true.describe (true function).
-// * - true.it (true function).
-// * - true.assert-equal (true function).
+// * - True.describe (true function).
+// * - True.it (true function).
+// * - True.assert-equal (true function).
 // * - err (function).
 
 // stylelint-disable number-max-precision
+// stylelint-disable function-name-case
 
 @use "sass:map";
-@use "../../../node_modules/sass-true/sass/true" as *;
-@use "../../../src/functions/global/is-in-list" as func;
-@use "../../../src/development-utils/error" as dev;
+@use "../../../node_modules/sass-true/sass/true" as True;
+@use "../../../src/functions/global/is-in-list" as LibFunc;
+@use "../../../src/development-utils/error" as Dev;
 
 $test-cases-is-in-list-map: (
     1: (
@@ -45,22 +46,22 @@ $test-cases-is-in-list-map: (
     3: (
         "list": 45,
         "given": 17,
-        "expected": dev.err("The first parameter of is-in-list function must be in a list type.")
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
     ),
     4: (
         "list": "Just a list",
         "given": true,
-        "expected": dev.err("The first parameter of is-in-list function must be in a list type.")
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
     ),
     5: (
         "list": "Just a list",
         "given": "Just a value",
-        "expected": dev.err("The first parameter of is-in-list function must be in a list type.")
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
     ),
     6: (
         "list": false,
         "given": (true, 1),
-        "expected": dev.err("The first parameter of is-in-list function must be in a list type.")
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
     ),
     7: (
         "list": (13, 54, 43, (32, 675, 21)),
@@ -74,9 +75,9 @@ $test-cases-is-in-list-map: (
     $given-value: map.get($inner, "given");
     $expected-value: map.get($inner, "expected");
 
-    @include describe("[Function] is-in-list(#{$list-value}, #{$given-value}), Result: #{$expected-value}") {
-        @include it("is-in-list(#{$list-value}, #{$given-value}) value.") {
-            @include assert-equal(func.is-in-list($list-value, $given-value), $expected-value);
+    @include True.describe("[Function] is-in-list(#{$list-value}, #{$given-value}), Result: #{$expected-value}") {
+        @include True.it("is-in-list(#{$list-value}, #{$given-value}) value.") {
+            @include True.assert-equal(LibFunc.is-in-list($list-value, $given-value), $expected-value);
         }
     }
 }
