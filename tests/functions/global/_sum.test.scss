@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+// @description
+// * sum function.
+// * This module tests a functionality of sum function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace global
+
+// @module global/sum.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+@use "sass:map";
+@use "../../../node_modules/sass-true/sass/true" as *;
+@use "../../../src/functions/global/sum" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-sum-map: (
+    (1, 2, 3): 6,
+    0px: dev.err("The parameter of sum function must be in a list type."),
+    344px: dev.err("The parameter of sum function must be in a list type."),
+    -0.5px: dev.err("The parameter of sum function must be in a list type."),
+    -92px: dev.err("The parameter of sum function must be in a list type."),
+    (94vh, 12, 3px): dev.err("Values of the list must has one unit only."),
+    (80px, 2px, 3px): 85px,
+    (80rem, 2rem, 3px): dev.err("Values of the list must has one unit only."),
+    "Just a number": dev.err("The parameter of sum function must be in a list type."),
+    true: dev.err("The parameter of sum function must be in a list type."),
+    false: dev.err("The parameter of sum function must be in a list type."),
+    (1, 2, 4): 7
+);
+
+@each $case, $result in $test-cases-sum-map {
+    @include describe("[Function] sum(#{$case}), Result: #{$result}") {
+        @include it("sum(#{$case}) value.") {
+            @include assert-equal(func.sum($case), $result);
+        }
+    }
+}
