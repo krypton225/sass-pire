@@ -44,7 +44,7 @@ $test-cases-flatten-list-map: (
 
 @each $case, $result in $test-cases-flatten-list-map {
     @include True.describe("[Function] flatten(#{$case}), Result: #{$result}") {
-        @include True.it("Cut the unit of (#{$case}) value.") {
+        @include True.it("Flatten of (#{$case}).") {
             @include True.assert-equal(LibFunc.flatten($case), $result);
         }
     }
