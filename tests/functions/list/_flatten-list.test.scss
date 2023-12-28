@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+// @description
+// * flatten function.
+// * This module tests a functionality of flatten function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace global
+
+// @module global/flatten.test
+
+// @dependencies:
+// * - true.describe (true function).
+// * - true.it (true function).
+// * - true.assert-equal (true function).
+// * - err (function).
+
+@use "sass:map";
+@use "../../../node_modules/sass-true/sass/true" as True;
+@use "../../../src/functions/list/flatten-list" as func;
+@use "../../../src/development-utils/error" as dev;
+
+$test-cases-flatten-list-map: (
+    (1, 2, 4): (1 2 4),
+    344px: dev.err("The parameter of flatten function must be in a list type."),
+    (69, 48, 54, (32, (11, 43))): (69 48 54 32 11 43),
+    ((true, false), (0, "Just a text"), (2, 32, 4)): (true false 0 "Just a text" 2 32 4),
+    (69, 48, 54, (32, (11, 43, (21, (11, "Yes"))))): (69 48 54 32 11 43 21 11 "Yes"),
+    true: dev.err("The parameter of flatten function must be in a list type."),
+    "Just a number": dev.err("The parameter of flatten function must be in a list type."),
+    false: dev.err("The parameter of flatten function must be in a list type."),
+);
+
+@each $case, $result in $test-cases-flatten-list-map {
+    @include True.describe("[Function] flatten(#{$case}), Result: #{$result}") {
+        @include True.it("Cut the unit of (#{$case}) value.") {
+            @include True.assert-equal(func.flatten($case), $result);
+        }
+    }
+}

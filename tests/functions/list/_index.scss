@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards key functionalities from other modules.
+// * for easy access in the current stylesheet.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace functions/list
+
+// * flatten-list forward.
+// * forwarding the testing flatten function.
+// * please see testing `flatten` function for details.
+// @see flatten-list
+@forward "flatten-list.test";
