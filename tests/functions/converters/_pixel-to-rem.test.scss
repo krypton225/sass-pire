@@ -48,7 +48,7 @@ $test-cases-px-to-rem-map: (
 
 @each $case, $result in $test-cases-px-to-rem-map {
     @include True.describe("[Function] px-to-rem(#{$case}), Result: #{$result}") {
-        @include True.it("Convert a value in pixel to inches.") {
+        @include True.it("Convert a value in pixel to rem.") {
             @include True.assert-equal(LibFunc.px-to-rem($case), $result);
         }
     }
