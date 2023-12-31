@@ -69,7 +69,7 @@
         @return Error.toggle("The parameter of get-last-from function must be in a list type.");
     }
 
-    @if length($list) == 0 {
+    @if list.length($list) == 0 {
         @return Error.toggle("You must enter the list values of the list in get-last-from function.");
     }
 
@@ -77,11 +77,11 @@
         @if list.index(Config.$main-data-types, $list) {
             $new-list: list.append($list, null);
 
-            @return nth($new-list, length($new-list) - 1);
+            @return list.nth($new-list, list.length($new-list) - 1);
         }
     }
 
     $new-list: LibFunc.flatten($list);
 
-    @return nth($new-list, length($new-list));
+    @return list.nth($new-list, list.length($new-list));
 }
