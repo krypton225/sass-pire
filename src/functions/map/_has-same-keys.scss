@@ -43,6 +43,7 @@
 // @return {Boolean} True if all maps have the same keys, false otherwise.
 
 @use "sass:meta";
+@use "sass:list";
 @use "sass:map";
 @use "../../development-utils/toggle-error-message" as Error;
 

@@ -43,7 +43,7 @@ $test-cases-center-of-list-map: (
 
 @each $case, $result in $test-cases-center-of-list-map {
     @include True.describe("[Function] center-of-list(#{$case}), Result: #{$result}") {
-        @include True.it("center-of-list( #{$case}).") {
+        @include True.it("center-of-list(#{$case}).") {
             @include True.assert-equal(LibFunc.center-of-list($case), $result);
         }
     }

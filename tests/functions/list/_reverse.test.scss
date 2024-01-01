@@ -43,7 +43,7 @@ $test-cases-reverse-map: (
 
 @each $case, $result in $test-cases-reverse-map {
     @include True.describe("[Function] reverse(#{$case}), Result: #{$result}") {
-        @include True.it("reverse( #{$case}).") {
+        @include True.it("reverse(#{$case}).") {
             @include True.assert-equal(LibFunc.reverse($case), $result);
         }
     }

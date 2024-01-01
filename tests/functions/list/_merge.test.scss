@@ -43,7 +43,7 @@ $test-cases-merge-map: (
 
 @each $case, $result in $test-cases-merge-map {
     @include True.describe("[Function] merge(#{$case}), Result: #{$result}") {
-        @include True.it("merge( #{$case}).") {
+        @include True.it("merge(#{$case}).") {
             @include True.assert-equal(LibFunc.merge($case), $result);
         }
     }
