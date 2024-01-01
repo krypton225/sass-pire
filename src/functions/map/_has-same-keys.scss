@@ -49,7 +49,7 @@
 @function has-same-keys($all-maps...) {
     $keys-list: null;
 
-    @if length($all-maps) == 1 {
+    @if list.length($all-maps) == 1 {
         @return Error.toggle("The parameter of has-same-keys function must has more than one map.");
     }
 

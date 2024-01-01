@@ -67,7 +67,7 @@
         @return Error.toggle("The parameter of center-of-list function must be in a list type.");
     }
 
-    @if length($list) == 0 {
+    @if list.length($list) == 0 {
         @return 0;
     }
 
@@ -75,8 +75,8 @@
     $flatten-list-length: list.length($flatten-list);
 
     @if $flatten-list-length % 2 == 0 {
-        @return nth($flatten-list, math.div($flatten-list-length, 2));
+        @return list.nth($flatten-list, math.div($flatten-list-length, 2));
     }
 
-    @return nth($flatten-list, math.div(($flatten-list-length + 1), 2));
+    @return list.nth($flatten-list, math.div(($flatten-list-length + 1), 2));
 }

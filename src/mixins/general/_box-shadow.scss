@@ -86,7 +86,7 @@
 
             @if list.length($one-list) == 1 {
                 @if meta.type-of($first-item-val) == string {
-                    @if not index($box-shadow-values, $first-item-val) {
+                    @if not list.index($box-shadow-values, $first-item-val) {
                         @error "The value of box shadow must has one of these values: (#{$box-shadow-values})";
                     }
 
@@ -102,11 +102,11 @@
                 $second-item-val: list.nth($one-list, 2);
 
                 @if meta.type-of($first-item-val) == number and meta.type-of($second-item-val) == number {
-                    @if not index(var.$main-units, math.unit($first-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($first-item-val)) {
                         @error "First value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($second-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($second-item-val)) {
                         @error "Second value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
                 } @else {
@@ -129,7 +129,7 @@
                     $third-item-val: list.nth($one-list, 3);
                     $fourth-item-val: list.nth($one-list, 4);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
@@ -147,11 +147,11 @@
                     $fourth-item-val: list.nth($one-list, 4);
                     $fifth-item-val: list.nth($one-list, 5);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($fourth-item-val)) {
                         @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
@@ -170,11 +170,11 @@
                     $fifth-item-val: list.nth($one-list, 5);
                     $sixth-item-val: list.nth($one-list, 6);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($fourth-item-val)) {
                         @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
