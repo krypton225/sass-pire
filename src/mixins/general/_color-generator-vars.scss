@@ -76,6 +76,7 @@
 
 @use "sass:meta";
 @use "sass:list";
+@use "sass:string";
 @use "../../abstract/config" as Config;
 
 @mixin generate-colors($brand-name: Config.$brand-lib-name, $color-map: ()) {
@@ -102,9 +103,9 @@
             }
 
             @if $brand-name == "" or $brand-name == def {
-                --#{Config.$brand-lib-name}-#{to-lower-case($clr)}-clr: #{$val};
+                --#{Config.$brand-lib-name}-#{string.to-lower-case($clr)}-clr: #{$val};
             } @else {
-                --#{to-lower-case($brand-name)}-#{to-lower-case($clr)}-clr: #{$val};
+                --#{string.to-lower-case($brand-name)}-#{string.to-lower-case($clr)}-clr: #{$val};
             }
         }
     }

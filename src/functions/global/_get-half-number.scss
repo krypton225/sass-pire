@@ -52,6 +52,7 @@
 
 @use "sass:meta";
 @use "sass:math";
+@use "sass:string";
 @use "cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
@@ -68,7 +69,7 @@
         $num-after-cut-unit: LibFunc.cut-unit($number);
         $unit-of-number: math.unit($number);
 
-        @return unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");
+        @return string.unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");
     }
 
     @return calc($number / 2);
