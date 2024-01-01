@@ -95,7 +95,7 @@
     ) !default;
 
     @if meta.type-of($one-side) == number {
-        @if not math.unitless($one-side) {
+        @if not unitless($one-side) {
             @if func.is-in-list($all-units, math.unit($one-side)) {
                 width: $one-side;
                 height: $one-side;
