@@ -41,3 +41,9 @@
 // * CSS transformations.
 // @see transform
 @forward "transform";
+
+// * forwarding the "grid" module.
+// * The "grid" module likely provides utilities for handling
+// * CSS grid properties.
+// @see grid
+@forward "grid-props";

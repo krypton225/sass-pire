@@ -1,0 +1,18 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards modules related to CSS grid.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace mixins
+
+// * forwarding the "grid" module.
+// * The "grid" module likely provides utilities for
+// * handling various CSS vendor prefixes.
+// @see grid
+@forward "grid";
