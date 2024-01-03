@@ -16,3 +16,9 @@
 // * handling various CSS vendor prefixes.
 // @see grid
 @forward "grid";
+
+// * forwarding the "inline-grid" module.
+// * The "inline-grid" module likely provides utilities for
+// * handling various CSS vendor prefixes.
+// @see inline-grid
+@forward "inline-grid";

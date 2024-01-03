@@ -48,8 +48,6 @@ $directions-props-values: (inherit, initial, revert, revert-layer, unset, auto) 
 
 // * Grid.
 
-$inline-grid-prefixes-values: (-ms-inline-grid, inline-grid) !default;
-
 $column-gap-props: (-webkit-column-gap, -moz-column-gap, column-gap) !default;
 
 $grid-column-props: (-ms-grid-column, grid-column) !default;
