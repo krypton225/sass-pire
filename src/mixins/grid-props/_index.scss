@@ -22,3 +22,9 @@
 // * handling various CSS vendor prefixes.
 // @see inline-grid
 @forward "inline-grid";
+
+// * forwarding the "column-gap" module.
+// * The "column-gap" module likely provides utilities for
+// * handling various CSS vendor prefixes.
+// @see column-gap
+@forward "column-gap";
