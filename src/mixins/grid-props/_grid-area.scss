@@ -24,6 +24,9 @@
 // * - meta.type-of (SASS function).
 // * - Error.toggle (function).
 
+// @param {String} $value
+// * The value to set to grid-area property.
+
 // @example
 // * .example {
 // *   @include area("2 / 1 / span 2 / span 3");
