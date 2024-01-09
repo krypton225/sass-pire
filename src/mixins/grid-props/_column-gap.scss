@@ -25,6 +25,10 @@
 // * - LibFunc.is-in-list (function).
 // * - Error.toggle (function).
 
+// @param {Number|String} $value
+// * The value of column-gap property.
+// * If a string, it can be: (normal, initial, inherit).
+
 // @example
 // * .example {
 // *   @include col-gap(12rem);
@@ -45,7 +49,7 @@
     $column-gap-prefixes-values: (-webkit-column-gap, -moz-column-gap, column-gap) !default;
 
     @if meta.type-of($value) == string {
-        $column-gap-property-values: (normal, initial, inherit, length) !default;
+        $column-gap-property-values: (normal, initial, inherit) !default;
 
         @if LibFunc.is-in-list($column-gap-property-values, $value) {
             @each $one-item in $column-gap-prefixes-values {
