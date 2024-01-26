@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-inh-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-inherit
 
 @mixin flex-inh-normal($dir: row) {
-    @include f.f-prop($dir, inherit, normal);
+    @include LibMixin.f-prop($dir, inherit, normal);
 }
 
 // @mixin flex-inh-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-stretch($dir: row) {
-    @include f.f-prop($dir, inherit, stretch);
+    @include LibMixin.f-prop($dir, inherit, stretch);
 }
 
 // @mixin flex-inh-start
@@ -79,7 +79,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-start($dir: row) {
-    @include f.f-prop($dir, inherit, start);
+    @include LibMixin.f-prop($dir, inherit, start);
 }
 
 // @mixin flex-inh-end
@@ -87,7 +87,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-end($dir: row) {
-    @include f.f-prop($dir, inherit, end);
+    @include LibMixin.f-prop($dir, inherit, end);
 }
 
 // @mixin flex-inh-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-fstart($dir: row) {
-    @include f.f-prop($dir, inherit, flex-start);
+    @include LibMixin.f-prop($dir, inherit, flex-start);
 }
 
 // @mixin flex-inh-fend
@@ -103,7 +103,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-fend($dir: row) {
-    @include f.f-prop($dir, inherit, flex-end);
+    @include LibMixin.f-prop($dir, inherit, flex-end);
 }
 
 // @mixin flex-inh-center
@@ -111,7 +111,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-center($dir: row) {
-    @include f.f-prop($dir, inherit, center);
+    @include LibMixin.f-prop($dir, inherit, center);
 }
 
 // @mixin flex-inh-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-baseline($dir: row) {
-    @include f.f-prop($dir, inherit, baseline);
+    @include LibMixin.f-prop($dir, inherit, baseline);
 }
 
 // @mixin flex-inh-inh
@@ -127,5 +127,5 @@
 // @module flexbox-inherit
 
 @mixin flex-inh-inh($dir: row) {
-    @include f.f-prop($dir, inherit, inherit);
+    @include LibMixin.f-prop($dir, inherit, inherit);
 }

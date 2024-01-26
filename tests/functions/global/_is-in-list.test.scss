@@ -1,0 +1,83 @@
+@charset "UTF-8";
+
+// @description
+// * is-in-list function.
+// * This module tests a functionality of is-in-list function.
+
+// @access private
+
+// @version 1.0.0
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace global
+
+// @module global/is-in-list.test
+
+// @dependencies:
+// * - True.describe (true function).
+// * - True.it (true function).
+// * - True.assert-equal (true function).
+// * - Dev.err (function).
+
+// stylelint-disable number-max-precision
+// stylelint-disable function-name-case
+
+@use "sass:map";
+@use "../../../node_modules/sass-true/sass/true" as True;
+@use "../../../src/functions/global/is-in-list" as LibFunc;
+@use "../../../src/development-utils/error" as Dev;
+
+$test-cases-is-in-list-map: (
+    1: (
+        "list": (1, 2, 4),
+        "given": 2,
+        "expected": true
+    ),
+    2: (
+        "list": (69, 48, 54, (32, (11, 43))),
+        "given": 32,
+        "expected": true
+    ),
+    3: (
+        "list": 45,
+        "given": 17,
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
+    ),
+    4: (
+        "list": "Just a list",
+        "given": true,
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
+    ),
+    5: (
+        "list": "Just a list",
+        "given": "Just a value",
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
+    ),
+    6: (
+        "list": false,
+        "given": (true, 1),
+        "expected": Dev.err("The first parameter of is-in-list function must be in a list type.")
+    ),
+    7: (
+        "list": (13, 54, 43, (32, 675, 21)),
+        "given": true,
+        "expected": false
+    )
+);
+
+@each $case, $inner in $test-cases-is-in-list-map {
+    $list-value: map.get($inner, "list");
+    $given-value: map.get($inner, "given");
+    $expected-value: map.get($inner, "expected");
+
+    @include True.describe("[Function] is-in-list(#{$list-value}, #{$given-value}), Result: #{$expected-value}") {
+        @include True.it("is-in-list(#{$list-value}, #{$given-value}) value.") {
+            @include True.assert-equal(LibFunc.is-in-list($list-value, $given-value), $expected-value);
+        }
+    }
+}

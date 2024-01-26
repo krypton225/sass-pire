@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -22,7 +22,8 @@
 // @module general/generate-colors
 
 // @dependencies:
-// * - $brand-lib-name (variable).
+// * - meta.type-of (SASS function).
+// * - Config.$brand-lib-name (config variable).
 
 // @param {String} $brand-name
 // * The brand name or namespace for the color variables.
@@ -64,7 +65,7 @@
 
 // @note 1
 // * Make sure to include the "variables" module where the
-// * "$brand-lib-name" variable is defined.
+// * "$brand-lib-name" variable configuration is defined.
 
 // @note 2
 // * There are two mixins in this file.
@@ -73,15 +74,17 @@
 // * The core logic of (gen-clrs) mixin is to call the first one.
 // * You can use one of them as you want.
 
+@use "sass:meta";
 @use "sass:list";
-@use "../../abstract/variables" as var;
+@use "sass:string";
+@use "../../abstract/config" as Config;
 
-@mixin generate-colors($brand-name: var.$brand-lib-name, $color-map: ()) {
-    @if type-of($brand-name) != string {
+@mixin generate-colors($brand-name: Config.$brand-lib-name, $color-map: ()) {
+    @if meta.type-of($brand-name) != string {
         @error "Brand name must be in string type.";
     }
 
-    @if type-of($color-map) != map {
+    @if meta.type-of($color-map) != map {
         @error "You must pass a map of colors to generate-colors mixin.";
     }
 
@@ -91,23 +94,23 @@
 
     :root {
         @each $clr, $val in $color-map {
-            @if type-of($clr) != string {
+            @if meta.type-of($clr) != string {
                 @error "Please, Make the color name in the string type.";
             }
 
-            @if type-of($val) != color {
+            @if meta.type-of($val) != color {
                 @error "Please, Make sure the value in the map has a color type.";
             }
 
             @if $brand-name == "" or $brand-name == def {
-                --#{var.$brand-lib-name}-#{to-lower-case($clr)}-clr: #{$val};
+                --#{Config.$brand-lib-name}-#{string.to-lower-case($clr)}-clr: #{$val};
             } @else {
-                --#{to-lower-case($brand-name)}-#{to-lower-case($clr)}-clr: #{$val};
+                --#{string.to-lower-case($brand-name)}-#{string.to-lower-case($clr)}-clr: #{$val};
             }
         }
     }
 }
 
-@mixin gen-clrs($brand-name: var.$brand-lib-name, $color-map: ()) {
+@mixin gen-clrs($brand-name: Config.$brand-lib-name, $color-map: ()) {
     @include generate-colors($brand-name, $color-map);
 }

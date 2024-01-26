@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.3.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -23,8 +23,8 @@
 // * - math.div (SASS function).
 // * - list.length (SASS function).
 // * - list.nth (SASS function).
-// * - flatten-list (function).
-// * - toggle (function).
+// * - LibFunc.flatten-list (function).
+// * - Error.toggle (function).
 
 // @param {List} $list
 // * The input list from which the centered element is retrieved.
@@ -59,7 +59,7 @@
 @use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "flatten-list" as func;
+@use "flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function center-of-list($list: ()) {
@@ -67,16 +67,16 @@
         @return Error.toggle("The parameter of center-of-list function must be in a list type.");
     }
 
-    @if length($list) == 0 {
+    @if list.length($list) == 0 {
         @return 0;
     }
 
-    $flatten-list: func.flatten($list);
+    $flatten-list: LibFunc.flatten($list);
     $flatten-list-length: list.length($flatten-list);
 
     @if $flatten-list-length % 2 == 0 {
-        @return nth($flatten-list, math.div($flatten-list-length, 2));
+        @return list.nth($flatten-list, math.div($flatten-list-length, 2));
     }
 
-    @return nth($flatten-list, math.div(($flatten-list-length + 1), 2));
+    @return list.nth($flatten-list, math.div(($flatten-list-length + 1), 2));
 }

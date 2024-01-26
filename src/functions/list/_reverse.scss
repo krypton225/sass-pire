@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.4.0
+// @version 1.5.0
 
 // @author Kitty Giraudel
 // @link https://kittygiraudel.com/
@@ -26,8 +26,8 @@
 // * - list.length (SASS function).
 // * - list.append (SASS function).
 // * - list.nth (SASS function).
-// * - flatten-list (function).
-// * - toggle (function).
+// * - LibFunc.flatten-list (function).
+// * - Error.toggle (function).
 
 // @param {List} $list
 // * A list from which to reverse.
@@ -37,7 +37,7 @@
 
 // @example
 // * .example {
-// *   content: reverse((12, 43, 4), (33, 555, 6));
+// *   content: reverse(((12, 43, 4), (33, 555, 6)));
 // * }
 
 // @output
@@ -49,7 +49,7 @@
 
 @use "sass:meta";
 @use "sass:list";
-@use "flatten-list" as func;
+@use "flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function reverse($list: ()) {
@@ -57,7 +57,7 @@
         @return Error.toggle("The parameter of reverse function must be in a list type.");
     }
 
-    $flat-list: func.flatten($list);
+    $flat-list: LibFunc.flatten($list);
     $reversed-list: ();
 
     @for $i from list.length($flat-list) to 0 {

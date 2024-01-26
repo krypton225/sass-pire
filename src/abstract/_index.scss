@@ -14,8 +14,8 @@
 // @see variables
 @forward "variables";
 
-// * forwarded colors.
-// * This module forwards the colors defined in the "colors" module.
-// * It allows you to use these colors in other files.
-// @see colors
-@forward "colors";
+// * forwarded config.
+// * This module forwards the configuration defined for library.
+// * It allows you to use these configurations in other files.
+// @see config
+@forward "config";

@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,7 @@
 // @module main-props/flex-dir
 
 // @dependencies:
-// * - is-in-list (function).
+// * - LibFunc.is-in-list (function).
 
 // @param {String} $value
 // * The value for the `flex-direction` property.
@@ -58,9 +58,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 // stylelint-disable scss/no-global-function-names
 
-@use "sass:list";
-@use "sass:map";
-@use "../../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin flex-dir($value: row) {
     $flex-direction-values: (row, r, row-reverse, r-rev, column, col, c, column-reverse, col-rev, "") !default;
@@ -105,7 +103,7 @@
         flex-direction: row-reverse
     ) !default;
 
-    @if func.is-in-list($flex-direction-values, $value) {
+    @if LibFunc.is-in-list($flex-direction-values, $value) {
         @if $value == column or $value == col or $value == c {
             @each $prop, $val in $merge-flex-direction-column {
                 #{$prop}: $val;

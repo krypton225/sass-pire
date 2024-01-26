@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.5.2
+// @version 1.6.2
 
 // @author Khaled Mohamed
 
@@ -21,9 +21,9 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
-// * - cut-unit (function).
-// * - approx (function).
-// * - toggle (function).
+// * - LibFunc.cut-unit (function).
+// * - Approx.approx (function).
+// * - Error.toggle (function).
 
 // @param {Number} $inches-val
 // * The value in inches unit to convert.
@@ -46,7 +46,7 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../global/cut-unit" as func;
+@use "../global/cut-unit" as LibFunc;
 @use "../../development-utils/approximation-numbers" as Approx;
 @use "../../development-utils/toggle-error-message" as Error;
 
@@ -68,7 +68,7 @@
         @return Error.toggle("The in-to-cm function accepts argument with inch unit only.");
     }
 
-    $actual-number: func.cut-unit($inches-val);
+    $actual-number: LibFunc.cut-unit($inches-val);
     $final-result: Approx.of(($actual-number * 2.54cm));
 
     @return $final-result;

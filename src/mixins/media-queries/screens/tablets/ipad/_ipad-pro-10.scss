@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.2.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -22,6 +22,7 @@
 // @module ipad/ipad-pro-10
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
@@ -68,19 +69,20 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:meta";
 @use "sass:list";
-@use "../../../../../functions/global/is-in-list" as func;
-@use "../../../../../functions/list/merge" as sp;
+@use "../../../../../functions/global/is-in-list" as LibFunc1;
+@use "../../../../../functions/list/merge" as LibFunc2;
 @use "../../../../../development-utils/toggle-error-message" as Error;
 
 @mixin ipad-pro-10($orientation-type: portrait) {
-    @if type-of($orientation-type) != string {
+    @if meta.type-of($orientation-type) != string {
         content: Error.toggle("The parameter of ipad-pro-10 mixin must be in a string type.");
     }
 
     $landscape-values: (landscape, land, l) !default;
     $portrait-values: (portrait, port, p, "") !default;
-    $all-orientations-types: sp.merge($landscape-values, $portrait-values) !default;
+    $all-orientations-types: LibFunc2.merge($landscape-values, $portrait-values) !default;
     $device-width-port: 834px !default;
     $device-width-land: 1112px !default;
     $device-pixel-ratio: 2 !default;
@@ -92,7 +94,7 @@
             @content;
         }
     } @else {
-        @if func.is-in-list($all-orientations-types, $orientation-type) {
+        @if LibFunc1.is-in-list($all-orientations-types, $orientation-type) {
             @if list.index($landscape-values, $orientation-type) {
                 @media only screen and
                     (min-device-width: $device-width-land) and

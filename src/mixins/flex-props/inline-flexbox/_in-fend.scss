@@ -11,7 +11,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -57,14 +57,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/inflex-prop" as f;
+@use "../main-props/inflex-prop" as LibMixin;
 
 // @mixin inflex-fend-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-normal($dir: row) {
-    @include f.inflex-prop($dir, flex-end, normal);
+    @include LibMixin.inflex-prop($dir, flex-end, normal);
 }
 
 // @mixin inflex-fend-stretch
@@ -72,7 +72,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-stretch($dir: row) {
-    @include f.inflex-prop($dir, flex-end, stretch);
+    @include LibMixin.inflex-prop($dir, flex-end, stretch);
 }
 
 // @mixin inflex-fend-start
@@ -80,7 +80,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-start($dir: row) {
-    @include f.inflex-prop($dir, flex-end, start);
+    @include LibMixin.inflex-prop($dir, flex-end, start);
 }
 
 // @mixin inflex-fend-end
@@ -88,7 +88,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-end($dir: row) {
-    @include f.inflex-prop($dir, flex-end, end);
+    @include LibMixin.inflex-prop($dir, flex-end, end);
 }
 
 // @mixin inflex-fend-fstart
@@ -96,7 +96,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-fstart($dir: row) {
-    @include f.inflex-prop($dir, flex-end, flex-start);
+    @include LibMixin.inflex-prop($dir, flex-end, flex-start);
 }
 
 // @mixin inflex-fend-fend
@@ -104,7 +104,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-fend($dir: row) {
-    @include f.inflex-prop($dir, flex-end, flex-end);
+    @include LibMixin.inflex-prop($dir, flex-end, flex-end);
 }
 
 // @mixin inflex-fend-center
@@ -112,7 +112,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-center($dir: row) {
-    @include f.inflex-prop($dir, flex-end, center);
+    @include LibMixin.inflex-prop($dir, flex-end, center);
 }
 
 // @mixin inflex-fend-baseline
@@ -120,7 +120,7 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-baseline($dir: row) {
-    @include f.inflex-prop($dir, flex-end, baseline);
+    @include LibMixin.inflex-prop($dir, flex-end, baseline);
 }
 
 // @mixin inflex-fend-inh
@@ -128,5 +128,5 @@
 // @module inline-flexbox-fend
 
 @mixin inflex-fend-inh($dir: row) {
-    @include f.inflex-prop($dir, flex-end, inherit);
+    @include LibMixin.inflex-prop($dir, flex-end, inherit);
 }

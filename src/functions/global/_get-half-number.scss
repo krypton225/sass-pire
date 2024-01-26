@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.2.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -21,8 +21,10 @@
 // @dependencies:
 // * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
-// * - cut-unit (function).
-// * - toggle (function).
+// * - math.unitless (SASS function).
+// * - string.unquote (SASS function).
+// * - LibFunc.cut-unit (function).
+// * - Error.toggle (function).
 
 // @param {Number} $number
 // * The number to calculate the half of.
@@ -50,19 +52,24 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "cut-unit" as func;
+@use "sass:string";
+@use "cut-unit" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function half($number) {
     @if meta.type-of($number) != number {
-        @return Error.toggle("You must pass a value in type number to cut-unit function.");
+        @return Error.toggle("The parameter of half function must be in a number type.");
+    }
+
+    @if LibFunc.cut-unit($number) == 0 {
+        @return 0;
     }
 
     @if not unitless($number) {
-        $num-after-cut-unit: func.cut-unit($number);
+        $num-after-cut-unit: LibFunc.cut-unit($number);
         $unit-of-number: math.unit($number);
 
-        @return unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");
+        @return string.unquote("#{calc($num-after-cut-unit / 2)}#{$unit-of-number}");
     }
 
     @return calc($number / 2);

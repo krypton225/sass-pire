@@ -11,7 +11,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -57,14 +57,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/inflex-prop" as f;
+@use "../main-props/inflex-prop" as LibMixin;
 
 // @mixin inflex-fstart-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-normal($dir: row) {
-    @include f.inflex-prop($dir, flex-start, normal);
+    @include LibMixin.inflex-prop($dir, flex-start, normal);
 }
 
 // @mixin inflex-fstart-stretch
@@ -72,7 +72,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-stretch($dir: row) {
-    @include f.inflex-prop($dir, flex-start, stretch);
+    @include LibMixin.inflex-prop($dir, flex-start, stretch);
 }
 
 // @mixin inflex-fstart-start
@@ -80,7 +80,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-start($dir: row) {
-    @include f.inflex-prop($dir, flex-start, start);
+    @include LibMixin.inflex-prop($dir, flex-start, start);
 }
 
 // @mixin inflex-fstart-end
@@ -88,7 +88,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-end($dir: row) {
-    @include f.inflex-prop($dir, flex-start, end);
+    @include LibMixin.inflex-prop($dir, flex-start, end);
 }
 
 // @mixin inflex-fstart-fstart
@@ -96,7 +96,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-fstart($dir: row) {
-    @include f.inflex-prop($dir, flex-start, flex-start);
+    @include LibMixin.inflex-prop($dir, flex-start, flex-start);
 }
 
 // @mixin inflex-fstart-fend
@@ -104,7 +104,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-fend($dir: row) {
-    @include f.inflex-prop($dir, flex-start, flex-end);
+    @include LibMixin.inflex-prop($dir, flex-start, flex-end);
 }
 
 // @mixin inflex-fstart-center
@@ -112,7 +112,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-center($dir: row) {
-    @include f.inflex-prop($dir, flex-start, center);
+    @include LibMixin.inflex-prop($dir, flex-start, center);
 }
 
 // @mixin inflex-fstart-baseline
@@ -120,7 +120,7 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-baseline($dir: row) {
-    @include f.inflex-prop($dir, flex-start, baseline);
+    @include LibMixin.inflex-prop($dir, flex-start, baseline);
 }
 
 // @mixin inflex-fstart-inh
@@ -128,5 +128,5 @@
 // @module inline-flexbox-fstart
 
 @mixin inflex-fstart-inh($dir: row) {
-    @include f.inflex-prop($dir, flex-start, inherit);
+    @include LibMixin.inflex-prop($dir, flex-start, inherit);
 }

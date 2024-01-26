@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-right-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-right
 
 @mixin flex-right-normal($dir: row) {
-    @include f.f-prop($dir, right, normal);
+    @include LibMixin.f-prop($dir, right, normal);
 }
 
 // @mixin flex-right-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-right
 
 @mixin flex-right-stretch($dir: row) {
-    @include f.f-prop($dir, right, stretch);
+    @include LibMixin.f-prop($dir, right, stretch);
 }
 
 // @mixin flex-right-start
@@ -79,7 +79,7 @@
 // @module flexbox-right
 
 @mixin flex-right-start($dir: row) {
-    @include f.f-prop($dir, right, start);
+    @include LibMixin.f-prop($dir, right, start);
 }
 
 // @mixin flex-right-end
@@ -87,7 +87,7 @@
 // @module flexbox-right
 
 @mixin flex-right-end($dir: row) {
-    @include f.f-prop($dir, right, end);
+    @include LibMixin.f-prop($dir, right, end);
 }
 
 // @mixin flex-right-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-right
 
 @mixin flex-right-fstart($dir: row) {
-    @include f.f-prop($dir, right, flex-start);
+    @include LibMixin.f-prop($dir, right, flex-start);
 }
 
 // @mixin flex-right-fend
@@ -103,7 +103,7 @@
 // @module flexbox-right
 
 @mixin flex-right-fend($dir: row) {
-    @include f.f-prop($dir, right, flex-end);
+    @include LibMixin.f-prop($dir, right, flex-end);
 }
 
 // @mixin flex-right-center
@@ -111,7 +111,7 @@
 // @module flexbox-right
 
 @mixin flex-right-center($dir: row) {
-    @include f.f-prop($dir, right, center);
+    @include LibMixin.f-prop($dir, right, center);
 }
 
 // @mixin flex-right-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-right
 
 @mixin flex-right-baseline($dir: row) {
-    @include f.f-prop($dir, right, baseline);
+    @include LibMixin.f-prop($dir, right, baseline);
 }
 
 // @mixin flex-right-inh
@@ -127,5 +127,5 @@
 // @module flexbox-right
 
 @mixin flex-right-inh($dir: row) {
-    @include f.f-prop($dir, right, inherit);
+    @include LibMixin.f-prop($dir, right, inherit);
 }

@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,8 @@
 // @module main-props/flex-grow
 
 // @dependencies:
-// * - cut-unit (function).
+// * - meta.type-of (SASS function).
+// * - LibFunc.cut-unit (function).
 
 // @param {Number} $val
 // * The value for the `flex-grow` property.
@@ -52,13 +53,13 @@
 // * The core logic of (f-g) mixin is to call the first one.
 // * You can use one of them as you want.
 
-@use "sass:list";
-@use "../../../functions/global/cut-unit" as func;
+@use "sass:meta";
+@use "../../../functions/global/cut-unit" as LibFunc;
 
 @mixin flex-grow($value: 0) {
     $flex-grow-props: (-webkit-flex-grow, -webkit-box-flex, -ms-flex-positive, -moz-box-flex, flex-grow) !default;
 
-    @if type-of($value) != number {
+    @if meta.type-of($value) != number {
         @error "$value of flex-grow argument must be of type number.";
     }
 
@@ -67,7 +68,7 @@
     }
 
     @each $prop in $flex-grow-props {
-        #{$prop}: func.cut-unit($value);
+        #{$prop}: LibFunc.cut-unit($value);
     }
 }
 

@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -22,7 +22,9 @@
 // @module transform/scale
 
 // @dependencies:
-// * - pref.prefixing-all (mixin).
+// * - meta.type-of (SASS function).
+// * - LibMixin.prefixing-all (mixin).
+// * - toggle (function).
 
 // @param {Number|String} $x
 // * The scaling factor for the x-axis.
@@ -50,24 +52,83 @@
 // *   transform: scale(2, 2);
 // * }
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as pref;
+@use "../vendor-prefixes/prefix" as LibMixin;
+@use "../../development-utils/toggle-error-message" as Error;
 
-@mixin scale($x: 1, $y: $x) {
+@mixin scale($x: 1px, $y: $x) {
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
+    $main-units: (
+        #{"%"},
+        cm,
+        mm,
+        in,
+        px,
+        pt,
+        pc,
+        em,
+        ex,
+        ch,
+        rem,
+        vw,
+        vh,
+        vmin,
+        vmax,
+        dpi,
+        dpcm,
+        dppx,
+        vw,
+        svw,
+        lvw,
+        dvw,
+        vh,
+        lvh,
+        dvh,
+        vi,
+        svi,
+        lvi,
+        vmin,
+        svmin,
+        lvmin,
+        dvmin,
+        vmax,
+        svmax,
+        lvmax,
+        dvmax,
+        vb,
+        lvb,
+        dvb
+    ) !default;
 
-    @if type-of($x) == number and type-of($y) == number {
-        @if not unitless($x) or not unitless($y) {
-            @error "The value of scale property must not has any unit.";
+    @if meta.type-of($x) == number and meta.type-of($y) == number {
+        @if not index($main-units, math.unit($x)) or not index($main-units, math.unit($y)) {
+            content: Error.toggle("The parameter of scale mixin must has one of these units: (#{$main-units}).");
+        } @else {
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
         }
-    } @else if type-of($x) == string {
-        @if not index($transform-props-values, $x) or not index($transform-props-values, $y) {
-            @error "The value of transform property with scale value must has one of these: (#{$transform-props-values})";
+    } @else if meta.type-of($x) == string and meta.type-of($y) == string {
+        @if index($transform-props-values, $x) and index($transform-props-values, $y) {
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
+        } @else {
+            content: Error.toggle(
+                "The parameter of scale mixin must has one of these values: (#{$transform-props-values})."
+            );
+        }
+    } @else if meta.type-of($x) == number and meta.type-of($y) == string {
+        @if index($main-units, math.unit($x)) and index($transform-props-values, $y) {
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
+        } @else {
+            content: Error.toggle("The parameter x of scale mixin must has one of these units: (#{$main-units}).");
+        }
+    } @else if meta.type-of($x) == string and meta.type-of($y) == number {
+        @if index($main-units, math.unit($y)) and index($transform-props-values, $x) {
+            @include LibMixin.prefixing-all(transform, scale($x, $y));
+        } @else {
+            content: Error.toggle("The parameter y of scale mixin must has one of these units: (#{$main-units}).");
         }
     } @else {
-        @error "The value of scale in transform property must be in number or string type.";
+        content: Error.toggle("The value of scale mixin must be in a number or a string type.");
     }
-
-    @include pref.prefixing-all(transform, scale($x, $y));
 }

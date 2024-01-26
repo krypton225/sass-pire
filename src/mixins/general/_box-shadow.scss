@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -20,6 +20,7 @@
 // @module general/shadow
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - $main-units (variable).
 // * - pref.prefixing-web (mixin).
 
@@ -65,6 +66,7 @@
 // stylelint-disable scss/dollar-variable-empty-line-before
 // stylelint-disable indentation
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../vendor-prefixes/prefix" as pref;
@@ -83,8 +85,8 @@
             $first-item-val: list.nth($one-list, 1);
 
             @if list.length($one-list) == 1 {
-                @if type-of($first-item-val) == string {
-                    @if not index($box-shadow-values, $first-item-val) {
+                @if meta.type-of($first-item-val) == string {
+                    @if not list.index($box-shadow-values, $first-item-val) {
                         @error "The value of box shadow must has one of these values: (#{$box-shadow-values})";
                     }
 
@@ -99,12 +101,12 @@
             } @else if list.length($one-list) >= 3 {
                 $second-item-val: list.nth($one-list, 2);
 
-                @if type-of($first-item-val) == number and type-of($second-item-val) == number {
-                    @if not index(var.$main-units, math.unit($first-item-val)) {
+                @if meta.type-of($first-item-val) == number and meta.type-of($second-item-val) == number {
+                    @if not list.index(var.$main-units, math.unit($first-item-val)) {
                         @error "First value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($second-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($second-item-val)) {
                         @error "Second value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
                 } @else {
@@ -114,7 +116,7 @@
                 @if list.length($one-list) == 3 {
                     $third-item-val: list.nth($one-list, 3);
 
-                    @if type-of($third-item-val) != color {
+                    @if meta.type-of($third-item-val) != color {
                         @error "The third argument of shadow mixin must be in color type.";
                     }
 
@@ -127,11 +129,11 @@
                     $third-item-val: list.nth($one-list, 3);
                     $fourth-item-val: list.nth($one-list, 4);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if type-of($fourth-item-val) != color {
+                    @if meta.type-of($fourth-item-val) != color {
                         @error "The fourth argument of shadow mixin must be in color type.";
                     }
 
@@ -145,15 +147,15 @@
                     $fourth-item-val: list.nth($one-list, 4);
                     $fifth-item-val: list.nth($one-list, 5);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($fourth-item-val)) {
                         @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if type-of($fifth-item-val) != color {
+                    @if meta.type-of($fifth-item-val) != color {
                         @error "The fifth argument of shadow mixin must be in color type.";
                     }
 
@@ -168,15 +170,15 @@
                     $fifth-item-val: list.nth($one-list, 5);
                     $sixth-item-val: list.nth($one-list, 6);
 
-                    @if not index(var.$main-units, math.unit($third-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($third-item-val)) {
                         @error "Third value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if not index(var.$main-units, math.unit($fourth-item-val)) {
+                    @if not list.index(var.$main-units, math.unit($fourth-item-val)) {
                         @error "Fourth value of the box shadow must has one of these units: (#{var.$main-units})";
                     }
 
-                    @if type-of($fifth-item-val) != color {
+                    @if meta.type-of($fifth-item-val) != color {
                         @error "The fifth argument of shadow mixin must be in color type.";
                     }
 

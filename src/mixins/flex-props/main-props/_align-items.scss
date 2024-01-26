@@ -7,7 +7,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.2.1
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,7 @@
 // @module main-props/align-items
 
 // @dependencies:
-// * - is-in-list (function).
+// * - LibFunc.is-in-list (function).
 
 // @param {String} $value
 // * The value for the `align-items` property.
@@ -53,8 +53,7 @@
 // * The core logic of (a-i) mixin is to call the first one.
 // * You can use one of them as you want.
 
-@use "sass:list";
-@use "../../../functions/global/is-in-list" as func;
+@use "../../../functions/global/is-in-list" as LibFunc;
 
 @mixin align-items($value: normal) {
     $align-items-props: (
@@ -68,7 +67,7 @@
     // stylelint-disable-next-line scss/dollar-variable-empty-line-before
     $align-items-values: (normal, stretch, start, end, flex-start, flex-end, center, baseline, inherit) !default;
 
-    @if func.is-in-list($align-items-values, $value) {
+    @if LibFunc.is-in-list($align-items-values, $value) {
         @each $prop in $align-items-props {
             #{$prop}: $value;
         }

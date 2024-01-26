@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.4.0
+// @version 1.5.0
 
 // @author Kitty Giraudel
 // @link https://kittygiraudel.com/
@@ -22,12 +22,13 @@
 // @update We updated the use of the list library of Sass.
 
 // @dependencies:
+// * - Config.$main-data-types (config variable).
 // * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - list.append (SASS function).
 // * - list.nth (SASS function).
-// * - flatten-list (function).
-// * - toggle (function).
+// * - LibFunc.flatten-list (function).
+// * - Error.toggle (function).
 
 // @param {List} $list
 // * A list from which to retrieve the first element.
@@ -60,8 +61,8 @@
 
 @use "sass:meta";
 @use "sass:list";
-@use "../../abstract/variables" as var;
-@use "flatten-list" as func;
+@use "../../abstract/config" as Config;
+@use "flatten-list" as LibFunc;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function get-first-from($list: ()) {
@@ -69,19 +70,19 @@
         @return Error.toggle("The parameter of get-first-from function must be in a list type.");
     }
 
-    @if length($list) == 0 {
+    @if list.length($list) == 0 {
         @return Error.toggle("You must enter the list values of the list in get-first-from function.");
     }
 
     @if meta.type-of($list) != list {
-        @if list.index(var.$main-data-types, $list) {
+        @if list.index(Config.$main-data-types, $list) {
             $new-list: list.append($list, null);
 
-            @return nth($new-list, 1);
+            @return list.nth($new-list, 1);
         }
     }
 
-    $new-list: func.flatten($list);
+    $new-list: LibFunc.flatten($list);
 
-    @return nth($new-list, 1);
+    @return list.nth($new-list, 1);
 }

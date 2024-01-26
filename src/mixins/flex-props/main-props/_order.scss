@@ -8,7 +8,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -21,7 +21,8 @@
 // @module main-props/order
 
 // @dependencies:
-// * - cut-unit (function).
+// * - meta.type-of (SASS function).
+// * - LibFunc.cut-unit (function).
 
 // @param {Number} $val
 // * The order value. Must be a number.
@@ -46,7 +47,8 @@
 // *   order: 2;
 // * }
 
-@use "../../../functions/global/cut-unit" as func;
+@use "sass:meta";
+@use "../../../functions/global/cut-unit" as LibFunc;
 
 @mixin order($value: 0) {
     $order-props: (
@@ -60,11 +62,11 @@
         order
     ) !default;
 
-    @if type-of($value) != number {
+    @if meta.type-of($value) != number {
         @error "The value of order mixin argument must be of type number.";
     }
 
-    $actual-val: func.cut-unit($value);
+    $actual-val: LibFunc.cut-unit($value);
 
     @each $prop in $order-props {
         #{$prop}: $actual-val;

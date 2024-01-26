@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.3.0
+// @version 1.5.0
 
 // @author Khaled Mohamed
 
@@ -19,8 +19,9 @@
 // @module map/has-same-keys
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - map.keys (SASS function).
-// * - toggle (function).
+// * - Error.toggle (function).
 
 // @param {Map} $all-maps
 // * The maps to be compared.
@@ -41,18 +42,20 @@
 
 // @return {Boolean} True if all maps have the same keys, false otherwise.
 
+@use "sass:meta";
+@use "sass:list";
 @use "sass:map";
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function has-same-keys($all-maps...) {
     $keys-list: null;
 
-    @if length($all-maps) == 1 {
+    @if list.length($all-maps) == 1 {
         @return Error.toggle("The parameter of has-same-keys function must has more than one map.");
     }
 
     @each $map in $all-maps {
-        @if type-of($map) != map {
+        @if meta.type-of($map) != map {
             @return Error.toggle("The parameter of has-same-keys function must be in a map type.");
         }
 

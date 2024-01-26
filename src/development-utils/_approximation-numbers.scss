@@ -7,7 +7,7 @@
 
 // @access private
 
-// @version 1.0.0
+// @version 1.2.0
 
 // @author Takeru Suzuki
 // @link: https://gist.github.com/terkel/4373420
@@ -26,8 +26,8 @@
 // * - math.round (SASS function).
 // * - math.ceil (SASS function).
 // * - math.floor (SASS function).
-// * - cut-unit (function).
-// * - toggle (function).
+// * - LibFunc.cut-unit (function).
+// * - Error.toggle (function).
 
 // @update We updated the function with validations
 
@@ -69,13 +69,13 @@
 
 @use "sass:meta";
 @use "sass:math";
-@use "../functions/global/cut-unit" as func;
+@use "../functions/global/cut-unit" as LibFunc;
 @use "../development-utils/toggle-error-message" as Error;
 
 @function approx($num, $digits: 3, $mode: round) {
     $node: 1;
     $num-unit: "";
-    $num-without-unit: func.cut-unit($num);
+    $num-without-unit: LibFunc.cut-unit($num);
     $mode-values: (round, ceil, floor) !default;
 
     @if meta.type-of($num) != number or meta.type-of($digits) != number {

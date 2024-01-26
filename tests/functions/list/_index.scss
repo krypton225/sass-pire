@@ -1,0 +1,49 @@
+@charset "UTF-8";
+
+// @description
+// * This file forwards key functionalities from other modules.
+// * for easy access in the current stylesheet.
+
+// @author Khaled Mohamed
+
+// @license MIT
+
+// @repository: https://github.com/krypton225/sass-pire
+
+// @namespace functions/list
+
+// * flatten-list forward.
+// * forwarding the testing flatten function.
+// * please see testing `flatten` function for details.
+// @see flatten-list
+@forward "flatten-list.test";
+
+// * get-centered-element-list forward.
+// * forwarding the testing center-of-list function.
+// * please see testing `center-of-list` function for details.
+// @see center-of-list
+@forward "get-centered-element-list.test";
+
+// * get-first-element-list forward.
+// * forwarding the testing get-first-from function.
+// * please see testing `get-first-from` function for details.
+// @see get-first-from
+@forward "get-first-element.test";
+
+// * get-last-element-list forward.
+// * forwarding the testing get-last-from function.
+// * please see testing `get-last-from` function for details.
+// @see get-last-from
+@forward "get-last-element.test";
+
+// * merge forward.
+// * forwarding the testing merge function.
+// * please see testing `merge` function for details.
+// @see merge
+@forward "merge.test";
+
+// * reverse forward.
+// * forwarding the testing reverse function.
+// * please see testing `reverse` function for details.
+// @see reverse
+@forward "reverse.test";

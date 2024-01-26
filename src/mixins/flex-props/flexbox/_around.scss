@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-around-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-around
 
 @mixin flex-around-normal($dir: row) {
-    @include f.f-prop($dir, space-around, normal);
+    @include LibMixin.f-prop($dir, space-around, normal);
 }
 
 // @mixin flex-around-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-around
 
 @mixin flex-around-stretch($dir: row) {
-    @include f.f-prop($dir, space-around, stretch);
+    @include LibMixin.f-prop($dir, space-around, stretch);
 }
 
 // @mixin flex-around-start
@@ -79,7 +79,7 @@
 // @module flexbox-around
 
 @mixin flex-around-start($dir: row) {
-    @include f.f-prop($dir, space-around, start);
+    @include LibMixin.f-prop($dir, space-around, start);
 }
 
 // @mixin flex-around-end
@@ -87,7 +87,7 @@
 // @module flexbox-around
 
 @mixin flex-around-end($dir: row) {
-    @include f.f-prop($dir, space-around, end);
+    @include LibMixin.f-prop($dir, space-around, end);
 }
 
 // @mixin flex-around-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-around
 
 @mixin flex-around-fstart($dir: row) {
-    @include f.f-prop($dir, space-around, flex-start);
+    @include LibMixin.f-prop($dir, space-around, flex-start);
 }
 
 // @mixin flex-around-fend
@@ -103,7 +103,7 @@
 // @module flexbox-around
 
 @mixin flex-around-fend($dir: row) {
-    @include f.f-prop($dir, space-around, flex-end);
+    @include LibMixin.f-prop($dir, space-around, flex-end);
 }
 
 // @mixin flex-around-center
@@ -111,7 +111,7 @@
 // @module flexbox-around
 
 @mixin flex-around-center($dir: row) {
-    @include f.f-prop($dir, space-around, center);
+    @include LibMixin.f-prop($dir, space-around, center);
 }
 
 // @mixin flex-around-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-around
 
 @mixin flex-around-baseline($dir: row) {
-    @include f.f-prop($dir, space-around, baseline);
+    @include LibMixin.f-prop($dir, space-around, baseline);
 }
 
 // @mixin flex-around-inh
@@ -127,5 +127,5 @@
 // @module flexbox-around
 
 @mixin flex-around-inh($dir: row) {
-    @include f.f-prop($dir, space-around, inherit);
+    @include LibMixin.f-prop($dir, space-around, inherit);
 }

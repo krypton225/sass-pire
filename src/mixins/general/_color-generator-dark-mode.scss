@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.0.1
+// @version 1.1.1
 
 // @author Khaled Mohamed
 
@@ -22,6 +22,7 @@
 // @module general/generate-colors-dark-mode
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.length (function).
 // * - has-same-keys (function).
 
@@ -120,12 +121,13 @@
 // * The core logic of (gen-clrs-dark) mixin is to call the first one.
 // * You can use one of them as you want.
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:map";
 @use "../../functions/map/has-same-keys" as func;
 
 @mixin generate-colors-dark-mode($light-colors-map: (), $dark-colors-map: (), $generate-with-attr: false) {
-    @if type-of($light-colors-map) != map {
+    @if meta.type-of($light-colors-map) != map {
         @error "You must pass a two map of colors to generate-colors-dark-mode mixin.";
     }
 
@@ -133,7 +135,7 @@
         @error "Please, Pass a map with values to generate-colors-dark-mode mixin.";
     }
 
-    @if type-of($dark-colors-map) != map {
+    @if meta.type-of($dark-colors-map) != map {
         @error "You must pass a two map of colors to generate-colors-dark-mode mixin.";
     }
 
@@ -141,18 +143,18 @@
         @error "Please, Pass a map with values to generate-colors-dark-mode mixin.";
     }
 
-    @if type-of($generate-with-attr) != bool {
+    @if meta.type-of($generate-with-attr) != bool {
         @error "You must pass the third argument of the generate-colors-dark-mode mixin with boolean value.";
     }
 
     @if func.has-same-keys($light-colors-map, $dark-colors-map) {
         :root {
             @each $clr, $val in $light-colors-map {
-                @if type-of($clr) != string {
+                @if meta.type-of($clr) != string {
                     @error "Please, Make the color name in the string type.";
                 }
 
-                @if type-of($val) != color {
+                @if meta.type-of($val) != color {
                     @error "Please, Make sure the value in the map has a color type.";
                 }
 
@@ -163,11 +165,11 @@
         @if $generate-with-attr {
             html[data-theme="light"] {
                 @each $clr, $val in $light-colors-map {
-                    @if type-of($clr) != string {
+                    @if meta.type-of($clr) != string {
                         @error "Please, Make the color name in the string type.";
                     }
 
-                    @if type-of($val) != color {
+                    @if meta.type-of($val) != color {
                         @error "Please, Make sure the value in the map has a color type.";
                     }
 
@@ -178,11 +180,11 @@
 
         html[data-theme="dark"] {
             @each $clr, $val in $dark-colors-map {
-                @if type-of($clr) != string {
+                @if meta.type-of($clr) != string {
                     @error "Please, Make the color name in the string type.";
                 }
 
-                @if type-of($val) != color {
+                @if meta.type-of($val) != color {
                     @error "Please, Make sure the value in the map has a color type.";
                 }
 

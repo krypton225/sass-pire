@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.3.1
+// @version 1.4.1
 
 // @author Khaled Mohamed
 
@@ -22,6 +22,7 @@
 // @module laptops/laptop-general
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - is-in-list (function).
 // * - merge (function).
@@ -63,24 +64,25 @@
 // stylelint-disable media-feature-name-no-vendor-prefix
 // stylelint-disable scss/operator-no-newline-after
 
+@use "sass:meta";
 @use "sass:list";
-@use "../../../../functions/global/is-in-list" as func;
-@use "../../../../functions/list/merge" as sp-list;
+@use "../../../../functions/global/is-in-list" as LibFunc1;
+@use "../../../../functions/list/merge" as LibFunc2;
 @use "../../../../development-utils/toggle-error-message" as Error;
 
 @mixin laptop-general($retina-value) {
-    @if type-of($retina-value) != string {
+    @if meta.type-of($retina-value) != string {
         content: Error.toggle("The parameter of laptop-general mixin must be in a string type.");
     }
 
     $accepted-retina-values: (retina, yes, y) !default;
     $unaccepted-retina-values: (non-retina, no, non, n) !default;
-    $all-retina-values: sp-list.merge($accepted-retina-values, $unaccepted-retina-values) !default;
+    $all-retina-values: LibFunc2.merge($accepted-retina-values, $unaccepted-retina-values) !default;
     $min-device-width: 1200px !default;
     $max-device-width: 1600px !default;
     $min-resolution: 192dpi !default;
 
-    @if func.is-in-list($all-retina-values, $retina-value) {
+    @if LibFunc1.is-in-list($all-retina-values, $retina-value) {
         @if list.index($accepted-retina-values, $retina-value) {
             @media screen and (min-device-width: $min-device-width)
                 and (max-device-width: $max-device-width)

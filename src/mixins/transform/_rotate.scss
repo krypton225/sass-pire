@@ -9,7 +9,7 @@
 
 // @access public
 
-// @version 1.2.0
+// @version 1.3.0
 
 // @author Khaled Mohamed
 
@@ -22,9 +22,10 @@
 // @module transform/rotate
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - math.unit (SASS function).
 // * - $angle-units (variable).
-// * - pref.prefixing-all (mixin).
+// * - LibMixin.prefixing-all (mixin).
 // * - toggle (function).
 
 // @param {Number|String} $val
@@ -47,28 +48,29 @@
 // *   transform: rotate(45deg);
 // * }
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
-@use "../vendor-prefixes/prefix" as pref;
 @use "../../abstract" as var;
+@use "../vendor-prefixes/prefix" as LibMixin;
 @use "../../development-utils/toggle-error-message" as Error;
 
 @mixin rotate($val: 0deg) {
     $transform-props-values: (inherit, initial, revert, unset, none) !default;
 
-    @if type-of($val) == number {
+    @if meta.type-of($val) == number {
         @if not index(var.$angle-units, math.unit($val)) {
             content: Error.toggle("The parameter of rotate mixin must has one of these units: (#{var.$angle-units})");
         } @else {
-            @include pref.prefixing-all(transform, rotate($val));
+            @include LibMixin.prefixing-all(transform, rotate($val));
         }
-    } @else if type-of($val) == string {
+    } @else if meta.type-of($val) == string {
         @if not index($transform-props-values, $val) {
             content: Error.toggle(
                 "The parameter of rotate mixin must has one of these values: (#{$transform-props-values})"
             );
         } @else {
-            @include pref.prefixing-all(transform, rotate($val));
+            @include LibMixin.prefixing-all(transform, rotate($val));
         }
     } @else {
         content: Error.toggle("The value of rotate mixin must be in a number or a string type.");

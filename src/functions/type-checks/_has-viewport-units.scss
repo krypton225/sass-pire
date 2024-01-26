@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.3.0
+// @version 1.5.0
 
 // @author Khaled Mohamed
 
@@ -19,9 +19,10 @@
 // @module type-checks/has-view-unit
 
 // @dependencies:
+// * - meta.type-of (SASS function).
 // * - list.index (SASS function).
 // * - math.unit (SASS function).
-// * - toggle (function).
+// * - Error.toggle (function).
 
 // @param {number} $val
 // * The number to check for viewport units.
@@ -43,12 +44,13 @@
 // @returns {boolean} - Returns true if the argument has one of the
 // * viewport units, otherwise false.
 
+@use "sass:meta";
 @use "sass:list";
 @use "sass:math";
 @use "../../development-utils/toggle-error-message" as Error;
 
 @function has-view-unit($value) {
-    @if type-of($value) != number {
+    @if meta.type-of($value) != number {
         @return Error.toggle("The parameter of has-view-unit function must be in a number type.");
     }
 

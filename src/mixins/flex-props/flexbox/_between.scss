@@ -10,7 +10,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -56,14 +56,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/flex-prop" as f;
+@use "../main-props/flex-prop" as LibMixin;
 
 // @mixin flex-between-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module flexbox-between
 
 @mixin flex-between-normal($dir: row) {
-    @include f.f-prop($dir, space-between, normal);
+    @include LibMixin.f-prop($dir, space-between, normal);
 }
 
 // @mixin flex-between-stretch
@@ -71,7 +71,7 @@
 // @module flexbox-between
 
 @mixin flex-between-stretch($dir: row) {
-    @include f.f-prop($dir, space-between, stretch);
+    @include LibMixin.f-prop($dir, space-between, stretch);
 }
 
 // @mixin flex-between-start
@@ -79,7 +79,7 @@
 // @module flexbox-between
 
 @mixin flex-between-start($dir: row) {
-    @include f.f-prop($dir, space-between, start);
+    @include LibMixin.f-prop($dir, space-between, start);
 }
 
 // @mixin flex-between-end
@@ -87,7 +87,7 @@
 // @module flexbox-between
 
 @mixin flex-between-end($dir: row) {
-    @include f.f-prop($dir, space-between, end);
+    @include LibMixin.f-prop($dir, space-between, end);
 }
 
 // @mixin flex-between-fstart
@@ -95,7 +95,7 @@
 // @module flexbox-between
 
 @mixin flex-between-fstart($dir: row) {
-    @include f.f-prop($dir, space-between, flex-start);
+    @include LibMixin.f-prop($dir, space-between, flex-start);
 }
 
 // @mixin flex-between-fend
@@ -103,7 +103,7 @@
 // @module flexbox-between
 
 @mixin flex-between-fend($dir: row) {
-    @include f.f-prop($dir, space-between, flex-end);
+    @include LibMixin.f-prop($dir, space-between, flex-end);
 }
 
 // @mixin flex-between-center
@@ -111,7 +111,7 @@
 // @module flexbox-between
 
 @mixin flex-between-center($dir: row) {
-    @include f.f-prop($dir, space-between, center);
+    @include LibMixin.f-prop($dir, space-between, center);
 }
 
 // @mixin flex-between-baseline
@@ -119,7 +119,7 @@
 // @module flexbox-between
 
 @mixin flex-between-baseline($dir: row) {
-    @include f.f-prop($dir, space-between, baseline);
+    @include LibMixin.f-prop($dir, space-between, baseline);
 }
 
 // @mixin flex-between-inh
@@ -127,5 +127,5 @@
 // @module flexbox-between
 
 @mixin flex-between-inh($dir: row) {
-    @include f.f-prop($dir, space-between, inherit);
+    @include LibMixin.f-prop($dir, space-between, inherit);
 }

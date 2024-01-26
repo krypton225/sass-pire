@@ -6,7 +6,7 @@
 
 // @access private
 
-// @version 1.2.0
+// @version 1.4.0
 
 // @author Khaled Mohamed
 
@@ -20,7 +20,8 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - toggle (function).
+// * - list.index (SASS function).
+// * - Error.toggle (function).
 
 // @param {string} $val
 // * The provided value of the position.
@@ -51,7 +52,7 @@
     $flag: true !default;
 
     @if meta.type-of($val) != string {
-        @return Error.toggle("Argument of has-pos function must be of type string.");
+        @return Error.toggle("The parameter of has-pos function must be in a string type.");
     }
 
     @if not list.index($position-values, $val) {

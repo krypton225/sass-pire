@@ -11,7 +11,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -57,14 +57,14 @@
 // *   align-items: normal;
 // * }
 
-@use "../main-props/inflex-prop" as f;
+@use "../main-props/inflex-prop" as LibMixin;
 
 // @mixin inflex-left-normal
 // @param {String} $dir - The flex direction. Default: row.
 // @module inline-flexbox-left
 
 @mixin inflex-left-normal($dir: row) {
-    @include f.inflex-prop($dir, left, normal);
+    @include LibMixin.inflex-prop($dir, left, normal);
 }
 
 // @mixin inflex-left-stretch
@@ -72,7 +72,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-stretch($dir: row) {
-    @include f.inflex-prop($dir, left, stretch);
+    @include LibMixin.inflex-prop($dir, left, stretch);
 }
 
 // @mixin inflex-left-start
@@ -80,7 +80,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-start($dir: row) {
-    @include f.inflex-prop($dir, left, start);
+    @include LibMixin.inflex-prop($dir, left, start);
 }
 
 // @mixin inflex-left-end
@@ -88,7 +88,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-end($dir: row) {
-    @include f.inflex-prop($dir, left, end);
+    @include LibMixin.inflex-prop($dir, left, end);
 }
 
 // @mixin inflex-left-fstart
@@ -96,7 +96,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-fstart($dir: row) {
-    @include f.inflex-prop($dir, left, flex-start);
+    @include LibMixin.inflex-prop($dir, left, flex-start);
 }
 
 // @mixin inflex-left-fend
@@ -104,7 +104,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-fend($dir: row) {
-    @include f.inflex-prop($dir, left, flex-end);
+    @include LibMixin.inflex-prop($dir, left, flex-end);
 }
 
 // @mixin inflex-left-center
@@ -112,7 +112,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-center($dir: row) {
-    @include f.inflex-prop($dir, left, center);
+    @include LibMixin.inflex-prop($dir, left, center);
 }
 
 // @mixin inflex-left-baseline
@@ -120,7 +120,7 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-baseline($dir: row) {
-    @include f.inflex-prop($dir, left, baseline);
+    @include LibMixin.inflex-prop($dir, left, baseline);
 }
 
 // @mixin inflex-left-inh
@@ -128,5 +128,5 @@
 // @module inline-flexbox-left
 
 @mixin inflex-left-inh($dir: row) {
-    @include f.inflex-prop($dir, left, inherit);
+    @include LibMixin.inflex-prop($dir, left, inherit);
 }

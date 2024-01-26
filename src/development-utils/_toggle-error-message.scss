@@ -7,7 +7,7 @@
 
 // @access private
 
-// @version 1.1.0
+// @version 1.2.0
 
 // @author Khaled Mohamed
 
@@ -21,8 +21,8 @@
 
 // @dependencies:
 // * - meta.type-of (SASS function).
-// * - $test-environment (variable).
-// * - err (function).
+// * - Config.$test-environment (config variable).
+// * - Dev.err (function).
 
 // @param {String} $message
 // * The error message to be printed as expected value.
@@ -45,16 +45,16 @@
 // @return {String} - Returns the provided error message.
 
 @use "sass:meta";
-@use "../abstract/variables" as var;
-@use "./error" as dev;
+@use "../abstract/config" as Config;
+@use "./error" as Dev;
 
 @function toggle-error-message($error-msg) {
     @if meta.type-of($error-msg) != string {
         @error "Error message in toggle-error-message function must be in type string.";
     }
 
-    @if var.$test-environment == true {
-        @return dev.err($error-msg);
+    @if Config.$test-environment == true {
+        @return Dev.err($error-msg);
     } @else {
         @error $error-msg;
     }

@@ -6,7 +6,7 @@
 
 // @access public
 
-// @version 1.0.0
+// @version 1.1.0
 
 // @author Khaled Mohamed
 
@@ -19,7 +19,7 @@
 // @module general/scroll
 
 // @dependencies:
-// * - Nothing.
+// * - meta.type-of (SASS function).
 
 // @param {Number} $widthScrollbar
 // * Width of the scrollbar in rem units.
@@ -77,6 +77,8 @@
 // *   border-radius: 0.2rem;
 // * }
 
+@use "sass:meta";
+
 @mixin scroll(
     $widthScrollbar: 0.4,
     $borderRadiusScrollbar: 0.3,
@@ -91,7 +93,7 @@
     $max-border-radius-thumb: 0.7;
 
     // * Scrollbar width.
-    @if type-of($widthScrollbar) != number {
+    @if meta.type-of($widthScrollbar) != number {
         @error "Width of the scrollbar must be in number type.";
     }
 
@@ -102,7 +104,7 @@
     }
 
     // * Scrollbar border radius.
-    @if type-of($borderRadiusScrollbar) != number {
+    @if meta.type-of($borderRadiusScrollbar) != number {
         @error "Width of the scrollbar must be in number type.";
     }
 
@@ -113,7 +115,7 @@
     }
 
     // * Scroll thumb border radius.
-    @if type-of($borderRadiusThumb) != number {
+    @if meta.type-of($borderRadiusThumb) != number {
         @error "Width of the scrollbar must be in number type.";
     }
 
@@ -124,19 +126,19 @@
     }
 
     // * Scroll thumb background.
-    @if type-of($bgColorScrollbar) != color {
+    @if meta.type-of($bgColorScrollbar) != color {
         @error "Background color of scroll bar must be in color type.";
     }
 
-    @if type-of($bgColorThumb) != color {
+    @if meta.type-of($bgColorThumb) != color {
         @error "Background color of scroll thumb must be in color type.";
     }
 
-    @if type-of($bgColorTrack) != color {
+    @if meta.type-of($bgColorTrack) != color {
         @error "Background color of scroll track must be in color type.";
     }
 
-    @if type-of($bxShadow) != bool {
+    @if meta.type-of($bxShadow) != bool {
         @error "Box shadow value in scroll mixin must be in boolean type.";
     }
 
