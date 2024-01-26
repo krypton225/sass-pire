@@ -42,6 +42,7 @@
         "lint": "npx stylelint ./src/**/*.scss",
         "cmt": "cz",
         "tags": "git push repo --tags",
+        "log": "changelog generate",
         "gen:lock": "npm i --package-lock-only",
         "test:scss": "sass --no-source-map ./tests/test.scss:dist/test-styles.css --watch",
         "test:jest": "jest ./tests/sass.test.js --watchAll #runs all tests",
