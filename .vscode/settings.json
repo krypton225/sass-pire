@@ -37,7 +37,8 @@
         "mq-screens-laptops",
         "config-file",
         "testing",
-        "functions-map"
+        "functions-map",
+        "security"
     ],
     "cSpell.words": ["Giraudel"]
 }
