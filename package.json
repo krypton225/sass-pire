@@ -10,11 +10,7 @@
             "url": "https://opensource.org/license/mit/"
         }
     ],
-    "author": {
-        "name": "Khaled Mohamed",
-        "email": "k.mohamed.11.98@gmail.com",
-        "url": "https://github.com/krypton225"
-    },
+    "author": "Khaled Mohamed <k.mohamed.11.98@gmail.com> (https://github.com/krypton225)",
     "contributors": [
         "Khaled Mohamed"
     ],
@@ -22,10 +18,7 @@
         "url": "https://github.com/krypton225/sass-pire/issues"
     },
     "homepage": "https://github.com/krypton225/sass-pire#readme",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/krypton225/sass-pire"
-    },
+    "repository": "https://github.com/krypton225/sass-pire",
     "keywords": [
         "SCSS",
         "SASS",
@@ -62,5 +55,6 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
-    }
+    },
+    "main": "index.js"
 }
