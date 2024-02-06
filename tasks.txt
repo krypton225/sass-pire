@@ -35,3 +35,5 @@ Global:
     - Provide more additional comments in documentation of functions and mixins (Done).
 
     - Flex Flow mixin.
+
+    - Flex mixin (flex-grow, flex-shrink, flex-basis).
