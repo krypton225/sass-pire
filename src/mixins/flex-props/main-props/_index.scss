@@ -83,3 +83,8 @@
 // * This module likely provides styles for flex item ordering.
 // @see order
 @forward "order";
+
+// * forwarding the "flow" module.
+// * This module likely provides styles for flex item flowing.
+// @see flow
+@forward "flex-flow";
