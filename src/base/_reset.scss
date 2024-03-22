@@ -56,6 +56,12 @@ html:focus-within {
 body {
     min-height: 100vh;
     line-height: 1.5;
+
+    // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
+    :where(&) {
+        hyphens: auto;
+        overflow-wrap: break-word;
+    }
 }
 
 // * A elements that don't have a class get default styles
