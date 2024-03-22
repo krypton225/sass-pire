@@ -1,6 +1,6 @@
 {
     "name": "sass-pire",
-    "version": "1.5.1",
+    "version": "1.5.2",
     "description": "Just a more mixins and functions with SCSS for more productive projects.",
     "markdown": "github",
     "license": "MIT",
@@ -10,11 +10,7 @@
             "url": "https://opensource.org/license/mit/"
         }
     ],
-    "author": {
-        "name": "Khaled Mohamed",
-        "email": "k.mohamed.11.98@gmail.com",
-        "url": "https://github.com/krypton225"
-    },
+    "author": "Khaled Mohamed <k.mohamed.11.98@gmail.com> (https://github.com/krypton225)",
     "contributors": [
         "Khaled Mohamed"
     ],
@@ -22,10 +18,7 @@
         "url": "https://github.com/krypton225/sass-pire/issues"
     },
     "homepage": "https://github.com/krypton225/sass-pire#readme",
-    "repository": {
-        "type": "git",
-        "url": "https://github.com/krypton225/sass-pire"
-    },
+    "repository": "https://github.com/krypton225/sass-pire",
     "keywords": [
         "SCSS",
         "SASS",
@@ -51,6 +44,8 @@
     "devDependencies": {
         "concurrently": "^8.2.2",
         "cz-conventional-changelog": "^3.3.0",
+        "eslint": ">=5.16.0",
+        "eslint-config-google": "^0.14.0",
         "jest": "^29.7.0",
         "npm-check-updates": "^16.14.11",
         "sass": "^1.69.5",
@@ -62,5 +57,6 @@
         "commitizen": {
             "path": "./node_modules/cz-conventional-changelog"
         }
-    }
+    },
+    "main": "index.js"
 }

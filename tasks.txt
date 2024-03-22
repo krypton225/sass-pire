@@ -33,3 +33,7 @@ Global:
     - Add access for all functions and mixins (DONE).
 
     - Provide more additional comments in documentation of functions and mixins (Done).
+
+    - Flex Flow mixin (DONE).
+
+    - Flex mixin (flex-grow, flex-shrink, flex-basis).
