@@ -72,7 +72,12 @@ a:not([class]) {
 img,
 picture {
     max-width: 100%;
-    display: block;
+    height: auto;
+    vertical-align: middle;
+    font-style: italic;
+    background-repeat: no-repeat;
+    background-size: cover;
+    shape-margin: 1rem;
 }
 
 // * Inherit fonts for inputs and buttons
