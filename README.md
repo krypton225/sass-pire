@@ -38,9 +38,6 @@ Or by using `@use` statement:
 * Useful `Functions` to use easily.
 * `Media queries` with a sufficient amount of screens to match all of it.
 
-## License
-[MIT](https://github.com/krypton225/sass-pire/blob/master/README.md)
-
 ## Contribute
 You can contribute to `sass-pire` by making a fork of this repository and cloning it in your local device.
 
@@ -48,3 +45,7 @@ It is very important to make a `new branch` to your `feature` or `solve a bug` o
 
 ## Do you want more features?
 Please, set a new issue and labeled it as `Feature` and insert what you want.
+
+
+## License
+[MIT](https://github.com/krypton225/sass-pire/blob/master/README.md)
