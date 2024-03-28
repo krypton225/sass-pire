@@ -48,4 +48,4 @@ Please, set a new issue and labeled it as `Feature` and insert what you want.
 
 
 ## License
-[MIT](https://github.com/krypton225/sass-pire/blob/master/README.md)
+[MIT](https://github.com/krypton225/sass-pire/blob/master/LICENSE.md)
