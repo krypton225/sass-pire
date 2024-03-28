@@ -25,6 +25,10 @@
         "sass-library",
         "scss-library"
     ],
+    "repository": {
+        "url": "https://github.com/krypton225/sass-pire",
+        "type": "git"
+    },
     "scripts": {
         "dev": "concurrently --prefix-colors=\"cyan,yellow\" \"npm run sass:watch\" \"npm run sass:comp\"",
         "sass:watch": "sass --no-source-map ./src/sass-pire.scss:dist/styles.css --watch",
