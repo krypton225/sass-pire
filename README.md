@@ -1,5 +1,6 @@
 <div align="center">
-  <img src="./assets/images/logo.png" width="100" align="center">
+
+  <img src="./assets/images/logo.png" width="200">
 
   # SASS Pire
 
