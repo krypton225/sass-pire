@@ -1,11 +1,6 @@
-<div align="center">
+# SASS Pire
 
-  <img src="./assets/images/logo.png" width="200">
-
-  # SASS Pire
-
-  *Just more mixins and functions with SCSS for more productive projects.*
-</div>
+*Just more mixins and functions with SCSS for more productive projects.*
 
 ## Getting Started
 NPM
