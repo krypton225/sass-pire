@@ -3,6 +3,9 @@
 // @description
 // * This reset file belongs to Andy Bell.
 // * You can check this here: https://andy-bell.co.uk/a-modern-css-reset/
+// * We benefited from other reset. You can find it here:
+// * https://www.joshwcomeau.com/css/custom-css-reset/
+
 // * We updated some of this reset file.
 
 // @access public
@@ -40,6 +43,17 @@ dd {
     margin: 0;
 }
 
+// * Avoid text overflows
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
 // * Remove list styles on ul, ol elements with a list role which suggests
 // * default styling will be removed
 ul[role="list"],
@@ -56,6 +70,9 @@ html:focus-within {
 body {
     min-height: 100dvh;
     line-height: 1.5;
+
+    // * This is for improve text rendering in the browsers
+    -webkit-font-smoothing: antialiased;
 
     // stylelint-disable-next-line scss/selector-no-redundant-nesting-selector
     :where(&) {
@@ -76,10 +93,13 @@ a:not([class]) {
 
 // * Make images easier to work with
 img,
-picture {
+picture,
+video,
+canvas,
+svg {
     max-width: 100%;
     height: auto;
-    vertical-align: middle;
+    display: block;
     font-style: italic;
     background-repeat: no-repeat;
     background-size: cover;
